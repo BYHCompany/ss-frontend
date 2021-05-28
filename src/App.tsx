@@ -1,9 +1,12 @@
 import React from 'react';
+import { Header } from './Components/Header/';
 import './style.scss';
+
 function App() {
   return (
     <div className="app">
-      <div className="app_container"></div>
+      <Header />
+      <div className="container"></div>
     </div>
   );
 }
