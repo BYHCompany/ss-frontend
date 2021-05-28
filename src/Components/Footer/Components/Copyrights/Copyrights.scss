@@ -1,0 +1,15 @@
+@import '../../../../GlobalStyles/mixins';
+
+.copyright {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 15px;
+  width: 100%;
+  margin-bottom: 10px;
+  @include theme-aware('background-color', 'primary');
+
+  p {
+    @include theme-aware('color', 'default');
+  }
+}
