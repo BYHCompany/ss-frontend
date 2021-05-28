@@ -4,3 +4,14 @@
   margin: 0;
   font-family: 'Nunito', sans-serif;
 }
+
+.app {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.app_container {
+  width: 100%;
+  max-width: 1170px;
+}
