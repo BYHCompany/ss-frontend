@@ -1,9 +1,11 @@
 import React from 'react';
-import './style.scss';
+import { Footer } from './Components/Footer';
+import './GlobalStyles/style.scss';
 function App() {
   return (
-    <div className="app">
-      <div className="app_container"></div>
+    <div className="app theme-light">
+      <div className="container"></div>
+      <Footer />
     </div>
   );
 }
