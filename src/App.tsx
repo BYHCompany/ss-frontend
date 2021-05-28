@@ -1,12 +1,13 @@
 import React from 'react';
-import { Header } from './Components/Header/';
-import './style.scss';
-
+import { Footer } from './Components/Footer';
+import { Header } from './Components/Header';
+import './GlobalStyles/style.scss';
 function App() {
   return (
-    <div className="app">
+    <div className="app theme-light">
       <Header />
       <div className="container"></div>
+      <Footer />
     </div>
   );
 }
