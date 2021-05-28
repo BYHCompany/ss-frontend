@@ -1,9 +1,10 @@
+@import '../../../GlobalStyles/mixins';
 .header {
   width: 100%;
-  background-color: #072832;
   height: 70px;
   display: flex;
   justify-content: center;
+  @include theme-aware('background-color', 'primary');
 }
 .header__container {
   max-width: 1170px;
