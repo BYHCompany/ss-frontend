@@ -7,11 +7,12 @@
 
 .app {
   display: flex;
-  justify-content: center;
+
   flex-direction: column;
+  align-items: center;
 }
 
-.app_container {
+.container {
   width: 100%;
-  max-width: 1170px;
+  width: 1170px;
 }
