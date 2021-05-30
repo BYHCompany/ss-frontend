@@ -1,6 +1,6 @@
 @import '../../../../GlobalStyles/mixins';
 
-.list {
+.list + .list {
   margin-right: 30px;
   max-width: 370px;
 }
@@ -18,16 +18,27 @@
   font-size: 18px;
   margin-bottom: 11px;
   transition: all 0.1s ease-in-out;
-  display: flex;
-  justify-content: space-between;
 
   a {
     text-decoration: none;
+    display: flex;
+    justify-content: space-between;
     @include theme-aware('color', 'default');
   }
 
   & a:hover {
     color: #ffffff;
     text-decoration: underline;
+  }
+}
+
+.list__icon {
+  svg {
+    font-size: 24px;
+    width: 24px;
+    height: 24px;
+    path {
+      @include theme-aware('color', 'default');
+    }
   }
 }

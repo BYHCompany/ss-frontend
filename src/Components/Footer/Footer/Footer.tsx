@@ -1,42 +1,25 @@
 import React from 'react';
+import { contacts, icons, info, support } from '../../../assets/footerItems';
 import { Copyrights } from '../Components/Copyrights/Copyrights';
-import { Link, List } from '../Components/List/List';
-import './style.scss';
-
-export const support = [
-  { href: '#', linkName: 'Написать в поддержку' },
-  { href: '#', linkName: 'Как подать объявление?' },
-  { href: '#', linkName: 'Как создать учётную запись?' },
-  { href: '#', linkName: 'Что делать если в поиске не отображается моё объявление?' },
-  { href: '#', linkName: 'Что нужно для идеального объявления или как продать машину быстрее?' },
-] as Link[];
-
-export const info = [
-  { href: '#', linkName: 'О компании' },
-  { href: '#', linkName: 'Вакансии' },
-  { href: '#', linkName: 'Партнёрам' },
-  { href: '#', linkName: 'Реклама на сайте' },
-  { href: '#', linkName: 'Наш блог' },
-  { href: '#', linkName: 'Политика конфиденциальности' },
-] as Link[];
-
-export const contacts = [
-  { href: '#', linkName: 'О компании' },
-  { href: '#', linkName: 'Вакансии' },
-  { href: '#', linkName: 'Партнёрам' },
-  { href: '#', linkName: 'Реклама на сайте' },
-  { href: '#', linkName: 'Наш блог' },
-  { href: '#', linkName: 'Политика конфиденциальности' },
-] as Link[];
+import { List } from '../Components/List/List';
+import { Mobile } from '../Components/Mobile/Mobile';
+import { Payment } from '../Components/Payment/Payment';
+import './Footer.scss';
 
 export const Footer: React.FC = (): React.ReactElement => {
   return (
     <div className="footer">
       <div className="container footer__container">
-        <div className="footer__container__grid">
-          <List items={support} label="Поддержка" />
-          <List items={info} label="Доп. информация" />
-          <List items={contacts} label="Контакты" />
+        <div className="footer__container__grid footer__container__top">
+          <List className="footer__container__grid__item" items={support} label="Поддержка" />
+          <List className="footer__container__grid__item" items={info} label="Доп. информация" />
+          <div style={{ marginLeft: '200px', maxWidth: '170px' }}>
+            <List items={contacts} label="Контакты" />
+          </div>
+        </div>
+        <div className="footer__container__grid footer__container__bottom">
+          <Payment className="footer__container__grid__item" icons={icons} label="Способы оплаты" />
+          <Mobile className="footer__container__grid__item" label="Для мобильных устройств" />
         </div>
         <Copyrights />
       </div>
