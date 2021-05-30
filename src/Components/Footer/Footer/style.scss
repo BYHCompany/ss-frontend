@@ -1,0 +1,9 @@
+@import '../../../GlobalStyles/mixins';
+
+.footer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  @include theme-aware('background-color', 'primary');
+}
