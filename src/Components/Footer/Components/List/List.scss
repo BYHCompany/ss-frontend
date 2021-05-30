@@ -1,18 +1,25 @@
 @import '../../../../GlobalStyles/mixins';
 
-.support__item {
+.list {
+  margin-right: 30px;
+  max-width: 370px;
+}
+
+.list__item {
   display: flex;
   flex-direction: column;
 }
 
-.support__title {
+.list__title {
   margin-bottom: 46px;
 }
 
-.support__item {
+.list__item {
   font-size: 18px;
-  margin-bottom: 10px;
+  margin-bottom: 11px;
   transition: all 0.1s ease-in-out;
+  display: flex;
+  justify-content: space-between;
 
   a {
     text-decoration: none;
