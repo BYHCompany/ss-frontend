@@ -12,12 +12,14 @@
 .support__item {
   font-size: 18px;
   margin-bottom: 10px;
-  cursor: pointer;
   transition: all 0.1s ease-in-out;
 
-  @include theme-aware('color', 'default');
+  a {
+    text-decoration: none;
+    @include theme-aware('color', 'default');
+  }
 
-  &:hover {
+  & a:hover {
     color: #ffffff;
     text-decoration: underline;
   }

@@ -7,3 +7,14 @@
 
   @include theme-aware('background-color', 'primary');
 }
+
+.footer__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer__container__grid {
+  display: grid;
+  grid-template-columns: auto auto auto;
+}

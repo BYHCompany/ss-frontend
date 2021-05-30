@@ -7,12 +7,20 @@ export const Support: React.FC = (): React.ReactElement => {
     <div className="support">
       <Title variant="secondary" className="support__title" type="medium" text="Поддержка" />
       <ul className="support__list">
-        <li className="support__item">Написать в поддержку</li>
-        <li className="support__item">Как подать объявление?</li>
-        <li className="support__item">Как создать учётную запись?</li>
-        <li className="support__item">Что делать если в поиске не отображается моё объявление?</li>
         <li className="support__item">
-          Что нужно для идеального объявления или как продать машину быстрее?
+          <a href="#">Написать в поддержку</a>
+        </li>
+        <li className="support__item">
+          <a href="#">Как подать объявление?</a>
+        </li>
+        <li className="support__item">
+          <a href="#">Как создать учётную запись?</a>
+        </li>
+        <li className="support__item">
+          <a href="#">Что делать если в поиске не отображается моё объявление?</a>
+        </li>
+        <li className="support__item">
+          <a href="#">Что нужно для идеального объявления или как продать машину быстрее?</a>
         </li>
       </ul>
     </div>
