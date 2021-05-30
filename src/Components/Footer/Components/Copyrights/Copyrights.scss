@@ -7,9 +7,10 @@
   height: 15px;
   width: 100%;
   margin-bottom: 10px;
-  @include theme-aware('background-color', 'primary');
 
   p {
+    font-size: 11px;
+
     @include theme-aware('color', 'default');
   }
 }

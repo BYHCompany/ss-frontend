@@ -2,7 +2,7 @@ import React from 'react';
 import { AiOutlineCopyrightCircle } from 'react-icons/ai';
 import './Copyrights.scss';
 
-export const Copyrights = () => {
+export const Copyrights: React.FC = (): React.ReactElement => {
   return (
     <div className="container">
       <div className="copyright">
