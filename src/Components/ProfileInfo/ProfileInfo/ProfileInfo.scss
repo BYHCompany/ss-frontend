@@ -1,0 +1,36 @@
+.profile-info__wrapper {
+  flex-direction: column;
+  width: 100%;
+}
+
+.fullName,
+.tags-message__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.fullName-info {
+  display: flex;
+  margin-bottom: 25px;
+}
+
+.location__section {
+  margin-bottom: 25px;
+  display: flex;
+  align-items: center;
+  font-size: 30px;
+}
+
+.about__section {
+  display: flex;
+  align-items: center;
+  margin-bottom: 11px;
+  font-weight: bold;
+  font-size: 22px;
+  color: #8c8c8c;
+}
+
+.profile-info__tags-wrapper {
+  display: flex;
+}
