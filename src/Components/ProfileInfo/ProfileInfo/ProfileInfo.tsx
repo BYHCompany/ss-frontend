@@ -28,7 +28,7 @@ export const ProfileInfo: React.FC<ProfileInfoProps> = ({ profileInfoData }) => 
           </div>
           <div className="profile-info__wrapper">
             <div className="fullName">
-              <div className="fullName-info">
+              <div className="fullName-info" data-testid="fullName-info">
                 <Title text={data.firstName} style={{ marginRight: 10 }} type={'medium'} />
                 <Title text={data.lastName} type={'medium'} />
               </div>

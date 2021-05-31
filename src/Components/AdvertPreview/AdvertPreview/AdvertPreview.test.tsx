@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import React from 'react';
 import { AdvertPreview } from '..';
 import { advertData } from '../../../assets/advertPreviewData';

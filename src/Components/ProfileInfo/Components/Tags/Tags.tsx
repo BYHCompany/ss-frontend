@@ -6,7 +6,7 @@ export type tag = {
   backgroundColor: string;
   name: string;
 };
-interface TagsProps {
+export interface TagsProps {
   tags: tag[];
 }
 
@@ -15,9 +15,9 @@ export const Tags: React.FC<TagsProps> = ({ tags }) => {
     <>
       {tags.map((tag) => (
         <Paper
+          display={'inline-block'}
           key={tag.id}
           height={23}
-          width={68}
           className="tag__wrapper"
           customBgColor={tag.backgroundColor}>
           {tag.name}
