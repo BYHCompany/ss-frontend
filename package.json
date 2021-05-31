@@ -19,7 +19,7 @@
     "@types/redux-saga": "^0.10.5",
     "@types/sass-loader": "^8.0.1",
     "axios": "^0.21.1",
-    "byh-components": "0.1.7",
+    "byh-components": "0.1.9",
     "node-sass": "^6.0.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
@@ -66,28 +66,5 @@
     "identity-obj-proxy": "^3.0.0",
     "jest-esm-transformer": "^1.0.0",
     "typescript-babel-jest": "^1.0.6"
-  },
-  "babel": {
-    "presets": [
-      "@babel/preset-react",
-      "@babel/preset-env",
-      "@babel/preset-typescript"
-    ],
-    "plugins": []
-  },
-  "jest": {
-    "transform": {
-      "^.+\\.(tsx|ts)?$": "typescript-babel-jest"
-    },
-    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$",
-    "moduleNameMapper": {
-      "^.+\\.scss$": "identity-obj-proxy"
-    },
-    "moduleFileExtensions": [
-      "ts",
-      "tsx",
-      "js",
-      "json"
-    ]
   }
 }
