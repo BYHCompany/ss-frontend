@@ -1,0 +1,36 @@
+@import '../../../GlobalStyles/mixins';
+
+.footer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  @include theme-aware('background-color', 'primary');
+}
+
+.footer__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer__container__grid {
+  display: grid;
+  width: 100%;
+}
+
+.footer__container__top {
+  grid-template-columns: 400px 400px auto;
+  margin-bottom: 64px;
+}
+
+.footer__container__bottom {
+  grid-template-columns: 400px auto auto;
+  margin-bottom: 80px;
+}
+
+.footer__container__grid__item {
+  max-width: 370px;
+  width: 100%;
+  margin-right: 30px;
+}
