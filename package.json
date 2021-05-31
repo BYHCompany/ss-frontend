@@ -57,6 +57,7 @@
       "last 1 safari version"
     ]
   },
+
   "devDependencies": {
     "@babel/plugin-transform-react-jsx": "^7.14.3",
     "@babel/preset-env": "^7.14.4",
