@@ -16,5 +16,21 @@
 
 .footer__container__grid {
   display: grid;
-  grid-template-columns: auto auto auto;
+  width: 100%;
+}
+
+.footer__container__top {
+  grid-template-columns: 400px 400px auto;
+  margin-bottom: 64px;
+}
+
+.footer__container__bottom {
+  grid-template-columns: 400px auto auto;
+  margin-bottom: 80px;
+}
+
+.footer__container__grid__item {
+  max-width: 370px;
+  width: 100%;
+  margin-right: 30px;
 }
