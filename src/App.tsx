@@ -1,19 +1,18 @@
 import React from 'react';
-import { profileInfoData } from './assets/profileInfoData';
 import { Footer } from './Components/Footer';
 import { Header } from './Components/Header';
-import { ProfileInfo } from './Components/ProfileInfo';
+import { BrowserRouter as Router } from 'react-router-dom';
 import './GlobalStyles/style.scss';
 
 function App() {
   return (
-    <div className="app theme-light">
-      <Header />
-      <div className="container">
-        <ProfileInfo profileInfoData={profileInfoData} />
+    <Router>
+      <div className="app theme-light">
+        <Header />
+        <div className="container"></div>
+        <Footer />
       </div>
-      <Footer />
-    </div>
+    </Router>
   );
 }
 

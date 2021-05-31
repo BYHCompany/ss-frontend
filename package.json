@@ -57,13 +57,37 @@
       "last 1 safari version"
     ]
   },
-  "jest": {
-    "moduleNameMapper": {
-      "\\.(css|less|scss|sass)$": "identity-obj-proxy"
-    }
-  },
+
   "devDependencies": {
-    "@babel/plugin-syntax-flow": "^7.12.13",
-    "identity-obj-proxy": "^3.0.0"
+    "@babel/plugin-transform-react-jsx": "^7.14.3",
+    "@babel/preset-env": "^7.14.4",
+    "@babel/preset-react": "^7.13.13",
+    "@babel/preset-typescript": "^7.13.0",
+    "identity-obj-proxy": "^3.0.0",
+    "jest-esm-transformer": "^1.0.0",
+    "typescript-babel-jest": "^1.0.6"
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-react",
+      "@babel/preset-env",
+      "@babel/preset-typescript"
+    ],
+    "plugins": []
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.(tsx|ts)?$": "typescript-babel-jest"
+    },
+    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$",
+    "moduleNameMapper": {
+      "^.+\\.scss$": "identity-obj-proxy"
+    },
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "json"
+    ]
   }
 }
