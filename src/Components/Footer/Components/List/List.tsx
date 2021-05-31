@@ -1,17 +1,8 @@
 import { Title } from 'byh-components';
 import React from 'react';
+import { Link as RouterLink } from 'react-router-dom';
 import './List.scss';
-
-export type Link = {
-  href: string;
-  linkName: string;
-  icon?: React.ReactNode;
-};
-
-interface ListProps extends React.HTMLAttributes<HTMLElement> {
-  label: string;
-  items: Link[];
-}
+import { ListProps } from './ListTypes';
 
 export const List: React.FC<ListProps> = ({ items, label, ...props }): React.ReactElement => {
   return (
@@ -21,10 +12,10 @@ export const List: React.FC<ListProps> = ({ items, label, ...props }): React.Rea
         {items.map((link) => {
           return (
             <li key={link.href + link.linkName} className="list__item">
-              <a href={link.href}>
+              <RouterLink to={link.href}>
                 {link.linkName}
                 {link.icon ? <div className="list__icon">{link.icon}</div> : <></>}
-              </a>
+              </RouterLink>
             </li>
           );
         })}

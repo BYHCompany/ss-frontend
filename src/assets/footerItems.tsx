@@ -1,4 +1,3 @@
-import { Link } from '../Components/Footer/Components/List/List';
 import { ReactComponent as VK } from '../assets/img/socialNetIcons/vk.svg';
 import { FaFacebook, FaTelegram, FaInstagram, FaTwitter } from 'react-icons/fa';
 import { ReactComponent as MasterCard } from '../assets/img/paymentSystems/mastercard.svg';
@@ -7,6 +6,8 @@ import { ReactComponent as Bitcoin } from '../assets/img/paymentSystems/bitcoin.
 import { ReactComponent as GooglePay } from '../assets/img/paymentSystems/google-pay.svg';
 import { ReactComponent as Visa } from '../assets/img/paymentSystems/visa.svg';
 import { ReactComponent as PayPal } from '../assets/img/paymentSystems/paypal.svg';
+import { Link } from '../Components/Footer/Components/List/ListTypes';
+import { IconObject } from '../Components/Footer/Components/Payment/PaymentTypes';
 
 export const support = [
   { href: '#', linkName: 'Написать в поддержку' },
@@ -34,10 +35,10 @@ export const contacts = [
 ] as Link[];
 
 export const icons = [
-  <MasterCard />,
-  <ApplePay />,
-  <Bitcoin />,
-  <GooglePay />,
-  <Visa />,
-  <PayPal />,
-];
+  { icon: <MasterCard />, href: 'https://www.mastercard.ru/ru-ru.html' },
+  { icon: <ApplePay />, href: 'https://www.apple.com/ru/apple-pay/' },
+  { icon: <Bitcoin />, href: 'https://bitcoin.org/ru/' },
+  { icon: <GooglePay />, href: 'https://pay.google.com/' },
+  { icon: <Visa />, href: 'https://www.visa.com.ru/' },
+  { icon: <PayPal />, href: 'https://www.paypal.com/lv/home' },
+] as IconObject[];
