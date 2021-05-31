@@ -1,6 +1,10 @@
 @import '../../../../GlobalStyles/mixins';
 
-.copyright {
+.copyrights__container {
+  max-width: 1170px;
+}
+
+.copyrights {
   display: flex;
   justify-content: space-between;
   align-items: center;
