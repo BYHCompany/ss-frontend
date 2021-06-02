@@ -1,0 +1,48 @@
+@import '../../../GlobalStyles/mixins';
+
+.bigAdvertPreview__wrapper {
+  padding: 15px;
+  display: flex;
+  cursor: pointer;
+}
+
+.bigAdertPreview__content {
+  display: flex;
+  width: 100%;
+  margin-left: 10px;
+  flex-direction: column;
+}
+
+.bigAdertPreview__content__leftRightPos {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.bigAdertPreview__content__year {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.bigAdertPreview__content__param {
+  font-size: 24px;
+  @include theme-aware('color', 'default');
+}
+
+.bigAdertPreview__content__param--bold {
+  font-weight: 700;
+}
+
+.bigAdertPreview__content__priceWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bigAdertPreview__content__price {
+  font-size: 24px;
+  font-weight: 700;
+  @include theme-aware('color', 'secondary');
+}
