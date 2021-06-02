@@ -8,6 +8,7 @@
 
 .bigAdertPreview__content {
   display: flex;
+  max-width: 701px;
   width: 100%;
   margin-left: 10px;
   flex-direction: column;
@@ -19,6 +20,10 @@
   justify-content: space-between;
   align-items: center;
   margin-bottom: 5px;
+
+  p {
+    line-height: 33px;
+  }
 }
 
 .bigAdertPreview__content__year {
@@ -35,14 +40,46 @@
   font-weight: 700;
 }
 
-.bigAdertPreview__content__priceWrapper {
+.bigAdertPreview__content__tags {
+  display: flex;
+}
+
+.bigAdertPreview__content__tagWrapper {
   display: flex;
   align-items: center;
   justify-content: center;
+
+  p {
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.bigAdertPreview__content__boostTag {
+  margin-right: 10px;
+}
+
+.bigAdertPreview__content___tagText {
+  font-size: 18px;
+  font-weight: 400;
+  @include theme-aware('color', 'secondary');
 }
 
 .bigAdertPreview__content__price {
   font-size: 24px;
   font-weight: 700;
+  @include theme-aware('color', 'secondary');
+}
+
+.bigAdertPreview__content__tagsAndButtons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+  align-items: flex-end;
+}
+
+.bigAdvertPreview__content__tagIcon {
+  margin-right: 7px;
+  font-size: 24px;
   @include theme-aware('color', 'secondary');
 }
