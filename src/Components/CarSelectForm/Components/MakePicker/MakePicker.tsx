@@ -4,7 +4,7 @@ import './MakePicker.scss';
 
 export const MakePicker = () => {
   return (
-    <div style={{ marginRight: 15 }}>
+    <div data-testid="make-picker" style={{ marginRight: 15 }}>
       <Title text="Подобрать авто" variant="primary" type="medium" />
       <Paper
         className="make-picker__wrapper"

@@ -14,7 +14,7 @@ export const CarSelectorForm = () => {
   return (
     <Paper style={{ padding: 15 }} height={397}>
       <MakePicker />
-      <div className="car-selector-from__wrapper">
+      <div className="car-selector-from__wrapper" data-testid="car-selector-from__wrapper">
         <div style={{ display: 'flex' }}>
           <ModelForm />
           <MillageForm />

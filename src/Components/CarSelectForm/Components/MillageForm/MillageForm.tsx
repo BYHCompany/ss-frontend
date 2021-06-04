@@ -5,7 +5,7 @@ import { dropdownData } from '../ModelForm/ModelForm';
 export const MillageForm = () => {
   const mockFunc = () => {};
   return (
-    <div style={{ marginTop: 50, width: 496 }}>
+    <div data-testid="millage-form" style={{ marginTop: 50, width: 496 }}>
       <div className="model-form__dropdown model-form__padding">
         <Dropdown
           width={238}
