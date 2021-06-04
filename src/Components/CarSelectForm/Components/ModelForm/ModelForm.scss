@@ -1,4 +1,21 @@
 .model-form__wrapper {
   height: 256px;
   width: 322px;
+  margin: 50px 15px 0 0;
+}
+.model-form__dropdown {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.model-form__padding {
+  padding-bottom: 15px;
+}
+
+.short-input__divider {
+  display: flex;
+  align-items: center;
+  font-size: 30px;
 }
