@@ -12,19 +12,20 @@ import { numberWithSeparators } from '../../../services/numberWithSeparator';
 import { priceFormatter } from '../../../services/priceFormaters';
 import './BigAdvertPreview.scss';
 import { BigAdvertPreviewProps } from './BigAdvertPreviewTypes';
+import { BsPlug } from 'react-icons/bs';
+import { BiTrendingUp } from 'react-icons/bi';
 
 export const BigAdvertPreview: React.FC<BigAdvertPreviewProps> = ({ src, car }) => {
   return (
     <Paper className={'bigAdvertPreview__wrapper'}>
-      <ImageComponent src={src} width={431} height={263} />
+      <ImageComponent src={src} width={431} height={267} />
       <div className="bigAdertPreview__content">
         <div style={{ marginBottom: 15 }}>
-          <div className="bigAdertPreview__content__leftRightPos">
+          <div style={{ marginBottom: '0' }} className="bigAdertPreview__content__leftRightPos">
             <Title text={car.name} />
             <p className="bigAdertPreview__content__year">{car.year} год</p>
           </div>
         </div>
-
         <div className="bigAdertPreview__content__leftRightPos">
           <p className="bigAdertPreview__content__param">
             {translateEngineType(car.engineType)} / {convertKwToHP(car.power)} л.с
@@ -48,8 +49,28 @@ export const BigAdvertPreview: React.FC<BigAdvertPreviewProps> = ({ src, car }) 
           </p>
         </div>
         <div className="bigAdertPreview__content__tagsAndButtons">
+          <div className="bigAdertPreview__content__tags">
+            {car.engineType === 'Electric' && (
+              <Paper
+                className="bigAdertPreview__content__tagWrapper bigAdertPreview__content__boostTag"
+                width={153}
+                height={34}
+                customBgColor="#00A3FF">
+                <BsPlug className="bigAdvertPreview__content__tagIcon" />
+                <p className="bigAdertPreview__content___tagText">Электрокар</p>
+              </Paper>
+            )}
+            <Paper
+              className="bigAdertPreview__content__tagWrapper bigAdertPreview__content__boostTag"
+              width={150}
+              height={34}
+              customBgColor="#4FFFAA">
+              <BiTrendingUp className="bigAdvertPreview__content__tagIcon" />
+              <p className="bigAdertPreview__content___tagText">Выгодно</p>
+            </Paper>
+          </div>
           <Paper
-            className="bigAdertPreview__content__priceWrapper"
+            className="bigAdertPreview__content__tagWrapper"
             width={200}
             height={44}
             customBgColor="#072832">
