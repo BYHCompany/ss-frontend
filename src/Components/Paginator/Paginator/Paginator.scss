@@ -1,0 +1,13 @@
+.paginator__wrapper {
+  display: flex;
+  align-items: center;
+
+  button {
+    margin-right: 5px;
+  }
+}
+
+.paginator__separator {
+  margin: 0 22px;
+  font-size: 36px;
+}
