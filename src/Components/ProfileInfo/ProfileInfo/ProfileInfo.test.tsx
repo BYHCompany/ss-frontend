@@ -14,7 +14,6 @@ describe('ProfileInfo', () => {
   });
   it('FullName Info should be rendered in the document', () => {
     const { getByTestId } = getProfileInfo();
-    screen.debug();
     const fullNameInfo = getByTestId('fullName-info');
     expect(fullNameInfo).toBeInTheDocument();
   });

@@ -1,8 +1,8 @@
 import { Button, ImageComponent, Paper, Title } from 'byh-components';
 import React from 'react';
-import { tag, Tags } from '../Components/Tags/Tags';
 import { FiSettings } from 'react-icons/fi';
 import { GrLocation } from 'react-icons/gr';
+import { tag, Tags } from '../../Tags/Tags/Tags';
 import './ProfileInfo.scss';
 export type ProfileInfoTypes = {
   id: string;
