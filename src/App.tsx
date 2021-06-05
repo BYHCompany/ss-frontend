@@ -15,7 +15,7 @@ function App() {
             car={carExample}
             src="https://i.ytimg.com/vi/Xa8DwaXVcS0/maxresdefault.jpg"
           /> */}
-          <Paginator allPagesCount={20} currentPage={8} />
+          <Paginator allPagesCount={20} currentPage={2} />
         </div>
         <Footer />
       </div>
