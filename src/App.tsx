@@ -15,7 +15,11 @@ function App() {
             car={carExample}
             src="https://i.ytimg.com/vi/Xa8DwaXVcS0/maxresdefault.jpg"
           /> */}
-          <Paginator allPagesCount={20} currentPage={2} />
+          <Paginator
+            allPagesCount={200}
+            currentPage={90}
+            callback={(index) => console.log(index)}
+          />
         </div>
         <Footer />
       </div>
