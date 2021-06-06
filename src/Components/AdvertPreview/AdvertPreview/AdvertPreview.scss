@@ -1,12 +1,14 @@
 .advert__wrapper {
   padding: 20px;
   cursor: pointer;
-  &:hover {
+  display: flex;
+  flex-direction: column;
+  dd &:hover {
     transform: scale(1.004);
   }
 }
 
-.advert-action__wrapper {
+.advert-preview__action-wrapper {
   display: flex;
   justify-content: space-between;
 }
