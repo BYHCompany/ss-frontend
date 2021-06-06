@@ -3,7 +3,7 @@ import { Footer } from './Components/Footer';
 import { Header } from './Components/Header';
 import { BrowserRouter as Router } from 'react-router-dom';
 import './GlobalStyles/style.scss';
-import { Profile } from './Pages';
+import { ErrorPage } from './Pages/ErrorPage';
 
 function App() {
   return (
@@ -11,7 +11,7 @@ function App() {
       <div className="app theme-light">
         <Header />
         <div className="container">
-          <Profile />
+          <ErrorPage />
         </div>
         <Footer />
       </div>
