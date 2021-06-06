@@ -1,6 +1,7 @@
 import { Button } from 'byh-components';
 import React from 'react';
 import { typeSelectButtons } from '../../../assets/typeSelectButtons';
+
 import './style.scss';
 
 export const TypeSelect = () => {

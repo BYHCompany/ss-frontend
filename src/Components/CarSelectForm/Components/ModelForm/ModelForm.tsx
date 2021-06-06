@@ -20,7 +20,7 @@ export const dropdownData = [
 export const ModelForm = () => {
   const mockFunc = () => {};
   return (
-    <div className="model-form__wrapper">
+    <div data-testid="model-form__wrapper" className="model-form__wrapper">
       <Dropdown
         callback={mockFunc}
         width={322}
@@ -53,7 +53,7 @@ export const ModelForm = () => {
       <div className="model-form__dropdown model-form__padding">
         <Dropdown
           callback={mockFunc}
-          label="Объём от"
+          label="Объём"
           width={150}
           height={50}
           labelFontSize={24}
