@@ -1,15 +1,14 @@
 import { Button, Title } from 'byh-components';
 import React from 'react';
-import { advertData } from '../../../../../assets/advertPreviewData';
-import './SpecialOffers.scss';
+import { biggerAdvertData } from '../../../../../assets/advertPreviewData';
 import { AdvertPreview } from '../../../../../Components/AdvertPreview';
-
-export const SpecialOffers = () => {
+import './ProfitableOffers.scss';
+export const ProfitableOffers = () => {
   return (
     <div>
-      <Title text="Предложения специально для Вас" type="large" variant="primary" />
-      <div className="special-offers__advert-preview__wrapper">
-        {advertData.map((props) => (
+      <Title type="large" text="Не пропусти эти выгодные предложения" variant="primary" />
+      <div className="profitable-offers__advert-preview__wrapper">
+        {biggerAdvertData.map((props) => (
           <div style={{ marginBottom: 35 }}>
             <AdvertPreview
               id={props.id}
@@ -23,7 +22,7 @@ export const SpecialOffers = () => {
           </div>
         ))}
       </div>
-      <div className="special-offers__button">
+      <div className="profitable-offers__button">
         <Button label="Показать больше" height={60} width={570} fontSize={40} variant="primary" />
       </div>
     </div>

@@ -29,8 +29,8 @@ export const AdvertPreview: React.FC<advertDataType> = ({
         <Title text={title} type={'ultraSmall'} />
         <ImageComponent src={photo} height={144} width={310} />
         <p style={{ margin: '6px 0', fontWeight: 'bold' }}>{year} год</p>
-        <div className="advert-action__wrapper">
-          <div className="advert-icons__wrapper">
+        <div className="advert-preview__action-wrapper">
+          <div className="advert-preview__action-wrapper">
             {isElectric && (
               <Button
                 tag
