@@ -1,5 +1,5 @@
 import { Button, CheckBox, Paper } from 'byh-components';
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { FaCookieBite } from 'react-icons/fa';
 import './CookiePopup.scss';
 
@@ -10,17 +10,31 @@ interface Cookies {
 }
 
 export const CookiePopup: React.FC = (): React.ReactElement => {
-  const [cookiesSettingsVisible, setCookiesSettingsVisible] = useState(true);
-  const [cookies, setCokies] = useState<Cookies>({
+  const [cookiesSettingsVisible, setCookiesSettingsVisible] = React.useState(true);
+  const [cookies, setCokies] = React.useState<Cookies>({
     authorization: false,
     settings: false,
     recomendations: false,
   });
 
-  const editCookieSettings = () => {
+  const editAuthCookieSettings = () => {
     setCokies((prevState) => ({
       ...prevState,
       authorization: !prevState.authorization,
+    }));
+  };
+
+  const editRecCookieSettings = () => {
+    setCokies((prevState) => ({
+      ...prevState,
+      recomendations: !prevState.recomendations,
+    }));
+  };
+
+  const editSettingsCookieSettings = () => {
+    setCokies((prevState) => ({
+      ...prevState,
+      settings: !prevState.settings,
     }));
   };
 
@@ -37,17 +51,46 @@ export const CookiePopup: React.FC = (): React.ReactElement => {
             для того, чтобы:
           </p>
           <ul className="cookiePopup__list">
-            <li>Автоматически авторизовывать на сайте</li>
-            <li>Сохранять Ваши настройки</li>
-            <li>Показывать Вам подходящие рекомендации</li>
+            <li>
+              {cookiesSettingsVisible && (
+                <CheckBox
+                  className="cookiePopup__checkbox"
+                  checked={cookies.authorization}
+                  onChangeHandler={editAuthCookieSettings}
+                />
+              )}
+              Автоматически авторизовывать на сайте
+            </li>
+            <li>
+              {cookiesSettingsVisible && (
+                <CheckBox
+                  className="cookiePopup__checkbox"
+                  checked={cookies.settings}
+                  onChangeHandler={editSettingsCookieSettings}
+                />
+              )}
+              Сохранять Ваши настройки
+            </li>
+            <li>
+              {cookiesSettingsVisible && (
+                <CheckBox
+                  className="cookiePopup__checkbox"
+                  checked={cookies.recomendations}
+                  onChangeHandler={editRecCookieSettings}
+                />
+              )}
+              Показывать Вам подходящие рекомендации
+            </li>
           </ul>
         </div>
       </div>
       <div className="cookiePopup__buttonBlock">
-        <div className="cookiePopup__declineButton">
-          <p>Настроить</p>
+        <div
+          className="cookiePopup__declineButton"
+          onClick={() => setCookiesSettingsVisible(!cookiesSettingsVisible)}>
+          <p>{cookiesSettingsVisible ? 'Скрыть' : 'Настроить'}</p>
         </div>
-        <Button fontSize={24} variant="primary" width={165} height={107} label="Cогласен" />
+        <Button fontSize={24} variant="primary" width={165} height={107} label="Принять" />
       </div>
     </Paper>
   );
