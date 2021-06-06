@@ -1,0 +1,57 @@
+@import '../../../GlobalStyles/mixins';
+
+.cookiePopup__wrapper {
+  width: 100%;
+  height: 161px;
+  display: flex;
+  padding: 16px 20px;
+  align-items: center;
+}
+
+.cookiePopup__icon {
+  font-size: 64px;
+  @include theme-aware('color', 'primary');
+}
+
+.cookiePopup__textContent {
+  max-width: 621px;
+  margin-left: 25px;
+}
+
+.cookiePopup__description {
+  font-size: 24px;
+
+  li {
+    font-size: 14px;
+  }
+}
+
+.cookiePopup__list {
+  margin-left: 20px;
+}
+
+.cookiePopup__span {
+  font-weight: 700;
+  @include theme-aware('color', 'primary');
+}
+
+.cookiePopup__buttonBlock {
+  display: flex;
+  margin-left: auto;
+}
+
+.cookiePopup__declineButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 140px;
+  margin-right: 50px;
+
+  p {
+    font-size: 24px;
+    font-weight: 700;
+    text-decoration: underline;
+    cursor: pointer;
+    @include theme-aware('color', 'default');
+  }
+}

@@ -3,9 +3,14 @@ import React from 'react';
 import { dropdownData } from '../ModelForm/ModelForm';
 
 export const MillageForm = () => {
+  const [checked, setChecked] = React.useState(false);
   const mockFunc = () => {};
+
+  const onChangeHandler = () => {
+    setChecked(!checked);
+  };
   return (
-    <div style={{ marginTop: 50, width: 496 }}>
+    <div data-testid="millage-form" style={{ marginTop: 50, width: 496 }}>
       <div className="model-form__dropdown model-form__padding">
         <Dropdown
           width={238}
@@ -52,7 +57,7 @@ export const MillageForm = () => {
           items={dropdownData}
           callback={mockFunc}
         />
-        <CheckBox callback={mockFunc} width={34} height={34} />
+        <CheckBox checked={checked} onChangeHandler={onChangeHandler} width={34} height={34} />
         <Title type="ultraSmall" variant="primary" text="ГБО" />
       </div>
     </div>
