@@ -10,7 +10,7 @@ interface Cookies {
 }
 
 export const CookiePopup: React.FC = (): React.ReactElement => {
-  const [cookiesSettingsVisible, setCookiesSettingsVisible] = React.useState(true);
+  const [cookiesSettingsVisible, setCookiesSettingsVisible] = React.useState(false);
   const [cookies, setCokies] = React.useState<Cookies>({
     authorization: false,
     settings: false,
@@ -54,6 +54,7 @@ export const CookiePopup: React.FC = (): React.ReactElement => {
             <li>
               {cookiesSettingsVisible && (
                 <CheckBox
+                  data-testid="checkbox-auth"
                   className="cookiePopup__checkbox"
                   checked={cookies.authorization}
                   onChangeHandler={editAuthCookieSettings}
@@ -64,6 +65,7 @@ export const CookiePopup: React.FC = (): React.ReactElement => {
             <li>
               {cookiesSettingsVisible && (
                 <CheckBox
+                  data-testid="checkbox-settings"
                   className="cookiePopup__checkbox"
                   checked={cookies.settings}
                   onChangeHandler={editSettingsCookieSettings}
@@ -74,6 +76,7 @@ export const CookiePopup: React.FC = (): React.ReactElement => {
             <li>
               {cookiesSettingsVisible && (
                 <CheckBox
+                  data-testid="checkbox-rec"
                   className="cookiePopup__checkbox"
                   checked={cookies.recomendations}
                   onChangeHandler={editRecCookieSettings}
@@ -86,6 +89,7 @@ export const CookiePopup: React.FC = (): React.ReactElement => {
       </div>
       <div className="cookiePopup__buttonBlock">
         <div
+          data-testid="manage"
           className="cookiePopup__declineButton"
           onClick={() => setCookiesSettingsVisible(!cookiesSettingsVisible)}>
           <p>{cookiesSettingsVisible ? 'Скрыть' : 'Настроить'}</p>
