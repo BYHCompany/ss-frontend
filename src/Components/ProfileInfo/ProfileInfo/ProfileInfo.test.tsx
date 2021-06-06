@@ -1,11 +1,11 @@
-import { render, screen } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import React from 'react';
 import { ProfileInfo } from '..';
 import { profileInfoData } from '../../../assets/profileInfoData';
 
 describe('ProfileInfo', () => {
   const getProfileInfo = () => {
-    return render(<ProfileInfo profileInfoData={profileInfoData} />);
+    return render(<ProfileInfo {...profileInfoData} />);
   };
   it('ProfileInfo should be rendered in the document', () => {
     const { getAllByTestId } = getProfileInfo();

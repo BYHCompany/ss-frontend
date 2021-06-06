@@ -2,31 +2,29 @@ import { Button, ImageComponent, Paper, Title } from 'byh-components';
 import React from 'react';
 import { FiSettings } from 'react-icons/fi';
 import { GrLocation } from 'react-icons/gr';
-import { tag, Tags } from '../../Tags/Tags/Tags';
+import { Tag, Tags } from '../../Tags/Tags/Tags';
 import './ProfileInfo.scss';
-interface ProfileInfoProps {
-  id: string;
+export interface ProfileInfoProps {
   location: string;
-  photo: string;
+  photoUrl: string;
   firstName: string;
   lastName: string;
   about: string;
-  tags: tag[];
+  tags: Tag[];
 }
 
 export const ProfileInfo: React.FC<ProfileInfoProps> = ({
   about,
   firstName,
-  id,
   lastName,
   location,
-  photo,
+  photoUrl,
   tags,
 }) => {
   return (
-    <Paper key={id} maxWidth={1170} style={{ padding: 35, display: 'flex' }}>
+    <Paper maxWidth={1170} style={{ padding: 35, display: 'flex' }}>
       <div>
-        <ImageComponent src={photo} width={207} height={207} style={{ marginRight: 30 }} />
+        <ImageComponent src={photoUrl} width={207} height={207} style={{ marginRight: 30 }} />
       </div>
       <div className="profile-info__wrapper">
         <div className="fullName">
