@@ -25,28 +25,32 @@ export const Profile: React.FC = (): React.ReactElement => {
         style={{ marginBottom: 30 }}
         text="Объявления пользователя"
       />
-      <div className="profile__userAdverts">
+      <Paper
+        display="grid"
+        className={`${advertVisability ? 'profile__userAdverts' : 'profile__userAdverts--empty'}`}>
         {advertVisability ? (
           biggerAdvertData.map((advert) => {
             return (
-              <AdvertPreview
-                isElectric={advert.isElectric}
-                isInTrending={advert.isInTrending}
-                key={advert.id}
-                id={advert.id}
-                photo={advert.photo}
-                price={advert.price}
-                title={advert.title}
-                year={advert.id}
-              />
+              <div className="profile__advert">
+                <AdvertPreview
+                  isElectric={advert.isElectric}
+                  isInTrending={advert.isInTrending}
+                  key={advert.id}
+                  id={advert.id}
+                  photo={advert.photo}
+                  price={advert.price}
+                  title={advert.title}
+                  year={advert.id}
+                />
+              </div>
             );
           })
         ) : (
-          <div className="profile__userAdverts--empty">
+          <div className="">
             <Title variant="primary" text="В данный момент объявлений нет" type="small" />
           </div>
         )}
-      </div>
+      </Paper>
     </div>
   );
 };

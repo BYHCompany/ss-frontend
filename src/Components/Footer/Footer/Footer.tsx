@@ -13,9 +13,7 @@ export const Footer: React.FC = (): React.ReactElement => {
         <div className="footer__container__grid">
           <List className="footer__container__grid__item" items={support} label="Поддержка" />
           <List className="footer__container__grid__item" items={info} label="Доп. информация" />
-          <div>
-            <List items={contacts} label="Контакты" />
-          </div>
+          <List items={contacts} label="Контакты" />
           <Payment className="footer__container__grid__item" icons={icons} label="Способы оплаты" />
           <Mobile className="footer__container__grid__item" label="Для мобильных устройств" />
         </div>
