@@ -4,7 +4,7 @@ import { FaChargingStation } from 'react-icons/fa';
 import { AiOutlineStock } from 'react-icons/ai';
 import './AdvertPreview.scss';
 
-export type advertDataType = {
+export type AdvertDataType = {
   id: string;
   title: string;
   photo: string;
@@ -14,7 +14,7 @@ export type advertDataType = {
   price: string;
 };
 
-export const AdvertPreview: React.FC<advertDataType> = ({
+export const AdvertPreview: React.FC<AdvertDataType> = ({
   id,
   title,
   photo,

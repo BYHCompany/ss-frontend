@@ -22,7 +22,7 @@ export const ProfileInfo: React.FC<ProfileInfoProps> = ({
   tags,
 }) => {
   return (
-    <Paper maxWidth={1170} style={{ padding: 35, display: 'flex' }}>
+    <Paper maxWidth={1170} style={{ padding: 35, display: 'flex', marginBottom: 55 }}>
       <div>
         <ImageComponent src={photoUrl} width={207} height={207} style={{ marginRight: 30 }} />
       </div>

@@ -1,4 +1,4 @@
-import { advertDataType } from '../Components/AdvertPreview/AdvertPreview/AdvertPreview';
+import { AdvertDataType } from '../Components/AdvertPreview/AdvertPreview/AdvertPreview';
 
 export const advertData = [
   {
@@ -28,7 +28,7 @@ export const advertData = [
     isInTrending: true,
     price: '223 000 $',
   },
-] as advertDataType[];
+] as AdvertDataType[];
 
 export const biggerAdvertData = [
   {
@@ -85,4 +85,4 @@ export const biggerAdvertData = [
     isInTrending: true,
     price: '223 000 $',
   },
-] as advertDataType[];
+] as AdvertDataType[];
