@@ -1,13 +1,14 @@
 import { Paper } from 'byh-components';
 import React from 'react';
 import './Tags.scss';
-export type tag = {
+
+export type Tag = {
   id: string;
   backgroundColor: string;
   name: string;
 };
 export interface TagsProps {
-  tags: tag[];
+  tags: Tag[];
 }
 
 export const Tags: React.FC<TagsProps> = ({ tags }) => {

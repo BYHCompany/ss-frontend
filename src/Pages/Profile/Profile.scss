@@ -1,0 +1,14 @@
+.profile__userAdverts {
+  padding: 34px 30px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+  grid-gap: 30px;
+}
+
+.profile__userAdverts--empty {
+  width: 100%;
+  height: 270px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
