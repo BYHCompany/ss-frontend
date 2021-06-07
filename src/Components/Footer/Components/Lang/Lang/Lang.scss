@@ -1,0 +1,25 @@
+@import '../../../../../GlobalStyles/mixins';
+
+.footer__lang__wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer__lang__item {
+  width: 100%;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: 0.2s all ease-in-out;
+
+  &:hover {
+    transform: scale(1.01);
+  }
+
+  p {
+    font-size: 18px;
+
+    @include theme-aware('color', 'default');
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "label": "Something went wrong...",
+  "desciption": "You can contact the support center or return to the main page using the buttons below",
+  "buttons": {
+    "main": "Main page",
+    "support": "Support"
+  }
+}
