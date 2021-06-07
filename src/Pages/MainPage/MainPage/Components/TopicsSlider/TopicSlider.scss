@@ -1,0 +1,18 @@
+.topic-slider__topic-review__wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 780px;
+  flex-wrap: wrap;
+}
+
+.active {
+  color: red;
+  cursor: pointer;
+}
+
+.active__slider {
+  display: block;
+}
+.not-active__slider {
+  display: none;
+}

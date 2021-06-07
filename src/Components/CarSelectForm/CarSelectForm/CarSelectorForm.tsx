@@ -12,7 +12,7 @@ export const CarSelectorForm = () => {
     // setMaxValue(maxVal);
   };
   return (
-    <Paper style={{ padding: 15 }} height={397}>
+    <Paper display={'flex'} style={{ padding: 15 }} height={397}>
       <MakePicker />
       <div className="car-selector-from__wrapper" data-testid="car-selector-from__wrapper">
         <div style={{ display: 'flex' }}>
