@@ -1,0 +1,32 @@
+@import '../../../GlobalStyles/mixins';
+
+.signIn__contentWrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 48px 0 23px 0;
+  margin: 0 75px;
+}
+
+.signIn__privatePerson {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  @include theme-aware('background-color', 'primary');
+}
+
+.signIn__privatePerson__icon {
+  font-size: 60px;
+  margin-bottom: 3px;
+
+  @include theme-aware('color', 'secondary');
+}
+
+.signIn__privatePerson__descr {
+  font-size: 10px;
+  font-weight: 700;
+
+  @include theme-aware('color', 'default');
+}
