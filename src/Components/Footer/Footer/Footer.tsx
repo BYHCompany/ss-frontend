@@ -43,7 +43,7 @@ export const Footer: React.FC = (): React.ReactElement => {
             items={info}
             label={t('footer:info.label')}
           />
-          <List items={contacts} label="Контакты" />
+          <List items={contacts} label={t('footer:contacts')} />
           <Payment
             className="footer__container__grid__item"
             icons={icons}

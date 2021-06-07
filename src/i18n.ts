@@ -1,16 +1,24 @@
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
-import footerEN from './locales/en/footer.json';
-import footerRU from './locales/ru/footer.json';
+import footerEN from './locales/en/footerEN.json';
+import footerRU from './locales/ru/footerRU.json';
+import errorEN from './locales/en/errorEN.json';
+import errorRU from './locales/ru/errorRU.json';
+import headerEN from './locales/en/headerEN.json';
+import headerRU from './locales/ru/headerRU.json';
 // the translations
 // (tip move them in a JSON file and import them,
 // or even better, manage them via a UI: https://react.i18next.com/guides/multiple-translation-files#manage-your-translations-with-a-management-gui)
 const resources = {
   en: {
     footer: footerEN,
+    error: errorEN,
+    header: headerEN,
   },
   ru: {
     footer: footerRU,
+    error: errorRU,
+    header: headerRU,
   },
 };
 
