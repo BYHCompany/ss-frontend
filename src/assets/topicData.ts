@@ -44,12 +44,27 @@ export const topicSliderData = [
   },
   {
     mainTag: { label: 'Electric car', value: 'ec' },
-    imageSrc:
-      'https://media.autoexpress.co.uk/image/private/s--X-WVjvBW--/f_auto,t_content-image-full-desktop@1/v1615552677/autoexpress/2021/03/Volkswagen%20ID4%202021%20UK-4.jpg',
-    label: 'Volkswagen представит крупный электрический кроссовер в апреле',
+    imageSrc: 'https://images.drive.ru/i/0/5fc88a25ec05c46a25000086.jpg',
+    label: '«Выглядит на 10 миллионов». Что говорят о новом Genesis GV80',
+    tags: tags,
+    description:
+      'Новый GV80 занимает особое место в гамме Genesis и открывает совершенно новую страницу в истории бренда. Дело в том, что GV80 — это вообще первый кроссовер корейской марки',
+  },
+  {
+    mainTag: { label: 'Electric car', value: 'ec' },
+    imageSrc: 'https://s0.rbk.ru/v6_top_pics/resized/1440xH/media/img/9/97/756226241435979.jpg',
+    label: 'Неприятная ловушка для водителей: камеры штрафуют, если пробить колесо',
     tags: tags,
     description:
       '21 апреля в Шанхае начнёт работу автосалон, на котором ожидается анонс ряда новинок ведущих автопроизводителей, включая электрический кроссовер ID.6 компании Volkswagen (VW). В преддверии старта мероприятия немецкий автопроизводитель опубликовал в своём официальном аккаунте в китайской социальной сети Weibo тизер, подтверждающий грядущий анонс нового кроссовера на электрическом ходу. Семиместный электромобиль ...',
+  },
+  {
+    mainTag: { label: 'Electric car', value: 'ec' },
+    imageSrc: 'https://images.drive.ru/i/0/5fc88a25ec05c46a25000086.jpg',
+    label: '«Выглядит на 10 миллионов». Что говорят о новом Genesis GV80',
+    tags: tags,
+    description:
+      'Новый GV80 занимает особое место в гамме Genesis и открывает совершенно новую страницу в истории бренда. Дело в том, что GV80 — это вообще первый кроссовер корейской марки',
   },
   {
     mainTag: { label: 'Electric car', value: 'ec' },
@@ -89,29 +104,10 @@ export const topicSliderData = [
   },
   {
     mainTag: { label: 'Electric car', value: 'ec' },
-    imageSrc:
-      'https://media.autoexpress.co.uk/image/private/s--X-WVjvBW--/f_auto,t_content-image-full-desktop@1/v1615552677/autoexpress/2021/03/Volkswagen%20ID4%202021%20UK-4.jpg',
-    label: 'Volkswagen представит крупный электрический кроссовер в апреле',
+    imageSrc: 'https://images.drive.ru/i/0/5fc88a25ec05c46a25000086.jpg',
+    label: '«Выглядит на 10 миллионов». Что говорят о новом Genesis GV80',
     tags: tags,
     description:
-      '21 апреля в Шанхае начнёт работу автосалон, на котором ожидается анонс ряда новинок ведущих автопроизводителей, включая электрический кроссовер ID.6 компании Volkswagen (VW). В преддверии старта мероприятия немецкий автопроизводитель опубликовал в своём официальном аккаунте в китайской социальной сети Weibo тизер, подтверждающий грядущий анонс нового кроссовера на электрическом ходу. Семиместный электромобиль ...',
-  },
-  {
-    mainTag: { label: 'Electric car', value: 'ec' },
-    imageSrc:
-      'https://media.autoexpress.co.uk/image/private/s--X-WVjvBW--/f_auto,t_content-image-full-desktop@1/v1615552677/autoexpress/2021/03/Volkswagen%20ID4%202021%20UK-4.jpg',
-    label: 'Volkswagen представит крупный электрический кроссовер в апреле',
-    tags: tags,
-    description:
-      '21 апреля в Шанхае начнёт работу автосалон, на котором ожидается анонс ряда новинок ведущих автопроизводителей, включая электрический кроссовер ID.6 компании Volkswagen (VW). В преддверии старта мероприятия немецкий автопроизводитель опубликовал в своём официальном аккаунте в китайской социальной сети Weibo тизер, подтверждающий грядущий анонс нового кроссовера на электрическом ходу. Семиместный электромобиль ...',
-  },
-  {
-    mainTag: { label: 'Electric car', value: 'ec' },
-    imageSrc:
-      'https://media.autoexpress.co.uk/image/private/s--X-WVjvBW--/f_auto,t_content-image-full-desktop@1/v1615552677/autoexpress/2021/03/Volkswagen%20ID4%202021%20UK-4.jpg',
-    label: 'Volkswagen представит крупный электрический кроссовер в апреле',
-    tags: tags,
-    description:
-      '21 апреля в Шанхае начнёт работу автосалон, на котором ожидается анонс ряда новинок ведущих автопроизводителей, включая электрический кроссовер ID.6 компании Volkswagen (VW). В преддверии старта мероприятия немецкий автопроизводитель опубликовал в своём официальном аккаунте в китайской социальной сети Weibo тизер, подтверждающий грядущий анонс нового кроссовера на электрическом ходу. Семиместный электромобиль ...',
+      'Новый GV80 занимает особое место в гамме Genesis и открывает совершенно новую страницу в истории бренда. Дело в том, что GV80 — это вообще первый кроссовер корейской марки',
   },
 ] as TopicPreviewProps[];
