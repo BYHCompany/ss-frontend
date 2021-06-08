@@ -9,23 +9,6 @@ import { ReactComponent as PayPal } from '../assets/img/paymentSystems/paypal.sv
 import { Link } from '../Components/Footer/Components/List/ListTypes';
 import { IconObject } from '../Components/Footer/Components/Payment/PaymentTypes';
 
-export const support = [
-  { href: '#', linkName: 'Написать в поддержку' },
-  { href: '#', linkName: 'Как подать объявление?' },
-  { href: '#', linkName: 'Как создать учётную запись?' },
-  { href: '#', linkName: 'Что делать если в поиске не отображается моё объявление?' },
-  { href: '#', linkName: 'Что нужно для идеального объявления или как продать машину быстрее?' },
-] as Link[];
-
-export const info = [
-  { href: '#', linkName: 'О компании' },
-  { href: '#', linkName: 'Вакансии' },
-  { href: '#', linkName: 'Партнёрам' },
-  { href: '#', linkName: 'Реклама на сайте' },
-  { href: '#', linkName: 'Наш блог' },
-  { href: '#', linkName: 'Политика конфиденциальности' },
-] as Link[];
-
 export const contacts = [
   { href: '#', linkName: 'Vkontakte', icon: <VK /> },
   { href: '#', linkName: 'Facebook', icon: <FaFacebook /> },

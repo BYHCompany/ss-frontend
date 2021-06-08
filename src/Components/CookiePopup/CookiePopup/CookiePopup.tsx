@@ -38,8 +38,6 @@ export const CookiePopup: React.FC = (): React.ReactElement => {
     }));
   };
 
-  console.log(cookies);
-
   return (
     <Paper className="cookiePopup__wrapper">
       <FaCookieBite className="cookiePopup__icon" />

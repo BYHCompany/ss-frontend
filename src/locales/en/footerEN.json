@@ -1,0 +1,29 @@
+{
+  "support": {
+    "label": "Support",
+    "askSupport": "Contact support",
+    "howToAddAdvert": "How to submit an ad?",
+    "createAccount": "How to create account?",
+    "noInSearch": "What should I do if my ad is not displayed in the search?",
+    "idealAdvert": "What do you need for a perfect ad or how to sell a car faster?"
+  },
+  "info": {
+    "label": "Add. information",
+    "about": "About company",
+    "vacancies": "Vacancies",
+    "partners": "Partners",
+    "ad": "Advertising",
+    "blog": "Our blog",
+    "politics": "Privacy Policy"
+  },
+  "lang": {
+    "label": "Language",
+    "ru": "Russian",
+    "en": "English",
+    "lv": "Latvian"
+  },
+  "mobile": "For mobile devices",
+  "contacts": "Contacts",
+  "payment": "Payment methods",
+  "copyrights": "All rights reserved"
+}

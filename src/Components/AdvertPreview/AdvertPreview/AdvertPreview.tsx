@@ -4,7 +4,7 @@ import { FaChargingStation } from 'react-icons/fa';
 import { AiOutlineStock } from 'react-icons/ai';
 import './AdvertPreview.scss';
 
-export type advertDataType = {
+export type AdvertDataType = {
   id: string;
   title: string;
   photo: string;
@@ -14,7 +14,7 @@ export type advertDataType = {
   price: string;
 };
 
-export const AdvertPreview: React.FC<advertDataType> = ({
+export const AdvertPreview: React.FC<AdvertDataType> = ({
   id,
   title,
   photo,
@@ -25,8 +25,8 @@ export const AdvertPreview: React.FC<advertDataType> = ({
 }) => {
   return (
     <>
-      <Paper key={id} className="advert__wrapper" width={350}>
-        <Title text={title} variant="primary" style={{ marginBottom: 5 }} type={'ultraSmall'} />
+      <Paper display="flex" key={id} className="advert__wrapper" width={350}>
+        <Title text={title} type={'ultraSmall'} />
         <ImageComponent src={photo} height={144} width={310} />
         <p style={{ margin: '6px 0', fontWeight: 'bold' }}>{year} год</p>
         <div className="advert-preview__action-wrapper">

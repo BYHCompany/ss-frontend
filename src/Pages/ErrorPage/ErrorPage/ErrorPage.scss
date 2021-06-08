@@ -1,0 +1,24 @@
+@import '../../../GlobalStyles/mixins';
+
+.error__wrapper {
+  display: flex;
+  align-items: center;
+  margin: 70px 0 110px 0;
+}
+
+.error__content {
+  max-width: 945px;
+  display: flex;
+  flex-direction: column;
+}
+
+.error_description {
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.error__icon {
+  font-size: 162px;
+  @include theme-aware('color', 'redC');
+}

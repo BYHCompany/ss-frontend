@@ -17,21 +17,20 @@
 
 .footer__container__grid {
   display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 40px;
   width: 100%;
+  margin-bottom: 40px;
+
+  @media screen and (max-width: 1149) {
+    grid-template-columns: repeat(auto-fill, minmax(650px, 1fr));
+  }
 }
 
-.footer__container__top {
-  grid-template-columns: 400px 400px auto;
-  margin-bottom: 64px;
-}
-
-.footer__container__bottom {
-  grid-template-columns: 400px auto auto;
-  margin-bottom: 80px;
-}
-
-.footer__container__grid__item {
-  max-width: 370px;
+.footer__item {
   width: 100%;
-  margin-right: 30px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
