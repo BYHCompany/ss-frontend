@@ -6,7 +6,7 @@ interface RightSideProps {
 
 export const RightSide: React.FC<RightSideProps> = ({ children }) => {
   return (
-    <div style={{ width: '100%' }} data-testid="right-side">
+    <div style={{ width: '62.48%' }} data-testid="right-side">
       {children}
     </div>
   );
