@@ -58,7 +58,9 @@ export const MillageForm = () => {
           callback={mockFunc}
         />
         <CheckBox checked={checked} onChangeHandler={onChangeHandler} width={34} height={34} />
-        <Title type="ultraSmall" variant="primary" text="ГБО" />
+        <Title type="ultraSmall" variant="primary">
+          ГБО
+        </Title>
       </div>
     </div>
   );

@@ -10,9 +10,11 @@ interface AuthTemplateProps {
 
 export const AuthTemplate: React.FC<AuthTemplateProps> = ({ children }) => {
   return (
-    <Paper height={750} customBgColor={'rgba(255, 255, 255, 0.5)'}>
-      <LeftSide />
-      <RightSide children={children} />
-    </Paper>
+    <div className="authTemplate__wrapper">
+      <Paper height={750} width={1170} display="flex" customBgColor={'rgba(255, 255, 255, 0.5)'}>
+        <LeftSide />
+        <RightSide children={children} />
+      </Paper>
+    </div>
   );
 };

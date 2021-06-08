@@ -10,12 +10,9 @@ export const ErrorPage = () => {
   return (
     <div className="error__wrapper">
       <div className="error__content">
-        <Title
-          style={{ marginBottom: 10 }}
-          type="large"
-          variant="primary"
-          text={t('error:label')}
-        />
+        <Title style={{ marginBottom: 10 }} type="large" variant="primary">
+          {t('error:label')}
+        </Title>
         <p className="error_description">{t('error:desciption')}</p>
         <div>
           <Button
@@ -23,16 +20,12 @@ export const ErrorPage = () => {
             width={170}
             height={60}
             fontSize={26}
-            label={t('error:buttons.main')}
-            variant="primary"
-          />
-          <Button
-            width={170}
-            height={60}
-            fontSize={26}
-            label={t('error:buttons.support')}
-            variant="primary"
-          />
+            variant="primary">
+            {t('error:buttons.main')}
+          </Button>
+          <Button width={170} height={60} fontSize={26} variant="primary">
+            {t('error:buttons.support')}
+          </Button>
         </div>
       </div>
       <BiErrorCircle className="error__icon" />

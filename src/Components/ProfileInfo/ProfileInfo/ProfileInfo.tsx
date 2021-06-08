@@ -29,8 +29,10 @@ export const ProfileInfo: React.FC<ProfileInfoProps> = ({
       <div className="profile-info__wrapper">
         <div className="fullName">
           <div className="fullName-info" data-testid="fullName-info">
-            <Title text={firstName} style={{ marginRight: 10 }} type={'medium'} />
-            <Title text={lastName} type={'medium'} />
+            <Title style={{ marginRight: 10 }} type={'medium'}>
+              {firstName}
+            </Title>
+            <Title type={'medium'}>{lastName}</Title>
           </div>
 
           <a href="#">
@@ -39,7 +41,7 @@ export const ProfileInfo: React.FC<ProfileInfoProps> = ({
         </div>
         <section className="location__section">
           <GrLocation style={{ marginRight: 10 }} />
-          <Title text={location} type={'ultraSmall'} />
+          <Title type={'ultraSmall'}>{location}</Title>
         </section>
         <section className="about__section">
           <p>{about}</p>
@@ -48,7 +50,9 @@ export const ProfileInfo: React.FC<ProfileInfoProps> = ({
           <div className="profile-info__tags-wrapper">
             <Tags tags={tags} />
           </div>
-          <Button label="Сообщения" width={170} height={43} fontSize={24} variant={'primary'} />
+          <Button width={170} height={43} fontSize={24} variant={'primary'}>
+            Сообщения
+          </Button>
         </div>
       </div>
     </Paper>

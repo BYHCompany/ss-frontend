@@ -22,7 +22,7 @@ export const BigAdvertPreview: React.FC<BigAdvertPreviewProps> = ({ src, car }) 
       <div className="bigAdertPreview__content">
         <div style={{ marginBottom: 15 }}>
           <div style={{ marginBottom: '0' }} className="bigAdertPreview__content__leftRightPos">
-            <Title text={car.name} />
+            <Title>{car.name}</Title>
             <p className="bigAdertPreview__content__year">{car.year} год</p>
           </div>
         </div>

@@ -7,12 +7,9 @@ import { AdvertPreview } from '../../../../../Components/AdvertPreview';
 export const SpecialOffers = () => {
   return (
     <div>
-      <Title
-        style={{ marginBottom: 20 }}
-        text="Предложения специально для Вас"
-        type="large"
-        variant="primary"
-      />
+      <Title style={{ marginBottom: 20 }} type="large" variant="primary">
+        Предложения специально для Вас
+      </Title>
       <div className="special-offers__advert-preview__wrapper">
         {advertData.map((props) => (
           <div key={props.id} style={{ marginBottom: 35 }}>
@@ -29,7 +26,9 @@ export const SpecialOffers = () => {
         ))}
       </div>
       <div className="special-offers__button">
-        <Button label="Показать больше" height={60} width={570} fontSize={40} variant="primary" />
+        <Button height={60} width={570} fontSize={40} variant="primary">
+          Показать больше
+        </Button>
       </div>
     </div>
   );

@@ -6,12 +6,9 @@ import './ProfitableOffers.scss';
 export const ProfitableOffers = () => {
   return (
     <div>
-      <Title
-        style={{ marginBottom: 20 }}
-        type="large"
-        text="Не пропусти эти выгодные предложения"
-        variant="primary"
-      />
+      <Title style={{ marginBottom: 20 }} type="large" variant="primary">
+        Не пропусти эти выгодные предложения
+      </Title>
       <div className="profitable-offers__advert-preview__wrapper">
         {biggerAdvertData.map((props) => (
           <div key={props.id} style={{ marginBottom: 35 }}>
@@ -28,7 +25,9 @@ export const ProfitableOffers = () => {
         ))}
       </div>
       <div className="profitable-offers__button">
-        <Button label="Показать больше" height={60} width={570} fontSize={40} variant="primary" />
+        <Button height={60} width={570} fontSize={40} variant="primary">
+          Показать больше
+        </Button>
       </div>
     </div>
   );
