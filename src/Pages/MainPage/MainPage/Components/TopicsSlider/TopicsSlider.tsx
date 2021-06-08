@@ -38,7 +38,9 @@ export const TopicsSlider = () => {
 
   return (
     <div>
-      <Title style={{ marginBottom: 20 }} text="Новости" variant="primary" type="large" />
+      <Title style={{ marginBottom: 20 }} variant="primary" type="large">
+        Новости
+      </Title>
       <div>
         {arr.map((topic: any, index: number) => {
           if (index === currentSlide) {
