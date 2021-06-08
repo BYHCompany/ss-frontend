@@ -7,6 +7,7 @@ import './i18n';
 import { AuthTemplate } from './Templates/AuthTemplate';
 import { SignIn } from './Pages/SignIn';
 
+
 function App() {
   const [isLogging, setLogging] = useState(true);
 

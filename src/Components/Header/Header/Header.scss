@@ -7,9 +7,10 @@
   @include theme-aware('background-color', 'primary');
 }
 .header__container {
-  max-width: 1170px;
+  max-width: 1190px;
   width: 100%;
   height: 100%;
   display: flex;
   justify-content: space-between;
+  padding: 0 10px;
 }

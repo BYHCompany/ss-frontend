@@ -30,7 +30,7 @@ export const AdvertPreview: React.FC<AdvertDataType> = ({
         <ImageComponent src={photo} height={144} width={310} />
         <p style={{ margin: '6px 0', fontWeight: 'bold' }}>{year} год</p>
         <div className="advert-preview__action-wrapper">
-          <div className="advert-preview__action-wrapper">
+          <div className="advert-icons__wrapper">
             {isElectric && (
               <Button
                 tag
@@ -56,6 +56,7 @@ export const AdvertPreview: React.FC<AdvertDataType> = ({
           </div>
           <Paper
             className="advert-price_wrapper"
+            display="flex"
             shadow={false}
             customBgColor={'#072832'}
             height={35}

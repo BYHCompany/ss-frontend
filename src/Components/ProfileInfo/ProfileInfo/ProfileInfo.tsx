@@ -34,13 +34,13 @@ export const ProfileInfo: React.FC<ProfileInfoProps> = ({
             </Title>
             <Title type={'medium'}>{lastName}</Title>
           </div>
+
           <a href="#">
             <FiSettings style={{ fontSize: 30 }} />
           </a>
         </div>
         <section className="location__section">
           <GrLocation style={{ marginRight: 10 }} />
-
           <Title type={'ultraSmall'}>{location}</Title>
         </section>
         <section className="about__section">
