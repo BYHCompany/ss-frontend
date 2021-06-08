@@ -6,10 +6,15 @@ import './ProfitableOffers.scss';
 export const ProfitableOffers = () => {
   return (
     <div>
-      <Title type="large" text="Не пропусти эти выгодные предложения" variant="primary" />
+      <Title
+        style={{ marginBottom: 20 }}
+        type="large"
+        text="Не пропусти эти выгодные предложения"
+        variant="primary"
+      />
       <div className="profitable-offers__advert-preview__wrapper">
         {biggerAdvertData.map((props) => (
-          <div style={{ marginBottom: 35 }}>
+          <div key={props.id} style={{ marginBottom: 35 }}>
             <AdvertPreview
               id={props.id}
               photo={props.photo}

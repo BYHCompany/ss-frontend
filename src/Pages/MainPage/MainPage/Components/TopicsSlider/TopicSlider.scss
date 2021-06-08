@@ -1,0 +1,21 @@
+@import '../../../../../GlobalStyles/mixins';
+
+.topic-slider__topic-review__wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 780px;
+  flex-wrap: wrap;
+}
+
+.topic-slider__rhombus-default,
+.topic-slider__rhombus-active {
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+}
+.topic-slider__rhombus-default {
+  color: #c4c4c4;
+}
+.topic-slider__rhombus-active {
+  @include theme-aware('color', 'primary');
+}

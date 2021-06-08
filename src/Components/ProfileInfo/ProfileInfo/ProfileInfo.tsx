@@ -32,13 +32,13 @@ export const ProfileInfo: React.FC<ProfileInfoProps> = ({
             <Title text={firstName} style={{ marginRight: 10 }} type={'medium'} />
             <Title text={lastName} type={'medium'} />
           </div>
+
           <a href="#">
             <FiSettings style={{ fontSize: 30 }} />
           </a>
         </div>
         <section className="location__section">
           <GrLocation style={{ marginRight: 10 }} />
-
           <Title text={location} type={'ultraSmall'} />
         </section>
         <section className="about__section">

@@ -6,6 +6,7 @@ import './GlobalStyles/style.scss';
 import { ErrorPage } from './Pages/ErrorPage';
 import './i18n';
 
+
 function App() {
   return (
     <Router>

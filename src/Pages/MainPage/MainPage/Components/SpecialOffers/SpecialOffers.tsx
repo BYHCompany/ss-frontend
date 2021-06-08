@@ -7,10 +7,15 @@ import { AdvertPreview } from '../../../../../Components/AdvertPreview';
 export const SpecialOffers = () => {
   return (
     <div>
-      <Title text="Предложения специально для Вас" type="large" variant="primary" />
+      <Title
+        style={{ marginBottom: 20 }}
+        text="Предложения специально для Вас"
+        type="large"
+        variant="primary"
+      />
       <div className="special-offers__advert-preview__wrapper">
         {advertData.map((props) => (
-          <div style={{ marginBottom: 35 }}>
+          <div key={props.id} style={{ marginBottom: 35 }}>
             <AdvertPreview
               id={props.id}
               photo={props.photo}

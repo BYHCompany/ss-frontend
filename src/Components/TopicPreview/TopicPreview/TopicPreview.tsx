@@ -13,7 +13,7 @@ export const TopicPreview: React.FC<TopicPreviewProps> = ({
   tags,
 }) => {
   return (
-    <Paper className="topickPreview__wrapper">
+    <Paper display={'flex'} className="topickPreview__wrapper">
       <ImageComponent width={447} height={340} style={{ marginRight: '15px' }} src={imageSrc} />
       <div className="topicPreview__contentWrapper">
         <div className="topicPreview__titleAndTag">
