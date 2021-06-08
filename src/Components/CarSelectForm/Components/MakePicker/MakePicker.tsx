@@ -5,16 +5,22 @@ import './MakePicker.scss';
 export const MakePicker = () => {
   return (
     <div data-testid="make-picker" style={{ marginRight: 15 }}>
-      <Title text="Подобрать авто" variant="primary" type="medium" />
+      <Title variant="primary" type="medium">
+        Подобрать авто
+      </Title>
       <Paper
         className="make-picker__wrapper"
         customBgColor="#fff"
         height={314}
         width={292}
         boxShadow={false}>
-        <Title text="Популярные марки" type="ultraSmall" variant="default" />
+        <Title type="ultraSmall" variant="default">
+          Популярные марки
+        </Title>
         <div className="make__wrapper"></div>
-        <Button label="Другие..." fullWidth fontSize={18} variant="primary" />
+        <Button fullWidth fontSize={18} variant="primary">
+          Другие...
+        </Button>
       </Paper>
     </div>
   );

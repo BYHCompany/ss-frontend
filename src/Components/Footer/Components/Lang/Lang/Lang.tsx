@@ -15,12 +15,9 @@ export const Lang: React.FC = (): React.ReactElement => {
 
   return (
     <div className="footer__lang__wrapper">
-      <Title
-        style={{ marginBottom: 10 }}
-        variant="secondary"
-        type="medium"
-        text={t('footer:lang.label')}
-      />
+      <Title style={{ marginBottom: 10 }} variant="secondary" type="medium">
+        {t('footer:lang.label')}
+      </Title>
       <div onClick={() => langHandler('en')} className="footer__lang__item">
         <p>{t('footer:lang.en')}</p>
         <img alt="EN" src={en} />

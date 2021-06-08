@@ -10,16 +10,25 @@ import { SignIn } from './Pages/SignIn';
 function App() {
   const [isLogging, setLogging] = useState(true);
 
+  if (!isLogging) {
+    return (
+      <Router>
+        <div className="app theme-light">
+          {!isLogging && (
+            <>
+              <Header />
+              <div className="container"></div>
+              <Footer />
+            </>
+          )}
+        </div>
+      </Router>
+    );
+  }
+
   return (
     <Router>
       <div className="app theme-light">
-        {!isLogging && (
-          <>
-            <Header />
-            <div className="container"></div>
-            <Footer />
-          </>
-        )}
         <SignIn />
       </div>
     </Router>

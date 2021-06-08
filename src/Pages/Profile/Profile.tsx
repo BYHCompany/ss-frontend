@@ -19,12 +19,9 @@ export const Profile: React.FC = (): React.ReactElement => {
         photoUrl={profileInfoData.photoUrl}
         tags={profileInfoData.tags}
       />
-      <Title
-        variant="primary"
-        type="medium"
-        style={{ marginBottom: 30 }}
-        text="Объявления пользователя"
-      />
+      <Title variant="primary" type="medium" style={{ marginBottom: 30 }}>
+        Объявления пользователя
+      </Title>
       <Paper
         display="grid"
         className={`${advertVisability ? 'profile__userAdverts' : 'profile__userAdverts--empty'}`}>
@@ -47,7 +44,9 @@ export const Profile: React.FC = (): React.ReactElement => {
           })
         ) : (
           <div className="">
-            <Title variant="primary" text="В данный момент объявлений нет" type="small" />
+            <Title variant="primary" type="small">
+              В данный момент объявлений нет
+            </Title>
           </div>
         )}
       </Paper>

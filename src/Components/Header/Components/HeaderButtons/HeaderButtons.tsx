@@ -14,21 +14,21 @@ export const HeaderButtons = () => {
         startIcon={<CgFileDocument />}
         height={35}
         width={237}
-        label={t('header:ad')}
         paddingVertical={5}
         paddingHorizontal={10}
         variant="secondary"
-        fontSize={18}
-      />
+        fontSize={18}>
+        {t('header:ad')}
+      </Button>
       <Button
         startIcon={<RiAccountBoxLine />}
         height={35}
         width={170}
         paddingVertical={5}
-        label={t('header:account')}
         variant="secondary"
-        fontSize={18}
-      />
+        fontSize={18}>
+        {t('header:account')}
+      </Button>
     </div>
   );
 };

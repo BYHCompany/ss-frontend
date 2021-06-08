@@ -7,7 +7,9 @@ export const Header = () => {
   return (
     <div className="header" data-testid="header">
       <div className="header__container">
-        <Title style={{ width: '100%' }} variant="secondary" text={'SS V8'} type={'large'} />
+        <Title style={{ width: '100%' }} variant="secondary" type={'large'}>
+          {'SS V8'}
+        </Title>
         <HeaderButtons />
       </div>
     </div>

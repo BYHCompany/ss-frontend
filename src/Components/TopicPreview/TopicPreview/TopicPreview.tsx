@@ -17,7 +17,9 @@ export const TopicPreview: React.FC<TopicPreviewProps> = ({
       <ImageComponent width={447} height={340} style={{ marginRight: '15px' }} src={imageSrc} />
       <div className="topicPreview__contentWrapper">
         <div className="topicPreview__titleAndTag">
-          <Title type="small" className="topicPreview__label" text={label} variant="primary" />
+          <Title type="small" className="topicPreview__label" variant="primary">
+            {label}
+          </Title>
           {mainTag && (
             <Button
               tag
@@ -50,7 +52,9 @@ export const TopicPreview: React.FC<TopicPreviewProps> = ({
               );
             })}
           </div>
-          <Button width={160} height={40} variant="primary" label="Читать далее" />
+          <Button width={160} height={40} variant="primary">
+            Читать далее
+          </Button>
         </div>
       </div>
     </Paper>

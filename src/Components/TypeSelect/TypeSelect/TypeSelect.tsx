@@ -11,7 +11,6 @@ export const TypeSelect = () => {
       {typeSelectButtons.map((button) => (
         <Button
           onClick={() => setClicked(button.id)}
-          label={button.label}
           key={button.id}
           paddingHorizontal={5}
           accurateValues
@@ -19,8 +18,9 @@ export const TypeSelect = () => {
           height={40}
           shadow
           fontSize={24}
-          variant={button.id === clicked ? 'primary' : 'default'}
-        />
+          variant={button.id === clicked ? 'primary' : 'default'}>
+          {button.label}
+        </Button>
       ))}
     </div>
   );

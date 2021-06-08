@@ -7,7 +7,9 @@ import { ListProps } from './ListTypes';
 export const List: React.FC<ListProps> = ({ items, label, ...props }): React.ReactElement => {
   return (
     <div className="list" {...props}>
-      <Title variant="secondary" className="list__title" type="medium" text={label} />
+      <Title variant="secondary" className="list__title" type="medium">
+        {label}
+      </Title>
       <ul className="list_ul">
         {items.map((link) => {
           return (

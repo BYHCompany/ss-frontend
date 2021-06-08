@@ -92,7 +92,9 @@ export const CookiePopup: React.FC = (): React.ReactElement => {
           onClick={() => setCookiesSettingsVisible(!cookiesSettingsVisible)}>
           <p>{cookiesSettingsVisible ? 'Скрыть' : 'Настроить'}</p>
         </div>
-        <Button fontSize={24} variant="primary" width={165} height={107} label="Принять" />
+        <Button fontSize={24} variant="primary" width={165} height={107}>
+          Принять
+        </Button>
       </div>
     </Paper>
   );
