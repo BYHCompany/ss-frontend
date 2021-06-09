@@ -1,7 +1,7 @@
 import { Button, CheckBox, Dropdown, Input, Paper, Title } from 'byh-components';
 import React from 'react';
 import { AuthTemplate } from '../../../Templates/AuthTemplate';
-import './SignIn.scss';
+import './SignUp.scss';
 import { FaUserAlt } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { Controller, SubmitHandler, useForm } from 'react-hook-form';
