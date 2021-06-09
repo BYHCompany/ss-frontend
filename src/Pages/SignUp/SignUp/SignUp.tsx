@@ -5,6 +5,7 @@ import './SignUp.scss';
 import { FaUserAlt } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { Controller, SubmitHandler, useForm } from 'react-hook-form';
+import { Trans, useTranslation } from 'react-i18next';
 
 const items = [
   {
@@ -47,9 +48,11 @@ type Inputs = {
   pass1: string;
   pass2: string;
   email: string;
+  polict: boolean;
 };
 
-export const SignIn = () => {
+export const SignUp = () => {
+  const { t } = useTranslation();
   // const [isPrivatePerson, setIsPrivatePerson] = React.useState(true);
   const { handleSubmit, control } = useForm();
 
@@ -59,7 +62,7 @@ export const SignIn = () => {
     <AuthTemplate>
       <div className="signIn__contentWrapper">
         <Title style={{ marginBottom: 38 }} variant="primary">
-          Выберать тип аккаунта
+          {t('signUp:form.selectAccountType')}
         </Title>
         <Paper
           display="flex"
@@ -68,11 +71,9 @@ export const SignIn = () => {
           className="signIn__privatePerson">
           <FaUserAlt className="signIn__privatePerson__icon" />
           <Title type="medium" variant="secondary">
-            Частное лицо
+            {t('signUp:form.types.private.text')}
           </Title>
-          <p className="signIn__privatePerson__descr">
-            Выберите это, если Вы являетесь частным лицом
-          </p>
+          <p className="signIn__privatePerson__descr">{t('signUp:form.types.private.descr')}</p>
         </Paper>
         <form onSubmit={handleSubmit(onSubmit)} className="signIn__content__inputWrapper">
           <div className="signIn__content__inputSide">
@@ -82,13 +83,12 @@ export const SignIn = () => {
                 name="name"
                 render={({ field: { onChange, value } }) => (
                   <Input
-                    // @ts-ignore
                     onChange={onChange}
                     value={value}
                     className="signIn__content__input"
                     variant="secondary"
                     width={280}
-                    placeholder="Имя*"
+                    placeholder={t('signUp:form.inputs.name')}
                   />
                 )}
               />
@@ -102,7 +102,7 @@ export const SignIn = () => {
                     width={280}
                     onChange={onChange}
                     value={value}
-                    placeholder="Фамилия*"
+                    placeholder={t('signUp:form.inputs.surname')}
                   />
                 )}
               />
@@ -116,7 +116,7 @@ export const SignIn = () => {
                     width={280}
                     value={value}
                     onChange={onChange}
-                    placeholder="Электронная почта*"
+                    placeholder={t('signUp:form.inputs.email')}
                   />
                 )}
               />
@@ -130,7 +130,7 @@ export const SignIn = () => {
                     width={280}
                     onChange={onChange}
                     value={value}
-                    placeholder="Пароль*"
+                    placeholder={t('signUp:form.inputs.pass1')}
                   />
                 )}
               />
@@ -144,11 +144,11 @@ export const SignIn = () => {
                     width={280}
                     onChange={onChange}
                     value={value}
-                    placeholder="Подтверждение пароля*"
+                    placeholder={t('signUp:form.inputs.pass2')}
                   />
                 )}
               />
-              <p className="signIn__content__info">* - обязательное поле</p>
+              <p className="signIn__content__info">{t('signUp:form.required')}</p>
             </div>
             <div className="signIn__content__checkboxWrap">
               <Controller
@@ -164,12 +164,13 @@ export const SignIn = () => {
                   />
                 )}
               />
-
               <p className="signIn__content__checkboxDescr">
-                Согласен и принимаю{' '}
-                <Link to="" className="signIn__text--underline">
-                  Политику конфиденциальности
-                </Link>
+                <Trans i18nKey="signUp:form.private">
+                  Согласен и принимаю
+                  <Link to="" className="signIn__text--underline">
+                    Политику конфиденциальности
+                  </Link>
+                </Trans>
               </p>
             </div>
           </div>
@@ -185,7 +186,7 @@ export const SignIn = () => {
                     variant="secondary"
                     width={280}
                     items={items}
-                    label="Страна*"
+                    label={t('signUp:form.inputs.country')}
                     callback={onChange}
                   />
                 )}
@@ -201,7 +202,7 @@ export const SignIn = () => {
                     width={280}
                     onChange={onChange}
                     value={value}
-                    placeholder="Номер телефона*"
+                    placeholder={t('signUp:form.inputs.phone')}
                   />
                 )}
               />
@@ -215,21 +216,26 @@ export const SignIn = () => {
                     width={280}
                     value={value}
                     onChange={onChange}
-                    placeholder="Дата рождения - DD / MM / YYYY"
+                    placeholder={t('signUp:form.inputs.bd')}
                   />
                 )}
               />
 
               <div className="signIn__content__passValid">
-                Пароль должен содержать как минимум
-                <span className="signIn__content__mark"> Заглавную букву</span> и
-                <span className="signIn__content__mark"> любую цифру</span>
+                <Trans i18nKey="signUp:form.notValidPass">
+                  Пароль должен содержать как минимум
+                  <span className="signIn__content__mark"> Заглавную букву</span> и
+                  <span className="signIn__content__mark"> любую цифру</span>
+                </Trans>
               </div>
-              <div className="signIn__content__passValid red passNotMatch">Пароли не совпадают</div>
+
+              <div className="signIn__content__passValid red passNotMatch">
+                {t('signUp:form.notSimilar')}
+              </div>
             </div>
             <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
               <Button variant="primary" width={236} height={40}>
-                Продолжить
+                {t('signUp:form.continue')}
               </Button>
             </div>
           </div>
