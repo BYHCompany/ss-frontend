@@ -1,0 +1,38 @@
+{
+  "form": {
+    "selectAccountType": "Select account type",
+    "types": {
+      "private": {
+        "text": "Private person",
+        "descr": "Select this if you are an private person"
+      },
+      "dealer": {
+        "text": "Dealer",
+        "descr": "Choose this if you are a dealership"
+      }
+    },
+    "inputs": {
+      "name": "Name*",
+      "surname": "Surname*",
+      "email": "Email*",
+      "pass1": "Password*",
+      "pass2": "Password confirmation*",
+      "country": "Country*",
+      "phone": "Phone number*",
+      "bd": "Birthday date - DD / MM / YYYY"
+    },
+    "required": "* - required field",
+    "notValidPass": "Password must contain at least <1>Capital letter</1> and <1>any number</1>",
+    "notSimilar": "Password mismatch",
+    "private": "I agree and accept the <1>Privacy Policy</1>",
+    "continue": "Continue"
+  },
+  "emailValid": {
+    "text": "A confirmation email has been sent to you at:",
+    "resend": {
+      "doNotGetEmail": "Did not get the email?",
+      "wait": "Wait {{timer}} sec.",
+      "button": "Resend"
+    }
+  }
+}

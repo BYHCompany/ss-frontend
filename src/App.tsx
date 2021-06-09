@@ -4,9 +4,8 @@ import { Header } from './Components/Header';
 import { BrowserRouter as Router } from 'react-router-dom';
 import './GlobalStyles/style.scss';
 import './i18n';
-import { SignIn } from './Pages/SignIn';
-import { MainPage } from './Pages/MainPage';
-import { AdvertPage } from './Pages/AdvertPage';
+import { Email } from './Pages/SignUp/Email/Email';
+import { SignUp } from './Pages/SignUp';
 
 function App() {
   const [isLogging, setLogging] = useState(false);
@@ -18,9 +17,7 @@ function App() {
           {!isLogging && (
             <>
               <Header />
-              <div className="container">
-                <AdvertPage />
-              </div>
+              <div className="container"></div>
               <Footer />
             </>
           )}
@@ -32,7 +29,7 @@ function App() {
   return (
     <Router>
       <div className="app theme-light">
-        <SignIn />
+        <SignUp />
       </div>
     </Router>
   );
