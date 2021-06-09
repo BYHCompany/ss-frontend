@@ -4,7 +4,7 @@ import { AuthTemplate } from '../../../Templates/AuthTemplate';
 import './SignIn.scss';
 import { FaUserAlt } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
-import { SubmitHandler, useForm } from 'react-hook-form';
+import { Controller, SubmitHandler, useForm } from 'react-hook-form';
 
 const items = [
   {
@@ -51,8 +51,7 @@ type Inputs = {
 
 export const SignIn = () => {
   // const [isPrivatePerson, setIsPrivatePerson] = React.useState(true);
-  const [isConfirmedPrivacy, setIsConfirmedPrivacy] = React.useState(false);
-  const { register, handleSubmit } = useForm();
+  const { handleSubmit, control } = useForm();
 
   const onSubmit: SubmitHandler<Inputs> = (data: any) => console.log(data);
 
@@ -78,56 +77,94 @@ export const SignIn = () => {
         <form onSubmit={handleSubmit(onSubmit)} className="signIn__content__inputWrapper">
           <div className="signIn__content__inputSide">
             <div>
-              <Input
-                {...register('name')}
-                className="signIn__content__input"
-                variant="secondary"
-                width={280}
-                callback={() => {}}
-                placeholder="Имя*"
+              <Controller
+                control={control}
+                name="name"
+                render={({ field: { onChange, value } }) => (
+                  <Input
+                    // @ts-ignore
+                    onChange={onChange}
+                    value={value}
+                    className="signIn__content__input"
+                    variant="secondary"
+                    width={280}
+                    placeholder="Имя*"
+                  />
+                )}
               />
-              <Input
-                {...register('surname')}
-                className="signIn__content__input"
-                variant="secondary"
-                width={280}
-                callback={() => {}}
-                placeholder="Фамилия*"
+              <Controller
+                control={control}
+                name="surname"
+                render={({ field: { onChange, value } }) => (
+                  <Input
+                    className="signIn__content__input"
+                    variant="secondary"
+                    width={280}
+                    onChange={onChange}
+                    value={value}
+                    placeholder="Фамилия*"
+                  />
+                )}
               />
-              <Input
-                {...register('email')}
-                className="signIn__content__input"
-                variant="secondary"
-                width={280}
-                callback={() => {}}
-                placeholder="Электронная почта*"
+              <Controller
+                control={control}
+                name="email"
+                render={({ field: { onChange, value } }) => (
+                  <Input
+                    className="signIn__content__input"
+                    variant="secondary"
+                    width={280}
+                    value={value}
+                    onChange={onChange}
+                    placeholder="Электронная почта*"
+                  />
+                )}
               />
-              <Input
-                {...register('pass1')}
-                className="signIn__content__input"
-                variant="secondary"
-                width={280}
-                callback={() => {}}
-                placeholder="Пароль*"
+              <Controller
+                control={control}
+                name="pass1"
+                render={({ field: { onChange, value } }) => (
+                  <Input
+                    className="signIn__content__input"
+                    variant="secondary"
+                    width={280}
+                    onChange={onChange}
+                    value={value}
+                    placeholder="Пароль*"
+                  />
+                )}
               />
-              <Input
-                {...register('pass2')}
-                className="signIn__content__input"
-                variant="secondary"
-                width={280}
-                callback={() => {}}
-                placeholder="Подтверждение пароля*"
+              <Controller
+                control={control}
+                name="pass2"
+                render={({ field: { onChange, value } }) => (
+                  <Input
+                    className="signIn__content__input"
+                    variant="secondary"
+                    width={280}
+                    onChange={onChange}
+                    value={value}
+                    placeholder="Подтверждение пароля*"
+                  />
+                )}
               />
               <p className="signIn__content__info">* - обязательное поле</p>
             </div>
             <div className="signIn__content__checkboxWrap">
-              <CheckBox
-                width={32}
-                height={32}
-                style={{ marginRight: 10 }}
-                checked={isConfirmedPrivacy}
-                onChangeHandler={() => setIsConfirmedPrivacy(!isConfirmedPrivacy)}
+              <Controller
+                control={control}
+                name="policy"
+                render={({ field: { onChange, value } }) => (
+                  <CheckBox
+                    width={32}
+                    height={32}
+                    style={{ marginRight: 10 }}
+                    checked={value}
+                    onChangeHandler={onChange}
+                  />
+                )}
               />
+
               <p className="signIn__content__checkboxDescr">
                 Согласен и принимаю{' '}
                 <Link to="" className="signIn__text--underline">
@@ -138,32 +175,51 @@ export const SignIn = () => {
           </div>
           <div className="signIn__content__inputSide">
             <div>
-              <Dropdown
-                style={{ marginBottom: 15 }}
-                itemsScrollHeight={200}
-                variant="secondary"
-                width={280}
-                items={items}
-                label="Страна*"
-                callback={() => {}}
+              <Controller
+                control={control}
+                name="country"
+                render={({ field: { onChange } }) => (
+                  <Dropdown
+                    style={{ marginBottom: 15 }}
+                    itemsScrollHeight={200}
+                    variant="secondary"
+                    width={280}
+                    items={items}
+                    label="Страна*"
+                    callback={onChange}
+                  />
+                )}
               />
-              <Input
-                {...register('phone')}
-                className="signIn__content__input"
-                startIcon={<p style={{ fontSize: 14, fontWeight: 700 }}>+371</p>}
-                variant="secondary"
-                width={280}
-                callback={() => {}}
-                placeholder="Номер телефона*"
+              <Controller
+                control={control}
+                name="phone"
+                render={({ field: { onChange, value } }) => (
+                  <Input
+                    className="signIn__content__input"
+                    startIcon={<p style={{ fontSize: 14, fontWeight: 700 }}>+371</p>}
+                    variant="secondary"
+                    width={280}
+                    onChange={onChange}
+                    value={value}
+                    placeholder="Номер телефона*"
+                  />
+                )}
               />
-              <Input
-                {...register('bd')}
-                className="signIn__content__input"
-                variant="secondary"
-                width={280}
-                callback={() => {}}
-                placeholder="Дата рождения - DD / MM / YYYY"
+              <Controller
+                control={control}
+                name="bd"
+                render={({ field: { onChange, value } }) => (
+                  <Input
+                    className="signIn__content__input"
+                    variant="secondary"
+                    width={280}
+                    value={value}
+                    onChange={onChange}
+                    placeholder="Дата рождения - DD / MM / YYYY"
+                  />
+                )}
               />
+
               <div className="signIn__content__passValid">
                 Пароль должен содержать как минимум
                 <span className="signIn__content__mark"> Заглавную букву</span> и
