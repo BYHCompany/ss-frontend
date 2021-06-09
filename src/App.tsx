@@ -4,12 +4,12 @@ import { Header } from './Components/Header';
 import { BrowserRouter as Router } from 'react-router-dom';
 import './GlobalStyles/style.scss';
 import './i18n';
-import { AuthTemplate } from './Templates/AuthTemplate';
 import { SignIn } from './Pages/SignIn';
-
+import { MainPage } from './Pages/MainPage';
+import { AdvertPage } from './Pages/AdvertPage';
 
 function App() {
-  const [isLogging, setLogging] = useState(true);
+  const [isLogging, setLogging] = useState(false);
 
   if (!isLogging) {
     return (
@@ -18,7 +18,9 @@ function App() {
           {!isLogging && (
             <>
               <Header />
-              <div className="container"></div>
+              <div className="container">
+                <AdvertPage />
+              </div>
               <Footer />
             </>
           )}

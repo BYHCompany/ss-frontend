@@ -1,11 +1,15 @@
 import React from 'react';
 import { Title } from 'byh-components';
-import { TopicPreview } from '../../../../../Components/TopicPreview/TopicPreview/TopicPreview';
+
 import './TopicSlider.scss';
-import { topicSliderData } from '../../../../../assets/topicData';
+
 import { CgShapeRhombus } from 'react-icons/cg';
+import { topicSliderData } from '../../../../assets/topicData';
+import { TopicPreview } from '../../../../Components/TopicPreview';
+import { useTranslation } from 'react-i18next';
 
 export const TopicsSlider = () => {
+  const { t } = useTranslation();
   const [currentSlide, setCurrentSlide] = React.useState<number>(0);
   const length = topicSliderData.length;
   const allNav = Math.round(length / 2);
@@ -37,9 +41,9 @@ export const TopicsSlider = () => {
   }, [allNav, currentSlide]);
 
   return (
-    <div>
+    <div data-testid="TopicsSlider-wrapper">
       <Title style={{ marginBottom: 20 }} variant="primary" type="large">
-        Новости
+        {t('mainPage:news')}
       </Title>
       <div>
         {arr.map((topic: any, index: number) => {

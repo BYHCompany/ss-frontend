@@ -1,5 +1,6 @@
 import { Dropdown } from 'byh-components';
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import './ModelForm.scss';
 
 type dropdownDataType = [
@@ -18,6 +19,7 @@ export const dropdownData = [
 ] as dropdownDataType;
 
 export const ModelForm = () => {
+  const { t } = useTranslation();
   const mockFunc = () => {};
   return (
     <div data-testid="model-form__wrapper" className="model-form__wrapper">
@@ -26,7 +28,7 @@ export const ModelForm = () => {
         width={322}
         height={50}
         variant="default"
-        label="Модель"
+        label={t('mainPage:carSelectForm.dropDowns.model')}
         labelFontSize={24}
         items={dropdownData}
         className="model-form__padding"
@@ -34,7 +36,7 @@ export const ModelForm = () => {
       <div className="model-form__dropdown model-form__padding">
         <Dropdown
           callback={mockFunc}
-          label="Год от"
+          label={t('mainPage:carSelectForm.dropDowns.year.yearFrom')}
           width={150}
           height={50}
           labelFontSize={24}
@@ -43,7 +45,7 @@ export const ModelForm = () => {
         <span className="short-input__divider">-</span>
         <Dropdown
           callback={mockFunc}
-          label="Год до"
+          label={t('mainPage:carSelectForm.dropDowns.year.yearTo')}
           width={150}
           height={50}
           labelFontSize={24}
@@ -53,7 +55,7 @@ export const ModelForm = () => {
       <div className="model-form__dropdown model-form__padding">
         <Dropdown
           callback={mockFunc}
-          label="Объём"
+          label={t('mainPage:carSelectForm.dropDowns.engineVolume.volumeFrom')}
           width={150}
           height={50}
           labelFontSize={24}
@@ -61,7 +63,7 @@ export const ModelForm = () => {
         />
         <Dropdown
           callback={mockFunc}
-          label="До"
+          label={t('mainPage:carSelectForm.dropDowns.engineVolume.volumeTo')}
           width={150}
           height={50}
           labelFontSize={24}
@@ -71,7 +73,7 @@ export const ModelForm = () => {
       <Dropdown
         className="model-form__padding"
         callback={mockFunc}
-        label="Тип Двигателя"
+        label={t('mainPage:carSelectForm.dropDowns.engineType')}
         labelFontSize={24}
         width={322}
         height={50}

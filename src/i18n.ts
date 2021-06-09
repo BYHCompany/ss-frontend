@@ -6,6 +6,9 @@ import errorEN from './locales/en/errorEN.json';
 import errorRU from './locales/ru/errorRU.json';
 import headerEN from './locales/en/headerEN.json';
 import headerRU from './locales/ru/headerRU.json';
+import mainPageRU from './locales/ru/mainPageRU.json';
+import mainPageEN from './locales/en/mainPageEN.json';
+
 // the translations
 // (tip move them in a JSON file and import them,
 // or even better, manage them via a UI: https://react.i18next.com/guides/multiple-translation-files#manage-your-translations-with-a-management-gui)
@@ -14,9 +17,11 @@ const resources = {
     footer: footerEN,
     error: errorEN,
     header: headerEN,
+    mainPage: mainPageEN,
   },
   ru: {
     footer: footerRU,
+    mainPage: mainPageRU,
     error: errorRU,
     header: headerRU,
   },

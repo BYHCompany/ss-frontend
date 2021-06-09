@@ -1,0 +1,39 @@
+.advert-slider__wrapper {
+  margin-bottom: 40px;
+}
+
+.advert-slider__small-wrapper {
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.advert-slider__next-prev__buttons {
+  position: absolute;
+  z-index: 1;
+  width: 770px;
+  height: 380px;
+  display: flex;
+}
+.advert-slider__next__button,
+.advert-slider__prev__button {
+  width: 50%;
+  height: 100%;
+}
+
+.advert-slider__image-for-more {
+  filter: brightness(25%);
+}
+
+.advert-slider__image_text {
+  position: absolute;
+  color: #fff;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 76px;
+  width: 150px;
+  font-weight: bold;
+  font-size: 16px;
+}
