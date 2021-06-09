@@ -4,10 +4,11 @@ import { Header } from './Components/Header';
 import { BrowserRouter as Router } from 'react-router-dom';
 import './GlobalStyles/style.scss';
 import './i18n';
-import { SignIn } from './Pages/SignIn';
+import { Email } from './Pages/SignUp/Email/Email';
+import { SignUp } from './Pages/SignUp';
 
 function App() {
-  const [isLogging, setLogging] = useState(true);
+  const [isLogging, setLogging] = useState(false);
 
   if (!isLogging) {
     return (
@@ -28,7 +29,7 @@ function App() {
   return (
     <Router>
       <div className="app theme-light">
-        <SignIn />
+        <SignUp />
       </div>
     </Router>
   );
