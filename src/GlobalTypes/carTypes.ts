@@ -13,6 +13,23 @@ export type EngineType = 'Gasoline' | 'Diesel' | 'Electric' | 'hydrogen' | 'Hybr
 export type CarState = 'Used' | 'New';
 export type TransmitionType = 'Rear wheel drive' | 'All wheel drive (AWD)' | 'Front wheel drive';
 export type Gearbox = 'Automatic' | 'Manual' | 'variable' | 'robot';
+export type SteeringWheelPos = 'Left' | 'Right' | 'Middle';
+
+export type AdvertInfoProps = {
+  price: number;
+  year: number;
+  mileage: number;
+  transmissionType: TransmitionType;
+  steeringWheel: SteeringWheelPos;
+  engineType: EngineType;
+  gearbox: Gearbox;
+  power: number;
+  carBody: CarBodyTypes;
+  state: CarState;
+  tax: number;
+  vinCode: string;
+  carLicensePlate: string;
+};
 
 export type MiniCarObject = {
   name: string;
@@ -25,4 +42,5 @@ export type MiniCarObject = {
   mileage: number;
   state: CarState;
   price: number;
+  steeringWheel: SteeringWheelPos;
 };

@@ -1,0 +1,40 @@
+{
+  "buttons": {
+    "others": "Другие...",
+    "find": "Найти варианты",
+    "showMore": "Показать больше"
+  },
+  "searchTypeButtons": {
+    "auto": "Автомобили",
+    "motocycle": "Мототранспорт",
+    "specialTransport": "Спец.транспорт",
+    "others": "Другие"
+  },
+  "carSelectForm": {
+    "label": "Подобрать авто",
+    "famousMake": "Популярные марки",
+    "dropDowns": {
+      "model": "Модель",
+      "year": {
+        "yearFrom": "Год от",
+        "yearTo": "Год До"
+      },
+      "engineVolume": {
+        "volumeFrom": "Объём",
+        "volumeTo": "До"
+      },
+      "engineType": "Тип двигателя",
+      "millage": {
+        "millageFrom": "Пробег от",
+        "millageTo": "До"
+      },
+      "carBody": "Кузов",
+      "gearBox": "Коробка",
+      "transmission": "Привод",
+      "gasEquipment": "ГБО"
+    }
+  },
+  "specialOffersLabel": "Предложения специально для Вас",
+  "profitableOffers": "Не пропусти эти выгодные предложения",
+  "news": "Новости"
+}

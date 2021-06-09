@@ -1,8 +1,10 @@
 import { CheckBox, Dropdown, Title } from 'byh-components';
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { dropdownData } from '../ModelForm/ModelForm';
 
 export const MillageForm = () => {
+  const { t } = useTranslation();
   const [checked, setChecked] = React.useState(false);
   const mockFunc = () => {};
 
@@ -16,7 +18,7 @@ export const MillageForm = () => {
           width={238}
           height={50}
           labelFontSize={24}
-          label="Пробег от"
+          label={t('mainPage:carSelectForm.dropDowns.millage.millageFrom')}
           items={dropdownData}
           callback={mockFunc}
         />
@@ -24,7 +26,7 @@ export const MillageForm = () => {
         <Dropdown
           width={238}
           height={50}
-          label="До"
+          label={t('mainPage:carSelectForm.dropDowns.millage.millageTo')}
           labelFontSize={24}
           items={dropdownData}
           callback={mockFunc}
@@ -35,7 +37,7 @@ export const MillageForm = () => {
           labelFontSize={24}
           width={238}
           height={50}
-          label="Кузов"
+          label={t('mainPage:carSelectForm.dropDowns.carBody')}
           items={dropdownData}
           callback={mockFunc}
         />
@@ -43,7 +45,7 @@ export const MillageForm = () => {
           width={238}
           labelFontSize={24}
           height={50}
-          label="Коробка"
+          label={t('mainPage:carSelectForm.dropDowns.gearBox')}
           items={dropdownData}
           callback={mockFunc}
         />
@@ -53,13 +55,13 @@ export const MillageForm = () => {
           width={377}
           height={50}
           labelFontSize={24}
-          label="Привод"
+          label={t('mainPage:carSelectForm.dropDowns.transmission')}
           items={dropdownData}
           callback={mockFunc}
         />
         <CheckBox checked={checked} onChangeHandler={onChangeHandler} width={34} height={34} />
         <Title type="ultraSmall" variant="primary">
-          ГБО
+          {t('mainPage:carSelectForm.dropDowns.gasEquipment')}
         </Title>
       </div>
     </div>

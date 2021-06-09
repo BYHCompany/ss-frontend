@@ -26,7 +26,9 @@ export const AdvertPreview: React.FC<AdvertDataType> = ({
   return (
     <>
       <Paper display="flex" key={id} className="advert__wrapper" width={350}>
-        <Title type={'ultraSmall'}>{title}</Title>
+        <Title variant="primary" type={'ultraSmall'}>
+          {title}
+        </Title>
         <ImageComponent src={photo} height={144} width={310} />
         <p style={{ margin: '6px 0', fontWeight: 'bold' }}>{year} год</p>
         <div className="advert-preview__action-wrapper">

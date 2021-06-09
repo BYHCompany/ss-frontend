@@ -6,6 +6,8 @@ import errorEN from './locales/en/errorEN.json';
 import errorRU from './locales/ru/errorRU.json';
 import headerEN from './locales/en/headerEN.json';
 import headerRU from './locales/ru/headerRU.json';
+import mainPageRU from './locales/ru/mainPageRU.json';
+import mainPageEN from './locales/en/mainPageEN.json';
 import signUpRU from './locales/ru/SignUpRU.json';
 import signUpEN from './locales/en/SignUpEN.json';
 // the translations
@@ -16,10 +18,12 @@ const resources = {
     footer: footerEN,
     error: errorEN,
     header: headerEN,
+    mainPage: mainPageEN,
     signUp: signUpEN,
   },
   ru: {
     footer: footerRU,
+    mainPage: mainPageRU,
     error: errorRU,
     header: headerRU,
     signUp: signUpRU,

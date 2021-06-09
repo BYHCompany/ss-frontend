@@ -1,13 +1,16 @@
 import { Button, Title } from 'byh-components';
 import React from 'react';
-import { biggerAdvertData } from '../../../../../assets/advertPreviewData';
-import { AdvertPreview } from '../../../../../Components/AdvertPreview';
+import { useTranslation } from 'react-i18next';
+import { biggerAdvertData } from '../../../../assets/advertPreviewData';
+import { AdvertPreview } from '../../../../Components/AdvertPreview';
+
 import './ProfitableOffers.scss';
 export const ProfitableOffers = () => {
+  const { t } = useTranslation();
   return (
-    <div>
+    <div data-testId="profitableOffers-wrapper">
       <Title style={{ marginBottom: 20 }} type="large" variant="primary">
-        Не пропусти эти выгодные предложения
+        {t('mainPage:profitableOffers')}
       </Title>
       <div className="profitable-offers__advert-preview__wrapper">
         {biggerAdvertData.map((props) => (
@@ -26,7 +29,7 @@ export const ProfitableOffers = () => {
       </div>
       <div className="profitable-offers__button">
         <Button height={60} width={570} fontSize={40} variant="primary">
-          Показать больше
+          {t('mainPage:buttons.showMore')}
         </Button>
       </div>
     </div>

@@ -1,0 +1,40 @@
+{
+  "buttons": {
+    "others": "Others...",
+    "find": "Find Options",
+    "showMore": "Show More"
+  },
+  "searchTypeButtons": {
+    "auto": "Car",
+    "motocycle": "Motocycle",
+    "specialTransport": "Special transport",
+    "others": "Others"
+  },
+  "carSelectForm": {
+    "label": "Pick up a car",
+    "famousMake": "Famous Makes",
+    "dropDowns": {
+      "model": "Model",
+      "year": {
+        "yearFrom": "Year From",
+        "yearTo": "Year To"
+      },
+      "engineVolume": {
+        "volumeFrom": "Volume",
+        "volumeTo": "To"
+      },
+      "engineType": "Engine Type",
+      "millage": {
+        "millageFrom": "Millage from",
+        "millageTo": "To"
+      },
+      "carBody": "Car body",
+      "gearBox": "Gear Body",
+      "transmission": "Transmission",
+      "gasEquipment": "GE"
+    }
+  },
+  "specialOffersLabel": "Special offers for you",
+  "profitableOffers": "Don't miss these great deals",
+  "news": "News"
+}

@@ -1,0 +1,34 @@
+.advert-info__wrapper {
+  position: relative;
+}
+
+.advert-info__wrapper {
+  position: sticky;
+  top: 20px;
+}
+
+.advert-info__account-info__fullName,
+.advert-info__account-info__wrapper,
+.advert-info__account-info__buttons {
+  display: flex;
+}
+
+.advert-info__price-title {
+  text-align: end;
+  margin-bottom: 20px;
+}
+.advert-info__account-info__wrapper {
+  width: 370px;
+}
+
+.advert-info__account-info__fullName {
+  margin-bottom: 7px;
+  justify-content: space-between;
+}
+.advert-info__account-info__photo {
+  margin-right: 15px;
+}
+
+.advert-info__account-info__buttons {
+  flex-direction: column;
+}
