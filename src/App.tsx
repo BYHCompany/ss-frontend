@@ -7,7 +7,7 @@ import './i18n';
 import { authRoutes, routes } from './routes';
 
 function App() {
-  const [isLogging, setLogging] = React.useState(true);
+  const [isLogging, setLogging] = React.useState<boolean>(false);
 
   if (!isLogging) {
     return (

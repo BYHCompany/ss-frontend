@@ -1,0 +1,129 @@
+@import '../../../GlobalStyles/mixins';
+
+.settings__wrapper {
+  display: grid;
+  grid-template-columns: 263px auto;
+  width: 100%;
+  padding: 35px;
+}
+
+.settings__photoAndName {
+  display: flex;
+  flex-direction: column;
+  max-width: 260px;
+}
+
+.settings__name {
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.settings__selectorWrapper {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  margin-bottom: 16px;
+
+  &::after {
+    content: '';
+    width: 100%;
+    height: 1px;
+
+    @include theme-aware('background-color', 'blackC');
+  }
+}
+
+.settings__selector {
+  display: flex;
+  justify-content: space-between;
+}
+
+.settings__selector__item {
+  font-weight: 400;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.settings__bold {
+  font-weight: 700;
+}
+
+.settings__formWrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.settings__formGrid {
+  display: grid;
+  grid-template-columns: auto auto;
+}
+
+.settings__input {
+  margin-bottom: 20px;
+}
+
+.settings__mainInputs {
+  margin-bottom: 20px;
+}
+
+.settings__sexSelector {
+  margin-bottom: 30px;
+}
+
+.settings__sexButtons {
+  max-width: 300px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+
+  button {
+    margin-bottom: 13px;
+  }
+}
+
+.settings__location {
+  margin-bottom: 30px;
+}
+
+.settings__right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.settings__fileInput {
+  width: 290px;
+  height: 43px;
+}
+
+.settings__continue {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 5px;
+}
+
+.settings__fileUpload__label {
+  font-size: 18px;
+  font-weight: 700;
+  width: 100%;
+  height: 43px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.settings__fileWrapper {
+  width: 100%;
+  max-width: 290px;
+  height: 43px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5px;
+  border-radius: 3px;
+
+  @include theme-aware('color', 'secondary');
+  @include theme-aware('background-color', 'primary');
+}
