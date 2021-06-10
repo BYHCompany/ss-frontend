@@ -35,7 +35,7 @@ export const TopicsSlider = () => {
       } else {
         setCurrentSlide(0);
       }
-    }, 2000);
+    }, 15000);
 
     return () => clearInterval(timer);
   }, [allNav, currentSlide]);
