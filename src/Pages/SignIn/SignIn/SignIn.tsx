@@ -1,6 +1,7 @@
-import { Button, CheckBox, Input, Title } from 'byh-components';
+import { Alert, Button, CheckBox, Input, Title } from 'byh-components';
 import React from 'react';
 import { Controller, SubmitHandler, useForm } from 'react-hook-form';
+import { useTranslation } from 'react-i18next';
 import { AuthTemplate } from '../../../Templates/AuthTemplate';
 import './SignIn.scss';
 type InputType = {
@@ -9,13 +10,15 @@ type InputType = {
   rememberMe: boolean;
 };
 export const SignIn = () => {
+  const { t } = useTranslation();
+  const [error, setError] = React.useState(false);
   const { handleSubmit, control } = useForm();
   const onSubmit: SubmitHandler<InputType> = (data: any) => console.log(data);
   return (
     <AuthTemplate>
       <div className="signIn__wrapper">
         <div className="signIn-content__wrapper">
-          <Title variant="secondary" type="ultraLarge">
+          <Title variant="primary" type="ultraLarge">
             SS V8
           </Title>
           <form onSubmit={handleSubmit(onSubmit)}>
@@ -30,7 +33,7 @@ export const SignIn = () => {
                     className=""
                     variant="secondary"
                     width={280}
-                    placeholder={'Электронная почта'}
+                    placeholder={t('signIn:email')}
                   />
                 )}
               />
@@ -46,13 +49,13 @@ export const SignIn = () => {
                     className=""
                     variant="secondary"
                     width={280}
-                    placeholder={'Пароль'}
+                    placeholder={t('signIn:password')}
                   />
                 )}
               />
             </div>
             <div className="signIn-rememberMe__wrapper">
-              <p>Запомнить Меня</p>
+              <p>{t('signIn:rememberMe')}</p>
               <Controller
                 control={control}
                 name="rememberMe"
@@ -68,14 +71,24 @@ export const SignIn = () => {
               />
             </div>
             <div className="signIn-button">
-              <Button fontSize={18} height={40} width={236} variant="primary">
-                Продолжить
+              <Button
+                onClick={() => setError(!error)}
+                fontSize={18}
+                height={40}
+                width={236}
+                variant="primary">
+                {t('signIn:button')}
               </Button>
             </div>
           </form>
-          <p className="signIn-forgetPass">Забыли пароль?</p>
+          <p className="signIn-forgetPass">{t('signIn:forgetPass')}</p>
         </div>
       </div>
+      {error && (
+        <div className="signIn-alert">
+          <Alert width={651} message={t('signIn:alert.error')} variant="danger" />
+        </div>
+      )}
     </AuthTemplate>
   );
 };
