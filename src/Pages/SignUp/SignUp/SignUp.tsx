@@ -128,6 +128,7 @@ export const SignUp = () => {
                     className="signIn__content__input"
                     variant="secondary"
                     width={280}
+                    type="password"
                     onChange={onChange}
                     value={value}
                     placeholder={t('signUp:form.inputs.pass1')}
@@ -142,6 +143,7 @@ export const SignUp = () => {
                     className="signIn__content__input"
                     variant="secondary"
                     width={280}
+                    type="password"
                     onChange={onChange}
                     value={value}
                     placeholder={t('signUp:form.inputs.pass2')}
@@ -200,6 +202,7 @@ export const SignUp = () => {
                     startIcon={<p style={{ fontSize: 14, fontWeight: 700 }}>+371</p>}
                     variant="secondary"
                     width={280}
+                    type="tel"
                     onChange={onChange}
                     value={value}
                     placeholder={t('signUp:form.inputs.phone')}
