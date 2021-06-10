@@ -1,4 +1,4 @@
-import { Profile } from './Pages';
+import { Profile } from './Pages/Profile';
 import { AdvertPage } from './Pages/AdvertPage';
 import { MainPage } from './Pages/MainPage';
 import { About, Email, SignUp } from './Pages/SignUp';
