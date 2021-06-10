@@ -3,9 +3,9 @@ import { AdvertPage } from './Pages/AdvertPage';
 import { MainPage } from './Pages/MainPage';
 import { About, Email, SignUp } from './Pages/SignUp';
 import { SignIn } from './Pages/SignIn';
-interface Route {
+export interface Route {
   path: string;
-  component: any;
+  Component: any;
   name: string;
   exact?: boolean;
 }
@@ -13,17 +13,17 @@ interface Route {
 export const routes = [
   {
     path: '/profile',
-    component: Profile,
+    Component: Profile,
     name: 'Profile',
   } as Route,
   {
     path: '/advert',
-    component: AdvertPage,
+    Component: AdvertPage,
     name: 'AdvertPage',
   } as Route,
   {
     path: '/',
-    component: MainPage,
+    Component: MainPage,
     name: 'MainPage',
     exact: true,
   } as Route,
@@ -32,19 +32,19 @@ export const routes = [
 export const authRoutes = [
   {
     path: '/signUp/about',
-    component: About,
+    Component: About,
     name: 'About',
   } as Route,
   {
     path: '/signUp/confirmEmail',
-    component: Email,
+    Component: Email,
     name: 'confirmEmail',
   } as Route,
-  { path: '/signUp/confirmEmail', component: Email, name: 'confirmEmail' },
-  { path: '/signIn', component: SignIn, name: 'SignIn' },
+  { path: '/signUp/confirmEmail', Component: Email, name: 'confirmEmail' },
+  { path: '/signIn', Component: SignIn, name: 'SignIn' },
   {
     path: '/signUp',
-    component: SignUp,
+    Component: SignUp,
     name: 'SignUp',
   } as Route,
 ];
