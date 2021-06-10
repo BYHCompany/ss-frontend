@@ -13,7 +13,7 @@ export interface Route {
 export const routes = [
   {
     path: '/profile/settings',
-    component: Settings,
+    Component: Settings,
     name: 'Profile settings',
   } as Route,
   {
@@ -47,12 +47,12 @@ export const authRoutes = [
   } as Route,
   {
     path: '/signUp/confirmEmail',
-    component: Email,
+    Component: Email,
     name: 'confirmEmail',
   } as Route,
   {
     path: '/signIn',
-    component: SignIn,
+    Component: SignIn,
     name: 'SignIn',
   } as Route,
   {
