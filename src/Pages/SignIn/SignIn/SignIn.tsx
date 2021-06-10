@@ -86,7 +86,7 @@ export const SignIn = () => {
       </div>
       {error && (
         <div className="signIn-alert">
-          <Alert width={651} message={t('signIn:forgetPass')} variant="danger" />
+          <Alert width={651} message={t('signIn:alert.error')} variant="danger" />
         </div>
       )}
     </AuthTemplate>
