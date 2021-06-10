@@ -1,6 +1,6 @@
 @import '../../../GlobalStyles/mixins';
 
-.signIn__contentWrapper {
+.signUp__contentWrapper {
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -9,7 +9,7 @@
   height: 100%;
 }
 
-.signIn__privatePerson {
+.signUp__privatePerson {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -19,27 +19,27 @@
   @include theme-aware('background-color', 'primary');
 }
 
-.signIn__privatePerson__icon {
+.signUp__privatePerson__icon {
   font-size: 60px;
   margin-bottom: 3px;
 
   @include theme-aware('color', 'secondary');
 }
 
-.signIn__privatePerson__descr {
+.signUp__privatePerson__descr {
   font-size: 10px;
   font-weight: 700;
 
   @include theme-aware('color', 'default');
 }
 
-.signIn__content__inputWrapper {
+.signUp__content__inputWrapper {
   display: grid;
   width: 100%;
   grid-template-columns: 1fr 1fr;
 }
 
-.signIn__content__inputSide {
+.signUp__content__inputSide {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -47,18 +47,18 @@
   margin-bottom: auto;
 }
 
-.signIn__content__input {
+.signUp__content__input {
   margin-bottom: 15px;
 }
 
-.signIn__content__info {
+.signUp__content__info {
   font-weight: 700;
   font-size: 14px;
 
   @include theme-aware('color', 'default');
 }
 
-.signIn__content__passValid {
+.signUp__content__passValid {
   font-size: 12px;
   font-weight: 700;
   max-width: 280px;
@@ -68,7 +68,7 @@
   @include theme-aware('color', 'default');
 }
 
-.signIn__content__mark {
+.signUp__content__mark {
   @include theme-aware('color', 'primary');
 }
 
@@ -81,18 +81,18 @@
   align-items: center;
 }
 
-.signIn__content__checkboxWrap {
+.signUp__content__checkboxWrap {
   display: flex;
   align-items: center;
 }
 
-.signIn__content__checkboxDescr {
+.signUp__content__checkboxDescr {
   font-size: 14px;
   font-weight: 700;
   text-decoration: none;
 }
 
-.signIn__text--underline {
+.signUp__text--underline {
   text-decoration: underline;
 
   @include theme-aware('color', 'primary');
