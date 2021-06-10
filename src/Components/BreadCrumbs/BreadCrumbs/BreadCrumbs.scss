@@ -1,0 +1,21 @@
+@import '../../../GlobalStyles/mixins';
+
+.breadCrumbs__wrapper {
+  margin-top: 40px;
+}
+
+.breadCrumbs__text {
+  font-size: 20px;
+  font-weight: regular;
+  @include theme-aware('color', 'default');
+}
+.breadCrumbs__link {
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+.breadCrumbs__divider {
+  font-size: 20px;
+  @include theme-aware('color', 'default');
+}
