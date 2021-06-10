@@ -9,6 +9,7 @@ interface Route {
   name: string;
   exact?: boolean;
 }
+import { SignIn } from './Pages/SignIn';
 
 export const routes = [
   {
@@ -40,6 +41,8 @@ export const authRoutes = [
     component: Email,
     name: 'confirmEmail',
   } as Route,
+  { path: '/signUp/confirmEmail', component: Email, name: 'confirmEmail' },
+  { path: '/signIn', component: SignIn, name: 'SignIn' },
   {
     path: '/signUp',
     component: SignUp,

@@ -12,53 +12,57 @@ const imageArr = [
       'https://baltic-grlk5lagedl.stackpathdns.com/production/baltic/images/1568109024498373-high_taycan_turbo_2019_porsche_ag_1.jpg?w=1920&h=800&fit=fill&crop=faces&auto=%5B%22format%22%2C%20%22compress%22%5D&cs=srgb',
   },
   {
-    image:
-      'http://i-auto.lv/uploads/posts/2020-04/1585970549_gf-jiei-m27c-1v7n_wnetrze-nowego-porsche-taycan-1920x1080-nocrop.jpg',
+    image: 'https://kursors.lv/wp-content/uploads/2019/09/2020-porsche-taycan.jpg',
   },
-  { image: 'https://kursors.lv/wp-content/uploads/2019/09/2020-porsche-taycan.jpg' },
-  { image: 'https://kursors.lv/wp-content/uploads/2019/09/2020-porsche-taycan.jpg' },
-  { image: 'https://kursors.lv/wp-content/uploads/2019/09/2020-porsche-taycan.jpg' },
-  { image: 'https://kursors.lv/wp-content/uploads/2019/09/2020-porsche-taycan.jpg' },
-  { image: 'https://kursors.lv/wp-content/uploads/2019/09/2020-porsche-taycan.jpg' },
-  { image: 'https://kursors.lv/wp-content/uploads/2019/09/2020-porsche-taycan.jpg' },
-  { image: 'https://kursors.lv/wp-content/uploads/2019/09/2020-porsche-taycan.jpg' },
+  {
+    image:
+      'https://evcompare.io/upload/resize_cache/iblock/ad8/1200_800_2/ad8a05faabd7c44bfd43a7e8d3a1a949.jpg',
+  },
+  {
+    image:
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQu5yce05MQDRoQ91WmYy-nv1KvuPE1LYzyrQ&usqp=CAU',
+  },
+  { image: 'https://a.d-cd.net/zMAAAgJrbeA-960.jpg' },
+  {
+    image:
+      'https://cdn.motor1.com/images/mgl/N096n/s1/porsche-taycan-cross-turismo-2020-render-de-motor1-com.jpg',
+  },
+  { image: 'https://img-c.drive.ru/models.photos/0000/000/000/001/6a6/48d782e5ccc72789-large.jpg' },
+  {
+    image:
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQGXrLZ5R2RxgdAKJxrF1mjPRrcEHw76MEAg&usqp=CAU',
+  },
+  {
+    image:
+      'https://cdn.elferspot.com/wp-content/uploads/2020/11/Porsche-Taycan-Turbo-S-kaufen-Deutschland-17-2000x1334.jpg',
+  },
 ];
 
 export const AdvertSlider = () => {
-  const [mainPhoto, setMainPhoto] = React.useState('');
-  const [currentSlide, setCurrentSlide] = React.useState(0);
+  const [photoIndex, setPhotoIndex] = React.useState(0);
   const length = imageArr.length;
+  let selectedImg = imageArr[photoIndex].image;
   const firstImage = imageArr[0].image;
-
-  const setMainPhotoHandler = (img: string) => {
-    setMainPhoto(img);
+  const setMainPhotoHandler = (index: number) => {
+    setPhotoIndex(index);
   };
 
   const nextSlide = () => {
-    setCurrentSlide(currentSlide === length - 1 ? 0 : currentSlide + 1);
+    setPhotoIndex(photoIndex === length - 1 ? 0 : photoIndex + 1);
   };
   const prevSlide = () => {
-    setCurrentSlide(currentSlide === length - 1 ? 0 : currentSlide - 1);
+    setPhotoIndex(photoIndex === 0 ? length - 1 : photoIndex - 1);
   };
+
   return (
     <div className="advert-slider__wrapper">
       <div>
         <div className="advert-slider__next-prev__buttons">
-          {currentSlide === 0 ? (
-            <div
-              className="advert-slider__next__button"
-              style={{ width: '100%' }}
-              onClick={nextSlide}
-            />
-          ) : (
-            <>
-              <div className="advert-slider__prev__button" onClick={prevSlide} />
-              <div className="advert-slider__next__button" onClick={nextSlide} />
-            </>
-          )}
+          <div className="advert-slider__prev__button" onClick={prevSlide} />
+          <div className="advert-slider__next__button" onClick={nextSlide} />
         </div>
         <ImageComponent
-          src={mainPhoto ? mainPhoto : firstImage}
+          src={selectedImg ? selectedImg : firstImage}
           width={770}
           height={380}
           style={{ marginBottom: 20 }}
@@ -71,7 +75,7 @@ export const AdvertSlider = () => {
               return (
                 <ImageComponent
                   key={index}
-                  onClick={() => setMainPhotoHandler(image)}
+                  onClick={() => setMainPhotoHandler(index)}
                   height={76}
                   width={150}
                   src={image}
@@ -86,7 +90,7 @@ export const AdvertSlider = () => {
                   <div className="advert-slider__image-for-more">
                     <ImageComponent
                       key={index}
-                      onClick={() => setMainPhotoHandler(image)}
+                      onClick={() => setMainPhotoHandler(index)}
                       height={76}
                       width={150}
                       src={image}
@@ -103,7 +107,7 @@ export const AdvertSlider = () => {
           return (
             <ImageComponent
               key={index}
-              onClick={() => setMainPhotoHandler(image)}
+              onClick={() => setMainPhotoHandler(index)}
               height={76}
               width={150}
               src={image}

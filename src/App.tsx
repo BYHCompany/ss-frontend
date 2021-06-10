@@ -44,6 +44,7 @@ function App() {
           {authRoutes.map((route) => (
             <Route path={route.path} key={route.name} render={() => <route.component />} />
           ))}
+          <Redirect to={'/signIn'} />
         </Switch>
       </div>
     </Router>
