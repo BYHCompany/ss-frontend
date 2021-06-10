@@ -60,7 +60,7 @@ export const SignUp = () => {
 
   return (
     <AuthTemplate>
-      <div className="signIn__contentWrapper">
+      <div className="signUp__contentWrapper">
         <Title style={{ marginBottom: 38 }} variant="primary">
           {t('signUp:form.selectAccountType')}
         </Title>
@@ -68,15 +68,15 @@ export const SignUp = () => {
           display="flex"
           style={{ width: '100%' }}
           height={168}
-          className="signIn__privatePerson">
-          <FaUserAlt className="signIn__privatePerson__icon" />
+          className="signUp__privatePerson">
+          <FaUserAlt className="signUp__privatePerson__icon" />
           <Title type="medium" variant="secondary">
             {t('signUp:form.types.private.text')}
           </Title>
-          <p className="signIn__privatePerson__descr">{t('signUp:form.types.private.descr')}</p>
+          <p className="signUp__privatePerson__descr">{t('signUp:form.types.private.descr')}</p>
         </Paper>
-        <form onSubmit={handleSubmit(onSubmit)} className="signIn__content__inputWrapper">
-          <div className="signIn__content__inputSide">
+        <form onSubmit={handleSubmit(onSubmit)} className="signUp__content__inputWrapper">
+          <div className="signUp__content__inputSide">
             <div>
               <Controller
                 control={control}
@@ -85,7 +85,7 @@ export const SignUp = () => {
                   <Input
                     onChange={onChange}
                     value={value}
-                    className="signIn__content__input"
+                    className="signUp__content__input"
                     variant="secondary"
                     width={280}
                     placeholder={t('signUp:form.inputs.name')}
@@ -97,7 +97,7 @@ export const SignUp = () => {
                 name="surname"
                 render={({ field: { onChange, value } }) => (
                   <Input
-                    className="signIn__content__input"
+                    className="signUp__content__input"
                     variant="secondary"
                     width={280}
                     onChange={onChange}
@@ -111,7 +111,7 @@ export const SignUp = () => {
                 name="email"
                 render={({ field: { onChange, value } }) => (
                   <Input
-                    className="signIn__content__input"
+                    className="signUp__content__input"
                     variant="secondary"
                     width={280}
                     value={value}
@@ -125,7 +125,7 @@ export const SignUp = () => {
                 name="pass1"
                 render={({ field: { onChange, value } }) => (
                   <Input
-                    className="signIn__content__input"
+                    className="signUp__content__input"
                     variant="secondary"
                     width={280}
                     type="password"
@@ -140,7 +140,7 @@ export const SignUp = () => {
                 name="pass2"
                 render={({ field: { onChange, value } }) => (
                   <Input
-                    className="signIn__content__input"
+                    className="signUp__content__input"
                     variant="secondary"
                     width={280}
                     type="password"
@@ -150,9 +150,9 @@ export const SignUp = () => {
                   />
                 )}
               />
-              <p className="signIn__content__info">{t('signUp:form.required')}</p>
+              <p className="signUp__content__info">{t('signUp:form.required')}</p>
             </div>
-            <div className="signIn__content__checkboxWrap">
+            <div className="signUp__content__checkboxWrap">
               <Controller
                 control={control}
                 name="policy"
@@ -166,17 +166,17 @@ export const SignUp = () => {
                   />
                 )}
               />
-              <p className="signIn__content__checkboxDescr">
+              <p className="signUp__content__checkboxDescr">
                 <Trans i18nKey="signUp:form.private">
                   Согласен и принимаю
-                  <Link to="" className="signIn__text--underline">
+                  <Link to="" className="signUp__text--underline">
                     Политику конфиденциальности
                   </Link>
                 </Trans>
               </p>
             </div>
           </div>
-          <div className="signIn__content__inputSide">
+          <div className="signUp__content__inputSide">
             <div>
               <Controller
                 control={control}
@@ -198,7 +198,7 @@ export const SignUp = () => {
                 name="phone"
                 render={({ field: { onChange, value } }) => (
                   <Input
-                    className="signIn__content__input"
+                    className="signUp__content__input"
                     startIcon={<p style={{ fontSize: 14, fontWeight: 700 }}>+371</p>}
                     variant="secondary"
                     width={280}
@@ -214,7 +214,7 @@ export const SignUp = () => {
                 name="bd"
                 render={({ field: { onChange, value } }) => (
                   <Input
-                    className="signIn__content__input"
+                    className="signUp__content__input"
                     variant="secondary"
                     width={280}
                     value={value}
@@ -224,15 +224,15 @@ export const SignUp = () => {
                 )}
               />
 
-              <div className="signIn__content__passValid">
+              <div className="signUp__content__passValid">
                 <Trans i18nKey="signUp:form.notValidPass">
                   Пароль должен содержать как минимум
-                  <span className="signIn__content__mark"> Заглавную букву</span> и
-                  <span className="signIn__content__mark"> любую цифру</span>
+                  <span className="signUp__content__mark"> Заглавную букву</span> и
+                  <span className="signUp__content__mark"> любую цифру</span>
                 </Trans>
               </div>
 
-              <div className="signIn__content__passValid red passNotMatch">
+              <div className="signUp__content__passValid red passNotMatch">
                 {t('signUp:form.notSimilar')}
               </div>
             </div>
