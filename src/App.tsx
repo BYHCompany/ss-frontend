@@ -8,7 +8,7 @@ import { SignUp } from './Pages/SignUp';
 import { authRoutes, routes } from './routes';
 
 function App() {
-  const [isLogging, setLogging] = useState(false);
+  const [isLogging, setLogging] = useState(true);
 
   if (!isLogging) {
     return (
@@ -45,6 +45,7 @@ function App() {
           {authRoutes.map((route) => (
             <Route path={route.path} key={route.name} render={() => <route.component />} />
           ))}
+          <Redirect to={'/signIn'} />
         </Switch>
       </div>
     </Router>
