@@ -34,5 +34,22 @@
       "wait": "Wait {{timer}} sec.",
       "button": "Resend"
     }
+  },
+  "about": {
+    "label": "Additional Information",
+    "addNewPhoto": "Upload new photo",
+    "location": {
+      "label": "Location",
+      "button": "Edit"
+    },
+    "aboutMe": {
+      "label": "Tell us about yourself",
+      "placeholder": "About myself"
+    },
+    "favourite": {
+      "label": "Choose your favorite car brands"
+    },
+    "info": "This part of registration is optional, you can skip it if you wish.",
+    "button": "Continue"
   }
 }

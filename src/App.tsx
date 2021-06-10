@@ -1,14 +1,13 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Footer } from './Components/Footer';
 import { Header } from './Components/Header';
 import { BrowserRouter as Router, Redirect, Route, Switch } from 'react-router-dom';
 import './GlobalStyles/style.scss';
 import './i18n';
-import { SignUp } from './Pages/SignUp';
 import { authRoutes, routes } from './routes';
 
 function App() {
-  const [isLogging, setLogging] = useState(true);
+  const [isLogging, setLogging] = React.useState(true);
 
   if (!isLogging) {
     return (
