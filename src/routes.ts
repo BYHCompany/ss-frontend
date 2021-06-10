@@ -2,14 +2,13 @@ import { Profile } from './Pages';
 import { AdvertPage } from './Pages/AdvertPage';
 import { MainPage } from './Pages/MainPage';
 import { About, Email, SignUp } from './Pages/SignUp';
-
+import { SignIn } from './Pages/SignIn';
 interface Route {
   path: string;
   component: any;
   name: string;
   exact?: boolean;
 }
-import { SignIn } from './Pages/SignIn';
 
 export const routes = [
   {
