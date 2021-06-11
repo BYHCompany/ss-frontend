@@ -18,10 +18,11 @@ export const BreadCrumbs: React.FC<BreadCrumbsType> = ({ crumbs }) => {
   if (crumbs.length <= 1) {
     return null;
   }
-  const reverseCrumbs = crumbs.reverse();
-
+  const cloneCrumbs = JSON.parse(JSON.stringify(crumbs));
+  const reverseCrumbs = cloneCrumbs.reverse();
   return (
     <div className="breadCrumbs__wrapper">
+      {/* @ts-ignore */}
       {reverseCrumbs.map(({ name, path }, key) =>
         key + 1 === crumbs.length ? (
           <React.Fragment key={key}>
