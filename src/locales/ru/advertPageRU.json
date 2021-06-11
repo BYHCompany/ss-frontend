@@ -1,0 +1,72 @@
+{
+  "comment": "Комментарий продавца",
+  "carEquipment": "Комплектация Автомобиля",
+
+  "buttons": {
+    "contact": "Связаться",
+    "showNumber": "Показать номер",
+    "show": "Показать"
+  },
+  "year": {
+    "year": "Год выпуска",
+    "value": "{{year}} год"
+  },
+  "millage": {
+    "millage": "Пробег",
+    "value": "{{millage}} км"
+  },
+  "transmission": {
+    "transmission": "Привод",
+    "value": {
+      "AWD": "Полный",
+      "RWD": "Задний",
+      "FWD": "Передный"
+    }
+  },
+  "steeringWheel": {
+    "steeringWheel": "Руль",
+    "value": { "left": "Левый", "right": "Правый" }
+  },
+  "engine": {
+    "engine": "Двигатель",
+    "engineType": {
+      "Gasoline": "Бензин",
+      "Diesel": "Дизель",
+      "Electric": "Электрический",
+      "hydrogen": "Водород",
+      "Hybrid": "Гибридный"
+    }
+  },
+  "gearBox": {
+    "gearBox": "Коробка",
+    "value": {
+      "Automatic": "Автоматический",
+      "Manual": "Ручная",
+      "variable": "Вариатор",
+      "robot": "Роботизированная"
+    }
+  },
+  "power": {
+    "power": "Мощность",
+    "value": "{{power}} лс"
+  },
+  "carBody": {
+    "carBody": "Кузов",
+    "carBodyTypes": {
+      "sedan": "Седан",
+      "coupe": "Купе",
+      "sportCar": "SportCar",
+      "wagon": "Универсал",
+      "hatchback": "Хэтчбек",
+      "convertible": "Кабриолет",
+      "suv": "Спортивный кроссовер",
+      "minivan": "Минивэн",
+      "pickup": "Пикап"
+    }
+  },
+  "tax": {
+    "tax": "Налоги",
+    "value": "{{tax}} €"
+  },
+  "carLicensePlate": "Гос.номер авто"
+}

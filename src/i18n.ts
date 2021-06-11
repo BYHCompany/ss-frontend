@@ -12,6 +12,9 @@ import signUpRU from './locales/ru/SignUpRU.json';
 import signUpEN from './locales/en/SignUpEN.json';
 import signInEN from './locales/en/SignInEN.json';
 import signInRU from './locales/ru/SignInRU.json';
+import advertPageEN from './locales/en/advertPageEN.json';
+import advertPageRU from './locales/ru/advertPageRU.json';
+
 // the translations
 // (tip move them in a JSON file and import them,
 // or even better, manage them via a UI: https://react.i18next.com/guides/multiple-translation-files#manage-your-translations-with-a-management-gui)
@@ -23,6 +26,7 @@ const resources = {
     mainPage: mainPageEN,
     signUp: signUpEN,
     signIn: signInEN,
+    advertPage: advertPageEN,
   },
   ru: {
     footer: footerRU,
@@ -31,6 +35,7 @@ const resources = {
     header: headerRU,
     signUp: signUpRU,
     signIn: signInRU,
+    advertPage: advertPageRU,
   },
 };
 

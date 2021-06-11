@@ -1,26 +1,38 @@
 import { Button, DescriptionList, Title, ImageComponent } from 'byh-components';
 import React from 'react';
-import {} from 'byh-components';
 import { BiMessageDetail } from 'react-icons/bi';
 import { FaPhoneAlt } from 'react-icons/fa';
 import './AdvertInfo.scss';
+import { AdvertInfoProps } from '../../../../GlobalTypes/carTypes';
+import {
+  translateBodyType,
+  translateEngineType,
+  translateGearboxType,
+  translateSteeringWheel,
+  translateTransmitionType,
+} from '../../../../services/carTranslators';
+import { Trans, useTranslation } from 'react-i18next';
 
+const descriptionData = {
+  year: 2020,
+  millage: 185,
+  transmissionType: 'All wheel drive (AWD)',
+  steeringWheel: 'Left',
+  engineType: 'Electric',
+  gearbox: 'Automatic',
+  power: 55,
+  carBody: 'sedan',
+  tax: 350,
+  vinCode: 'Полный',
+  carLicensePlate: 'Полный',
+} as AdvertInfoProps;
 export const AdvertInfo = () => {
   const [isHidden, setIsHidden] = React.useState(true);
-
-  const descriptionData = [
-    { 'Год выпуска': 2020 },
-    { Пробег: '185 км' },
-    { Привод: 'Полный' },
-    { Руль: 'Левый' },
-    { Двигатель: 'Дизель 3.0' },
-    { Коробка: 'Механическая' },
-    { Мощность: '55 л.c' },
-    { Кузов: 'Внедорожник 5 дв.' },
-    { Налог: 'Полный' },
-    { VIN: 'Полный' },
-    { 'Гос.номер авто': 'Полный' },
-  ];
+  const { t } = useTranslation();
+  const millage = descriptionData.millage;
+  const year = descriptionData.year;
+  const power = descriptionData.power;
+  const tax = descriptionData.tax;
 
   const handleHidden = () => {
     setIsHidden(!isHidden);
@@ -32,19 +44,78 @@ export const AdvertInfo = () => {
         <Title className="advert-info__price-title" variant="primary">
           230 300$
         </Title>
-        {descriptionData.map((description, index) => {
-          const length = descriptionData.length;
-          return (
-            <React.Fragment key={index}>
-              <DescriptionList
-                width={370}
-                handleHide={handleHidden}
-                hide={index === length - 1 || index === length - 2 ? isHidden : false}
-                obj={description}
-              />
-            </React.Fragment>
-          );
-        })}
+
+        <DescriptionList
+          width={370}
+          handleHide={handleHidden}
+          header={t('advertPage:year.year')}
+          description={<Trans i18nKey={'advertPage:year.value'}> {{ year }} </Trans>}
+        />
+
+        <DescriptionList
+          width={370}
+          handleHide={handleHidden}
+          header={t('advertPage:millage.millage')}
+          description={<Trans i18nKey={'advertPage:millage.value'}> {{ millage }} </Trans>}
+        />
+        <DescriptionList
+          header={t('advertPage:transmission.transmission')}
+          width={370}
+          handleHide={handleHidden}
+          description={translateTransmitionType(descriptionData.transmissionType)}
+        />
+        <DescriptionList
+          width={370}
+          handleHide={handleHidden}
+          header={t('advertPage:steeringWheel.steeringWheel')}
+          description={translateSteeringWheel(descriptionData.steeringWheel)}
+        />
+        <DescriptionList
+          width={370}
+          handleHide={handleHidden}
+          header={t('advertPage:engine.engine')}
+          description={translateEngineType(descriptionData.engineType)}
+        />
+        <DescriptionList
+          width={370}
+          handleHide={handleHidden}
+          header={t('advertPage:gearBox.gearBox')}
+          description={translateGearboxType(descriptionData.gearbox)}
+        />
+        <DescriptionList
+          width={370}
+          handleHide={handleHidden}
+          header={t('advertPage:power.power')}
+          description={<Trans i18nKey={'advertPage:power.value'}> {{ power }} </Trans>}
+        />
+        <DescriptionList
+          width={370}
+          handleHide={handleHidden}
+          header={t('advertPage:carBody.carBody')}
+          description={translateBodyType(descriptionData.carBody)}
+        />
+        <DescriptionList
+          width={370}
+          handleHide={handleHidden}
+          header={t('advertPage:tax.tax')}
+          description={<Trans i18nKey={'advertPage:tax.value'}> {{ tax }} </Trans>}
+        />
+        <DescriptionList
+          showButtonText={t('advertPage:buttons.show')}
+          width={370}
+          handleHide={handleHidden}
+          header="VIN"
+          hide={isHidden}
+          description={descriptionData.vinCode}
+        />
+        <DescriptionList
+          width={370}
+          showButtonText={t('advertPage:buttons.show')}
+          handleHide={handleHidden}
+          header={t('advertPage:carLicensePlate')}
+          hide={isHidden}
+          description={descriptionData.carLicensePlate}
+        />
         <div className={'advert-info__account-info__wrapper'}>
           <div className="advert-info__account-info__photo">
             <ImageComponent
@@ -67,10 +138,10 @@ export const AdvertInfo = () => {
                 height={41}
                 width={234}
                 endIcon={<BiMessageDetail />}>
-                Связаться
+                {t('advertPage:buttons.contact')}
               </Button>
               <Button variant="primary" height={41} width={234} endIcon={<FaPhoneAlt />}>
-                Показать номер
+                {t('advertPage:buttons.showNumber')}
               </Button>
             </div>
           </div>
