@@ -1,11 +1,13 @@
 import { Paper, Title } from 'byh-components';
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import './Comment.scss';
 export const Comment = () => {
+  const { t } = useTranslation();
   return (
     <Paper className="comment__wrapper" width={770} style={{ marginBottom: 40 }}>
       <Title className="comment__title" variant="primary">
-        Комментарий продавца
+        {t('advertPage:comment')}
       </Title>
       <p style={{ lineHeight: '30px', fontSize: 20 }}>
         Авто в идеальном состоянии, абсолютно весь в родном окрасе! Никаких дтп и прочих
