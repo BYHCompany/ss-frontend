@@ -1,82 +1,48 @@
 @import '../../../GlobalStyles/mixins';
-
-.signIn__contentWrapper {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  padding: 48px 0 23px 0;
-  margin: 0 75px;
-  height: 100%;
-}
-
-.signIn__privatePerson {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 30px;
-
-  @include theme-aware('background-color', 'primary');
-}
-
-.signIn__privatePerson__icon {
-  font-size: 60px;
-  margin-bottom: 3px;
-
-  @include theme-aware('color', 'secondary');
-}
-
-.signIn__privatePerson__descr {
-  font-size: 10px;
-  font-weight: 700;
-
-  @include theme-aware('color', 'default');
-}
-
-.signIn__content__inputWrapper {
-  display: grid;
+.signIn__wrapper {
   width: 100%;
-  grid-template-columns: 1fr 1fr;
+  height: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.signIn__content__inputLeftSide {
+.signIn-content__wrapper {
+  height: 280px;
+  width: 315px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  height: 100%;
-  margin-bottom: auto;
-}
-
-.signIn__content__input {
-  margin-bottom: 15px;
-}
-
-.signIn__content__info {
-  font-weight: 700;
-  font-size: 14px;
-
-  @include theme-aware('color', 'default');
-}
-
-.signIn__content__passValid {
-  font-size: 12px;
-  font-weight: 700;
-  max-width: 280px;
-  height: 40px;
-  margin-bottom: 15px;
-
-  @include theme-aware('color', 'default');
-}
-
-.signIn__content__mark {
-  @include theme-aware('color', 'primary');
-}
-
-.red {
-  @include theme-aware('color', 'redC');
-}
-
-.passNotMatch {
-  display: flex;
   align-items: center;
+}
+
+.signIn-email__input,
+.signIn-password__input,
+.signIn-rememberMe__wrapper,
+.signIn-button {
+  margin-bottom: 15px;
+}
+
+.signIn-rememberMe__wrapper {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.signIn-button {
+  display: flex;
+  justify-content: center;
+}
+
+.signIn-forgetPass {
+  font-size: 12px;
+  cursor: pointer;
+  user-select: none;
+  @include theme-aware('color', 'default');
+}
+
+.signIn-alert {
+  display: flex;
+  justify-content: center;
 }

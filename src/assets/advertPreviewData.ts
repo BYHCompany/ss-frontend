@@ -23,7 +23,8 @@ export const advertData = [
   {
     id: '3',
     title: 'Mercedes-Benz GLS500',
-    photo: 'https://www.carscoops.com/wp-content/uploads/2019/11/2020-mercedes-benz-gls-0.jpg',
+    photo:
+      'https://pictures.topspeed.com/IMG/crop_webp/201912/2020-mercedes-amg-gls-63-15_800x0.webp',
     year: '2020',
     isElectric: true,
     isInTrending: true,

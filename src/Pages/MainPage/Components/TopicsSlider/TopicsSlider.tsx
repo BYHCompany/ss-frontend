@@ -35,7 +35,7 @@ export const TopicsSlider = () => {
       } else {
         setCurrentSlide(0);
       }
-    }, 2000);
+    }, 15000);
 
     return () => clearInterval(timer);
   }, [allNav, currentSlide]);
@@ -52,14 +52,15 @@ export const TopicsSlider = () => {
               <div key={index} className={'active__slider'}>
                 {topic.map((topic: any, index: any) => {
                   return (
-                    <TopicPreview
-                      key={index}
-                      description={topic.description}
-                      imageSrc={topic.imageSrc}
-                      label={topic.label}
-                      mainTag={topic.mainTag}
-                      tags={topic.tags}
-                    />
+                    <React.Fragment key={index}>
+                      <TopicPreview
+                        description={topic.description}
+                        imageSrc={topic.imageSrc}
+                        label={topic.label}
+                        mainTag={topic.mainTag}
+                        tags={topic.tags}
+                      />
+                    </React.Fragment>
                   );
                 })}
               </div>

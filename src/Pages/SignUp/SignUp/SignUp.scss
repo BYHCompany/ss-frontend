@@ -1,0 +1,99 @@
+@import '../../../GlobalStyles/mixins';
+
+.signUp__contentWrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 48px 0 23px 0;
+  margin: 0 75px;
+  height: 100%;
+}
+
+.signUp__privatePerson {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
+
+  @include theme-aware('background-color', 'primary');
+}
+
+.signUp__privatePerson__icon {
+  font-size: 60px;
+  margin-bottom: 3px;
+
+  @include theme-aware('color', 'secondary');
+}
+
+.signUp__privatePerson__descr {
+  font-size: 10px;
+  font-weight: 700;
+
+  @include theme-aware('color', 'default');
+}
+
+.signUp__content__inputWrapper {
+  display: grid;
+  width: 100%;
+  grid-template-columns: 1fr 1fr;
+}
+
+.signUp__content__inputSide {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 385px;
+  margin-bottom: auto;
+}
+
+.signUp__content__input {
+  margin-bottom: 15px;
+}
+
+.signUp__content__info {
+  font-weight: 700;
+  font-size: 14px;
+
+  @include theme-aware('color', 'default');
+}
+
+.signUp__content__passValid {
+  font-size: 12px;
+  font-weight: 700;
+  max-width: 280px;
+  height: 40px;
+  margin-bottom: 15px;
+
+  @include theme-aware('color', 'default');
+}
+
+.signUp__content__mark {
+  @include theme-aware('color', 'primary');
+}
+
+.red {
+  @include theme-aware('color', 'redC');
+}
+
+.passNotMatch {
+  display: flex;
+  align-items: center;
+}
+
+.signUp__content__checkboxWrap {
+  display: flex;
+  align-items: center;
+}
+
+.signUp__content__checkboxDescr {
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.signUp__text--underline {
+  text-decoration: underline;
+
+  @include theme-aware('color', 'primary');
+}

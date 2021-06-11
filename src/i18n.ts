@@ -10,6 +10,10 @@ import mainPageRU from './locales/ru/mainPageRU.json';
 import mainPageEN from './locales/en/mainPageEN.json';
 import advertPageEN from './locales/en/advertPageEN.json';
 import advertPageRU from './locales/ru/advertPageRU.json';
+import signUpRU from './locales/ru/SignUpRU.json';
+import signUpEN from './locales/en/SignUpEN.json';
+import signInEN from './locales/en/SignInEN.json';
+import signInRU from './locales/ru/SignInRU.json';
 
 // the translations
 // (tip move them in a JSON file and import them,
@@ -21,6 +25,8 @@ const resources = {
     header: headerEN,
     mainPage: mainPageEN,
     advertPage: advertPageEN,
+    signUp: signUpEN,
+    signIn: signInEN,
   },
   ru: {
     footer: footerRU,
@@ -28,6 +34,8 @@ const resources = {
     error: errorRU,
     header: headerRU,
     advertPage: advertPageRU,
+    signUp: signUpRU,
+    signIn: signInRU,
   },
 };
 
