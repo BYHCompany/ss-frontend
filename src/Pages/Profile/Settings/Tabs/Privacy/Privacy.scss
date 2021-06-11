@@ -1,0 +1,76 @@
+@import '../../../../../GlobalStyles/mixins';
+
+.privacy__inputBlock {
+  margin-right: 10px;
+}
+
+.settings__privacy__wrapper {
+  display: grid;
+  grid-template-columns: 64% 36%;
+}
+
+.settings__privacy__input {
+  margin-bottom: 20px;
+}
+
+.privacy__input__strong {
+  font-weight: 700;
+  font-size: 18px;
+
+  @include theme-aware('color', 'greenC');
+}
+
+.privacy__input__miss {
+  font-weight: 700;
+  font-size: 18px;
+
+  @include theme-aware('color', 'redC');
+}
+
+.privacy__inputWrapper {
+  display: flex;
+  align-items: center;
+}
+
+.privacy__warn__wrapper {
+  width: 100%;
+  display: flex;
+  padding: 10px 19px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 3px;
+  flex-direction: column;
+  margin-bottom: 28px;
+
+  @include theme-aware('background-color', 'secondary');
+}
+
+.privacy__warn__label {
+  font-size: 24px;
+
+  @include theme-aware('color', 'primary');
+}
+
+.privacy__warn__icon {
+  font-size: 100px;
+  margin-bottom: 20px;
+}
+
+.privacy__warn__text {
+  font-size: 14px;
+  text-align: center;
+  margin-bottom: 6px;
+  font-weight: 700;
+}
+
+.privacy__warn__descr {
+  font-size: 14px;
+  text-align: center;
+
+  @include theme-aware('color', 'default');
+}
+
+.privacy__submitButtonWrapper {
+  display: flex;
+  justify-content: flex-end;
+}
