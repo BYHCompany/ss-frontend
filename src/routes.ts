@@ -1,4 +1,4 @@
-import { Profile } from './Pages';
+import { Profile, Settings } from './Pages/Profile';
 import { AdvertPage } from './Pages/AdvertPage';
 import { MainPage } from './Pages/MainPage';
 import { About, Email, SignUp } from './Pages/SignUp';
@@ -11,6 +11,11 @@ export interface Route {
 }
 
 export const routes = [
+  {
+    path: '/profile/settings',
+    Component: Settings,
+    name: 'Profile settings',
+  } as Route,
   {
     path: '/profile',
     Component: Profile,
@@ -40,8 +45,16 @@ export const authRoutes = [
     Component: Email,
     name: 'confirmEmail',
   } as Route,
-  { path: '/signUp/confirmEmail', Component: Email, name: 'confirmEmail' },
-  { path: '/signIn', Component: SignIn, name: 'SignIn' },
+  {
+    path: '/signUp/confirmEmail',
+    Component: Email,
+    name: 'confirmEmail',
+  } as Route,
+  {
+    path: '/signIn',
+    Component: SignIn,
+    name: 'SignIn',
+  } as Route,
   {
     path: '/signUp',
     Component: SignUp,

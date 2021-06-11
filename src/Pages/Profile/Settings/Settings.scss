@@ -1,0 +1,45 @@
+@import '../../../GlobalStyles/mixins';
+
+.settings__wrapper {
+  display: grid;
+  grid-template-columns: 263px auto;
+  width: 100%;
+  padding: 35px;
+}
+
+.settings__photoAndName {
+  display: flex;
+  flex-direction: column;
+  max-width: 260px;
+}
+
+.settings__name {
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.settings__selectorWrapper {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  margin-bottom: 16px;
+
+  &::after {
+    content: '';
+    width: 100%;
+    height: 1px;
+
+    @include theme-aware('background-color', 'blackC');
+  }
+}
+
+.settings__selector {
+  display: flex;
+  justify-content: space-between;
+}
+
+.settings__selector__item {
+  font-weight: 400;
+  font-size: 24px;
+  cursor: pointer;
+}
