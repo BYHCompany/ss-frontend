@@ -13,12 +13,12 @@ export type EngineType = 'Gasoline' | 'Diesel' | 'Electric' | 'hydrogen' | 'Hybr
 export type CarState = 'Used' | 'New';
 export type TransmitionType = 'Rear wheel drive' | 'All wheel drive (AWD)' | 'Front wheel drive';
 export type Gearbox = 'Automatic' | 'Manual' | 'variable' | 'robot';
-export type SteeringWheelPos = 'Left' | 'Right' | 'Middle';
+export type SteeringWheelPos = 'Left' | 'Right';
 
 export type AdvertInfoProps = {
   price: number;
   year: number;
-  mileage: number;
+  millage: number;
   transmissionType: TransmitionType;
   steeringWheel: SteeringWheelPos;
   engineType: EngineType;

@@ -1,0 +1,75 @@
+{
+  "comment": "Owner comment",
+  "carEquipment": "Car Equipment",
+
+  "buttons": {
+    "contact": "Contact",
+    "showNumber": "Show Number",
+    "show": "show"
+  },
+  "year": {
+    "year": "Year",
+    "value": "{{descriptionData.year}} year"
+  },
+  "millage": {
+    "millage": "Millage",
+    "value": "{{descriptionData.millage}} km"
+  },
+  "transmission": {
+    "transmission": "Transmission",
+    "value": {
+      "AWD": "All wheel drive",
+      "RWD": "Rear wheel drive",
+      "FWD": "Front wheel drive"
+    }
+  },
+  "steeringWheel": {
+    "steeringWheel": "SteeringWheel",
+    "value": {
+      "left": "Left",
+      "right": "Right"
+    }
+  },
+  "engine": {
+    "engine": "Engine",
+    "engineType": {
+      "Gasoline": "Gasoline",
+      "Diesel": "Diesel",
+      "Electric": "Electric",
+      "hydrogen": "Hydrogen",
+      "Hybrid": "Hybrid"
+    }
+  },
+  "gearBox": {
+    "gearBox": "Gear Box",
+    "value": {
+      "Automatic": "Automatic",
+      "Manual": "Manual",
+      "variable": "Variable",
+      "robot": "Robot"
+    }
+  },
+  "power": {
+    "power": "Power",
+    "value": "{{descriptionData.power}} hp"
+  },
+  "carBody": {
+    "carBody": "CarBody",
+    "carBodyTypes": {
+      "sedan": "Sedan",
+      "coupe": "Coupe",
+      "sportCar": "SportCar",
+      "wagon": "Wagon",
+      "hatchback": "Hatchback",
+      "convertible": "Convertible",
+      "suv": "Suv",
+      "minivan": "Minivan",
+      "pickup": "Pickup"
+    }
+  },
+  "tax": {
+    "tax": "Tax",
+    "value": "{{descriptionData.tax}} €"
+  },
+  "carLicensePlate": "Car License Plate"
+}

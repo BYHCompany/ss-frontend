@@ -1,24 +1,27 @@
+import { useTranslation } from 'react-i18next';
 import {
   CarBodyTypes,
   CarState,
   EngineType,
   Gearbox,
+  SteeringWheelPos,
   TransmitionType,
 } from '../GlobalTypes/carTypes';
+import i18n from '../i18n';
 
 //This fn translates engine type to normal users language
 export const translateEngineType = (engineType: EngineType) => {
   switch (engineType) {
     case 'Diesel':
-      return 'Дизель';
+      return i18n.t('advertPage:engine.engineType.Diesel');
     case 'Gasoline':
-      return 'Бензин';
+      return i18n.t('advertPage:engine.engineType.Gasoline');
     case 'Hybrid':
-      return 'Гибрид';
+      return i18n.t('advertPage:engine.engineType.Hybrid');
     case 'Electric':
-      return 'Электрический';
+      return i18n.t('advertPage:engine.engineType.Electric');
     case 'hydrogen':
-      return 'Водородный';
+      return i18n.t('advertPage:engine.engineType.hydrogen');
   }
 };
 
@@ -26,13 +29,13 @@ export const translateEngineType = (engineType: EngineType) => {
 export const translateGearboxType = (gearbox: Gearbox) => {
   switch (gearbox) {
     case 'Automatic':
-      return 'Автомат';
+      return i18n.t('advertPage:gearBox.value.Automatic');
     case 'Manual':
-      return 'Механическая';
+      return i18n.t('advertPage:gearBox.value.Manual');
     case 'robot':
-      return 'Роботизированная';
+      return i18n.t('advertPage:gearBox.value.robot');
     case 'variable':
-      return 'Вариатор';
+      return i18n.t('advertPage:gearBox.value.variable');
   }
 };
 
@@ -40,23 +43,23 @@ export const translateGearboxType = (gearbox: Gearbox) => {
 export const translateBodyType = (carBody: CarBodyTypes) => {
   switch (carBody) {
     case 'sedan':
-      return 'Седан';
+      return i18n.t('advertPage:carBody.carBodyTypes.sedan');
     case 'convertible':
-      return 'Кабриолет';
+      return i18n.t('advertPage:carBody.carBodyTypes.convertible');
     case 'coupe':
-      return 'Купе';
+      return i18n.t('advertPage:carBody.carBodyTypes.coupe');
     case 'minivan':
-      return 'Минивен';
+      return i18n.t('advertPage:carBody.carBodyTypes.minivan');
     case 'sportCar':
-      return 'Спорткар';
+      return i18n.t('advertPage:carBody.carBodyTypes.sportCar');
     case 'suv':
-      return 'Спортивный кроссовер';
+      return i18n.t('advertPage:carBody.carBodyTypes.suv');
     case 'wagon':
-      return 'Универсал';
+      return i18n.t('advertPage:carBody.carBodyTypes.wagon');
     case 'pickup':
-      return 'Пикап';
+      return i18n.t('advertPage:carBody.carBodyTypes.pickup');
     case 'hatchback':
-      return 'Хетчбэк';
+      return i18n.t('advertPage:carBody.carBodyTypes.hatchback');
   }
 };
 
@@ -74,10 +77,19 @@ export const translateStateType = (state: CarState) => {
 export const translateTransmitionType = (transmition: TransmitionType) => {
   switch (transmition) {
     case 'Rear wheel drive':
-      return 'Задний';
+      return i18n.t('advertPage:transmission.value.RWD');
     case 'Front wheel drive':
-      return 'Передний';
+      return i18n.t('advertPage:transmission.value.FWD');
     case 'All wheel drive (AWD)':
-      return 'Полный';
+      return i18n.t('advertPage:transmission.value.AWD');
+  }
+};
+//This fn translates transmision type to normal users language
+export const translateSteeringWheel = (steeringWheel: SteeringWheelPos) => {
+  switch (steeringWheel) {
+    case 'Left':
+      return i18n.t('advertPage:steeringWheel.value.left');
+    case 'Right':
+      return i18n.t('advertPage:steeringWheel.value.right');
   }
 };

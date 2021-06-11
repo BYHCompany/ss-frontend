@@ -8,6 +8,8 @@ import headerEN from './locales/en/headerEN.json';
 import headerRU from './locales/ru/headerRU.json';
 import mainPageRU from './locales/ru/mainPageRU.json';
 import mainPageEN from './locales/en/mainPageEN.json';
+import advertPageEN from './locales/en/advertPageEN.json';
+import advertPageRU from './locales/ru/advertPageRU.json';
 
 // the translations
 // (tip move them in a JSON file and import them,
@@ -18,12 +20,14 @@ const resources = {
     error: errorEN,
     header: headerEN,
     mainPage: mainPageEN,
+    advertPage: advertPageEN,
   },
   ru: {
     footer: footerRU,
     mainPage: mainPageRU,
     error: errorRU,
     header: headerRU,
+    advertPage: advertPageRU,
   },
 };
 
