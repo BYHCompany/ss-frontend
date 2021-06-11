@@ -24,18 +24,16 @@ export const BreadCrumbs: React.FC<BreadCrumbsType> = ({ crumbs }) => {
     <div className="breadCrumbs__wrapper">
       {reverseCrumbs.map(({ name, path }, key) =>
         key + 1 === crumbs.length ? (
-          <>
-            <span className="breadCrumbs__text" key={key}>
-              {name}
-            </span>
-          </>
+          <React.Fragment key={key}>
+            <span className="breadCrumbs__text">{name}</span>
+          </React.Fragment>
         ) : (
-          <>
-            <Link className="breadCrumbs__text breadCrumbs__link" key={key} to={path}>
+          <React.Fragment key={key}>
+            <Link className="breadCrumbs__text breadCrumbs__link" to={path}>
               {name}
             </Link>
             <span className="breadCrumbs__divider"> / </span>
-          </>
+          </React.Fragment>
         ),
       )}
     </div>
