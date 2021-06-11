@@ -1,19 +1,19 @@
 {
-  "comment": "Owner comment",
-  "carEquipment": "Car Equipment",
+  "comment": "Комментарий продавца",
+  "carEquipment": "Комплектация Автомобиля",
 
   "buttons": {
-    "contact": "Contact",
-    "showNumber": "Show Number",
-    "show": "show"
+    "contact": "Связаться",
+    "showNumber": "Показать номер",
+    "show": "Показать"
   },
   "year": {
     "year": "Год выпуска",
-    "value": "{{descriptionData.year}} год"
+    "value": "{{year}} год"
   },
   "millage": {
     "millage": "Пробег",
-    "value": "{{descriptionData.millage}} км"
+    "value": "{{millage}} км"
   },
   "transmission": {
     "transmission": "Привод",
@@ -48,7 +48,7 @@
   },
   "power": {
     "power": "Мощность",
-    "value": "{{descriptionData.power}} лс"
+    "value": "{{power}} лс"
   },
   "carBody": {
     "carBody": "Кузов",
@@ -66,7 +66,7 @@
   },
   "tax": {
     "tax": "Налоги",
-    "value": "{{descriptionData.tax}} €"
+    "value": "{{tax}} €"
   },
   "carLicensePlate": "Гос.номер авто"
 }

@@ -5,15 +5,15 @@
   "buttons": {
     "contact": "Contact",
     "showNumber": "Show Number",
-    "show": "show"
+    "show": "Show"
   },
   "year": {
     "year": "Year",
-    "value": "{{descriptionData.year}} year"
+    "value": "{{year}} year"
   },
   "millage": {
     "millage": "Millage",
-    "value": "{{descriptionData.millage}} km"
+    "value": "{{millage}} km"
   },
   "transmission": {
     "transmission": "Transmission",
@@ -24,7 +24,7 @@
     }
   },
   "steeringWheel": {
-    "steeringWheel": "SteeringWheel",
+    "steeringWheel": "Steering Wheel",
     "value": {
       "left": "Left",
       "right": "Right"
@@ -51,7 +51,7 @@
   },
   "power": {
     "power": "Power",
-    "value": "{{descriptionData.power}} hp"
+    "value": "{{power}} hp"
   },
   "carBody": {
     "carBody": "CarBody",
@@ -69,7 +69,7 @@
   },
   "tax": {
     "tax": "Tax",
-    "value": "{{descriptionData.tax}} €"
+    "value": "{{tax}} €"
   },
   "carLicensePlate": "Car License Plate"
 }

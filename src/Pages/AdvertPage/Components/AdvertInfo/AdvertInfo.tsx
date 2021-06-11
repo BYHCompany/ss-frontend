@@ -1,6 +1,5 @@
 import { Button, DescriptionList, Title, ImageComponent } from 'byh-components';
 import React from 'react';
-import {} from 'byh-components';
 import { BiMessageDetail } from 'react-icons/bi';
 import { FaPhoneAlt } from 'react-icons/fa';
 import './AdvertInfo.scss';
@@ -14,23 +13,26 @@ import {
 } from '../../../../services/carTranslators';
 import { Trans, useTranslation } from 'react-i18next';
 
+const descriptionData = {
+  year: 2020,
+  millage: 185,
+  transmissionType: 'All wheel drive (AWD)',
+  steeringWheel: 'Left',
+  engineType: 'Electric',
+  gearbox: 'Automatic',
+  power: 55,
+  carBody: 'sedan',
+  tax: 350,
+  vinCode: 'Полный',
+  carLicensePlate: 'Полный',
+} as AdvertInfoProps;
 export const AdvertInfo = () => {
   const [isHidden, setIsHidden] = React.useState(true);
   const { t } = useTranslation();
-
-  const descriptionData = {
-    year: 2020,
-    millage: 185,
-    transmissionType: 'All wheel drive (AWD)',
-    steeringWheel: 'Left',
-    engineType: 'Electric',
-    gearbox: 'Automatic',
-    power: 55,
-    carBody: 'sedan',
-    tax: 350,
-    vinCode: 'Полный',
-    carLicensePlate: 'Полный',
-  } as AdvertInfoProps;
+  const millage = descriptionData.millage;
+  const year = descriptionData.year;
+  const power = descriptionData.power;
+  const tax = descriptionData.tax;
 
   const handleHidden = () => {
     setIsHidden(!isHidden);
@@ -47,14 +49,14 @@ export const AdvertInfo = () => {
           width={370}
           handleHide={handleHidden}
           header={t('advertPage:year.year')}
-          description={descriptionData.year}
+          description={<Trans i18nKey={'advertPage:year.value'}> {{ year }} </Trans>}
         />
 
         <DescriptionList
           width={370}
           handleHide={handleHidden}
           header={t('advertPage:millage.millage')}
-          description={`${descriptionData.millage} км`}
+          description={<Trans i18nKey={'advertPage:millage.value'}> {{ millage }} </Trans>}
         />
         <DescriptionList
           header={t('advertPage:transmission.transmission')}
@@ -84,7 +86,7 @@ export const AdvertInfo = () => {
           width={370}
           handleHide={handleHidden}
           header={t('advertPage:power.power')}
-          description={descriptionData.power}
+          description={<Trans i18nKey={'advertPage:power.value'}> {{ power }} </Trans>}
         />
         <DescriptionList
           width={370}
@@ -96,9 +98,10 @@ export const AdvertInfo = () => {
           width={370}
           handleHide={handleHidden}
           header={t('advertPage:tax.tax')}
-          description={descriptionData.tax}
+          description={<Trans i18nKey={'advertPage:tax.value'}> {{ tax }} </Trans>}
         />
         <DescriptionList
+          showButtonText={t('advertPage:buttons.show')}
           width={370}
           handleHide={handleHidden}
           header="VIN"
@@ -107,6 +110,7 @@ export const AdvertInfo = () => {
         />
         <DescriptionList
           width={370}
+          showButtonText={t('advertPage:buttons.show')}
           handleHide={handleHidden}
           header={t('advertPage:carLicensePlate')}
           hide={isHidden}
