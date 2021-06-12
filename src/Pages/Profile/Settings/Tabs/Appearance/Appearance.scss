@@ -1,0 +1,43 @@
+@import '../../../../../GlobalStyles/mixins';
+
+.appearance__wrapper {
+  display: grid;
+  grid-template-columns: 47% 53%;
+}
+
+.appearance__left {
+  display: flex;
+  flex-direction: column;
+}
+
+.appearance__right {
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+}
+
+.appearance__themePreview {
+  width: 100%;
+  padding: 22px 36px;
+  margin-bottom: 20px;
+
+  @include theme-aware('background-color', 'secondary');
+}
+
+.appearance__themePreview__text {
+  font-weight: 700;
+  font-size: 24px;
+  text-align: center;
+}
+
+.appearance__settingWrapper {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+
+  p {
+    margin-left: 20px;
+    font-size: 24px;
+    font-weight: 700;
+  }
+}
