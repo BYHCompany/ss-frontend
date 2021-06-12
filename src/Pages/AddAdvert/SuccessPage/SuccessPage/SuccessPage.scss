@@ -1,0 +1,25 @@
+@import '../../../../GlobalStyles/mixins';
+.successPage__wrapper,
+.successPage__paper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.successPage__paper {
+  margin-bottom: 40px;
+}
+.successPage__successIcon--wrapper {
+  width: 178px;
+  height: 178px;
+  border-radius: 100px;
+  margin-bottom: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @include theme-aware('background-color', 'greenC');
+}
+.successPage__successIcon {
+  color: #fff;
+  font-size: 46px;
+}
