@@ -1,10 +1,10 @@
 import { Paper, Title } from 'byh-components';
 import React from 'react';
-import { AdvertPreview } from '../../Components/AdvertPreview';
-import { ProfileInfo } from '../../Components/ProfileInfo';
+import { AdvertPreview } from '../../../Components/AdvertPreview';
+import { ProfileInfo } from '../../../Components/ProfileInfo';
 import './Profile.scss';
-import { biggerAdvertData } from '../../assets/advertPreviewData';
-import { profileInfoData } from '../../assets/profileInfoData';
+import { biggerAdvertData } from '../../../assets/advertPreviewData';
+import { profileInfoData } from '../../../assets/profileInfoData';
 
 export const Profile: React.FC = (): React.ReactElement => {
   const advertVisability: boolean = biggerAdvertData.length > 0 ? true : false;
