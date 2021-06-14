@@ -16,7 +16,6 @@ import signInEN from './locales/en/SignInEN.json';
 import signInRU from './locales/ru/SignInRU.json';
 import successAddAdvertEN from './locales/en/successAddAdvertEN.json';
 import successAddAdvertRU from './locales/ru/successAddAdvertRU.json';
-
 // the translations
 // (tip move them in a JSON file and import them,
 // or even better, manage them via a UI: https://react.i18next.com/guides/multiple-translation-files#manage-your-translations-with-a-management-gui)
