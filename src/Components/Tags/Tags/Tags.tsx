@@ -4,7 +4,7 @@ import './Tags.scss';
 
 export type Tag = {
   id: string;
-  backgroundColor: string;
+  bg: string;
   name: string;
 };
 export interface TagsProps {
@@ -35,7 +35,7 @@ export const Tags: React.FC<TagsProps> = ({ tags, withButton = false }) => {
           height={23}
           onClick={() => hadleTag(index)}
           className="tag__wrapper"
-          customBgColor={checked.includes(index) ? tag.backgroundColor : 'EBEBEB'}>
+          customBgColor={checked.includes(index) ? tag.bg : 'EBEBEB'}>
           {tag.name}
         </Paper>
       ))}
