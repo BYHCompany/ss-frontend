@@ -9,7 +9,7 @@ import { BreadCrumbs } from './Components/BreadCrumbs';
 
 function App() {
   const [isLogging, setLogging] = React.useState<boolean>(false);
-  
+
   if (!isLogging) {
     return (
       <Router>
