@@ -5,7 +5,7 @@ import {
   EngineType,
   Gearbox,
   SteeringWheelPos,
-  TransmitionType,
+  TransmissionType,
 } from '../GlobalTypes/carTypes';
 import i18n from '../i18n';
 
@@ -74,13 +74,13 @@ export const translateStateType = (state: CarState) => {
 };
 
 //This fn translates transmision type to normal users language
-export const translateTransmitionType = (transmition: TransmitionType) => {
+export const translateTransmitionType = (transmition: TransmissionType) => {
   switch (transmition) {
-    case 'Rear wheel drive':
+    case 'RWD':
       return i18n.t('advertPage:transmission.value.RWD');
-    case 'Front wheel drive':
+    case 'FWD':
       return i18n.t('advertPage:transmission.value.FWD');
-    case 'All wheel drive (AWD)':
+    case 'AWD':
       return i18n.t('advertPage:transmission.value.AWD');
   }
 };
