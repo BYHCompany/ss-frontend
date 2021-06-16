@@ -14,14 +14,16 @@ import {
 import { Trans, useTranslation } from 'react-i18next';
 
 const descriptionData = {
+  price: 230000,
   year: 2020,
   millage: 185,
-  transmissionType: 'All wheel drive (AWD)',
+  transmissionType: 'AWD',
   steeringWheel: 'Left',
   engineType: 'Electric',
   gearbox: 'Automatic',
   power: 55,
   carBody: 'sedan',
+  state: 'Used',
   tax: 350,
   vinCode: 'Полный',
   carLicensePlate: 'Полный',
@@ -42,7 +44,7 @@ export const AdvertInfo = () => {
     <div className="advert-info__container">
       <div className="advert-info__wrapper">
         <Title className="advert-info__price-title" variant="primary">
-          230 300$
+          {descriptionData.price}$
         </Title>
 
         <DescriptionList

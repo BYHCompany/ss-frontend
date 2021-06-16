@@ -9,5 +9,5 @@ export const carExample = {
   price: 230000,
   state: 'New',
   year: 2021,
-  transmissionType: 'All wheel drive (AWD)',
+  transmissionType: 'AWD',
 } as MiniCarObject;
