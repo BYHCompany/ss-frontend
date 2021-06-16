@@ -1,0 +1,27 @@
+@import '../../../../../GlobalStyles/mixins';
+
+.appearance__wrapper {
+  display: grid;
+  grid-template-columns: 47% 53%;
+}
+
+.appearance__left {
+}
+
+.appearance__right {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.appearance__themePreview {
+  width: 100%;
+  padding: 22px 36px;
+
+  @include theme-aware('background-color', 'secondary');
+}
+
+.appearance__themePreview__text {
+  font-weight: 700;
+  font-size: 24px;
+  text-align: center;
+}
