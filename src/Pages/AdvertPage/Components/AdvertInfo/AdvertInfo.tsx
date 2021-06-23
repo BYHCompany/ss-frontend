@@ -23,7 +23,7 @@ const descriptionData = {
   gearbox: 'automatic',
   power: 55,
   carBody: 'sedan',
-  state: 'Used',
+  state: 'used',
   tax: 350,
   vinCode: 'Полный',
   carLicensePlate: 'Полный',
