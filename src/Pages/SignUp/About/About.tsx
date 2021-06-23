@@ -41,7 +41,7 @@ const items = [
 ] as Tag[];
 
 export const About = () => {
-  const { control, handleSubmit } = useForm();
+  const { control } = useForm();
   const { t } = useTranslation();
 
   return (
