@@ -50,7 +50,7 @@ export const BigAdvertPreview: React.FC<BigAdvertPreviewProps> = ({ src, car }) 
         </div>
         <div className="bigAdertPreview__content__tagsAndButtons">
           <div className="bigAdertPreview__content__tags">
-            {car.engineType === 'Electric' && (
+            {car.engineType === 'electric' && (
               <Paper
                 className="bigAdertPreview__content__tagWrapper bigAdertPreview__content__boostTag"
                 width={153}

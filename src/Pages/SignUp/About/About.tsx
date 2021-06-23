@@ -9,39 +9,39 @@ import './About.scss';
 
 const items = [
   {
-    backgroundColor: '#fff',
+    bg: '#fff',
     id: 'bmw',
     name: 'BMW',
   },
   {
-    backgroundColor: '#fff',
+    bg: '#fff',
     id: 'audi',
     name: 'Audi',
   },
   {
-    backgroundColor: '#fff',
+    bg: '#fff',
     id: 'porsche',
     name: 'Porsche',
   },
   {
-    backgroundColor: '#fff',
+    bg: '#fff',
     id: 'ferrari',
     name: 'Ferrari',
   },
   {
-    backgroundColor: '#fff',
+    bg: '#fff',
     id: 'mb',
     name: 'Mercedes-Benz',
   },
   {
-    backgroundColor: 'red',
+    bg: 'red',
     id: 'tesla',
     name: 'Tesla',
   },
 ] as Tag[];
 
 export const About = () => {
-  const { control, handleSubmit } = useForm();
+  const { control } = useForm();
   const { t } = useTranslation();
 
   return (

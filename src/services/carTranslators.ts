@@ -1,24 +1,23 @@
-import { useTranslation } from 'react-i18next';
 import {
   CarBodyTypes,
   CarState,
   EngineType,
   Gearbox,
   SteeringWheelPos,
-  TransmitionType,
+  TransmissionType,
 } from '../GlobalTypes/carTypes';
 import i18n from '../i18n';
 
 //This fn translates engine type to normal users language
 export const translateEngineType = (engineType: EngineType) => {
   switch (engineType) {
-    case 'Diesel':
+    case 'diesel':
       return i18n.t('advertPage:engine.engineType.Diesel');
-    case 'Gasoline':
+    case 'gasoline':
       return i18n.t('advertPage:engine.engineType.Gasoline');
-    case 'Hybrid':
+    case 'hybrid':
       return i18n.t('advertPage:engine.engineType.Hybrid');
-    case 'Electric':
+    case 'electric':
       return i18n.t('advertPage:engine.engineType.Electric');
     case 'hydrogen':
       return i18n.t('advertPage:engine.engineType.hydrogen');
@@ -28,9 +27,9 @@ export const translateEngineType = (engineType: EngineType) => {
 //This fn translates gearbox type to normal users language
 export const translateGearboxType = (gearbox: Gearbox) => {
   switch (gearbox) {
-    case 'Automatic':
+    case 'automatic':
       return i18n.t('advertPage:gearBox.value.Automatic');
-    case 'Manual':
+    case 'manual':
       return i18n.t('advertPage:gearBox.value.Manual');
     case 'robot':
       return i18n.t('advertPage:gearBox.value.robot');
@@ -66,30 +65,30 @@ export const translateBodyType = (carBody: CarBodyTypes) => {
 //This fn translates engine type to normal users language
 export const translateStateType = (state: CarState) => {
   switch (state) {
-    case 'New':
+    case 'new':
       return 'Новый';
-    case 'Used':
+    case 'used':
       return 'Б/У';
   }
 };
 
 //This fn translates transmision type to normal users language
-export const translateTransmitionType = (transmition: TransmitionType) => {
+export const translateTransmitionType = (transmition: TransmissionType) => {
   switch (transmition) {
-    case 'Rear wheel drive':
+    case 'RWD':
       return i18n.t('advertPage:transmission.value.RWD');
-    case 'Front wheel drive':
+    case 'FWD':
       return i18n.t('advertPage:transmission.value.FWD');
-    case 'All wheel drive (AWD)':
+    case 'AWD':
       return i18n.t('advertPage:transmission.value.AWD');
   }
 };
 //This fn translates transmision type to normal users language
 export const translateSteeringWheel = (steeringWheel: SteeringWheelPos) => {
   switch (steeringWheel) {
-    case 'Left':
+    case 'left':
       return i18n.t('advertPage:steeringWheel.value.left');
-    case 'Right':
+    case 'right':
       return i18n.t('advertPage:steeringWheel.value.right');
   }
 };
