@@ -14,7 +14,7 @@ export const profileInfoData = {
       name: 'Tesla',
     },
     {
-      backgroundColor: '#E82127',
+      bg: '#E82127',
       id: 'merc',
       name: 'Mercedes-Benz',
     },

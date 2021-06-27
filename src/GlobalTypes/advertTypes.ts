@@ -8,15 +8,15 @@ export type VehiclePassport = 'original' | 'copy';
 export type Advert = {
   id: string;
   ownerId: string;
-  boosts: Boosts;
+  boosts: Boosts[];
   item: Car;
 };
 
 type Lights = 'xenon' | 'laser' | 'led';
-type Heat = 'windshield' | 'sideMirrors' | 'washerNozzles' | 'wiperZones' | 'all';
+type Heat = 'windshield' | 'sideMirrors' | 'washerNozzles' | 'wiperZones';
 export type Overview = {
   lights: Lights;
-  heat: Heat;
+  heat: Heat[];
   dayLights: boolean;
   fogLights: boolean;
   headLightsControl: boolean;
@@ -67,11 +67,11 @@ export type Interior = {
   interiorMaterial: InteriorMaterial;
   interiorColor: string;
   setsHeightRegulation: MainSeats;
-  electricSeatRegulation: AllSeats;
-  seatMemory: AllSeats;
+  electricSeatRegulation: AllSeats[];
+  seatMemory: AllSeats[];
   lumbarSupport: MainSeats;
-  seatsHeat: AllSeats;
-  seatsVent: AllSeats;
+  seatsHeat: AllSeats[];
+  seatsVent: AllSeats[];
   sportFrontSeats: boolean;
   massageSeats: boolean;
   steeringWheelHeat: boolean;
@@ -94,15 +94,17 @@ export type Interior = {
   doorSills: boolean;
 };
 
-type PowerWindows = 'all' | 'front' | 'back';
+type PowerWindows = 'front' | 'back';
 type AirConditioning = 'oneZone' | 'twoZone' | 'multiZone';
-type PowerSteering = 'active' | 'powerSteering';
-type ParkingAssistant = 'allParktronics' | 'front' | 'back';
-type Camera = '360' | 'front' | 'back';
+type PowerSteering = 'active' | 'default';
+type CruiseControl = 'active' | 'default' | 'null';
+type ParkingAssistant = 'allParktronics' | 'front' | 'back' | 'null';
+type Camera = '360' | 'front' | 'back' | 'null';
 export type Comfort = {
-  powerWindows: PowerWindows;
+  powerWindows: PowerWindows[];
   airConditioning: AirConditioning;
   powerSteering: PowerSteering;
+  cruiseControl: CruiseControl;
   parkingAssistant: ParkingAssistant;
   camera: Camera;
   headUpDisplay: boolean;
@@ -124,10 +126,9 @@ export type Comfort = {
   trunkWithoutHands: boolean;
 };
 
-type Airbags = 'all' | 'driver' | 'passenger' | 'frontSideBags' | 'backSideBags' | 'windowBags';
-type Isofix = 'front' | 'back' | 'all';
+type Airbags = 'driver' | 'passenger' | 'frontSideBags' | 'backSideBags' | 'windowBags';
+type Isofix = 'front' | 'back';
 type SupportSystems =
-  | 'all'
   | 'antiСollision'
   | 'laneControl'
   | 'driverFatigueSensor'
@@ -139,9 +140,9 @@ type SupportSystems =
   | 'blindSpotControl'
   | 'nightVision';
 export type Safety = {
-  airbags: Airbags;
-  isofix: Isofix;
-  supportSystems: SupportSystems;
+  airbags: Airbags[];
+  isofix: Isofix[];
+  supportSystems: SupportSystems[];
   abs: boolean;
   esp: boolean;
   peassureSensor: boolean;
@@ -149,7 +150,7 @@ export type Safety = {
   armoredBody: boolean;
 };
 
-type SpareWheel = 'donutWheel' | 'miniSpare';
+type SpareWheel = 'donutWheel' | 'miniSpare' | 'repairKit';
 type Suspention = 'pneumatic' | 'spring';
 export type Other = {
   suspention: Suspention;
