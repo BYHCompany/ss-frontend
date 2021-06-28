@@ -21,13 +21,14 @@ export type CarBodyTypes =
   | 'convertible'
   | 'suv'
   | 'minivan'
-  | 'pickup';
+  | 'pickup'
+  | 'compact';
 
-export type EngineType = 'Gasoline' | 'Diesel' | 'Electric' | 'hydrogen' | 'Hybrid';
-export type CarState = 'Used' | 'New';
+export type EngineType = 'gasoline' | 'diesel' | 'electric' | 'hydrogen' | 'hybrid';
+export type CarState = 'used' | 'new';
 export type TransmissionType = 'RWD' | 'AWD' | 'FWD';
-export type Gearbox = 'Automatic' | 'Manual' | 'variable' | 'robot';
-export type SteeringWheelPos = 'Left' | 'Right';
+export type Gearbox = 'automatic' | 'manual' | 'variable' | 'robot';
+export type SteeringWheelPos = 'left' | 'right';
 
 export type AdvertInfoProps = {
   price: number;
@@ -65,7 +66,7 @@ export type Car = {
   gen: string;
   modification: string;
   year: number;
-  millage: string;
+  millage: number;
   transmission: TransmissionType;
   steeringWheel: SteeringWheelPos;
   engineType: EngineType;
