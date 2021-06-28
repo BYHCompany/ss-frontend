@@ -20,7 +20,7 @@
     "@types/redux-saga": "^0.10.5",
     "@types/sass-loader": "^8.0.1",
     "axios": "^0.21.1",
-    "byh-components": "^1.0.30",
+    "byh-components": "^1.0.33",
     "i18next": "^20.3.1",
     "node-sass": "^6.0.0",
     "react": "^17.0.2",
