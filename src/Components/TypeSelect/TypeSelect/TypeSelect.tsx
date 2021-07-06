@@ -36,10 +36,10 @@ export const TypeSelect = () => {
           key={button.id}
           paddingHorizontal={5}
           accurateValues
-          width={225}
-          height={40}
+          width={200}
+          height={35}
           shadow
-          fontSize={24}
+          fontSize={22}
           variant={button.id === clicked ? 'primary' : 'default'}>
           {button.label}
         </Button>

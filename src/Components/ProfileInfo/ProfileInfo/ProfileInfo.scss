@@ -13,8 +13,11 @@
 }
 .fullName {
   margin-bottom: 25px;
+}
 
-
+.setting-button {
+  text-decoration: none;
+  @include theme-aware('color', 'primary');
 }
 
 .fullName-info {

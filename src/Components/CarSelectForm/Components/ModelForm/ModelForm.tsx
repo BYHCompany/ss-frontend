@@ -29,7 +29,7 @@ export const ModelForm = () => {
         height={50}
         variant="default"
         label={t('mainPage:carSelectForm.dropDowns.model')}
-        labelFontSize={24}
+        labelFontSize={22}
         items={dropdownData}
         className="model-form__padding"
       />
@@ -39,7 +39,7 @@ export const ModelForm = () => {
           label={t('mainPage:carSelectForm.dropDowns.year.yearFrom')}
           width={150}
           height={50}
-          labelFontSize={24}
+          labelFontSize={22}
           items={dropdownData}
         />
         <span className="short-input__divider">-</span>
@@ -48,7 +48,7 @@ export const ModelForm = () => {
           label={t('mainPage:carSelectForm.dropDowns.year.yearTo')}
           width={150}
           height={50}
-          labelFontSize={24}
+          labelFontSize={22}
           items={dropdownData}
         />
       </div>
@@ -58,7 +58,7 @@ export const ModelForm = () => {
           label={t('mainPage:carSelectForm.dropDowns.engineVolume.volumeFrom')}
           width={150}
           height={50}
-          labelFontSize={24}
+          labelFontSize={22}
           items={dropdownData}
         />
         <Dropdown
@@ -66,7 +66,7 @@ export const ModelForm = () => {
           label={t('mainPage:carSelectForm.dropDowns.engineVolume.volumeTo')}
           width={150}
           height={50}
-          labelFontSize={24}
+          labelFontSize={22}
           items={dropdownData}
         />
       </div>
@@ -74,7 +74,7 @@ export const ModelForm = () => {
         className="model-form__padding"
         callback={mockFunc}
         label={t('mainPage:carSelectForm.dropDowns.engineType')}
-        labelFontSize={24}
+        labelFontSize={22}
         width={322}
         height={50}
         variant="default"

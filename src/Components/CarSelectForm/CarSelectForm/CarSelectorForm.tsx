@@ -25,7 +25,7 @@ export const CarSelectorForm = () => {
           <div>
             <RangeSlider min={0} max={100} width={322} callback={mockFunc} />
           </div>
-          <Button width={322} height={50} variant="primary" fontSize={24}>
+          <Button width={300} height={45} variant="primary" fontSize={22}>
             {t('mainPage:buttons.find')}
           </Button>
         </div>
