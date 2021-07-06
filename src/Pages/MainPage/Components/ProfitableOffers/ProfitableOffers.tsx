@@ -9,7 +9,7 @@ export const ProfitableOffers = () => {
   const { t } = useTranslation();
   return (
     <div data-testId="profitableOffers-wrapper">
-      <Title style={{ marginBottom: 20 }} type="large" variant="primary">
+      <Title style={{ marginBottom: 20 }} type="medium" variant="primary">
         {t('mainPage:profitableOffers')}
       </Title>
       <div className="profitable-offers__advert-preview__wrapper">
@@ -28,7 +28,7 @@ export const ProfitableOffers = () => {
         ))}
       </div>
       <div className="profitable-offers__button">
-        <Button height={60} width={570} fontSize={40} variant="primary">
+        <Button height={45} width={370} fontSize={26} variant="primary">
           {t('mainPage:buttons.showMore')}
         </Button>
       </div>
