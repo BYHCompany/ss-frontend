@@ -3,7 +3,7 @@ import { AdvertPage } from './Pages/AdvertPage';
 import { MainPage } from './Pages/MainPage';
 import { About, Email, SignUp } from './Pages/SignUp';
 import { SignIn } from './Pages/SignIn';
-import { SuccessPage } from './Pages/AddAdvert/SuccessPage';
+import { AddAdvert, SuccessPage } from './Pages/AddAdvert';
 export interface Route {
   path: string;
   Component: any;
@@ -32,6 +32,12 @@ export const routes = [
     path: '/addAdvert/success',
     Component: SuccessPage,
     name: 'SuccessPage',
+  } as Route,
+
+  {
+    path: '/addAdvert',
+    Component: AddAdvert,
+    name: 'AddAdvert',
   } as Route,
 
   {

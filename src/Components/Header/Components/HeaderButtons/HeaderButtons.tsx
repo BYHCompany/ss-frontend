@@ -19,7 +19,9 @@ export const HeaderButtons = () => {
         paddingHorizontal={10}
         variant="secondary"
         fontSize={18}>
-        {t('header:ad')}
+        <NavLink className="header-button__link" to="/addAdvert">
+          {t('header:ad')}
+        </NavLink>
       </Button>
       <Button
         startIcon={<RiAccountBoxLine />}
