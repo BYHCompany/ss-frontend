@@ -15,3 +15,8 @@
   display: flex;
   justify-content: space-between;
 }
+
+.header__title {
+  text-decoration: none;
+  @include theme-aware('color', 'secondary');
+}
