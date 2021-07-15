@@ -14,19 +14,22 @@ export const CarSelectorForm = () => {
     // setMaxValue(maxVal);
   };
   return (
-    <Paper display={'flex'} style={{ padding: 15 }} height={397}>
+    <Paper display={"flex"} style={{ padding: 15 }} height={397}>
       <MakePicker />
-      <div className="car-selector-from__wrapper" data-testid="car-selector-from__wrapper">
-        <div style={{ display: 'flex' }}>
+      <div
+        className="car-selector-from__wrapper"
+        data-testid="car-selector-from__wrapper"
+      >
+        <div style={{ display: "flex" }}>
           <ModelForm />
           <MillageForm />
         </div>
         <div className="range-button__wrapper">
           <div>
-            <RangeSlider min={0} max={100} width={322} callback={mockFunc} />
+            {/* <RangeSlider min={0} max={100} width={322} callback={mockFunc} /> */}
           </div>
           <Button width={322} height={50} variant="primary" fontSize={24}>
-            {t('mainPage:buttons.find')}
+            {t("mainPage:buttons.find")}
           </Button>
         </div>
       </div>
