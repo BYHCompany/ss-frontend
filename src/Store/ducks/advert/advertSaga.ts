@@ -1,7 +1,7 @@
 import { call, put, takeEvery } from 'redux-saga/effects';
 import { Advert } from '../../../GlobalTypes/advertTypes';
 import { CustomResponseType } from '../../../GlobalTypes/responseType';
-import { getAdvert, setAdvert, setLoadingState } from './advertReducer';
+import { fetchAdvert, setAdvert, setLoadingState } from './advertReducer';
 import { AdvertApi } from '../../../api/AdvertApi';
 import { PayloadAction } from '@reduxjs/toolkit';
 import { LoadingState } from '../../commonType';
@@ -18,5 +18,5 @@ function* AdvertWorker(action: PayloadAction<string>) {
 }
 
 export function* AdvertSagaWatcher() {
-  yield takeEvery(getAdvert.type, AdvertWorker);
+  yield takeEvery(fetchAdvert.type, AdvertWorker);
 }

@@ -4,7 +4,7 @@ import { LoadingState } from '../../commonType';
 
 type AdvertInitialStateType = {
   status: LoadingState;
-  advert: Advert;
+  advert: Advert | null;
 };
 
 const advertInitialState = {
@@ -20,15 +20,15 @@ const advertInitialState = {
 } as AdvertInitialStateType;
 
 const advertSlice = createSlice({
-  name: 'advert',
+  name: 'advertSlice',
   initialState: advertInitialState,
   reducers: {
     //action for fetch advertData
-    getAdvert(state, action: PayloadAction<string>) {
+    fetchAdvert(state, action: PayloadAction<string>) {
       state.status = LoadingState.LOADING;
     },
-    //action for setting advertData to initialState
-    setAdvert(state, action: PayloadAction<Advert>) {
+    //action for setting advertData to State
+    setAdvert(state, action: PayloadAction<Advert | null>) {
       const advertData = action.payload;
       state.status = LoadingState.SUCCESS;
       state.advert = advertData;
@@ -39,6 +39,6 @@ const advertSlice = createSlice({
   },
 });
 
-export const { getAdvert, setAdvert, setLoadingState } = advertSlice.actions;
+export const { fetchAdvert, setAdvert, setLoadingState } = advertSlice.actions;
 
 export default advertSlice.reducer;
