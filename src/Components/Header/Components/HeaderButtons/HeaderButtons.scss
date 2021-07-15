@@ -1,6 +1,13 @@
+@import '../../../../GlobalStyles/mixins';
+
 .header-buttons {
   display: flex;
   align-items: center;
   width: 100%;
   justify-content: flex-end;
+}
+
+.header-button__link {
+  text-decoration: none;
+  @include theme-aware('color', 'primary');
 }

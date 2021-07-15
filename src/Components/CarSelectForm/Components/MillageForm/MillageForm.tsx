@@ -17,7 +17,7 @@ export const MillageForm = () => {
         <Dropdown
           width={238}
           height={50}
-          labelFontSize={24}
+          labelFontSize={22}
           label={t('mainPage:carSelectForm.dropDowns.millage.millageFrom')}
           items={dropdownData}
           callback={mockFunc}
@@ -27,14 +27,14 @@ export const MillageForm = () => {
           width={238}
           height={50}
           label={t('mainPage:carSelectForm.dropDowns.millage.millageTo')}
-          labelFontSize={24}
+          labelFontSize={22}
           items={dropdownData}
           callback={mockFunc}
         />
       </div>
       <div className="model-form__dropdown model-form__padding">
         <Dropdown
-          labelFontSize={24}
+          labelFontSize={22}
           width={238}
           height={50}
           label={t('mainPage:carSelectForm.dropDowns.carBody')}
@@ -43,7 +43,7 @@ export const MillageForm = () => {
         />
         <Dropdown
           width={238}
-          labelFontSize={24}
+          labelFontSize={22}
           height={50}
           label={t('mainPage:carSelectForm.dropDowns.gearBox')}
           items={dropdownData}
@@ -54,7 +54,7 @@ export const MillageForm = () => {
         <Dropdown
           width={377}
           height={50}
-          labelFontSize={24}
+          labelFontSize={22}
           label={t('mainPage:carSelectForm.dropDowns.transmission')}
           items={dropdownData}
           callback={mockFunc}

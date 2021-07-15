@@ -26,10 +26,10 @@ export const CarSelectorForm = () => {
         </div>
         <div className="range-button__wrapper">
           <div>
-            {/* <RangeSlider min={0} max={100} width={322} callback={mockFunc} /> */}
+            <RangeSlider min={0} max={100} width={322} callback={mockFunc} /> –
           </div>
-          <Button width={322} height={50} variant="primary" fontSize={24}>
-            {t("mainPage:buttons.find")}
+          <Button width={300} height={45} variant="primary" fontSize={22}>
+            {t('mainPage:buttons.find')}
           </Button>
         </div>
       </div>

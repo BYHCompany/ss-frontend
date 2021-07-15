@@ -3,6 +3,7 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { CgFileDocument } from 'react-icons/cg';
 import { RiAccountBoxLine } from 'react-icons/ri';
+import { NavLink } from 'react-router-dom';
 import './HeaderButtons.scss';
 export const HeaderButtons = () => {
   const { t } = useTranslation();
@@ -18,7 +19,9 @@ export const HeaderButtons = () => {
         paddingHorizontal={10}
         variant="secondary"
         fontSize={18}>
-        {t('header:ad')}
+        <NavLink className="header-button__link" to="/addAdvert">
+          {t('header:ad')}
+        </NavLink>
       </Button>
       <Button
         startIcon={<RiAccountBoxLine />}
@@ -27,7 +30,9 @@ export const HeaderButtons = () => {
         paddingVertical={5}
         variant="secondary"
         fontSize={18}>
-        {t('header:account')}
+        <NavLink className="header-button__link" to="/profile">
+          {t('header:account')}
+        </NavLink>
       </Button>
     </div>
   );

@@ -6,10 +6,10 @@ export type State = 'new' | 'used';
 export type VehiclePassport = 'original' | 'copy';
 
 export type Advert = {
-  id: string;
-  ownerId: string;
-  boosts: Boosts[];
-  item: Car;
+  id: string | null;
+  ownerId: string | null;
+  boosts: Boosts[] | null;
+  item: Car | null;
 };
 
 type Lights = 'xenon' | 'laser' | 'led';

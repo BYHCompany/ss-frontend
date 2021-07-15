@@ -8,7 +8,7 @@ export const SpecialOffers = () => {
   const { t } = useTranslation();
   return (
     <div data-testid="SpecialOffers-wrapper">
-      <Title style={{ marginBottom: 20 }} type="large" variant="primary">
+      <Title style={{ marginBottom: 20 }} type="medium" variant="primary">
         {t('mainPage:specialOffersLabel')}
       </Title>
       <div className="special-offers__advert-preview__wrapper">
@@ -27,7 +27,7 @@ export const SpecialOffers = () => {
         ))}
       </div>
       <div className="special-offers__button">
-        <Button height={60} width={570} fontSize={40} variant="primary">
+        <Button height={45} width={370} fontSize={26} variant="primary">
           {t('mainPage:buttons.showMore')}
         </Button>
       </div>

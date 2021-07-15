@@ -42,7 +42,7 @@ export const TopicsSlider = () => {
 
   return (
     <div data-testid="TopicsSlider-wrapper">
-      <Title style={{ marginBottom: 20 }} variant="primary" type="large">
+      <Title style={{ marginBottom: 20 }} variant="primary" type="medium">
         {t('mainPage:news')}
       </Title>
       <div>
