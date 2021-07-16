@@ -71,5 +71,20 @@
     "tax": "Tax",
     "value": "{{tax}} €"
   },
-  "carLicensePlate": "Car License Plate"
+  "carLicensePlate": "Car License Plate",
+  "options": {
+    "overview": {
+      "lights": {
+        "laser": "Laser",
+        "xenon": "Xenon",
+        "led": "LED"
+      },
+      "heats": {
+        "windshield": "Wind Shield",
+        "sideMirrors": "Side Mirrors",
+        "washerNozzles": "Washer Nozzles",
+        "wiperZones": "Wiper Zones"
+      }
+    }
+  }
 }

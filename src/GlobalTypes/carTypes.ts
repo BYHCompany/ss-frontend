@@ -89,16 +89,16 @@ export type Car = {
   TI: string;
   photo: string[];
   video: string;
-  options: {
-    overview: Overview;
-    exterior: Exterior;
-    antiTheftProtection: AntiTheftProtection;
-    entertainmentSystem: EntertainmentSystem;
-    interior: Interior;
-    comfort: Comfort;
-    safety: Safety;
-    other: Other;
-  };
+
+  overview: Overview;
+  exterior: Exterior;
+  antiTheftProtection: AntiTheftProtection;
+  entertainmentSystem: EntertainmentSystem;
+  interior: Interior;
+  comfort: Comfort;
+  safety: Safety;
+  other: Other;
+
   publishInfo: {
     city: string;
     phone: string;

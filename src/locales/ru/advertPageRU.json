@@ -68,5 +68,29 @@
     "tax": "Налоги",
     "value": "{{tax}} €"
   },
-  "carLicensePlate": "Гос.номер авто"
+  "carLicensePlate": "Гос.номер авто",
+  "options": {
+    "overview": {
+      "lights": {
+        "laser": "Лазер",
+        "xenon": "Ксенон",
+        "led": "LED"
+      },
+      "heats": {
+        "windshield": "Лобового стекла ",
+        "sideMirrors": "Боковых зеркал",
+        "washerNozzles": "Фарсунок стеклоомыватилей",
+        "wiperZones": "Зоны стеклоочистителей"
+      },
+      "dayLights": "Дневные ходовые огни",
+      "fogLights": "Противотуманные фары",
+      "headLightsControl": "Управление фарами ",
+      "headlightWasher": "Омыватель фар",
+      "adaptiveLights": "Адаптивные фары",
+      "rainControl": "Датчик Дождя",
+      "lightSensor": "Световой датчик",
+      "autoBeam": "Автоматический дальний свет"
+    },
+    "interior": {}
+  }
 }

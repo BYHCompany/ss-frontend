@@ -1,24 +1,22 @@
 import { Paper, Title } from 'byh-components';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import { useSelector } from 'react-redux';
+import { getAdvertComment } from '../../../../Store/ducks/advert/advertSelector';
 import './Comment.scss';
 export const Comment = () => {
+  const commentContent = useSelector(getAdvertComment);
   const { t } = useTranslation();
+  if (!commentContent) {
+    return null;
+  }
+
   return (
     <Paper className="comment__wrapper" width={770} style={{ marginBottom: 40 }}>
       <Title className="comment__title" variant="primary">
         {t('advertPage:comment')}
       </Title>
-      <p style={{ lineHeight: '30px', fontSize: 20 }}>
-        Авто в идеальном состоянии, абсолютно весь в родном окрасе! Никаких дтп и прочих
-        неприятностей! Полностью обслужен 500км назад. Панормная крыша, музыка ХарманКардон,
-        доводчики дверей,проекция, ассисенты движения и много другого Авто в идеальном состоянии,
-        абсолютно весь в родном окрасе! Никаких дтп и прочих неприятностей! Полностью обслужен 500км
-        назад. Панормная крыша, музыка ХарманКардон, доводчики дверей,проекция, ассисенты движения и
-        много другого Авто в идеальном состоянии, абсолютно весь в родном окрасе! Никаких дтп и
-        прочих неприятностей! Полностью обслужен 500км назад. Панормная крыша, музыка ХарманКардон,
-        доводчики дверей,проекция, ассисенты движения и много другого
-      </p>
+      <p style={{ lineHeight: '30px', fontSize: 20 }}>{commentContent}</p>
     </Paper>
   );
 };
