@@ -10,30 +10,25 @@ import {
   State,
   VehiclePassport,
   VehicleType,
-} from "./advertTypes";
+} from './advertTypes';
 
 export type CarBodyTypes =
-  | "sedan"
-  | "coupe"
-  | "sportCar"
-  | "wagon"
-  | "hatchback"
-  | "convertible"
-  | "suv"
-  | "minivan"
-  | "pickup"
-  | "compact";
+  | 'sedan'
+  | 'coupe'
+  | 'sportCar'
+  | 'wagon'
+  | 'hatchback'
+  | 'convertible'
+  | 'suv'
+  | 'minivan'
+  | 'pickup'
+  | 'compact';
 
-export type EngineType =
-  | "gasoline"
-  | "diesel"
-  | "electric"
-  | "hydrogen"
-  | "hybrid";
-export type CarState = "used" | "new";
-export type TransmissionType = "RWD" | "AWD" | "FWD";
-export type Gearbox = "automatic" | "manual" | "variable" | "robot";
-export type SteeringWheelPos = "left" | "right";
+export type EngineType = 'gasoline' | 'diesel' | 'electric' | 'hydrogen' | 'hybrid';
+export type CarState = 'used' | 'new';
+export type TransmissionType = 'RWD' | 'AWD' | 'FWD';
+export type Gearbox = 'automatic' | 'manual' | 'variable' | 'robot';
+export type SteeringWheelPos = 'left' | 'right';
 
 export type AdvertInfoProps = {
   price: number;
@@ -94,7 +89,6 @@ export type Car = {
   TI: string;
   photo: string[];
   video: string;
-
   overview: Overview;
   exterior: Exterior;
   antiTheftProtection: AntiTheftProtection;

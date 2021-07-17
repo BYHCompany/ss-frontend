@@ -1,4 +1,10 @@
-import { Heat, InteriorMaterial, Lights } from '../GlobalTypes/advertTypes';
+import {
+  AllSeats,
+  Heat,
+  InteriorColor,
+  InteriorMaterial,
+  Lights,
+} from '../GlobalTypes/advertTypes';
 import {
   CarBodyTypes,
   CarState,
@@ -108,39 +114,69 @@ export const translateHeats = (heats: Heat[]) => {
   const resArr = [];
   for (let i = 0; i < heats.length; i++) {
     switch (heats[i]) {
-      case "windshield":
-        resArr.push(i18n.t("advertPage:options.overview.heats.windshield"));
+      case 'windshield':
+        resArr.push(i18n.t('advertPage:options.overview.heats.windshield'));
         break;
-      case "washerNozzles":
-        resArr.push(i18n.t("advertPage:options.overview.heats.washerNozzles"));
+      case 'washerNozzles':
+        resArr.push(i18n.t('advertPage:options.overview.heats.washerNozzles'));
         break;
-      case "wiperZones":
-        resArr.push(i18n.t("advertPage:options.overview.heats.wiperZones"));
+      case 'wiperZones':
+        resArr.push(i18n.t('advertPage:options.overview.heats.wiperZones'));
         break;
-      case "sideMirrors":
-        resArr.push(i18n.t("advertPage:options.overview.heats.sideMirrors"));
+      case 'sideMirrors':
+        resArr.push(i18n.t('advertPage:options.overview.heats.sideMirrors'));
         break;
     }
   }
   return resArr;
 };
 
-export const translateInteriorMaterial = (
-  interiorMaterial: InteriorMaterial
-) => {
+export const translateInteriorMaterial = (interiorMaterial: InteriorMaterial) => {
   switch (interiorMaterial) {
-    case "alcantara":
-      return i18n.t("advertPage:options.interior.interiorMaterial.alcantara");
-    case "cloth":
-      return i18n.t("advertPage:options.interior.interiorMaterial.cloth");
-    case "leather":
-      return i18n.t("advertPage:options.interior.interiorMaterial.leather");
-    case "syntheticCloth":
-      return i18n.t(
-        "advertPage:options.interior.interiorMaterial.syntheticCloth"
-      );
-    case "velours":
-      return i18n.t("advertPage:options.interior.interiorMaterial.velours");
+    case 'alcantara':
+      return i18n.t('advertPage:options.interior.interiorMaterial.alcantara');
+    case 'cloth':
+      return i18n.t('advertPage:options.interior.interiorMaterial.cloth');
+    case 'leather':
+      return i18n.t('advertPage:options.interior.interiorMaterial.leather');
+    case 'syntheticCloth':
+      return i18n.t('advertPage:options.interior.interiorMaterial.syntheticCloth');
+    case 'velours':
+      return i18n.t('advertPage:options.interior.interiorMaterial.velours');
   }
 };
-
+export const translateSeats = (seats: AllSeats) => {
+  switch (seats) {
+    case 'back':
+      return i18n.t('advertPage:options.interior.backSeats');
+    case 'driver':
+      return i18n.t('advertPage:options.interior.driverSeat');
+    case 'front':
+      return i18n.t('advertPage:options.interior.frontSeats');
+  }
+};
+export const translateArrayOfSeats = (seats: AllSeats[]) => {
+  const arr = [];
+  for (let i = 0; i < seats.length; i++) {
+    switch (seats[i]) {
+      case 'back':
+        arr.push(i18n.t('advertPage:options.interior.backSeats'));
+        continue;
+      case 'driver':
+        arr.push(i18n.t('advertPage:options.interior.driverSeat'));
+        continue;
+      case 'front':
+        arr.push(i18n.t('advertPage:options.interior.frontSeats'));
+        break;
+    }
+  }
+  return arr;
+};
+export const translateInteriorColor = (seats: InteriorColor) => {
+  switch (seats) {
+    case 'dark':
+      return i18n.t('advertPage:options.interior.interiorColor.dark');
+    case 'light':
+      return i18n.t('advertPage:options.interior.interiorColor.light');
+  }
+};

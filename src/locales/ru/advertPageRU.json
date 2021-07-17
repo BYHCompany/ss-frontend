@@ -108,7 +108,7 @@
         "cloth": "Ткань",
         "syntheticCloth": "Синтетическая Ткань"
       },
-      "interiorColor": "Цвет Интерьера",
+      "interiorColor": { "label": "Цвет интерьера", "light": "Светлый", "dark": "Темный" },
       "setsHeightRegulation": "Регулировки высота сидений",
       "electricSeatRegulation": "Электрическая регулировка сидений",
       "seatMemory": "Сидение с памятью",

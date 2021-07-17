@@ -1,10 +1,10 @@
-import { Accordion, Title } from 'byh-components';
+import { Title } from 'byh-components';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { getAllCarOptions } from '../../../../Store/ducks/advert/advertSelector';
-import { booleanCarOptions, translateLights } from '../../../../services/carTranslators';
-import OverviewOptions from "./Overview";
+import { OverviewOptions } from './Overview';
+import { InteriorOptions } from './Interior';
 
 export const CarEquipment = () => {
   const { t } = useTranslation();
@@ -17,9 +17,10 @@ export const CarEquipment = () => {
   return (
     <div>
       <Title variant="primary" type="small" style={{ marginBottom: 10 }}>
-        {t("advertPage:carEquipment")}
+        {t('advertPage:carEquipment')}
       </Title>
       <OverviewOptions />
+      <InteriorOptions />
     </div>
   );
 };

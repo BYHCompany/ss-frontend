@@ -1,8 +1,12 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
+import { Redirect, useParams } from 'react-router-dom';
 import { fetchAdvert, setAdvert } from '../../../Store/ducks/advert/advertReducer';
-import { getAdvert, getIsAdvertLoading } from '../../../Store/ducks/advert/advertSelector';
+import {
+  getAdvert,
+  getIsAdvertError,
+  getIsAdvertLoading,
+} from '../../../Store/ducks/advert/advertSelector';
 import { AdvertInfo } from '../Components/AdvertInfo/AdvertInfo';
 import { AdvertSlider } from '../Components/AdvertSlider/AdvertSlider';
 import { AdvertTitle } from '../Components/AdvertTitle/AdvertTitle';
@@ -13,6 +17,7 @@ export const AdvertPage = () => {
   const dispatch = useDispatch();
   const advert = useSelector(getAdvert);
   const isLoading = useSelector(getIsAdvertLoading);
+  const isError = useSelector(getIsAdvertError);
   const params: { id: string } = useParams();
   const id = params.id;
   React.useEffect(() => {
@@ -23,10 +28,9 @@ export const AdvertPage = () => {
     };
   }, [dispatch, id]);
 
-  if (!advert) {
-    return null;
+  if (isError) {
+    return <Redirect to="/" />;
   }
-
   if (isLoading) {
     return (
       <div>

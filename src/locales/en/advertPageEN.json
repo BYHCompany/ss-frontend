@@ -74,7 +74,7 @@
   "carLicensePlate": "Car License Plate",
   "options": {
     "overview": {
-      "value": "Overview",
+      "label": "Overview",
       "lights": {
         "laser": "Laser",
         "xenon": "Xenon",
@@ -102,6 +102,7 @@
       "driverSeat": "Driver's Seat",
       "frontSeats": "Front Seats",
       "backSeats": "Back Seats",
+      "seatCount": "Number of seats",
 
       "interiorMaterial": {
         "label": "Interior Material",
@@ -111,7 +112,7 @@
         "cloth": "The Cloth",
         "syntheticCloth": "Synthetic Fabric"
       },
-      "interiorColor": "Interior Color",
+      "interiorColor": { "label": "Interior Color", "light": "Light", "dark": "Dark" },
       "setsHeightRegulation": "Seat height adjustment",
       "electricSeatRegulation": "Electric seat adjustment",
       "seatMemory": "Seat with memory",
@@ -286,4 +287,3 @@
     }
   }
 }
-

@@ -60,12 +60,13 @@ export type EntertainmentSystem = {
 };
 
 export type InteriorMaterial = 'leather' | 'velours' | 'alcantara' | 'cloth' | 'syntheticCloth';
-export type AllSeats = 'driverSeat' | 'frontSeats' | 'backSeats';
-export type MainSeats = 'driverSeat' | 'frontSeats';
+export type AllSeats = 'driver' | 'front' | 'back';
+export type MainSeats = 'driver' | 'front';
+export type InteriorColor = 'light' | 'dark';
 export type Interior = {
   seatCount: number;
   interiorMaterial: InteriorMaterial;
-  interiorColor: string;
+  interiorColor: InteriorColor;
   setsHeightRegulation: MainSeats;
   electricSeatRegulation: AllSeats[];
   seatMemory: AllSeats[];
