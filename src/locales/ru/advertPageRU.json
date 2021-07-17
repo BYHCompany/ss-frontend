@@ -108,7 +108,7 @@
         "syntheticCloth": "Синтетическая Ткань"
       },
       "interiorColor": "Цвет Интерьера",
-      "setsHeightRegulation": "Высота регулировки сидений",
+      "setsHeightRegulation": "Регулировки высота сидений",
       "electricSeatRegulation": "Электрическая регулировка сидений",
       "seatMemory": "Сидение с памятью",
       "lumbarSupport": "Поясничная поддержка",
@@ -132,7 +132,7 @@
       "rearSunBlinds": "Задние солнцезащитные шторы ",
       "ambientLight": "Окружающий свет",
       "decorativePedals": "Накладки на педали ",
-      "dorrSills": "Дверные пороги "
+      "doorSills": "Дверные пороги "
     },
 
     "comfort": {
@@ -271,7 +271,14 @@
       "suspention": {
         "pneumatic": "Пневматическая подвеска",
         "spring": "Пружинная подвеска"
-      }
+      },
+      "spareWheel": {
+        "donutWheel": "Аварийное колесо (докатка)",
+        "miniSpare": "Запаска (полноценное пятое колесо)",
+        "repairKit": "Ремкомплект для колеса"
+      },
+      "towbar": "Фаркоп",
+      "crankcaseProtection": "Защита картера"
     }
   }
 }
