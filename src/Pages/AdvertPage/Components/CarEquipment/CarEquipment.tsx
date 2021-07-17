@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { getAllCarOptions } from '../../../../Store/ducks/advert/advertSelector';
 import { booleanCarOptions, translateLights } from '../../../../services/carTranslators';
+import OverviewOptions from "./Overview";
 
 export const CarEquipment = () => {
   const { t } = useTranslation();
@@ -16,11 +17,9 @@ export const CarEquipment = () => {
   return (
     <div>
       <Title variant="primary" type="small" style={{ marginBottom: 10 }}>
-        {t('advertPage:carEquipment')}
+        {t("advertPage:carEquipment")}
       </Title>
-      <Accordion width={770} title={t('advertPage:options.overview.label')}>
-        <ul></ul>
-      </Accordion>
+      <OverviewOptions />
     </div>
   );
 };

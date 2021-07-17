@@ -98,6 +98,7 @@
       "driverSeat": "Сидение Водителя",
       "frontSeats": "Передние Сидения",
       "backSeats": "Задние Сидения",
+      "seatCount": "Количество мест",
 
       "interiorMaterial": {
         "label": "Материал интерьера",

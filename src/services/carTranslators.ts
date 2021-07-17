@@ -108,37 +108,39 @@ export const translateHeats = (heats: Heat[]) => {
   const resArr = [];
   for (let i = 0; i < heats.length; i++) {
     switch (heats[i]) {
-      case 'windshield':
-        resArr.push(i18n.t('advertPage:options.overview.heats.windshield'));
+      case "windshield":
+        resArr.push(i18n.t("advertPage:options.overview.heats.windshield"));
         break;
-      case 'washerNozzles':
-        resArr.push(i18n.t('advertPage:options.overview.heats.washerNozzles'));
+      case "washerNozzles":
+        resArr.push(i18n.t("advertPage:options.overview.heats.washerNozzles"));
         break;
-      case 'wiperZones':
-        resArr.push(i18n.t('advertPage:options.overview.heats.wiperZones'));
+      case "wiperZones":
+        resArr.push(i18n.t("advertPage:options.overview.heats.wiperZones"));
         break;
-      case 'sideMirrors':
-        resArr.push(i18n.t('advertPage:options.overview.heats.sideMirrors'));
+      case "sideMirrors":
+        resArr.push(i18n.t("advertPage:options.overview.heats.sideMirrors"));
         break;
     }
   }
+  return resArr;
 };
 
-export const translateInteriorMaterial = (interiorMaterial: InteriorMaterial) => {
+export const translateInteriorMaterial = (
+  interiorMaterial: InteriorMaterial
+) => {
   switch (interiorMaterial) {
-    case 'alcantara':
-      return i18n.t('advertPage:options.overview.lights.laser');
-    case 'cloth':
-      return i18n.t('advertPage:options.overview.lights.xenon');
-    case 'leather':
-      return i18n.t('advertPage:options.overview.lights.led');
-    case 'syntheticCloth':
-      return i18n.t('advertPage:options.overview.lights.led');
-    case 'velours':
-      return i18n.t('advertPage:options.overview.lights.led');
+    case "alcantara":
+      return i18n.t("advertPage:options.interior.interiorMaterial.alcantara");
+    case "cloth":
+      return i18n.t("advertPage:options.interior.interiorMaterial.cloth");
+    case "leather":
+      return i18n.t("advertPage:options.interior.interiorMaterial.leather");
+    case "syntheticCloth":
+      return i18n.t(
+        "advertPage:options.interior.interiorMaterial.syntheticCloth"
+      );
+    case "velours":
+      return i18n.t("advertPage:options.interior.interiorMaterial.velours");
   }
 };
 
-export const booleanCarOptions = (isValue: boolean, translation: string) => {
-  if (isValue) return translation;
-};

@@ -1,7 +1,8 @@
-import { createDraftSafeSelector } from '@reduxjs/toolkit';
-import { AdvertInfoProps } from '../../../GlobalTypes/carTypes';
-import { LoadingState } from '../../commonType';
-import { AppStateType } from '../../store';
+import { createDraftSafeSelector, OutputSelector } from "@reduxjs/toolkit";
+import { Overview } from "../../../GlobalTypes/advertTypes";
+import { AdvertInfoProps } from "../../../GlobalTypes/carTypes";
+import { LoadingState } from "../../commonType";
+import { AppStateType } from "../../store";
 
 export const getAdvert = (state: AppStateType) => state.advert.advert;
 export const getAdvertCar = (state: AppStateType) => state.advert.advert?.item;
@@ -26,39 +27,77 @@ export const getCarMainInfo = createDraftSafeSelector(getAdvertCar, (state) => {
   }
 });
 
-export const getAdvertImages = createDraftSafeSelector(getAdvertCar, (state) => {
-  const newPhoto = state?.photo.map((photo) => {
-    return { photo };
-  });
+export const getAdvertImages = createDraftSafeSelector(
+  getAdvertCar,
+  (state) => {
+    const newPhoto = state?.photo.map((photo) => {
+      return { photo };
+    });
 
-  return newPhoto;
-});
+    return newPhoto;
+  }
+);
 
-export const getAdvertComment = createDraftSafeSelector(getAdvertCar, (state) => state?.comment);
+export const getAdvertComment = createDraftSafeSelector(
+  getAdvertCar,
+  (state) => state?.comment
+);
 
 export const getAdvertTitle = createDraftSafeSelector(
   getAdvertCar,
-  (state) => `${state?.make} ${state?.model}`,
+  (state) => `${state?.make} ${state?.model}`
 );
 
-export const getLoadingAdvertState = (state: AppStateType): LoadingState => state.advert.status;
+export const getLoadingAdvertState = (state: AppStateType): LoadingState =>
+  state.advert.status;
 
 export const getIsAdvertLoading = (state: AppStateType): boolean =>
   getLoadingAdvertState(state) === LoadingState.LOADING;
 
-export const getAllCarOptions = createDraftSafeSelector(getAdvertCar, (state) => {
-  if (state) {
-    const allCarOptions = {
-      overview: state.overview,
-      interior: state.interior,
-      exterior: state.exterior,
-      comfort: state.comfort,
-      entertainmentSystem: state.entertainmentSystem,
-      safety: state.safety,
-      other: state.other,
-      antiTheftProtection: state.antiTheftProtection,
-      publishInfo: state.publishInfo,
-    };
-    return allCarOptions;
+export const getAllCarOptions = createDraftSafeSelector(
+  getAdvertCar,
+  (state) => {
+    if (state) {
+      const allCarOptions = {
+        overview: state.overview,
+        interior: state.interior,
+        exterior: state.exterior,
+        comfort: state.comfort,
+        entertainmentSystem: state.entertainmentSystem,
+        safety: state.safety,
+        other: state.other,
+        antiTheftProtection: state.antiTheftProtection,
+        publishInfo: state.publishInfo,
+      };
+      return allCarOptions;
+    }
   }
-});
+);
+
+export const getOverviewOptions = createDraftSafeSelector(
+  getAdvertCar,
+  (state) => {
+    if (state) {
+      const overview: Overview = state.overview;
+      return overview;
+    }
+  }
+);
+
+export const getExteriorOptions = createDraftSafeSelector(
+  getAdvertCar,
+  (state) => {
+    if (state) {
+      return state.exterior;
+    }
+  }
+);
+
+export const getInteriorOptions = createDraftSafeSelector(
+  getAdvertCar,
+  (state) => {
+    if (state) {
+      return state.interior;
+    }
+  }
+);
