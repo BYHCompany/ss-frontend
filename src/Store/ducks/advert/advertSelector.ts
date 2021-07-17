@@ -1,4 +1,5 @@
 import { createDraftSafeSelector } from '@reduxjs/toolkit';
+import { AdvertInfoProps } from '../../../GlobalTypes/carTypes';
 import { LoadingState } from '../../commonType';
 import { AppStateType } from '../../store';
 
@@ -9,6 +10,7 @@ export const getCarMainInfo = createDraftSafeSelector(getAdvertCar, (state) => {
   if (state) {
     const mainInfo = {
       year: state.year,
+      price: state.price,
       millage: state.millage,
       transmission: state.transmission,
       steeringWheel: state.steeringWheel,
@@ -43,3 +45,20 @@ export const getLoadingAdvertState = (state: AppStateType): LoadingState => stat
 
 export const getIsAdvertLoading = (state: AppStateType): boolean =>
   getLoadingAdvertState(state) === LoadingState.LOADING;
+
+export const getAllCarOptions = createDraftSafeSelector(getAdvertCar, (state) => {
+  if (state) {
+    const allCarOptions = {
+      overview: state.overview,
+      interior: state.interior,
+      exterior: state.exterior,
+      comfort: state.comfort,
+      entertainmentSystem: state.entertainmentSystem,
+      safety: state.safety,
+      other: state.other,
+      antiTheftProtection: state.antiTheftProtection,
+      publishInfo: state.publishInfo,
+    };
+    return allCarOptions;
+  }
+});

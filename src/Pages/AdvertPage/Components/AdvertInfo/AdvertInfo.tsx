@@ -12,25 +12,16 @@ import {
   translateTransmitionType,
 } from '../../../../services/carTranslators';
 import { Trans, useTranslation } from 'react-i18next';
+import { useSelector } from 'react-redux';
+import { getCarMainInfo } from '../../../../Store/ducks/advert/advertSelector';
 
-const descriptionData = {
-  price: 230000,
-  year: 2020,
-  millage: 185,
-  transmissionType: 'AWD',
-  steeringWheel: 'left',
-  engineType: 'electric',
-  gearbox: 'automatic',
-  power: 55,
-  carBody: 'sedan',
-  state: 'used',
-  tax: 350,
-  vinCode: 'Полный',
-  carLicensePlate: 'Полный',
-} as AdvertInfoProps;
 export const AdvertInfo = () => {
+  const descriptionData = useSelector(getCarMainInfo);
   const [isHidden, setIsHidden] = React.useState(true);
   const { t } = useTranslation();
+  if (!descriptionData) {
+    return null;
+  }
   const millage = descriptionData.millage;
   const year = descriptionData.year;
   const power = descriptionData.power;
@@ -64,7 +55,7 @@ export const AdvertInfo = () => {
           header={t('advertPage:transmission.transmission')}
           width={370}
           handleHide={handleHidden}
-          description={translateTransmitionType(descriptionData.transmissionType)}
+          description={translateTransmitionType(descriptionData.transmission)}
         />
         <DescriptionList
           width={370}
@@ -108,7 +99,7 @@ export const AdvertInfo = () => {
           handleHide={handleHidden}
           header="VIN"
           hide={isHidden}
-          description={descriptionData.vinCode}
+          description={descriptionData.vin}
         />
         <DescriptionList
           width={370}

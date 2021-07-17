@@ -12,8 +12,8 @@ export type Advert = {
   item: Car | null;
 };
 
-type Lights = 'xenon' | 'laser' | 'led';
-type Heat = 'windshield' | 'sideMirrors' | 'washerNozzles' | 'wiperZones';
+export type Lights = 'xenon' | 'laser' | 'led';
+export type Heat = 'windshield' | 'sideMirrors' | 'washerNozzles' | 'wiperZones';
 export type Overview = {
   lights: Lights;
   heat: Heat[];
@@ -59,9 +59,9 @@ export type EntertainmentSystem = {
   bluetooth: boolean;
 };
 
-type InteriorMaterial = 'leather' | 'velours' | 'alcantara' | 'cloth' | 'syntheticCloth';
-type AllSeats = 'driverSeat' | 'frontSeats' | 'backSeats';
-type MainSeats = 'driverSeat' | 'frontSeats';
+export type InteriorMaterial = 'leather' | 'velours' | 'alcantara' | 'cloth' | 'syntheticCloth';
+export type AllSeats = 'driverSeat' | 'frontSeats' | 'backSeats';
+export type MainSeats = 'driverSeat' | 'frontSeats';
 export type Interior = {
   seatCount: number;
   interiorMaterial: InteriorMaterial;

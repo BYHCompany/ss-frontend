@@ -71,5 +71,221 @@
     "tax": "Tax",
     "value": "{{tax}} €"
   },
-  "carLicensePlate": "Car License Plate"
+  "carLicensePlate": "Car License Plate",
+  "options": {
+    "overview": {
+      "value": "Overview",
+      "lights": {
+        "laser": "Laser",
+        "xenon": "Xenon",
+        "led": "LED"
+      },
+      "heats": {
+        "label": "Heats",
+        "windshield": "Wind Shield",
+        "sideMirrors": "Side Mirrors",
+        "washerNozzles": "Washer Nozzles",
+        "wiperZones": "Wiper Zones"
+      },
+         "dayLights": "Daytime Running Lights",
+        "fogLights": "Fog lights",
+        "headLightsControl": "Headlight control ",
+        "headlightWasher": "Headlight washer",
+        "adaptiveLights": "Adaptive headlights",
+        "rainControl": "Rain sensor",
+        "lightSensor": "Light sensor",
+        "autoBeam": "Automatic high beam"
+    },
+
+     
+      
+      "interior": {
+        "label": "Interior",
+        "driverSeat": "Driver's Seat",
+        "frontSeats": "Front Seats",
+        "backSeats": "Back Seats",
+
+        "interiorMaterial": {
+          "label": "Interior Material",
+          "leather": "Leather",
+          "velours": "Velours",
+          "alcantara": "Alcantara",
+          "cloth": "The Cloth",
+          "syntheticCloth": "Synthetic Fabric"
+        },
+        "interiorColor": "Interior Color",
+        "setsHeightRegulation": "Seat height adjustment",
+        "electricSeatRegulation": "Electric seat adjustment",
+        "seatMemory": "Seat with memory",
+        "lumbarSupport": "Lumbar support",
+        "seatsHeat": "Seat heating",
+        "seatsVent": "Seat ventilation",
+        "sportFrontSeats": "Front sports seats",
+        "massageSeats": "Seat massage",
+        "steeringWheelHeat": "Heated steering wheel",
+        "leatherSteeringWheel": "Leather steering wheel",
+        "gearboxLeather": "Leather trim gearbox",
+        "sunroof": "Sunroof",
+        "panoramicView": "Panoramic Roof",
+        "blackRoof": "Dark roof",
+        "frontArmrest": "Front armrest",
+        "rearArmrest": "Rear armrest",
+        "thirdSeatsRow": "Third row of seats",
+        "foldBackSeats": "Folding rear seats",
+        "foldRearBack": "Fold back to back",
+        "rearTableOnFrontSeats": "Back row tables",
+        "tintedGlass": "Tinted glass",
+        "rearSunBlinds": "Rear sun shades ",
+        "ambientLight": "Ambient light",
+        "decorativePedals": "Pads on the pedals",
+        "doorSills": "Door sills "
+      },
+
+      "comfort": {
+        "label": "Comfort",
+        "powerWindows": {
+          "lable": "Electric windows",
+          "front": "Power windows at the front",
+          "back": "Rear electric windows"
+        },
+
+        "airConditioning": {
+          "label": "Climate control ",
+          "oneZone": "Single zone climate control ",
+          "twoZone": "Dual zone climate controlь",
+          "multiZone": "Multi-zone climate control"
+        },
+
+        "powerSteering": {
+          "label": "Power steering",
+          "active": "Active power steering",
+          "default": "Conventional power steering"
+        },
+        "cruiseControl": {
+          "label": "Cruise-Control",
+          "active": "Active cruise control",
+          "default": "Normal Cruise Control",
+          "null": "Null"
+        },
+        "parkingAssistant": {
+          "label": "Parking Assistant",
+          "allParktronics": "All parking sensors",
+          "front": "Front parking sensors",
+          "back": "Rear parking sensors",
+          "null": "null"
+        },
+        "camera": {
+          "label": "Camera",
+          "360": "360",
+          "front": "Front camera",
+          "back": "Rear camera",
+          "null": "Null"
+        },
+        "headUpDisplay": "Head Up Display",
+        "driveModeSelection": "Selecting a driving mode",
+        "keylessSys": "Keyless access",
+        "remoteEngineStart": "Remote engine start",
+        "startStop": "Start Stop",
+        "buttonEngineStart": "Starting the engine from the button",
+        "programmablePreHeater": "Car preheating system",
+        "trunkLidDrive": "Trunk lid drive",
+        "electricMirrors": "Electric mirrors",
+        "electroFolderingMirrors": "Electro folding mirrors ",
+        "multiSteeringWheel": "Multifunction steering wheel",
+        "paddleShifters": "Paddle shifters",
+        "cooledGloveBox": "Cooled glove box",
+        "adjustablePedalAssembly": "Adjustable pedals",
+        "doorCloser": "Closers",
+        "ashtray": "Ashtray",
+        "trunkWithoutHands": "Closing the trunk with a button"
+      },
+      "exterior": {
+        "label": "Exterior",
+        "rimsType": {
+          "label": "Rims Type",
+          "alloy": "Alloy wheels ",
+          "stamped": "Stamped wheels"
+        },
+        "rimsSize": "Rims Size",
+        "twoBodyColors": "Two body colors",
+        "airbrush": "Air brush",
+        "decorateMoldings": "Decorative moldings",
+        "roofRails": "Roof rails"
+      },
+      "antiTheftProtection": {
+        "label": "Anti-theft protection",
+        "signaling": {
+          "default": "Conventional alarm ",
+          "advanced": "Advanced alarm"
+        },
+        "centralLock": "Central Lock",
+        "interiorPenetration": "Protection against penetration into the salon",
+        "immobilizer": "Immobilizer"
+      },
+      "entertainmentSystem": {
+        "audioSystem": {
+          "premium": "Premium audio system",
+          "default": "Audio System",
+          "audioPreparation": "Audio Preparation"
+        },
+        "navi": "Navigation",
+        "backSeatsSystem": "Rear seat multimedia",
+        "wirelessCharging": "Wireless charger",
+        "twelveVPlug": "12V socket",
+        "twoHundredTwenty": "Socket 220V",
+        "carPlay": "Apple CarPlay",
+        "aux": "AUX",
+        "usb": "USB",
+        "voiceAssistant": "Voice Assistant",
+        "androidAuto": "AndroidAuto",
+        "bluetooth": "Bluetooth"
+      },
+      "safety": {
+        "label": "Safety",
+        "airbags": {
+          "driver": "Driver's airbag",
+          "passenger": "Passenger airbag",
+          "frontSideBags": "Front side airbags",
+          "backSideBags": "Rear side airbags",
+          "windowBags": "Window airbags "
+        },
+        "isofix": {
+          "label": "Isofix",
+          "front": "Front isofix",
+          "back": "Rear isofix"
+        },
+        "supportSystems": {
+          "antiСollision": "Anti-collision",
+          "laneControl": "Lane control",
+          "driverFatigueSensor": "Driver fatigue sensor ",
+          "roadSignRecognition": "Traffic Sign Recognition ",
+          "ASR": "ASR",
+          "VSM": "VSM",
+          "BAS": "BAS",
+          "helpAtStartUp": "Help when starting up the hill",
+          "blindSpotControl": "Blind spot monitoring ",
+          "nightVision": "The night vision"
+        },
+        "abs": "Anti-lock braking system(ABS)",
+        "esp": "Stabilization system (ESP)",
+        "peassureSensor": "Pressure meter ",
+        "rearDoorBlock": "Rear door lock",
+        "armoredBody": "Armored body"
+      },
+      "other": {
+        "label": "Other",
+        "suspention": {
+          "pneumatic": "Air suspension",
+          "spring": "Spring suspension"
+        },
+        "spareWheel": {
+          "donutWheel": "Аварийное колесо (докатка)",
+          "miniSpare": "Запаска (полноценное пятое колесо)",
+          "repairKit": "Ремкомплект для колеса"
+        },
+        "towbar": "Фаркоп",
+        "crankcaseProtection": "Защита картера"
+      }
+    }
+  }
 }

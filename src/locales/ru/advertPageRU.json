@@ -68,5 +68,217 @@
     "tax": "Налоги",
     "value": "{{tax}} €"
   },
-  "carLicensePlate": "Гос.номер авто"
+  "carLicensePlate": "Гос.номер авто",
+  "options": {
+    "overview": {
+      "label": "Обзор",
+      "lights": {
+        "laser": "Лазер",
+        "xenon": "Ксенон",
+        "led": "LED"
+      },
+      "heats": {
+        "label": "Обогрев",
+        "windshield": "Лобового стекла ",
+        "sideMirrors": "Боковых зеркал",
+        "washerNozzles": "Фарсунок стеклоомыватилей",
+        "wiperZones": "Зоны стеклоочистителей"
+      },
+      "dayLights": "Дневные ходовые огни",
+      "fogLights": "Противотуманные фары",
+      "headLightsControl": "Управление фарами ",
+      "headlightWasher": "Омыватель фар",
+      "adaptiveLights": "Адаптивные фары",
+      "rainControl": "Датчик Дождя",
+      "lightSensor": "Световой датчик",
+      "autoBeam": "Автоматический дальний свет"
+    },
+    "interior": {
+      "label": "Интерьер",
+      "driverSeat": "Сидение Водителя",
+      "frontSeats": "Передние Сидения",
+      "backSeats": "Задние Сидения",
+
+      "interiorMaterial": {
+        "label": "Материал интерьера",
+        "leather": "Кожа",
+        "velours": "Велюр",
+        "alcantara": "Алькантара",
+        "cloth": "Ткань",
+        "syntheticCloth": "Синтетическая Ткань"
+      },
+      "interiorColor": "Цвет Интерьера",
+      "setsHeightRegulation": "Регулировки высота сидений",
+      "electricSeatRegulation": "Электрическая регулировка сидений",
+      "seatMemory": "Сидение с памятью",
+      "lumbarSupport": "Поясничная поддержка",
+      "seatsHeat": "Обогрев сидений",
+      "seatsVent": "Вентиляция сидений",
+      "sportFrontSeats": "Спортивные передние сидения",
+      "massageSeats": "Масаж сидений",
+      "steeringWheelHeat": "Обогрев руля",
+      "leatherSteeringWheel": "Кожаный руль",
+      "gearboxLeather": "Кожаная отделка КПП",
+      "sunroof": "Люк",
+      "panoramicView": "Панорама",
+      "blackRoof": "Темный потолок",
+      "frontArmrest": "Передний подлокотник",
+      "rearArmrest": "Задний подлокотник",
+      "thirdSeatsRow": "Третий ряд сидений",
+      "foldBackSeats": "Складывающиеся задние сидения",
+      "foldRearBack": "Cложить сзади назад",
+      "rearTableOnFrontSeats": "Столики заднего ряда",
+      "tintedGlass": "Тонированные стекла",
+      "rearSunBlinds": "Задние солнцезащитные шторы ",
+      "ambientLight": "Окружающий свет",
+      "decorativePedals": "Накладки на педали ",
+      "doorSills": "Дверные пороги "
+    },
+
+    "comfort": {
+      "label": "Комфорт",
+      "powerWindows": {
+        "lable": "Электрические стеклоподъемники",
+        "front": "Электрические стеклоподъемники cпреди",
+        "back": " Электрические стеклоподъемники cзади"
+      },
+
+      "airConditioning": {
+        "label": "Климат Контроль ",
+        "oneZone": "Однозонный климат контроль ",
+        "twoZone": "Двухзонный климат контроль",
+        "multiZone": "Мультизонный климат контроль"
+      },
+
+      "powerSteering": {
+        "label": "Усилитель руля",
+        "active": "Активный усилитель руля",
+        "default": "Обычный усилитель руля"
+      },
+      "cruiseControl": {
+        "label": "Круиз-контроль",
+        "active": "Активный Круиз-контроль",
+        "default": "Обычный Круиз-контроль",
+        "null": "Отсутствует"
+      },
+      "parkingAssistant": {
+        "label": "Помощь при парковке ",
+        "allParktronics": "Все парктроники",
+        "front": "Передние парктроники",
+        "back": "Задние парктроники",
+        "null": "Отсутствует"
+      },
+      "camera": {
+        "label": "Камеры",
+        "360": "360",
+        "front": "Передная",
+        "back": "Задная",
+        "null": "Отсутствует"
+      },
+      "headUpDisplay": "Проекция",
+      "driveModeSelection": "Выбор режима езды",
+      "keylessSys": "Без ключивой доступ",
+      "remoteEngineStart": "Дистанционный запуск двигателя",
+      "startStop": "Cтарт стоп",
+      "buttonEngineStart": "Запуск двигателя с кнопки",
+      "programmablePreHeater": "Система предварительного обогрева авто",
+      "trunkLidDrive": "Привод крышки багажника",
+      "electricMirrors": "Электрические зеркала",
+      "electroFolderingMirrors": "Электро складывающиеся зеркала ",
+      "multiSteeringWheel": "Многофункциональный руль",
+      "paddleShifters": "Подрулевые лепестки",
+      "cooledGloveBox": "Охлаждаемый бардачок",
+      "adjustablePedalAssembly": "Регулируемые педали",
+      "doorCloser": "Доводчики",
+      "ashtray": "Пепельница",
+      "trunkWithoutHands": "Закрытие багажника с кнопки"
+    },
+    "exterior": {
+      "label": "Экстерьер",
+      "rimsType": {
+        "label": "Тип дисков",
+        "alloy": "Литые диски ",
+        "stamped": "Штампованные диски"
+      },
+      "rimsSize": "Размер дисков",
+      "twoBodyColors": "Два цвета кузова",
+      "airbrush": "Воздушная щетка",
+      "decorateMoldings": "Декоративные молдинги",
+      "roofRails": "Рейлинги на крыше"
+    },
+    "antiTheftProtection": {
+      "label": "Защита от угона",
+      "signaling": {
+        "default": "Обычный сигнализация ",
+        "advanced": "Продвинутая сигнализация"
+      },
+      "centralLock": "Центральный замокс",
+      "interiorPenetration": "Защита от проникновение в салон",
+      "immobilizer": "Иммобилайзер"
+    },
+    "entertainmentSystem": {
+      "audioSystem": {
+        "premium": "Премиальная аудиосистема",
+        "default": "Аудиосистема",
+        "audioPreparation": "Аудиоподготовка"
+      },
+      "navi": "Навигация",
+      "backSeatsSystem": "Мультимедиа для задних пассажиров",
+      "wirelessCharging": "Беспроводная зарядка",
+      "twelveVPlug": "Розетка 12V",
+      "twoHundredTwenty": "Розетка 220V",
+      "carPlay": "Apple CarPlay",
+      "aux": "AUX",
+      "usb": "USB",
+      "voiceAssistant": "Голосовой ассистент",
+      "androidAuto": "AndroidAuto",
+      "bluetooth": "Bluetooth"
+    },
+    "safety": {
+      "label": "Безопасность",
+      "airbags": {
+        "driver": "Водительская подушка безопасноти",
+        "passenger": "Пассажирская подушка безопасноти",
+        "frontSideBags": "Передние боковые подушки безопасноти",
+        "backSideBags": "Задние боковые подушки безопасноти",
+        "windowBags": "Оконные подушки безопасноти "
+      },
+      "isofix": {
+        "label": "Isofix",
+        "front": "Спереди",
+        "back": "Сзади"
+      },
+      "supportSystems": {
+        "antiСollision": "Анти-столкновение",
+        "laneControl": "Контроль полосы",
+        "driverFatigueSensor": "Датчик усталости водителя ",
+        "roadSignRecognition": "Распознавание дорожных знаков ",
+        "ASR": "ASR",
+        "VSM": "VSM",
+        "BAS": "BAS",
+        "helpAtStartUp": "Помощь при старте в горку",
+        "blindSpotControl": "Контроль слепых зон ",
+        "nightVision": "Ночное видение"
+      },
+      "abs": "Антиблокировочная система(ABS)",
+      "esp": "Система стабилизации (ESP)",
+      "peassureSensor": "Датчик давления ",
+      "rearDoorBlock": "Блокировка задних дверей",
+      "armoredBody": "Бронированный кузов"
+    },
+    "other": {
+      "label": "Другое",
+      "suspention": {
+        "pneumatic": "Пневматическая подвеска",
+        "spring": "Пружинная подвеска"
+      },
+      "spareWheel": {
+        "donutWheel": "Аварийное колесо (докатка)",
+        "miniSpare": "Запаска (полноценное пятое колесо)",
+        "repairKit": "Ремкомплект для колеса"
+      },
+      "towbar": "Фаркоп",
+      "crankcaseProtection": "Защита картера"
+    }
+  }
 }
