@@ -74,6 +74,7 @@
   "carLicensePlate": "Car License Plate",
   "options": {
     "overview": {
+      "value": "Overview",
       "lights": {
         "laser": "Laser",
         "xenon": "Xenon",

@@ -1,4 +1,4 @@
-import { Heat, Lights } from '../GlobalTypes/advertTypes';
+import { Heat, InteriorMaterial, Lights } from '../GlobalTypes/advertTypes';
 import {
   CarBodyTypes,
   CarState,
@@ -121,6 +121,21 @@ export const translateHeats = (heats: Heat[]) => {
         resArr.push(i18n.t('advertPage:options.overview.heats.sideMirrors'));
         break;
     }
+  }
+};
+
+export const translateInteriorMaterial = (interiorMaterial: InteriorMaterial) => {
+  switch (interiorMaterial) {
+    case 'alcantara':
+      return i18n.t('advertPage:options.overview.lights.laser');
+    case 'cloth':
+      return i18n.t('advertPage:options.overview.lights.xenon');
+    case 'leather':
+      return i18n.t('advertPage:options.overview.lights.led');
+    case 'syntheticCloth':
+      return i18n.t('advertPage:options.overview.lights.led');
+    case 'velours':
+      return i18n.t('advertPage:options.overview.lights.led');
   }
 };
 
