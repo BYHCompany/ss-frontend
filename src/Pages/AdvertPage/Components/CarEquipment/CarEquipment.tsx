@@ -5,6 +5,7 @@ import { useSelector } from 'react-redux';
 import { getAllCarOptions } from '../../../../Store/ducks/advert/advertSelector';
 import { OverviewOptions } from './Overview';
 import { InteriorOptions } from './Interior';
+import { ExteriorOptions } from './Exterior';
 
 export const CarEquipment = () => {
   const { t } = useTranslation();
@@ -21,6 +22,7 @@ export const CarEquipment = () => {
       </Title>
       <OverviewOptions />
       <InteriorOptions />
+      <ExteriorOptions />
     </div>
   );
 };

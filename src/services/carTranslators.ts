@@ -4,6 +4,7 @@ import {
   InteriorColor,
   InteriorMaterial,
   Lights,
+  Rims,
 } from '../GlobalTypes/advertTypes';
 import {
   CarBodyTypes,
@@ -178,5 +179,13 @@ export const translateInteriorColor = (seats: InteriorColor) => {
       return i18n.t('advertPage:options.interior.interiorColor.dark');
     case 'light':
       return i18n.t('advertPage:options.interior.interiorColor.light');
+  }
+};
+export const translateRimsType = (rims: Rims) => {
+  switch (rims) {
+    case 'alloy':
+      return i18n.t('advertPage:options.exterior.rimsType.alloy');
+    case 'stamped':
+      return i18n.t('advertPage:options.exterior.rimsType.stamped');
   }
 };

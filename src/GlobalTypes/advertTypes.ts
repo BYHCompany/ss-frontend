@@ -26,7 +26,7 @@ export type Overview = {
   lightSensor: boolean;
   autoBeam: boolean;
 };
-type Rims = 'alloy' | 'stamped';
+export type Rims = 'alloy' | 'stamped';
 export type Exterior = {
   rimsType: Rims;
   rimsSize: number;
