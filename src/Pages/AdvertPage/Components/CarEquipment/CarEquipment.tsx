@@ -9,6 +9,7 @@ import { ExteriorOptions } from './Exterior';
 import { AntiTheftProtectionOptions } from './AntiTheftProtection';
 import { EntertainmentSystem } from './EntertainmentSystem';
 import { Safety } from './Safety';
+import { Comfort } from './Comfort';
 
 export const CarEquipment = () => {
   const { t } = useTranslation();
@@ -29,6 +30,7 @@ export const CarEquipment = () => {
       <AntiTheftProtectionOptions />
       <EntertainmentSystem />
       <Safety />
+      <Comfort />
     </div>
   );
 };

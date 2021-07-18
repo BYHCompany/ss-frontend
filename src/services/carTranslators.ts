@@ -1,15 +1,23 @@
 import {
   Airbags,
+  AirConditioning,
   AllSeats,
   AudioSystem,
+  Camera,
+  CruiseControl,
   Heat,
   InteriorColor,
   InteriorMaterial,
   Isofix,
   Lights,
+  ParkingAssistant,
+  PowerSteering,
+  PowerWindows,
   Rims,
   Signaling,
+  SpareWheel,
   SupportSystems,
+  Suspention,
 } from '../GlobalTypes/advertTypes';
 import {
   CarBodyTypes,
@@ -294,4 +302,93 @@ export const translateSupportSystems = (seats: SupportSystems[]) => {
     }
   }
   return arr;
+};
+//Comfort TRANSLATION
+export const translatePowerWindows = (powerWindows: PowerWindows[]) => {
+  const arr = [];
+
+  for (let i = 0; i < powerWindows.length; i++) {
+    switch (powerWindows[i]) {
+      case 'front':
+        arr.push(i18n.t('advertPage:options.comfort.powerWindows.front'));
+        break;
+      case 'back':
+        arr.push(i18n.t('advertPage:options.comfort.powerWindows.back'));
+        break;
+    }
+  }
+  return arr;
+};
+
+export const translateAirConditioning = (airConditioning: AirConditioning) => {
+  switch (airConditioning) {
+    case 'multiZone':
+      return i18n.t('advertPage:options.comfort.airConditioning.multiZone');
+    case 'twoZone':
+      return i18n.t('advertPage:options.comfort.airConditioning.twoZone');
+    case 'oneZone':
+      return i18n.t('advertPage:options.comfort.airConditioning.oneZone');
+  }
+};
+export const translatePowerSteering = (powerSteering: PowerSteering) => {
+  switch (powerSteering) {
+    case 'active':
+      return i18n.t('advertPage:options.comfort.powerSteering.active');
+    case 'default':
+      return i18n.t('advertPage:options.comfort.powerSteering.default');
+  }
+};
+export const translateCruiseControl = (cruiseControl: CruiseControl) => {
+  switch (cruiseControl) {
+    case 'active':
+      return i18n.t('advertPage:options.comfort.cruiseControl.active');
+    case 'default':
+      return i18n.t('advertPage:options.comfort.cruiseControl.default');
+    case 'null':
+      return i18n.t('advertPage:options.comfort.cruiseControl.null');
+  }
+};
+export const translateParkingAssistant = (parkingAssistant: ParkingAssistant) => {
+  switch (parkingAssistant) {
+    case 'allParktronics':
+      return i18n.t('advertPage:options.comfort.parkingAssistant.allParktronics');
+    case 'front':
+      return i18n.t('advertPage:options.comfort.parkingAssistant.front');
+    case 'back':
+      return i18n.t('advertPage:options.comfort.parkingAssistant.back');
+    case 'null':
+      return i18n.t('advertPage:options.comfort.cruiseControl.null');
+  }
+};
+export const translateCamera = (camera: Camera) => {
+  switch (camera) {
+    case '360':
+      return i18n.t('advertPage:options.comfort.camera.360');
+    case 'front':
+      return i18n.t('advertPage:options.comfort.camera.front');
+    case 'back':
+      return i18n.t('advertPage:options.comfort.camera.back');
+    case 'null':
+      return i18n.t('advertPage:options.comfort.cruiseControl.null');
+  }
+};
+//Other TRANSLATION
+
+export const translateSpareWheel = (spareWheel: SpareWheel) => {
+  switch (spareWheel) {
+    case 'donutWheel':
+      return i18n.t('advertPage:options.other.spareWheel.donutWheel');
+    case 'miniSpare':
+      return i18n.t('advertPage:options.other.spareWheel.miniSpare');
+    case 'repairKit':
+      return i18n.t('advertPage:options.other.spareWheel.repairKit');
+  }
+};
+export const translateSuspention = (suspention: Suspention) => {
+  switch (suspention) {
+    case 'pneumatic':
+      return i18n.t('advertPage:options.other.suspention.pneumatic');
+    case 'spring':
+      return i18n.t('advertPage:options.other.suspention.spring');
+  }
 };

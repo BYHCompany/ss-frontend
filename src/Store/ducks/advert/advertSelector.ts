@@ -99,3 +99,13 @@ export const getSafetyOptions = createDraftSafeSelector(getAdvertCar, (state) =>
     return state.safety;
   }
 });
+export const getComfortOptions = createDraftSafeSelector(getAdvertCar, (state) => {
+  if (state) {
+    return state.comfort;
+  }
+});
+export const getOthersOptions = createDraftSafeSelector(getAdvertCar, (state) => {
+  if (state) {
+    return state.other;
+  }
+});

@@ -18,7 +18,7 @@ export const Safety = () => {
   }
 
   return (
-    <div>
+    <div style={{ marginBottom: 20 }}>
       <Accordion width={770} title={t('advertPage:options.safety.label')}>
         <ul>
           {safety.airbags && translateAirbags(safety.airbags).map((e) => <li key={e}>{e}</li>)}

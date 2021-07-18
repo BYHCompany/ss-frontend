@@ -95,12 +95,12 @@ export type Interior = {
   doorSills: boolean;
 };
 
-type PowerWindows = 'front' | 'back';
-type AirConditioning = 'oneZone' | 'twoZone' | 'multiZone';
-type PowerSteering = 'active' | 'default';
-type CruiseControl = 'active' | 'default' | 'null';
-type ParkingAssistant = 'allParktronics' | 'front' | 'back' | 'null';
-type Camera = '360' | 'front' | 'back' | 'null';
+export type PowerWindows = 'front' | 'back';
+export type AirConditioning = 'oneZone' | 'twoZone' | 'multiZone';
+export type PowerSteering = 'active' | 'default';
+export type CruiseControl = 'active' | 'default' | 'null';
+export type ParkingAssistant = 'allParktronics' | 'front' | 'back' | 'null';
+export type Camera = '360' | 'front' | 'back' | 'null';
 export type Comfort = {
   powerWindows: PowerWindows[];
   airConditioning: AirConditioning;
@@ -151,8 +151,8 @@ export type Safety = {
   armoredBody: boolean;
 };
 
-type SpareWheel = 'donutWheel' | 'miniSpare' | 'repairKit';
-type Suspention = 'pneumatic' | 'spring';
+export type SpareWheel = 'donutWheel' | 'miniSpare' | 'repairKit';
+export type Suspention = 'pneumatic' | 'spring';
 export type Other = {
   suspention: Suspention;
   spareWheel: SpareWheel;
