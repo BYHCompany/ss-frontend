@@ -223,6 +223,7 @@
       "immobilizer": "Immobilizer"
     },
     "entertainmentSystem": {
+      "label": "Entertainment System",
       "audioSystem": {
         "premium": "Premium audio system",
         "default": "Audio System",

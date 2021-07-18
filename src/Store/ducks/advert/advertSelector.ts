@@ -89,3 +89,13 @@ export const getAntiTheftProtectionOptions = createDraftSafeSelector(getAdvertCa
     return state.antiTheftProtection;
   }
 });
+export const getEntertainmentSystemOptions = createDraftSafeSelector(getAdvertCar, (state) => {
+  if (state) {
+    return state.entertainmentSystem;
+  }
+});
+export const getSafetyOptions = createDraftSafeSelector(getAdvertCar, (state) => {
+  if (state) {
+    return state.safety;
+  }
+});

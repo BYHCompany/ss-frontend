@@ -43,7 +43,7 @@ export type AntiTheftProtection = {
   interiorPenetration: boolean;
   immobilizer: boolean;
 };
-type AudioSystem = 'premium' | 'default' | 'audioPreparation';
+export type AudioSystem = 'premium' | 'default' | 'audioPreparation';
 export type EntertainmentSystem = {
   audioSystem: AudioSystem;
   navi: boolean;
@@ -127,9 +127,9 @@ export type Comfort = {
   trunkWithoutHands: boolean;
 };
 
-type Airbags = 'driver' | 'passenger' | 'frontSideBags' | 'backSideBags' | 'windowBags';
-type Isofix = 'front' | 'back';
-type SupportSystems =
+export type Airbags = 'driver' | 'passenger' | 'frontSideBags' | 'backSideBags' | 'windowBags';
+export type Isofix = 'front' | 'back';
+export type SupportSystems =
   | 'antiСollision'
   | 'laneControl'
   | 'driverFatigueSensor'

@@ -13,7 +13,7 @@ export const AntiTheftProtectionOptions = () => {
     return null;
   }
   return (
-    <div>
+    <div style={{ marginBottom: 20 }}>
       <Accordion width={770} title={t('advertPage:options.antiTheftProtection.label')}>
         <ul>
           <li>

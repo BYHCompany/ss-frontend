@@ -219,6 +219,7 @@
       "immobilizer": "Иммобилайзер"
     },
     "entertainmentSystem": {
+      "label": "Развлекательная Система",
       "audioSystem": {
         "premium": "Премиальная аудиосистема",
         "default": "Аудиосистема",

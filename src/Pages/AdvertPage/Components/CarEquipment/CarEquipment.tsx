@@ -7,6 +7,8 @@ import { OverviewOptions } from './Overview';
 import { InteriorOptions } from './Interior';
 import { ExteriorOptions } from './Exterior';
 import { AntiTheftProtectionOptions } from './AntiTheftProtection';
+import { EntertainmentSystem } from './EntertainmentSystem';
+import { Safety } from './Safety';
 
 export const CarEquipment = () => {
   const { t } = useTranslation();
@@ -25,6 +27,8 @@ export const CarEquipment = () => {
       <InteriorOptions />
       <ExteriorOptions />
       <AntiTheftProtectionOptions />
+      <EntertainmentSystem />
+      <Safety />
     </div>
   );
 };

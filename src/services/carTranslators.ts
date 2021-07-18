@@ -1,11 +1,15 @@
 import {
+  Airbags,
   AllSeats,
+  AudioSystem,
   Heat,
   InteriorColor,
   InteriorMaterial,
+  Isofix,
   Lights,
   Rims,
   Signaling,
+  SupportSystems,
 } from '../GlobalTypes/advertTypes';
 import {
   CarBodyTypes,
@@ -101,7 +105,7 @@ export const translateSteeringWheel = (steeringWheel: SteeringWheelPos) => {
       return i18n.t('advertPage:steeringWheel.value.right');
   }
 };
-
+//OVERVIEW TRANSLATION
 export const translateLights = (lights: Lights) => {
   switch (lights) {
     case 'laser':
@@ -133,6 +137,7 @@ export const translateHeats = (heats: Heat[]) => {
   return resArr;
 };
 
+//Interior TRANSLATION
 export const translateInteriorMaterial = (interiorMaterial: InteriorMaterial) => {
   switch (interiorMaterial) {
     case 'alcantara':
@@ -182,6 +187,7 @@ export const translateInteriorColor = (seats: InteriorColor) => {
       return i18n.t('advertPage:options.interior.interiorColor.light');
   }
 };
+//exterior TRANSLATION
 export const translateRimsType = (rims: Rims) => {
   switch (rims) {
     case 'alloy':
@@ -190,7 +196,7 @@ export const translateRimsType = (rims: Rims) => {
       return i18n.t('advertPage:options.exterior.rimsType.stamped');
   }
 };
-
+//antiTheftProtection TRANSLATION
 export const translateSignaling = (signal: Signaling) => {
   switch (signal) {
     case 'default':
@@ -198,4 +204,94 @@ export const translateSignaling = (signal: Signaling) => {
     case 'advanced':
       return i18n.t('advertPage:options.antiTheftProtection.signaling.advanced');
   }
+};
+//entertainmentSystem TRANSLATION
+export const translateAudioSystem = (audio: AudioSystem) => {
+  switch (audio) {
+    case 'default':
+      return i18n.t('advertPage:options.entertainmentSystem.audioSystem.default');
+    case 'premium':
+      return i18n.t('advertPage:options.entertainmentSystem.audioSystem.premium');
+    case 'audioPreparation':
+      return i18n.t('advertPage:options.entertainmentSystem.audioSystem.audioPreparation');
+  }
+};
+//Safety TRANSLATION
+export const translateAirbags = (airbags: Airbags[]) => {
+  const arr = [];
+  for (let i = 0; i < airbags.length; i++) {
+    switch (airbags[i]) {
+      case 'backSideBags':
+        arr.push(i18n.t('advertPage:options.safety.airbags.backSideBags'));
+        break;
+      case 'driver':
+        arr.push(i18n.t('advertPage:options.safety.airbags.driver'));
+        break;
+      case 'frontSideBags':
+        arr.push(i18n.t('advertPage:options.safety.airbags.frontSideBags'));
+        break;
+      case 'passenger':
+        arr.push(i18n.t('advertPage:options.safety.airbags.passenger'));
+        break;
+      case 'windowBags':
+        arr.push(i18n.t('advertPage:options.safety.airbags.windowBags'));
+        break;
+    }
+  }
+
+  return arr as string[];
+};
+export const translateIsofix = (isofix: Isofix[]) => {
+  const arr = [];
+
+  for (let i = 0; i < isofix.length; i++) {
+    switch (isofix[i]) {
+      case 'front':
+        arr.push(i18n.t('advertPage:options.safety.isofix.front'));
+        break;
+      case 'back':
+        arr.push(i18n.t('advertPage:options.safety.isofix.back'));
+        break;
+    }
+  }
+  return arr;
+};
+
+export const translateSupportSystems = (seats: SupportSystems[]) => {
+  const arr = [];
+  for (let i = 0; i < seats.length; i++) {
+    switch (seats[i]) {
+      case 'ASR':
+        arr.push(i18n.t('advertPage:options.safety.supportSystems.ASR'));
+        break;
+      case 'BAS':
+        arr.push(i18n.t('advertPage:options.safety.supportSystems.BAS'));
+        break;
+      case 'VSM':
+        arr.push(i18n.t('advertPage:options.safety.supportSystems.VSM'));
+        break;
+      case 'antiСollision':
+        arr.push(i18n.t('advertPage:options.safety.supportSystems.antiСollision'));
+        break;
+      case 'blindSpotControl':
+        arr.push(i18n.t('advertPage:options.safety.supportSystems.blindSpotControl'));
+        break;
+      case 'driverFatigueSensor':
+        arr.push(i18n.t('advertPage:options.safety.supportSystems.driverFatigueSensor'));
+        break;
+      case 'helpAtStartUp':
+        arr.push(i18n.t('advertPage:options.safety.supportSystems.helpAtStartUp'));
+        break;
+      case 'laneControl':
+        arr.push(i18n.t('advertPage:options.safety.supportSystems.laneControl'));
+        break;
+      case 'nightVision':
+        arr.push(i18n.t('advertPage:options.safety.supportSystems.nightVision'));
+        break;
+      case 'roadSignRecognition':
+        arr.push(i18n.t('advertPage:options.safety.supportSystems.roadSignRecognition'));
+        break;
+    }
+  }
+  return arr;
 };
