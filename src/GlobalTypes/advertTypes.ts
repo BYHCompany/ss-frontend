@@ -36,7 +36,7 @@ export type Exterior = {
   roofRails: boolean;
 };
 
-type Signaling = 'default' | 'advanced';
+export type Signaling = 'default' | 'advanced';
 export type AntiTheftProtection = {
   signaling: Signaling;
   centralLock: boolean;

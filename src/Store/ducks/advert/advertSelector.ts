@@ -84,3 +84,8 @@ export const getInteriorOptions = createDraftSafeSelector(getAdvertCar, (state) 
     return state.interior;
   }
 });
+export const getAntiTheftProtectionOptions = createDraftSafeSelector(getAdvertCar, (state) => {
+  if (state) {
+    return state.antiTheftProtection;
+  }
+});

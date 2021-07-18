@@ -6,6 +6,7 @@ import { getAllCarOptions } from '../../../../Store/ducks/advert/advertSelector'
 import { OverviewOptions } from './Overview';
 import { InteriorOptions } from './Interior';
 import { ExteriorOptions } from './Exterior';
+import { AntiTheftProtectionOptions } from './AntiTheftProtection';
 
 export const CarEquipment = () => {
   const { t } = useTranslation();
@@ -23,6 +24,7 @@ export const CarEquipment = () => {
       <OverviewOptions />
       <InteriorOptions />
       <ExteriorOptions />
+      <AntiTheftProtectionOptions />
     </div>
   );
 };

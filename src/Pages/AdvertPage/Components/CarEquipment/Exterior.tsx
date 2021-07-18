@@ -14,24 +14,28 @@ export const ExteriorOptions = () => {
   }
 
   return (
-    <Accordion width={770} title={t('advertPage:options.exterior.label')}>
-      <ul>
-        <li>
-          {`${t('advertPage:options.exterior.rimsType.label')}:
+    <div style={{ marginBottom: 20 }}>
+      <Accordion width={770} title={t('advertPage:options.exterior.label')}>
+        <ul>
+          <li>
+            {`${t('advertPage:options.exterior.rimsType.label')}:
           ${translateRimsType(exterior.rimsType)}
           `}
-        </li>
-        <li>
-          {`${t('advertPage:options.exterior.rimsSize')}:
+          </li>
+          <li>
+            {`${t('advertPage:options.exterior.rimsSize')}:
           ${exterior.rimsSize}
           `}
-        </li>
+          </li>
 
-        {exterior.twoBodyColors && <li>{t('advertPage:options.exterior.twoBodyColors')}</li>}
-        {exterior.airbrush && <li>{t('advertPage:options.exterior.airbrush')}</li>}
-        {exterior.decorateMoldings && <li>{t('advertPage:options.exterior.decorateMoldings')}</li>}
-        {exterior.roofRails && <li>{t('advertPage:options.exterior.roofRails')}</li>}
-      </ul>
-    </Accordion>
+          {exterior.twoBodyColors && <li>{t('advertPage:options.exterior.twoBodyColors')}</li>}
+          {exterior.airbrush && <li>{t('advertPage:options.exterior.airbrush')}</li>}
+          {exterior.decorateMoldings && (
+            <li>{t('advertPage:options.exterior.decorateMoldings')}</li>
+          )}
+          {exterior.roofRails && <li>{t('advertPage:options.exterior.roofRails')}</li>}
+        </ul>
+      </Accordion>
+    </div>
   );
 };

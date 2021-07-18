@@ -5,6 +5,7 @@ import {
   InteriorMaterial,
   Lights,
   Rims,
+  Signaling,
 } from '../GlobalTypes/advertTypes';
 import {
   CarBodyTypes,
@@ -187,5 +188,14 @@ export const translateRimsType = (rims: Rims) => {
       return i18n.t('advertPage:options.exterior.rimsType.alloy');
     case 'stamped':
       return i18n.t('advertPage:options.exterior.rimsType.stamped');
+  }
+};
+
+export const translateSignaling = (signal: Signaling) => {
+  switch (signal) {
+    case 'default':
+      return i18n.t('advertPage:options.antiTheftProtection.signaling.default');
+    case 'advanced':
+      return i18n.t('advertPage:options.antiTheftProtection.signaling.advanced');
   }
 };

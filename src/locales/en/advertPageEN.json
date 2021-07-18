@@ -214,6 +214,7 @@
     "antiTheftProtection": {
       "label": "Anti-theft protection",
       "signaling": {
+        "label": "Signaling",
         "default": "Conventional alarm ",
         "advanced": "Advanced alarm"
       },
