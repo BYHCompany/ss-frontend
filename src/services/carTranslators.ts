@@ -380,7 +380,7 @@ export const translateSpareWheel = (spareWheel: SpareWheel) => {
       return i18n.t('advertPage:options.other.spareWheel.donutWheel');
     case 'miniSpare':
       return i18n.t('advertPage:options.other.spareWheel.miniSpare');
-    case 'repairKit':
+    case 'repair':
       return i18n.t('advertPage:options.other.spareWheel.repairKit');
   }
 };

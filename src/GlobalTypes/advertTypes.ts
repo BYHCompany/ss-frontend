@@ -7,7 +7,7 @@ export type VehiclePassport = 'original' | 'copy';
 
 export type Advert = {
   id: string | null;
-  ownerId: string | null;
+  ownerID: string | null;
   boosts: Boosts[] | null;
   item: Car | null;
 };
@@ -151,7 +151,7 @@ export type Safety = {
   armoredBody: boolean;
 };
 
-export type SpareWheel = 'donutWheel' | 'miniSpare' | 'repairKit';
+export type SpareWheel = 'donutWheel' | 'miniSpare' | 'repair';
 export type Suspention = 'pneumatic' | 'spring';
 export type Other = {
   suspention: Suspention;

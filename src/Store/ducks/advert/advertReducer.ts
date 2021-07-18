@@ -11,7 +11,7 @@ const advertInitialState = {
   status: LoadingState.NEVER,
   advert: {
     id: null,
-    ownerId: null,
+    ownerID: null,
     boosts: null,
     item: null,
     createAt: null,

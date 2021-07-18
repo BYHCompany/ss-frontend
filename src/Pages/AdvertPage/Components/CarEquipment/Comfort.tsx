@@ -20,16 +20,18 @@ export const Comfort = () => {
     return null;
   }
   return (
-    <div>
+    <div style={{ marginBottom: 20 }}>
       <Accordion width={770} title={t('advertPage:options.comfort.label')}>
         <ul>
           {comfort.powerWindows &&
             translatePowerWindows(comfort.powerWindows).map((e) => <li key={e}>{e} </li>)}
-          <li>{comfort.airConditioning && translateAirConditioning(comfort.airConditioning)}</li>
-          <li>{comfort.powerSteering && translatePowerSteering(comfort.powerSteering)}</li>
-          <li>{comfort.cruiseControl && translateCruiseControl(comfort.cruiseControl)}</li>
-          <li>{comfort.parkingAssistant && translateParkingAssistant(comfort.parkingAssistant)}</li>
-          <li>{comfort.camera && translateCamera(comfort.camera)}</li>
+          {comfort.airConditioning && <li> {translateAirConditioning(comfort.airConditioning)}</li>}
+          {comfort.powerSteering && <li>{translatePowerSteering(comfort.powerSteering)}</li>}
+          {comfort.cruiseControl && <li> {translateCruiseControl(comfort.cruiseControl)} </li>}
+          {comfort.parkingAssistant && (
+            <li>{translateParkingAssistant(comfort.parkingAssistant)}</li>
+          )}
+          {comfort.camera && <li>{translateCamera(comfort.camera)} </li>}
           {comfort.headUpDisplay && <li>{t('advertPage:options.comfort.headUpDisplay')}</li>}
           {comfort.driveModeSelection && (
             <li>{t('advertPage:options.comfort.driveModeSelection')}</li>
