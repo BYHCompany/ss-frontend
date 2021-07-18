@@ -23,7 +23,7 @@ export const routes = [
     name: 'Profile',
   } as Route,
   {
-    path: '/advert',
+    path: '/advert/:id',
     Component: AdvertPage,
     name: 'AdvertPage',
   } as Route,

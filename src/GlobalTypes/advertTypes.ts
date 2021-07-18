@@ -6,14 +6,14 @@ export type State = 'new' | 'used';
 export type VehiclePassport = 'original' | 'copy';
 
 export type Advert = {
-  id: string;
-  ownerId: string;
-  boosts: Boosts[];
-  item: Car;
+  id: string | null;
+  ownerID: string | null;
+  boosts: Boosts[] | null;
+  item: Car | null;
 };
 
-type Lights = 'xenon' | 'laser' | 'led';
-type Heat = 'windshield' | 'sideMirrors' | 'washerNozzles' | 'wiperZones';
+export type Lights = 'xenon' | 'laser' | 'led';
+export type Heat = 'windshield' | 'sideMirrors' | 'washerNozzles' | 'wiperZones';
 export type Overview = {
   lights: Lights;
   heat: Heat[];
@@ -26,7 +26,7 @@ export type Overview = {
   lightSensor: boolean;
   autoBeam: boolean;
 };
-type Rims = 'alloy' | 'stamped';
+export type Rims = 'alloy' | 'stamped';
 export type Exterior = {
   rimsType: Rims;
   rimsSize: number;
@@ -36,14 +36,14 @@ export type Exterior = {
   roofRails: boolean;
 };
 
-type Signaling = 'default' | 'advanced';
+export type Signaling = 'default' | 'advanced';
 export type AntiTheftProtection = {
   signaling: Signaling;
   centralLock: boolean;
   interiorPenetration: boolean;
   immobilizer: boolean;
 };
-type AudioSystem = 'premium' | 'default' | 'audioPreparation';
+export type AudioSystem = 'premium' | 'default' | 'audioPreparation';
 export type EntertainmentSystem = {
   audioSystem: AudioSystem;
   navi: boolean;
@@ -59,13 +59,14 @@ export type EntertainmentSystem = {
   bluetooth: boolean;
 };
 
-type InteriorMaterial = 'leather' | 'velours' | 'alcantara' | 'cloth' | 'syntheticCloth';
-type AllSeats = 'driverSeat' | 'frontSeats' | 'backSeats';
-type MainSeats = 'driverSeat' | 'frontSeats';
+export type InteriorMaterial = 'leather' | 'velours' | 'alcantara' | 'cloth' | 'syntheticCloth';
+export type AllSeats = 'driver' | 'front' | 'back';
+export type MainSeats = 'driver' | 'front';
+export type InteriorColor = 'light' | 'dark';
 export type Interior = {
   seatCount: number;
   interiorMaterial: InteriorMaterial;
-  interiorColor: string;
+  interiorColor: InteriorColor;
   setsHeightRegulation: MainSeats;
   electricSeatRegulation: AllSeats[];
   seatMemory: AllSeats[];
@@ -94,12 +95,12 @@ export type Interior = {
   doorSills: boolean;
 };
 
-type PowerWindows = 'front' | 'back';
-type AirConditioning = 'oneZone' | 'twoZone' | 'multiZone';
-type PowerSteering = 'active' | 'default';
-type CruiseControl = 'active' | 'default' | 'null';
-type ParkingAssistant = 'allParktronics' | 'front' | 'back' | 'null';
-type Camera = '360' | 'front' | 'back' | 'null';
+export type PowerWindows = 'front' | 'back';
+export type AirConditioning = 'oneZone' | 'twoZone' | 'multiZone';
+export type PowerSteering = 'active' | 'default';
+export type CruiseControl = 'active' | 'default' | 'null';
+export type ParkingAssistant = 'allParktronics' | 'front' | 'back' | 'null';
+export type Camera = '360' | 'front' | 'back' | 'null';
 export type Comfort = {
   powerWindows: PowerWindows[];
   airConditioning: AirConditioning;
@@ -126,9 +127,9 @@ export type Comfort = {
   trunkWithoutHands: boolean;
 };
 
-type Airbags = 'driver' | 'passenger' | 'frontSideBags' | 'backSideBags' | 'windowBags';
-type Isofix = 'front' | 'back';
-type SupportSystems =
+export type Airbags = 'driver' | 'passenger' | 'frontSideBags' | 'backSideBags' | 'windowBags';
+export type Isofix = 'front' | 'back';
+export type SupportSystems =
   | 'antiСollision'
   | 'laneControl'
   | 'driverFatigueSensor'
@@ -150,8 +151,8 @@ export type Safety = {
   armoredBody: boolean;
 };
 
-type SpareWheel = 'donutWheel' | 'miniSpare' | 'repairKit';
-type Suspention = 'pneumatic' | 'spring';
+export type SpareWheel = 'donutWheel' | 'miniSpare' | 'repair';
+export type Suspention = 'pneumatic' | 'spring';
 export type Other = {
   suspention: Suspention;
   spareWheel: SpareWheel;
