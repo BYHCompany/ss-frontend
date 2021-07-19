@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { getOthersOptions } from '../../../../Store/ducks/advert/advertSelector';
 import { translateSpareWheel, translateSuspention } from '../../../../services/carTranslators';
-
+import './CarEquipment.scss';
 export const Other = () => {
   const { t } = useTranslation();
   const other = useSelector(getOthersOptions);
@@ -16,7 +16,7 @@ export const Other = () => {
   return (
     <div style={{ marginBottom: 20 }}>
       <Accordion width={770} title={t('advertPage:options.other.label')}>
-        <ul>
+        <ul className="advert-accordion__content">
           {other.suspention && <li> {translateSuspention(other.suspention)} </li>}
           {other.spareWheel && <li> {translateSpareWheel(other.spareWheel)} </li>}
           {other.towbar && <li>{t('advertPage:options.comfort.towbar')}</li>}

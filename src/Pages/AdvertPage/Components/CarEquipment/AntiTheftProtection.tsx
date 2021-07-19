@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { translateSignaling } from '../../../../services/carTranslators';
 import { getAntiTheftProtectionOptions } from '../../../../Store/ducks/advert/advertSelector';
-
+import './CarEquipment.scss';
 export const AntiTheftProtectionOptions = () => {
   const antiTheftProtection = useSelector(getAntiTheftProtectionOptions);
   const { t } = useTranslation();
@@ -15,7 +15,7 @@ export const AntiTheftProtectionOptions = () => {
   return (
     <div style={{ marginBottom: 20 }}>
       <Accordion width={770} title={t('advertPage:options.antiTheftProtection.label')}>
-        <ul>
+        <ul className="advert-accordion__content">
           {antiTheftProtection.signaling && (
             <li>
               {`${t('advertPage:options.antiTheftProtection.signaling.label')}:

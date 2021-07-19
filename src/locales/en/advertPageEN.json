@@ -64,7 +64,8 @@
       "convertible": "Convertible",
       "suv": "Suv",
       "minivan": "Minivan",
-      "pickup": "Pickup"
+      "pickup": "Pickup",
+      "compact": "Compact"
     }
   },
   "tax": {
@@ -72,6 +73,11 @@
     "value": "{{tax}} €"
   },
   "carLicensePlate": "Car License Plate",
+  "owner": {
+    "bd": {
+      "value": "{{userBd}} Years Old"
+    }
+  },
   "options": {
     "overview": {
       "label": "Overview",

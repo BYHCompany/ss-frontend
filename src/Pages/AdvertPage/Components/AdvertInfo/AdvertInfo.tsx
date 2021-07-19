@@ -14,6 +14,7 @@ import {
 import { Trans, useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { getCarMainInfo } from '../../../../Store/ducks/advert/advertSelector';
+import { AdvertUserInfo } from './AdvertUserInfo';
 
 export const AdvertInfo = () => {
   const descriptionData = useSelector(getCarMainInfo);
@@ -39,6 +40,7 @@ export const AdvertInfo = () => {
         </Title>
 
         <DescriptionList
+          fontSize={22}
           width={370}
           handleHide={handleHidden}
           header={t('advertPage:year.year')}
@@ -46,30 +48,35 @@ export const AdvertInfo = () => {
         />
 
         <DescriptionList
+          fontSize={22}
           width={370}
           handleHide={handleHidden}
           header={t('advertPage:millage.millage')}
           description={<Trans i18nKey={'advertPage:millage.value'}> {{ millage }} </Trans>}
         />
         <DescriptionList
+          fontSize={22}
           header={t('advertPage:transmission.transmission')}
           width={370}
           handleHide={handleHidden}
           description={translateTransmitionType(descriptionData.transmission)}
         />
         <DescriptionList
+          fontSize={22}
           width={370}
           handleHide={handleHidden}
           header={t('advertPage:steeringWheel.steeringWheel')}
           description={translateSteeringWheel(descriptionData.steeringWheel)}
         />
         <DescriptionList
+          fontSize={22}
           width={370}
           handleHide={handleHidden}
           header={t('advertPage:engine.engine')}
           description={translateEngineType(descriptionData.engineType)}
         />
         <DescriptionList
+          fontSize={22}
           width={370}
           handleHide={handleHidden}
           header={t('advertPage:gearBox.gearBox')}
@@ -77,18 +84,21 @@ export const AdvertInfo = () => {
         />
         <DescriptionList
           width={370}
+          fontSize={22}
           handleHide={handleHidden}
           header={t('advertPage:power.power')}
           description={<Trans i18nKey={'advertPage:power.value'}> {{ power }} </Trans>}
         />
         <DescriptionList
           width={370}
+          fontSize={22}
           handleHide={handleHidden}
           header={t('advertPage:carBody.carBody')}
           description={translateBodyType(descriptionData.carBody)}
         />
         <DescriptionList
           width={370}
+          fontSize={22}
           handleHide={handleHidden}
           header={t('advertPage:tax.tax')}
           description={<Trans i18nKey={'advertPage:tax.value'}> {{ tax }} </Trans>}
@@ -96,6 +106,7 @@ export const AdvertInfo = () => {
         <DescriptionList
           showButtonText={t('advertPage:buttons.show')}
           width={370}
+          fontSize={22}
           handleHide={handleHidden}
           header="VIN"
           hide={isHidden}
@@ -103,42 +114,15 @@ export const AdvertInfo = () => {
         />
         <DescriptionList
           width={370}
+          fontSize={22}
           showButtonText={t('advertPage:buttons.show')}
           handleHide={handleHidden}
           header={t('advertPage:carLicensePlate')}
           hide={isHidden}
           description={descriptionData.carLicensePlate}
         />
-        <div className={'advert-info__account-info__wrapper'}>
-          <div className="advert-info__account-info__photo">
-            <ImageComponent
-              height={121}
-              width={121}
-              src={
-                'https://images.unsplash.com/photo-1622495892289-acbdc7414c59?ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=989&q=80'
-              }
-            />
-          </div>
-          <div style={{ width: '100%' }}>
-            <div className="advert-info__account-info__fullName">
-              <p>Имя Фамилия</p>
-              <p>25 Лет</p>
-            </div>
-            <div className="advert-info__account-info__buttons">
-              <Button
-                variant="primary"
-                style={{ marginBottom: 7 }}
-                height={41}
-                width={234}
-                endIcon={<BiMessageDetail />}>
-                {t('advertPage:buttons.contact')}
-              </Button>
-              <Button variant="primary" height={41} width={234} endIcon={<FaPhoneAlt />}>
-                {t('advertPage:buttons.showNumber')}
-              </Button>
-            </div>
-          </div>
-        </div>
+
+        <AdvertUserInfo />
       </div>
     </div>
   );
