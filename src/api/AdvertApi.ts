@@ -1,11 +1,11 @@
 import { Advert } from '../GlobalTypes/advertTypes';
 import { CustomResponseType } from '../GlobalTypes/responseType';
-import { instance } from './instance';
+import $api from './instance';
 
 export const AdvertApi = {
   async GetAdvert(id: string): Promise<CustomResponseType<Advert> | undefined> {
     try {
-      const advertData = await instance.get(`adverts/${id}`);
+      const advertData = await $api.get(`adverts/${id}`);
 
       return advertData.data;
     } catch (error) {
