@@ -2,3 +2,8 @@
   text-decoration: underline;
   font-weight: 700;
 }
+
+.advert-accordion__content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}

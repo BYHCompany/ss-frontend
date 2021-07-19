@@ -16,11 +16,13 @@ export const AntiTheftProtectionOptions = () => {
     <div style={{ marginBottom: 20 }}>
       <Accordion width={770} title={t('advertPage:options.antiTheftProtection.label')}>
         <ul>
-          <li>
-            {`${t('advertPage:options.antiTheftProtection.signaling.label')}:
+          {antiTheftProtection.signaling && (
+            <li>
+              {`${t('advertPage:options.antiTheftProtection.signaling.label')}:
             ${translateSignaling(antiTheftProtection.signaling)}
           `}
-          </li>
+            </li>
+          )}
           {antiTheftProtection.centralLock && (
             <li>{t('advertPage:options.antiTheftProtection.centralLock')}</li>
           )}

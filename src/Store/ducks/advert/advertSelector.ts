@@ -1,6 +1,5 @@
-import { createDraftSafeSelector, OutputSelector } from '@reduxjs/toolkit';
+import { createDraftSafeSelector } from '@reduxjs/toolkit';
 import { Overview } from '../../../GlobalTypes/advertTypes';
-import { AdvertInfoProps } from '../../../GlobalTypes/carTypes';
 import { LoadingState } from '../../commonType';
 import { AppStateType } from '../../store';
 

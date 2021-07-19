@@ -10,7 +10,7 @@ import {
   translateSeats,
 } from '../../../../services/carTranslators';
 import { getInteriorOptions } from '../../../../Store/ducks/advert/advertSelector';
-
+import './CarEquipment.scss';
 const InteriorOptions = () => {
   const interior: Interior | undefined = useSelector(getInteriorOptions);
   const { t } = useTranslation();
@@ -21,7 +21,7 @@ const InteriorOptions = () => {
   return (
     <div style={{ marginBottom: 20 }}>
       <Accordion width={770} title={t('advertPage:options.interior.label')}>
-        <ul>
+        <ul className="advert-accordion__content">
           <li>{`${t('advertPage:options.interior.seatCount')} : ${interior.seatCount}`}</li>
           <li>{`${t(
             'advertPage:options.interior.interiorMaterial.label',
