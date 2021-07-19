@@ -193,6 +193,8 @@ export const translateInteriorColor = (seats: InteriorColor) => {
       return i18n.t('advertPage:options.interior.interiorColor.dark');
     case 'light':
       return i18n.t('advertPage:options.interior.interiorColor.light');
+    default:
+      return i18n.t('advertPage:options.interior.interiorColor.dark');
   }
 };
 //exterior TRANSLATION
@@ -382,6 +384,8 @@ export const translateSpareWheel = (spareWheel: SpareWheel) => {
       return i18n.t('advertPage:options.other.spareWheel.miniSpare');
     case 'repair':
       return i18n.t('advertPage:options.other.spareWheel.repairKit');
+    default:
+      return i18n.t('advertPage:options.other.spareWheel.donutWheel');
   }
 };
 export const translateSuspention = (suspention: Suspention) => {

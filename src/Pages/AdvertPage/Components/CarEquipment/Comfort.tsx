@@ -11,7 +11,7 @@ import {
   translatePowerWindows,
 } from '../../../../services/carTranslators';
 import { getComfortOptions } from '../../../../Store/ducks/advert/advertSelector';
-
+import './CarEquipment.scss';
 export const Comfort = () => {
   const { t } = useTranslation();
   const comfort = useSelector(getComfortOptions);
@@ -22,16 +22,34 @@ export const Comfort = () => {
   return (
     <div style={{ marginBottom: 20 }}>
       <Accordion width={770} title={t('advertPage:options.comfort.label')}>
-        <ul>
+        <ul className="advert-accordion__content">
           {comfort.powerWindows &&
             translatePowerWindows(comfort.powerWindows).map((e) => <li key={e}>{e} </li>)}
           {comfort.airConditioning && <li> {translateAirConditioning(comfort.airConditioning)}</li>}
           {comfort.powerSteering && <li>{translatePowerSteering(comfort.powerSteering)}</li>}
-          {comfort.cruiseControl && <li> {translateCruiseControl(comfort.cruiseControl)} </li>}
-          {comfort.parkingAssistant && (
-            <li>{translateParkingAssistant(comfort.parkingAssistant)}</li>
+          {comfort.cruiseControl && (
+            <li>
+              {`${t('advertPage:options.comfort.cruiseControl.label')} : ${translateCruiseControl(
+                comfort.cruiseControl,
+              )}`}
+            </li>
           )}
-          {comfort.camera && <li>{translateCamera(comfort.camera)} </li>}
+
+          {comfort.parkingAssistant && (
+            <li>
+              {`${t(
+                'advertPage:options.comfort.parkingAssistant.label',
+              )} : ${translateParkingAssistant(comfort.parkingAssistant)}`}
+            </li>
+          )}
+
+          {comfort.camera && (
+            <li>
+              {`${t('advertPage:options.comfort.camera.label')} : ${translateCamera(
+                comfort.camera,
+              )}`}
+            </li>
+          )}
           {comfort.headUpDisplay && <li>{t('advertPage:options.comfort.headUpDisplay')}</li>}
           {comfort.driveModeSelection && (
             <li>{t('advertPage:options.comfort.driveModeSelection')}</li>
