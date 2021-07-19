@@ -28,6 +28,10 @@ export const AdvertPage = () => {
     };
   }, [dispatch, id]);
 
+  // if (!advert) {
+  //   return null;
+  // }
+
   if (isError) {
     return <Redirect to="/" />;
   }
