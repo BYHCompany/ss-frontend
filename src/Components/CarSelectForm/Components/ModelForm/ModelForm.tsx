@@ -1,8 +1,9 @@
 import { Dropdown } from 'byh-components';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import { getSearchCarModel } from '../../../../Store/ducks/searchCar/searchCarSelector';
 import './ModelForm.scss';
-
+import { useSelector, useDispatch } from 'react-redux';
 type dropdownDataType = [
   {
     label: string;
@@ -12,15 +13,17 @@ type dropdownDataType = [
 ];
 export const dropdownData = [
   {
-    label: '3-series',
+    label: '',
     id: '12134',
-    value: '3s',
+    value: '',
   },
 ] as dropdownDataType;
 
 export const ModelForm = () => {
   const { t } = useTranslation();
+  const model = useSelector(getSearchCarModel);
   const mockFunc = () => {};
+
   return (
     <div data-testid="model-form__wrapper" className="model-form__wrapper">
       <Dropdown
@@ -30,7 +33,14 @@ export const ModelForm = () => {
         variant="default"
         label={t('mainPage:carSelectForm.dropDowns.model')}
         labelFontSize={22}
-        items={dropdownData}
+        itemsScrollHeight={500}
+        items={
+          model
+            ? model.map((m) => {
+                return { id: m, label: m, value: m };
+              })
+            : dropdownData
+        }
         className="model-form__padding"
       />
       <div className="model-form__dropdown model-form__padding">

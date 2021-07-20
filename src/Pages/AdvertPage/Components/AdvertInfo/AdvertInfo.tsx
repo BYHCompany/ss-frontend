@@ -1,9 +1,8 @@
-import { Button, DescriptionList, Title, ImageComponent } from 'byh-components';
+import { DescriptionList, Title } from 'byh-components';
 import React from 'react';
-import { BiMessageDetail } from 'react-icons/bi';
-import { FaPhoneAlt } from 'react-icons/fa';
+
 import './AdvertInfo.scss';
-import { AdvertInfoProps } from '../../../../GlobalTypes/carTypes';
+
 import {
   translateBodyType,
   translateEngineType,
