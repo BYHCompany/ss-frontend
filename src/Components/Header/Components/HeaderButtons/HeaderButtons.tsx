@@ -30,7 +30,7 @@ export const HeaderButtons = () => {
         paddingVertical={5}
         variant="secondary"
         fontSize={18}>
-        <NavLink className="header-button__link" to="/profile">
+        <NavLink className="header-button__link" to="/profile/2">
           {t('header:account')}
         </NavLink>
       </Button>

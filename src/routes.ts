@@ -13,12 +13,12 @@ export interface Route {
 
 export const routes = [
   {
-    path: '/profile/settings',
+    path: '/profile/:id/settings',
     Component: Settings,
     name: 'Profile settings',
   } as Route,
   {
-    path: '/profile',
+    path: '/profile/:id',
     Component: Profile,
     name: 'Profile',
   } as Route,
