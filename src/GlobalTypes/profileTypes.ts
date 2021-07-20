@@ -1,4 +1,5 @@
 import { Tag } from '../Components/Tags/Tags/Tags';
+import { AdvertWithoutCar } from './advertTypes';
 
 type ProfileType = 'private' | 'dealer';
 type ProfileSex = 'male' | 'female' | string;
@@ -23,5 +24,5 @@ export type Profile = {
   uiTheme: ProfileUiTheme;
   impSys: boolean;
   lang: LanguageType;
-  adverts: string[];
+  adverts: AdvertWithoutCar[];
 };

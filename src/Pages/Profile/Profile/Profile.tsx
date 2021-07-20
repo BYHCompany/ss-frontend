@@ -1,13 +1,36 @@
 import { Paper, Title } from 'byh-components';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { AdvertPreview } from '../../../Components/AdvertPreview';
 import { ProfileInfo } from '../../../Components/ProfileInfo';
 import './Profile.scss';
 import { biggerAdvertData } from '../../../assets/advertPreviewData';
 import { profileInfoData } from '../../../assets/profileInfoData';
+import { useParams } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchProfile, setProfileData } from '../../../Store/ducks/profile/profileReducer';
+import { getProfileLoadingState } from '../../../Store/ducks/profile/profileSelector';
 
 export const Profile: React.FC = (): React.ReactElement => {
   const advertVisability: boolean = biggerAdvertData.length > 0 ? true : false;
+
+  const params: { id: string } = useParams();
+  const userID = params.id;
+
+  const dispatch = useDispatch();
+
+  const isProfileLoading = useSelector(getProfileLoadingState);
+
+  useEffect(() => {
+    dispatch(fetchProfile(userID));
+
+    return () => {
+      dispatch(setProfileData(null));
+    };
+  }, [dispatch, userID]);
+
+  if (isProfileLoading) {
+    return <div>Loading...</div>;
+  }
 
   return (
     <div>

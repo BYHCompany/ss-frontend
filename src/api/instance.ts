@@ -10,7 +10,12 @@ const $api = axios.create({
 });
 
 $api.interceptors.request.use((config) => {
-  config.headers.Authorization = `Bearer ${localStorage.getItem('token')}`;
+  const tokenFromLocalStorage = localStorage.getItem('token');
+
+  if (tokenFromLocalStorage) {
+    config.headers.Authorization = `Bearer ${tokenFromLocalStorage}`;
+  }
+
   return config;
 });
 

@@ -20,6 +20,15 @@ export type Advert = {
   owner: UserData | null;
 };
 
+/**
+ * It's for Profile advert array
+ */
+export type AdvertWithoutCar = {
+  id: number;
+  ownerID: number;
+  boosts: Boosts[];
+};
+
 export type Lights = 'xenon' | 'laser' | 'led';
 export type Heat = 'windshield' | 'sideMirrors' | 'washerNozzles' | 'wiperZones';
 export type Overview = {
