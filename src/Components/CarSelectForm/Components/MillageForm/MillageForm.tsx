@@ -26,60 +26,65 @@ export const MillageForm: React.FC<IProps> = ({ setSelectedData }) => {
 
   const onChangeHandler = () => {
     setChecked(!checked);
+  };
+
+  React.useEffect(() => {
     setSelectedData((prev) => {
       return { ...prev, gasEquip: checked };
     });
-  };
+  }, [checked, setSelectedData]);
 
   return (
     <div data-testid="millage-form" style={{ marginTop: 50, width: 496 }}>
-      <div className="model-form__dropdown model-form__padding">
-        <form onBlur={handleSubmit(onSubmit)} style={{ display: 'flex' }}>
-          <Controller
-            control={control}
-            name="millageFrom"
-            render={({ field: { onChange, value } }) => {
-              return (
-                <Input
-                  onChange={onChange}
-                  value={value}
-                  inputMode="numeric"
-                  type="number"
-                  pattern="[0-9]{10}"
-                  width={238}
-                  height={50}
-                  placeholder={t('mainPage:carSelectForm.dropDowns.millage.millageFrom')}
-                  fontSize={22}
-                  variant="secondary"
-                />
-              );
-            }}
-          />
-          <span className="short-input__divider ">-</span>
-          <Controller
-            control={control}
-            name="millageTo"
-            render={({ field: { onChange, value } }) => (
+      <form
+        className="model-form__dropdown model-form__padding"
+        onBlur={handleSubmit(onSubmit)}
+        style={{ display: 'flex' }}>
+        <Controller
+          control={control}
+          name="millageFrom"
+          render={({ field: { onChange, value } }) => {
+            return (
               <Input
                 onChange={onChange}
                 value={value}
-                name="millageTo"
                 inputMode="numeric"
                 type="number"
                 pattern="[0-9]{10}"
                 width={238}
                 height={50}
-                placeholder={t('mainPage:carSelectForm.dropDowns.millage.millageTo')}
-                fontSize={22}
+                placeholder={t('mainPage:carSelectForm.dropDowns.millage.millageFrom')}
+                fontSize={20}
                 variant="secondary"
               />
-            )}
-          />
-        </form>
-      </div>
+            );
+          }}
+        />
+        <span className="short-input__divider ">-</span>
+        <Controller
+          control={control}
+          name="millageTo"
+          render={({ field: { onChange, value } }) => (
+            <Input
+              onChange={onChange}
+              value={value}
+              name="millageTo"
+              inputMode="numeric"
+              type="number"
+              pattern="[0-9]{10}"
+              width={238}
+              height={50}
+              placeholder={t('mainPage:carSelectForm.dropDowns.millage.millageTo')}
+              fontSize={20}
+              variant="secondary"
+            />
+          )}
+        />
+      </form>
+
       <div className="model-form__dropdown model-form__padding">
         <Dropdown
-          labelFontSize={22}
+          labelFontSize={20}
           width={238}
           height={50}
           label={t('mainPage:carSelectForm.dropDowns.carBody')}
@@ -88,7 +93,7 @@ export const MillageForm: React.FC<IProps> = ({ setSelectedData }) => {
         />
         <Dropdown
           width={238}
-          labelFontSize={22}
+          labelFontSize={20}
           height={50}
           label={t('mainPage:carSelectForm.dropDowns.gearBox')}
           items={CarGearboxType}
@@ -99,16 +104,61 @@ export const MillageForm: React.FC<IProps> = ({ setSelectedData }) => {
         <Dropdown
           width={377}
           height={50}
-          labelFontSize={22}
+          labelFontSize={20}
           label={t('mainPage:carSelectForm.dropDowns.transmission')}
           items={CarTransmition}
           callback={setMillageFormData}
         />
         <CheckBox checked={checked} onChangeHandler={onChangeHandler} width={34} height={34} />
+
         <Title type="ultraSmall" variant="primary">
           {t('mainPage:carSelectForm.dropDowns.gasEquipment')}
         </Title>
       </div>
+      <form
+        className="model-form__dropdown model-form__padding"
+        onBlur={handleSubmit(onSubmit)}
+        style={{ display: 'flex' }}>
+        <Controller
+          control={control}
+          name="priceFrom"
+          render={({ field: { onChange, value } }) => {
+            return (
+              <Input
+                onChange={onChange}
+                value={value}
+                inputMode="numeric"
+                type="number"
+                pattern="[0-9]{10}"
+                width={238}
+                height={50}
+                placeholder={t('mainPage:carSelectForm.dropDowns.millage.millageFrom')}
+                fontSize={20}
+                variant="secondary"
+              />
+            );
+          }}
+        />
+        <span className="short-input__divider ">-</span>
+        <Controller
+          control={control}
+          name="priceTo"
+          render={({ field: { onChange, value } }) => (
+            <Input
+              onChange={onChange}
+              value={value}
+              inputMode="numeric"
+              type="number"
+              pattern="[0-9]{10}"
+              width={238}
+              height={50}
+              placeholder={t('mainPage:carSelectForm.dropDowns.millage.millageTo')}
+              fontSize={20}
+              variant="secondary"
+            />
+          )}
+        />
+      </form>
     </div>
   );
 };

@@ -8,9 +8,9 @@ import { TopicsSlider } from '../Components/TopicsSlider/TopicsSlider';
 export const MainPage = () => {
   return (
     <div data-testid="mainPage_wrapper">
-      <div style={{ marginBottom: 40 }}>
+      {/* <div style={{ marginBottom: 40 }}>
         <TypeSelect />
-      </div>
+      </div> */}
       <div style={{ marginBottom: 60 }}>
         <CarSelectorForm />
       </div>
