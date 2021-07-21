@@ -1,33 +1,43 @@
 import { Dropdown } from 'byh-components';
-import React from 'react';
+import React, { Dispatch, SetStateAction } from 'react';
 import { useTranslation } from 'react-i18next';
 import { getSearchCarModel } from '../../../../Store/ducks/searchCar/searchCarSelector';
 import './ModelForm.scss';
-import { useSelector, useDispatch } from 'react-redux';
-type dropdownDataType = [
-  {
-    label: string;
-    id: string;
-    value: string;
-  },
-];
+import { useSelector } from 'react-redux';
+import { createArrayObjectOfAllYears } from '../../../../services/allYears';
+import { CarEngineType } from '../../../../services/carFormData';
+import { createArrayOfVolumes } from '../../../../services/carVolumes';
+export type dropdownDataType = {
+  label: string;
+  id: string;
+  value: string;
+};
+
+interface IProps {
+  setSelectedData: Dispatch<SetStateAction<{}>>;
+}
+
 export const dropdownData = [
   {
     label: '',
     id: '12134',
     value: '',
-  },
-] as dropdownDataType;
+  } as dropdownDataType,
+];
 
-export const ModelForm = () => {
+export const ModelForm: React.FC<IProps> = ({ setSelectedData }) => {
   const { t } = useTranslation();
   const model = useSelector(getSearchCarModel);
-  const mockFunc = () => {};
+  const setDropdownInfo = (data: dropdownDataType) => {
+    setSelectedData((prev) => {
+      return { ...prev, [data.value]: data.id };
+    });
+  };
 
   return (
     <div data-testid="model-form__wrapper" className="model-form__wrapper">
       <Dropdown
-        callback={mockFunc}
+        callback={setDropdownInfo}
         width={322}
         height={50}
         variant="default"
@@ -37,7 +47,7 @@ export const ModelForm = () => {
         items={
           model
             ? model.map((m) => {
-                return { id: m, label: m, value: m };
+                return { id: m, label: m, value: 'model' };
               })
             : dropdownData
         }
@@ -45,50 +55,50 @@ export const ModelForm = () => {
       />
       <div className="model-form__dropdown model-form__padding">
         <Dropdown
-          callback={mockFunc}
+          callback={setDropdownInfo}
           label={t('mainPage:carSelectForm.dropDowns.year.yearFrom')}
           width={150}
           height={50}
           labelFontSize={22}
-          items={dropdownData}
+          items={createArrayObjectOfAllYears('yearFrom')}
         />
         <span className="short-input__divider">-</span>
         <Dropdown
-          callback={mockFunc}
+          callback={setDropdownInfo}
           label={t('mainPage:carSelectForm.dropDowns.year.yearTo')}
           width={150}
           height={50}
           labelFontSize={22}
-          items={dropdownData}
+          items={createArrayObjectOfAllYears('yearTo')}
         />
       </div>
       <div className="model-form__dropdown model-form__padding">
         <Dropdown
-          callback={mockFunc}
+          callback={setDropdownInfo}
           label={t('mainPage:carSelectForm.dropDowns.engineVolume.volumeFrom')}
           width={150}
           height={50}
           labelFontSize={22}
-          items={dropdownData}
+          items={createArrayOfVolumes('volumeFrom')}
         />
         <Dropdown
-          callback={mockFunc}
+          callback={setDropdownInfo}
           label={t('mainPage:carSelectForm.dropDowns.engineVolume.volumeTo')}
           width={150}
           height={50}
           labelFontSize={22}
-          items={dropdownData}
+          items={createArrayOfVolumes('volumeTo')}
         />
       </div>
       <Dropdown
         className="model-form__padding"
-        callback={mockFunc}
+        callback={setDropdownInfo}
         label={t('mainPage:carSelectForm.dropDowns.engineType')}
         labelFontSize={22}
         width={322}
         height={50}
         variant="default"
-        items={dropdownData}
+        items={CarEngineType}
       />
     </div>
   );
