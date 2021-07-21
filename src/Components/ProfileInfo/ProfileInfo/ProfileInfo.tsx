@@ -1,31 +1,30 @@
-import { Button, ImageComponent, Paper, Title } from 'byh-components';
+import { Button, Paper, Title } from 'byh-components';
 import React from 'react';
+import { useEffect } from 'react';
 import { FiSettings } from 'react-icons/fi';
 import { GrLocation } from 'react-icons/gr';
+import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { Tag, Tags } from '../../Tags/Tags/Tags';
+import { fetchMainProfileInfo } from '../../../Store/ducks/profile/profileReducer';
+import { BigProfileAvatar } from '../../Avatars/BigProfileAvatar';
+import { Tags } from '../../Tags/Tags/Tags';
 import './ProfileInfo.scss';
-export interface ProfileInfoProps {
-  location: string;
-  photoUrl: string;
-  firstName: string;
-  lastName: string;
-  about: string;
-  tags: Tag[];
+
+interface Props {
+  userID: string;
 }
 
-export const ProfileInfo: React.FC<ProfileInfoProps> = ({
-  about,
-  firstName,
-  lastName,
-  location,
-  photoUrl,
-  tags,
-}) => {
+export const ProfileInfo: React.FC<Props> = ({ userID }): React.ReactElement => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchMainProfileInfo(userID));
+  });
+
   return (
     <Paper maxWidth={1170} style={{ padding: 35, display: 'flex', marginBottom: 55 }}>
       <div>
-        <ImageComponent src={photoUrl} width={207} height={207} style={{ marginRight: 30 }} />
+        <BigProfileAvatar />
       </div>
       <div className="profile-info__wrapper">
         <div className="fullName">
@@ -38,7 +37,7 @@ export const ProfileInfo: React.FC<ProfileInfoProps> = ({
             </Title>
           </div>
 
-          <Link to="/profile/settings" className="setting-button">
+          <Link to={`/profile/${userID}/settings`} className="setting-button">
             <FiSettings style={{ fontSize: 30 }} />
           </Link>
         </div>
@@ -52,9 +51,7 @@ export const ProfileInfo: React.FC<ProfileInfoProps> = ({
           <p>{about}</p>
         </section>
         <div className="tags-message__wrapper">
-          <div className="profile-info__tags-wrapper">
-            <Tags tags={tags} />
-          </div>
+          <div className="profile-info__tags-wrapper">{tags && <Tags tags={tags} />}</div>
           <Button width={170} height={43} fontSize={24} variant={'primary'}>
             Сообщения
           </Button>

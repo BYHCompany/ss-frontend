@@ -1,5 +1,8 @@
-import { ImageComponent, Paper, Title } from 'byh-components';
+import { Paper, Title } from 'byh-components';
 import React from 'react';
+import { useSelector } from 'react-redux';
+import { BigProfileAvatar } from '../../../Components/Avatars/BigProfileAvatar';
+import { getInfoForSettings } from '../../../Store/ducks/profile/profileSelector';
 import './Settings.scss';
 import { Account } from './Tabs/Account/Account';
 import { Appearance } from './Tabs/Appearance/Appearance';
@@ -10,17 +13,18 @@ type SettingsMenus = 'account' | 'privacy' | 'appearance';
 export const Settings = () => {
   const [selectedType, setSelectedType] = React.useState<SettingsMenus>('account');
 
+  const minProfileData = useSelector(getInfoForSettings);
+
   return (
     <Paper display="grid" className="settings__wrapper">
       <div className="settings__photoAndName">
-        <ImageComponent
-          style={{ marginBottom: 14 }}
-          width={207}
-          height={207}
-          src="https://images.unsplash.com/photo-1621201523018-4744fee81b17?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=934&q=80"
-        />
-        <p className="settings__name">Имя</p>
-        <p className="settings__name">Фамилия</p>
+        {minProfileData && (
+          <>
+            <BigProfileAvatar />
+            <p className="settings__name">{minProfileData.firstName}</p>
+            <p className="settings__name">{minProfileData.lastName}</p>
+          </>
+        )}
       </div>
       <div className="settings__mainContent">
         <Title style={{ marginBottom: 20 }} customVariantColor="#000000" type="medium">

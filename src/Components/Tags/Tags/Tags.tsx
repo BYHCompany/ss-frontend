@@ -8,7 +8,7 @@ export type Tag = {
   name: string;
 };
 export interface TagsProps {
-  tags: Tag[];
+  tags?: Tag[];
   withButton?: boolean;
 }
 
@@ -24,6 +24,10 @@ export const Tags: React.FC<TagsProps> = ({ tags, withButton = false }) => {
       }
     });
   };
+
+  if (!tags) {
+    return null;
+  }
 
   return (
     <>

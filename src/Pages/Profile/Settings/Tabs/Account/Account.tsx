@@ -1,6 +1,8 @@
 import { Button, ImageComponent, Input, Textarea, Title } from 'byh-components';
 import React from 'react';
 import { Controller, useForm } from 'react-hook-form';
+import { useSelector } from 'react-redux';
+import { getProfileAccountSettings } from '../../../../../Store/ducks/profile/profileSelector';
 import './Account.scss';
 
 type SelectedSex = 'man' | 'woman' | 'other';
@@ -18,6 +20,7 @@ interface Data {
 
 export const Account: React.FC = (): React.ReactElement => {
   const [selectedSex, setSelectedSex] = React.useState<SelectedSex>('man');
+  const accountData = useSelector(getProfileAccountSettings);
 
   const { control, handleSubmit } = useForm<Data>();
 
@@ -41,6 +44,7 @@ export const Account: React.FC = (): React.ReactElement => {
             <Controller
               control={control}
               name="name"
+              defaultValue={accountData.firstName ? accountData.firstName : ''}
               render={({ field: { value, onChange } }) => (
                 <Input
                   className="settings__input"
@@ -61,6 +65,7 @@ export const Account: React.FC = (): React.ReactElement => {
                   className="settings__input"
                   width={300}
                   height={40}
+                  defaultValue={accountData.lastName ? accountData.lastName : ''}
                   value={value}
                   onChange={onChange}
                   variant="secondary"
@@ -71,6 +76,7 @@ export const Account: React.FC = (): React.ReactElement => {
             <Controller
               control={control}
               name="about"
+              defaultValue={accountData.about ? accountData.about : ''}
               render={({ field: { value, onChange } }) => (
                 <Textarea
                   value={value}
@@ -94,7 +100,7 @@ export const Account: React.FC = (): React.ReactElement => {
                 width={80}
                 height={27}
                 fontSize={14}>
-                Мужской
+                {<>{accountData?.firstName === ''}</>}
               </Button>
               <Button
                 onClick={(e: React.MouseEvent<HTMLElement>) => changeSex(e, 'woman')}
