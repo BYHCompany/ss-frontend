@@ -8,70 +8,74 @@ export interface Route {
   path: string;
   Component: any;
   name: string;
+  isAuth?: boolean;
   exact?: boolean;
 }
 
-export const routes = [
+export const routes: Route[] = [
   {
     path: '/profile/:id/settings',
     Component: Settings,
     name: 'Profile settings',
-  } as Route,
+  },
   {
     path: '/profile/:id',
     Component: Profile,
     name: 'Profile',
-  } as Route,
+  },
   {
     path: '/advert/:id',
     Component: AdvertPage,
     name: 'AdvertPage',
-  } as Route,
+  },
 
   {
     path: '/addAdvert/success',
     Component: SuccessPage,
     name: 'SuccessPage',
-  } as Route,
+  },
 
   {
     path: '/addAdvert',
     Component: AddAdvert,
     name: 'AddAdvert',
-  } as Route,
+    isAuth: false,
+  },
 
   {
     path: '/',
     Component: MainPage,
     name: 'MainPage',
     exact: true,
-  } as Route,
-];
-
-export const authRoutes = [
+  },
   {
     path: '/signUp/about',
     Component: About,
     name: 'About',
-  } as Route,
+    isAuth: true,
+  },
   {
     path: '/signUp/confirmEmail',
     Component: Email,
     name: 'confirmEmail',
-  } as Route,
+    isAuth: true,
+  },
   {
     path: '/signUp/confirmEmail',
     Component: Email,
     name: 'confirmEmail',
-  } as Route,
+    isAuth: true,
+  },
   {
     path: '/signIn',
     Component: SignIn,
     name: 'SignIn',
-  } as Route,
+    isAuth: true,
+  },
   {
     path: '/signUp',
     Component: SignUp,
     name: 'SignUp',
-  } as Route,
+    isAuth: true,
+  },
 ];

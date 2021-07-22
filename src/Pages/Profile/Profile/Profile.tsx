@@ -4,11 +4,11 @@ import { AdvertPreview } from '../../../Components/AdvertPreview';
 import { ProfileInfo } from '../../../Components/ProfileInfo';
 import './Profile.scss';
 import { biggerAdvertData } from '../../../assets/advertPreviewData';
-import { profileInfoData } from '../../../assets/profileInfoData';
 import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchProfile, setProfileData } from '../../../Store/ducks/profile/profileReducer';
-import { getProfileLoadingState } from '../../../Store/ducks/profile/profileSelector';
+import { fetchFullProfile } from '../../../Store/ducks/profile/profileReducer';
+import { getFullProfileLoadingState } from '../../../Store/ducks/profile/profileSelector';
+import { LoadingState } from '../../../Store/commonType';
 
 export const Profile: React.FC = (): React.ReactElement => {
   const advertVisability: boolean = biggerAdvertData.length > 0 ? true : false;
@@ -18,30 +18,17 @@ export const Profile: React.FC = (): React.ReactElement => {
 
   const dispatch = useDispatch();
 
-  const isProfileLoading = useSelector(getProfileLoadingState);
+  const profileStatus = useSelector(getFullProfileLoadingState);
 
   useEffect(() => {
-    dispatch(fetchProfile(userID));
-
-    return () => {
-      dispatch(setProfileData(null));
-    };
-  }, [dispatch, userID]);
-
-  if (isProfileLoading) {
-    return <div>Loading...</div>;
-  }
+    if (profileStatus === LoadingState.NEVER || profileStatus === LoadingState.ERROR) {
+      dispatch(fetchFullProfile(userID));
+    }
+  }, [dispatch, userID, profileStatus]);
 
   return (
     <div>
-      <ProfileInfo
-        about={profileInfoData.about}
-        firstName={profileInfoData.firstName}
-        lastName={profileInfoData.lastName}
-        location={profileInfoData.location}
-        photoUrl={profileInfoData.photoUrl}
-        tags={profileInfoData.tags}
-      />
+      <ProfileInfo userID={userID} />
       <Title variant="primary" type="medium" style={{ marginBottom: 30 }}>
         Объявления пользователя
       </Title>

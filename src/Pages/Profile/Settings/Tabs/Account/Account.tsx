@@ -1,136 +1,176 @@
 import { Button, ImageComponent, Input, Textarea, Title } from 'byh-components';
-import React from 'react';
+import React, { useState } from 'react';
+import { useEffect } from 'react';
 import { Controller, useForm } from 'react-hook-form';
+import { useDispatch, useSelector } from 'react-redux';
+import { ProfileSex } from '../../../../../GlobalTypes/profileTypes';
+import { LoadingState } from '../../../../../Store/commonType';
+import { fetchFullProfile } from '../../../../../Store/ducks/profile/profileReducer';
+import {
+  getAdditionalProfileInfo,
+  getFullProfileLoadingState,
+  getMainProfileInfo,
+} from '../../../../../Store/ducks/profile/profileSelector';
 import './Account.scss';
-
-type SelectedSex = 'man' | 'woman' | 'other';
 
 interface Data {
   name: string;
   surname: string;
   about: string;
-  sex: SelectedSex;
+  sex: ProfileSex;
   otherSex?: string;
   location?: string;
   bd: string; // Birthday
   avatar: File;
 }
 
-export const Account: React.FC = (): React.ReactElement => {
-  const [selectedSex, setSelectedSex] = React.useState<SelectedSex>('man');
+interface Props {
+  userID: string;
+}
 
+export const Account: React.FC<Props> = ({ userID }): React.ReactElement | null => {
+  const dispatch = useDispatch();
+
+  const [selectedSex, setSelectedSex] = React.useState<ProfileSex>('male');
   const { control, handleSubmit } = useForm<Data>();
 
-  //TODO:
-  //1. Fix data : any
+  const mainData = useSelector(getMainProfileInfo);
+  const additionalInfo = useSelector(getAdditionalProfileInfo);
+  const profileStatus = useSelector(getFullProfileLoadingState);
+
+  useEffect(() => {
+    if (profileStatus === LoadingState.ERROR || profileStatus === LoadingState.NEVER) {
+      dispatch(fetchFullProfile(userID));
+    }
+
+    additionalInfo.sex && setSelectedSex(additionalInfo.sex);
+  }, [dispatch, mainData, additionalInfo, profileStatus, userID]);
 
   const sendData = (data: Data) => {
     console.log(data);
   };
 
-  const changeSex = (e: React.MouseEvent<HTMLElement>, sex: SelectedSex) => {
+  const changeSex = (e: React.MouseEvent<HTMLElement>, sex: ProfileSex) => {
     e.preventDefault();
     setSelectedSex(sex);
   };
+
+  if (profileStatus === LoadingState.LOADING) {
+    return null;
+  }
 
   return (
     <form onSubmit={handleSubmit(sendData)} className="settings__formWrapper">
       <div className="settings__formGrid">
         <div className="settings__left">
           <div className="settings__mainInputs">
-            <Controller
-              control={control}
-              name="name"
-              render={({ field: { value, onChange } }) => (
-                <Input
-                  className="settings__input"
-                  width={300}
-                  height={40}
-                  value={value}
-                  onChange={onChange}
-                  variant="secondary"
-                  placeholder="Имя"
-                />
-              )}
-            />
-            <Controller
-              control={control}
-              name="surname"
-              render={({ field: { value, onChange } }) => (
-                <Input
-                  className="settings__input"
-                  width={300}
-                  height={40}
-                  value={value}
-                  onChange={onChange}
-                  variant="secondary"
-                  placeholder="Фамилия"
-                />
-              )}
-            />
-            <Controller
-              control={control}
-              name="about"
-              render={({ field: { value, onChange } }) => (
-                <Textarea
-                  value={value}
-                  onChange={onChange}
-                  variant="primary"
-                  placeholder="О себе"
-                  width={300}
-                  height={200}
-                />
-              )}
-            />
-          </div>
-          <div className="settings__sexSelector">
-            <Title style={{ marginBottom: 10 }} customVariantColor="#000000" type="ultraSmall">
-              Пол
-            </Title>
-            <div className="settings__sexButtons">
-              <Button
-                onClick={(e: React.MouseEvent<HTMLElement>) => changeSex(e, 'man')}
-                variant={selectedSex === 'man' ? 'primary' : 'secondary'}
-                width={80}
-                height={27}
-                fontSize={14}>
-                Мужской
-              </Button>
-              <Button
-                onClick={(e: React.MouseEvent<HTMLElement>) => changeSex(e, 'woman')}
-                variant={selectedSex === 'woman' ? 'primary' : 'secondary'}
-                width={80}
-                height={27}
-                fontSize={14}>
-                Женский
-              </Button>
-              <Button
-                onClick={(e: React.MouseEvent<HTMLElement>) => changeSex(e, 'other')}
-                variant={selectedSex === 'other' ? 'primary' : 'secondary'}
-                width={80}
-                height={27}
-                fontSize={14}>
-                Другой
-              </Button>
-            </div>
-            {selectedSex === 'other' && (
+            {mainData.firstName && (
               <Controller
                 control={control}
-                name="sex"
+                name="name"
+                defaultValue={mainData.firstName}
                 render={({ field: { value, onChange } }) => (
                   <Input
-                    value={value}
-                    onChange={onChange}
-                    className=""
-                    variant="secondary"
-                    placeholder="Пол (необязательно)"
+                    className="settings__input"
                     width={300}
                     height={40}
+                    value={value}
+                    onChange={onChange}
+                    variant="secondary"
+                    placeholder="Имя"
+                  />
+                )}
+              />
+            )}
+            {mainData.lastName && (
+              <Controller
+                control={control}
+                name="surname"
+                defaultValue={mainData.lastName}
+                render={({ field: { value, onChange } }) => (
+                  <Input
+                    className="settings__input"
+                    width={300}
+                    height={40}
+                    value={value}
+                    onChange={onChange}
+                    variant="secondary"
+                    placeholder="Фамилия"
+                  />
+                )}
+              />
+            )}
+            {additionalInfo.about && (
+              <Controller
+                control={control}
+                name="about"
+                defaultValue={additionalInfo.about}
+                render={({ field: { value, onChange } }) => (
+                  <Textarea
+                    value={value}
+                    onChange={onChange}
+                    variant="primary"
+                    placeholder="О себе"
+                    width={300}
+                    height={200}
                   />
                 )}
               />
             )}
           </div>
+          {additionalInfo.sex && (
+            <div className="settings__sexSelector">
+              <Title style={{ marginBottom: 10 }} customVariantColor="#000000" type="ultraSmall">
+                Пол
+              </Title>
+              <div className="settings__sexButtons">
+                <Button
+                  onClick={(e: React.MouseEvent<HTMLElement>) => changeSex(e, 'male')}
+                  variant={selectedSex === 'male' ? 'primary' : 'secondary'}
+                  width={80}
+                  height={27}
+                  fontSize={14}>
+                  {<>{mainData?.firstName === ''}</>}
+                </Button>
+                <Button
+                  onClick={(e: React.MouseEvent<HTMLElement>) => changeSex(e, 'female')}
+                  variant={selectedSex === 'female' ? 'primary' : 'secondary'}
+                  width={80}
+                  height={27}
+                  fontSize={14}>
+                  Женский
+                </Button>
+                <Button
+                  onClick={(e: React.MouseEvent<HTMLElement>) => changeSex(e, 'other')}
+                  variant={
+                    selectedSex !== 'male' && selectedSex !== 'female' ? 'primary' : 'secondary'
+                  }
+                  width={80}
+                  height={27}
+                  fontSize={14}>
+                  Другой
+                </Button>
+              </div>
+              {selectedSex !== 'male' && selectedSex !== 'female' && (
+                <Controller
+                  control={control}
+                  name="sex"
+                  defaultValue={selectedSex}
+                  render={({ field: { value, onChange } }) => (
+                    <Input
+                      value={value}
+                      onChange={onChange}
+                      className=""
+                      variant="secondary"
+                      placeholder="Пол (необязательно)"
+                      width={300}
+                      height={40}
+                    />
+                  )}
+                />
+              )}
+            </div>
+          )}
           <div className="settings__location">
             <Title
               style={{ marginBottom: 5 }}

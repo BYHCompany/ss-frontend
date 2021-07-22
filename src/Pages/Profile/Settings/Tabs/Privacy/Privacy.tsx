@@ -4,6 +4,14 @@ import { Controller, useForm } from 'react-hook-form';
 import { ImPencil } from 'react-icons/im';
 import './Privacy.scss';
 import { IoKeySharp } from 'react-icons/io5';
+import { useDispatch, useSelector } from 'react-redux';
+import {
+  getAdditionalProfileInfo,
+  getFullProfileLoadingState,
+} from '../../../../../Store/ducks/profile/profileSelector';
+import { useEffect } from 'react';
+import { LoadingState } from '../../../../../Store/commonType';
+import { fetchFullProfile } from '../../../../../Store/ducks/profile/profileReducer';
 
 interface PrivacyData {
   email: string;
@@ -13,24 +21,49 @@ interface PrivacyData {
   phone: string;
 }
 
-export const Privacy: React.FC = () => {
+interface RenderInputProps {
+  name: keyof PrivacyData;
+  placeholder: string;
+  type?: string;
+  startIcon?: React.ReactNode;
+  endIcon?: React.ReactNode;
+  defaultValue?: string;
+}
+
+interface Props {
+  userID: string;
+}
+
+export const Privacy: React.FC<Props> = ({ userID }) => {
   const { control, handleSubmit } = useForm<PrivacyData>();
+
+  const dispatch = useDispatch();
+  const profileStatus = useSelector(getFullProfileLoadingState);
+  const additionalInfo = useSelector(getAdditionalProfileInfo);
+
+  useEffect(() => {
+    if (profileStatus === LoadingState.ERROR || profileStatus === LoadingState.NEVER) {
+      dispatch(fetchFullProfile(userID));
+    }
+  });
 
   const sendData = (data: PrivacyData) => {
     console.log(data);
   };
 
-  const renderInput = (
-    name: keyof PrivacyData,
-    placeholder: string,
-    type: string = 'text',
-    startIcon?: React.ReactNode,
-    endIcon?: React.ReactNode,
-  ) => {
+  const renderInput = ({
+    name,
+    placeholder,
+    type,
+    defaultValue,
+    endIcon = null,
+    startIcon = null,
+  }: RenderInputProps) => {
     return (
       <Controller
         control={control}
         name={name}
+        defaultValue={defaultValue}
         render={({ field: { value, onChange } }) => (
           <Input
             type={type}
@@ -54,21 +87,44 @@ export const Privacy: React.FC = () => {
       <div className="settings__privacy__wrapper">
         <div className="privacy__left">
           <div className="settings__privacy__input">
-            {renderInput('email', 'E-mail', '', <ImPencil />)}
+            {renderInput({
+              name: 'email',
+              placeholder: 'E-mail',
+              startIcon: <ImPencil />,
+              defaultValue: additionalInfo.email ? additionalInfo.email : '',
+            })}
           </div>
           <div className="settings__privacy__input">
-            {renderInput('oldPass', 'Старый пароль', 'password')}
+            {renderInput({
+              name: 'oldPass',
+              placeholder: 'Старый пароль',
+              type: 'password',
+            })}
           </div>
           <div className="privacy__inputWrapper settings__privacy__input">
-            {renderInput('pass1', 'Новый Пароль', 'password')}
+            {renderInput({
+              name: 'pass1',
+              placeholder: 'Новый Пароль',
+              type: 'password',
+            })}
             <p className="privacy__input__strong">Надёжно</p>
           </div>
           <div className="privacy__inputWrapper settings__privacy__input">
-            {renderInput('pass2', 'Подтвержд. Пароля', 'password')}
+            {renderInput({
+              name: 'pass2',
+              placeholder: 'Подтвержд. Пароля',
+              type: 'password',
+            })}
             <p className="privacy__input__miss">Пароли не совпадают</p>
           </div>
           <div className="settings__privacy__input">
-            {renderInput('phone', 'Телефон', 'tel', '+371', <ImPencil />)}
+            {renderInput({
+              name: 'phone',
+              placeholder: 'Телефон',
+              type: 'tel',
+              endIcon: <ImPencil />,
+              defaultValue: additionalInfo.phone ? additionalInfo.phone : '',
+            })}
           </div>
         </div>
         <div className="privacy__right">
