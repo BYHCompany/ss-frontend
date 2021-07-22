@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux';
 import { Overview } from '../../../../GlobalTypes/advertTypes';
 import { translateHeats, translateLights } from '../../../../services/carTranslators';
 import { getOverviewOptions } from '../../../../Store/ducks/advert/advertSelector';
-
+import './CarEquipment.scss';
 const OverviewOptions = () => {
   const { t } = useTranslation();
   const overview: Overview | undefined = useSelector(getOverviewOptions);
@@ -16,7 +16,7 @@ const OverviewOptions = () => {
   return (
     <div style={{ marginBottom: 20 }}>
       <Accordion width={770} title={t('advertPage:options.overview.label')}>
-        <ul>
+        <ul className="advert-accordion__content">
           {overview.lights && <li> {translateLights(overview.lights)}</li>}
           {/* {overview.heat && translateHeats(overview.heat).map((h) => <li key={h}> {h} </li>)} */}
           {overview.heat &&

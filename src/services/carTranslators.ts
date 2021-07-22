@@ -80,6 +80,8 @@ export const translateBodyType = (carBody: CarBodyTypes) => {
       return i18n.t('advertPage:carBody.carBodyTypes.pickup');
     case 'hatchback':
       return i18n.t('advertPage:carBody.carBodyTypes.hatchback');
+    case 'compact':
+      return i18n.t('advertPage:carBody.carBodyTypes.compact');
   }
 };
 

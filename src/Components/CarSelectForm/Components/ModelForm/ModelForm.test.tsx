@@ -3,8 +3,9 @@ import React from 'react';
 import { ModelForm } from './ModelForm';
 
 describe('ModelForm', () => {
+  const mock = () => {};
   const getForm = () => {
-    return render(<ModelForm />);
+    return render(<ModelForm setSelectedData={mock} />);
   };
 
   it('ModelForm should be rendered in the document', () => {

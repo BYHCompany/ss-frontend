@@ -2,6 +2,7 @@ import { configureStore } from '@reduxjs/toolkit';
 import createSagaMiddleware from 'redux-saga';
 import advertReducer from './ducks/advert/advertReducer';
 import appReducer from './ducks/app/appReducer';
+import searchCarReducer from './ducks/searchCar/searchCarReducer';
 import profileReducer from './ducks/profile/profileReducer';
 import rootSaga from './sagas';
 
@@ -11,6 +12,7 @@ export const store = configureStore({
   reducer: {
     app: appReducer,
     advert: advertReducer,
+    searchCar: searchCarReducer,
     profile: profileReducer,
   },
   middleware: (getDefaultMiddleware) =>

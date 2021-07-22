@@ -14,6 +14,7 @@ const advertInitialState = {
     ownerID: null,
     boosts: null,
     item: null,
+    owner: null,
     createAt: null,
     updateAt: null,
   },

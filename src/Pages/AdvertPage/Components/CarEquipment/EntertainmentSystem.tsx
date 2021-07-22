@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { translateAudioSystem } from '../../../../services/carTranslators';
 import { getEntertainmentSystemOptions } from '../../../../Store/ducks/advert/advertSelector';
-
+import './CarEquipment.scss';
 export const EntertainmentSystem = () => {
   const { t } = useTranslation();
   const entertainmentSystem = useSelector(getEntertainmentSystemOptions);
@@ -14,7 +14,7 @@ export const EntertainmentSystem = () => {
   return (
     <div style={{ marginBottom: 20 }}>
       <Accordion width={770} title={t('advertPage:options.entertainmentSystem.label')}>
-        <ul>
+        <ul className="advert-accordion__content">
           <li>
             {`
           ${translateAudioSystem(entertainmentSystem.audioSystem)}

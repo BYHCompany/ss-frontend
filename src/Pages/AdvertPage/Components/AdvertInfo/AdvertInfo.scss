@@ -1,6 +1,4 @@
-.advert-info__wrapper {
-  position: relative;
-}
+@import '../../../../GlobalStyles/mixins';
 
 .advert-info__wrapper {
   position: sticky;
@@ -31,4 +29,12 @@
 
 .advert-info__account-info__buttons {
   flex-direction: column;
+}
+
+.advert-info__account-info__hiddenText {
+  font-weight: 700;
+  @include theme-aware('color', 'primary');
+  margin-bottom: 13px;
+  margin-top: 14px;
+  text-align: center;
 }

@@ -15,7 +15,6 @@ import { Comment } from '../Components/Comment/Comment';
 import './AdvertPage.scss';
 export const AdvertPage = () => {
   const dispatch = useDispatch();
-  const advert = useSelector(getAdvert);
   const isLoading = useSelector(getIsAdvertLoading);
   const isError = useSelector(getIsAdvertError);
   const params: { id: string } = useParams();
@@ -37,7 +36,7 @@ export const AdvertPage = () => {
   }
   if (isLoading) {
     return (
-      <div>
+      <div style={{ height: '100vh' }}>
         <h1> LOADING...</h1>
       </div>
     );
