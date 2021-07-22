@@ -18,7 +18,12 @@ export const MillageForm: React.FC<IProps> = ({ setSelectedData }) => {
     });
   };
 
-  const onSubmit = (data: any) => {
+  const onBlurMillage = (data: any) => {
+    setSelectedData((prev) => {
+      return { ...prev, ...data };
+    });
+  };
+  const onBlurPrice = (data: any) => {
     setSelectedData((prev) => {
       return { ...prev, ...data };
     });
@@ -38,11 +43,12 @@ export const MillageForm: React.FC<IProps> = ({ setSelectedData }) => {
     <div data-testid="millage-form" style={{ marginTop: 50, width: 496 }}>
       <form
         className="model-form__dropdown model-form__padding"
-        onBlur={handleSubmit(onSubmit)}
+        onBlur={handleSubmit(onBlurMillage)}
         style={{ display: 'flex' }}>
         <Controller
           control={control}
           name="millageFrom"
+          defaultValue=""
           render={({ field: { onChange, value } }) => {
             return (
               <Input
@@ -62,6 +68,7 @@ export const MillageForm: React.FC<IProps> = ({ setSelectedData }) => {
         />
         <span className="short-input__divider ">-</span>
         <Controller
+          defaultValue=""
           control={control}
           name="millageTo"
           render={({ field: { onChange, value } }) => (
@@ -117,10 +124,11 @@ export const MillageForm: React.FC<IProps> = ({ setSelectedData }) => {
       </div>
       <form
         className="model-form__dropdown model-form__padding"
-        onBlur={handleSubmit(onSubmit)}
+        onBlur={handleSubmit(onBlurPrice)}
         style={{ display: 'flex' }}>
         <Controller
           control={control}
+          defaultValue=""
           name="priceFrom"
           render={({ field: { onChange, value } }) => {
             return (
@@ -143,6 +151,7 @@ export const MillageForm: React.FC<IProps> = ({ setSelectedData }) => {
         <Controller
           control={control}
           name="priceTo"
+          defaultValue=""
           render={({ field: { onChange, value } }) => (
             <Input
               onChange={onChange}
@@ -152,7 +161,7 @@ export const MillageForm: React.FC<IProps> = ({ setSelectedData }) => {
               pattern="[0-9]{10}"
               width={238}
               height={50}
-              placeholder={t('mainPage:carSelectForm.dropDowns.millage.millageTo')}
+              placeholder={t('mainPage: carSelectForm.dropDowns.millage.millageTo')}
               fontSize={20}
               variant="secondary"
             />
