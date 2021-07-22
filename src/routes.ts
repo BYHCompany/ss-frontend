@@ -19,16 +19,17 @@ export const routes: Route[] = [
     name: 'Profile settings',
   },
   {
-    path: '/profile/:id',
+    path: '/profile/:userID',
     Component: Profile,
     name: 'Profile',
   },
   {
+    //TODO:
+    //Change id => advertID
     path: '/advert/:id',
     Component: AdvertPage,
     name: 'AdvertPage',
   },
-
   {
     path: '/addAdvert/success',
     Component: SuccessPage,
@@ -41,7 +42,6 @@ export const routes: Route[] = [
     name: 'AddAdvert',
     isAuth: false,
   },
-
   {
     path: '/',
     Component: MainPage,
@@ -52,12 +52,6 @@ export const routes: Route[] = [
     path: '/signUp/about',
     Component: About,
     name: 'About',
-    isAuth: true,
-  },
-  {
-    path: '/signUp/confirmEmail',
-    Component: Email,
-    name: 'confirmEmail',
     isAuth: true,
   },
   {

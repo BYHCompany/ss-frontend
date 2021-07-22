@@ -1,4 +1,4 @@
-import { Car } from './carTypes';
+import { Car, EngineType } from './carTypes';
 
 export type Boosts = 'free' | 'strong' | 'powerful';
 export type VehicleType = 'car' | 'motocycle' | 'specialTransport';
@@ -175,4 +175,21 @@ export type Other = {
   spareWheel: SpareWheel;
   towbar: boolean;
   crankcaseProtection: boolean;
+};
+
+export type SmallAdvertCar = {
+  make: string;
+  model: string;
+  modification: string;
+  year: number;
+  engineType: EngineType;
+  power: number;
+  price: number;
+  photo: string[];
+};
+
+export type SmallAdvert = {
+  boosts: Boosts;
+  ownerID: number;
+  item: SmallAdvertCar;
 };

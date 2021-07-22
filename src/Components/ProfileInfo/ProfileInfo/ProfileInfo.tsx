@@ -1,16 +1,13 @@
 import { Button, Paper, Title } from 'byh-components';
 import React from 'react';
-import { useEffect } from 'react';
 import { FiSettings } from 'react-icons/fi';
 import { GrLocation } from 'react-icons/gr';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { LoadingState } from '../../../Store/commonType';
-import { fetchFullProfile } from '../../../Store/ducks/profile/profileReducer';
 import {
   getAdditionalProfileInfo,
   getFavoriteProfileInfo,
-  getFullProfileLoadingState,
   getMainProfileInfo,
 } from '../../../Store/ducks/profile/profileSelector';
 import { BigProfileAvatar } from '../../Avatars/BigProfileAvatar';
@@ -22,18 +19,9 @@ interface Props {
 }
 
 export const ProfileInfo: React.FC<Props> = ({ userID }): React.ReactElement => {
-  const dispatch = useDispatch();
-
-  const profileStatus = useSelector(getFullProfileLoadingState);
   const mainData = useSelector(getMainProfileInfo);
   const additionalInfo = useSelector(getAdditionalProfileInfo);
   const tags = useSelector(getFavoriteProfileInfo);
-
-  useEffect(() => {
-    if (profileStatus === LoadingState.ERROR || profileStatus === LoadingState.NEVER) {
-      dispatch(fetchFullProfile(userID));
-    }
-  });
 
   return (
     <Paper maxWidth={1170} style={{ padding: 35, display: 'flex', marginBottom: 55 }}>
