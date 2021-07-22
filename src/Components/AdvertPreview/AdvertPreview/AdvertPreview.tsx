@@ -8,10 +8,10 @@ export type AdvertDataType = {
   id: string;
   title: string;
   photo: string;
-  year: string;
+  year: number;
   isElectric?: boolean;
   isInTrending?: boolean;
-  price: string;
+  price: number;
 };
 
 export const AdvertPreview: React.FC<AdvertDataType> = ({
@@ -64,7 +64,11 @@ export const AdvertPreview: React.FC<AdvertDataType> = ({
             height={35}
             width={158}>
             <Title variant="secondary" type="ultraSmall">
-              {price}
+              {new Intl.NumberFormat('ru-RU', {
+                style: 'currency',
+                currency: 'EUR',
+                maximumFractionDigits: 0,
+              }).format(price)}
             </Title>
           </Paper>
         </div>

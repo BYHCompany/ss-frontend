@@ -130,7 +130,7 @@ export const Account: React.FC<Props> = ({ userID }): React.ReactElement | null 
                   width={80}
                   height={27}
                   fontSize={14}>
-                  {<>{mainData?.firstName === ''}</>}
+                  Мужской
                 </Button>
                 <Button
                   onClick={(e: React.MouseEvent<HTMLElement>) => changeSex(e, 'female')}
