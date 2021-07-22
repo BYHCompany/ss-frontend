@@ -1,7 +1,7 @@
 import { Button, Toggler } from 'byh-components';
 import React from 'react';
 import { Controller, useForm } from 'react-hook-form';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { ReactComponent as ThemePreview } from '../../../../../assets/img/plates/ThemePreview.svg';
 import { UiTheme } from '../../../../../GlobalTypes/profileTypes';
 import { getSettingsProfileInfo } from '../../../../../Store/ducks/profile/profileSelector';

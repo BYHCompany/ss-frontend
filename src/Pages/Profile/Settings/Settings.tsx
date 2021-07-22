@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { BigProfileAvatar } from '../../../Components/Avatars/BigProfileAvatar';
 import { LoadingState } from '../../../Store/commonType';
-import { fetchFullProfile, setFullProfileData } from '../../../Store/ducks/profile/profileReducer';
+import { fetchFullProfile } from '../../../Store/ducks/profile/profileReducer';
 import {
   getFullProfileLoadingState,
   getMainProfileInfo,

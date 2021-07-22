@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { CgFileDocument } from 'react-icons/cg';
 import { RiAccountBoxLine } from 'react-icons/ri';
 import { useDispatch, useSelector } from 'react-redux';
-import { NavLink, useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import { getAuthUserID, getIsAuth } from '../../../../Store/ducks/app/appSelector';
 import { IoMdLogIn } from 'react-icons/io';
 import { AiOutlineUserAdd } from 'react-icons/ai';
