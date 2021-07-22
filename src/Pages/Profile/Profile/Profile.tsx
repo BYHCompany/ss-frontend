@@ -7,10 +7,8 @@ import { biggerAdvertData } from '../../../assets/advertPreviewData';
 import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchFullProfile } from '../../../Store/ducks/profile/profileReducer';
-import {
-  getProfileLoadingState,
-  getProfileMainInfo,
-} from '../../../Store/ducks/profile/profileSelector';
+import { getFullProfileLoadingState } from '../../../Store/ducks/profile/profileSelector';
+import { LoadingState } from '../../../Store/commonType';
 
 export const Profile: React.FC = (): React.ReactElement => {
   const advertVisability: boolean = biggerAdvertData.length > 0 ? true : false;
@@ -20,15 +18,13 @@ export const Profile: React.FC = (): React.ReactElement => {
 
   const dispatch = useDispatch();
 
-  const isProfileLoading = useSelector(getProfileLoadingState);
+  const profileStatus = useSelector(getFullProfileLoadingState);
 
   useEffect(() => {
-    dispatch(fetchFullProfile(userID));
-  }, [dispatch, userID]);
-
-  if (isProfileLoading) {
-    return <div>Loading...</div>;
-  }
+    if (profileStatus === LoadingState.NEVER || profileStatus === LoadingState.ERROR) {
+      dispatch(fetchFullProfile(userID));
+    }
+  }, [dispatch, userID, profileStatus]);
 
   return (
     <div>

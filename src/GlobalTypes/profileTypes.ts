@@ -2,11 +2,11 @@ import { Tag } from '../Components/Tags/Tags/Tags';
 import { LoadingState } from '../Store/commonType';
 import { AdvertWithoutCar } from './advertTypes';
 
-type ProfileType = 'private' | 'dealer';
-type ProfileSex = 'male' | 'female' | string;
-type ProfileUiTheme = 'light' | 'dark';
-type LanguageType = 'en' | 'lv' | 'ru';
-type RolesValues = 'USER' | 'ADMIN';
+export type ProfileType = 'private' | 'dealer';
+export type ProfileSex = 'male' | 'female' | string;
+export type UiTheme = 'light' | 'dark';
+export type LanguageType = 'en' | 'lv' | 'ru';
+// type RolesValues = 'USER' | 'ADMIN';
 
 // type Role = {
 //   id: number;
@@ -32,7 +32,7 @@ export type ProfileMainInfo = {
 
 export type ProfileSettings = {
   _status: LoadingState;
-  uiTheme: ProfileUiTheme;
+  uiTheme: UiTheme;
   lang: LanguageType;
   impSys: boolean;
 };
@@ -63,7 +63,7 @@ export type Profile = {
   settings: ProfileSettings;
   additional: ProfileAdditionalInfo;
   situational: ProfileSituationalInfo;
-  favorites: Tag[] | null;
+  favorite: Tag[] | null;
   adverts: AdvertWithoutCar[] | null;
 };
 
@@ -71,4 +71,4 @@ export type UnformattedFullProfile = ProfileRequiredInfo &
   ProfileMainInfo &
   ProfileSettings &
   ProfileAdditionalInfo &
-  ProfileSituationalInfo & { favorites: Tag[]; adverts: AdvertWithoutCar[] };
+  ProfileSituationalInfo & { favorite: Tag[]; adverts: AdvertWithoutCar[] };

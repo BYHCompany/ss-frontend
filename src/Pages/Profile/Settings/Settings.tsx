@@ -1,8 +1,14 @@
 import { Paper, Title } from 'byh-components';
-import React from 'react';
-import { useSelector } from 'react-redux';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { useParams } from 'react-router-dom';
 import { BigProfileAvatar } from '../../../Components/Avatars/BigProfileAvatar';
-import { getInfoForSettings } from '../../../Store/ducks/profile/profileSelector';
+import { LoadingState } from '../../../Store/commonType';
+import { fetchFullProfile, setFullProfileData } from '../../../Store/ducks/profile/profileReducer';
+import {
+  getFullProfileLoadingState,
+  getMainProfileInfo,
+} from '../../../Store/ducks/profile/profileSelector';
 import './Settings.scss';
 import { Account } from './Tabs/Account/Account';
 import { Appearance } from './Tabs/Appearance/Appearance';
@@ -10,19 +16,32 @@ import { Privacy } from './Tabs/Privacy/Privacy';
 
 type SettingsMenus = 'account' | 'privacy' | 'appearance';
 
-export const Settings = () => {
+export const Settings: React.FC = () => {
+  const dispatch = useDispatch();
+
   const [selectedType, setSelectedType] = React.useState<SettingsMenus>('account');
 
-  const minProfileData = useSelector(getInfoForSettings);
+  //Selectors
+  const profileStatus = useSelector(getFullProfileLoadingState);
+  const mainProfileInfo = useSelector(getMainProfileInfo);
+
+  const params: { id: string } = useParams();
+  const userID = params.id;
+
+  useEffect(() => {
+    if (profileStatus === LoadingState.NEVER || profileStatus === LoadingState.ERROR) {
+      dispatch(fetchFullProfile(userID));
+    }
+  });
 
   return (
     <Paper display="grid" className="settings__wrapper">
       <div className="settings__photoAndName">
-        {minProfileData && (
+        {mainProfileInfo && (
           <>
             <BigProfileAvatar />
-            <p className="settings__name">{minProfileData.firstName}</p>
-            <p className="settings__name">{minProfileData.lastName}</p>
+            <p className="settings__name">{mainProfileInfo.firstName}</p>
+            <p className="settings__name">{mainProfileInfo.lastName}</p>
           </>
         )}
       </div>
@@ -55,8 +74,8 @@ export const Settings = () => {
             </p>
           </div>
         </div>
-        {selectedType === 'account' && <Account />}
-        {selectedType === 'privacy' && <Privacy />}
+        {selectedType === 'account' && <Account userID={userID} />}
+        {selectedType === 'privacy' && <Privacy userID={userID} />}
         {selectedType === 'appearance' && <Appearance />}
       </div>
     </Paper>

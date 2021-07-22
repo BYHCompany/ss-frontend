@@ -3,11 +3,18 @@ import React from 'react';
 import { useEffect } from 'react';
 import { FiSettings } from 'react-icons/fi';
 import { GrLocation } from 'react-icons/gr';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { fetchMainProfileInfo } from '../../../Store/ducks/profile/profileReducer';
+import { LoadingState } from '../../../Store/commonType';
+import { fetchFullProfile } from '../../../Store/ducks/profile/profileReducer';
+import {
+  getAdditionalProfileInfo,
+  getFavoriteProfileInfo,
+  getFullProfileLoadingState,
+  getMainProfileInfo,
+} from '../../../Store/ducks/profile/profileSelector';
 import { BigProfileAvatar } from '../../Avatars/BigProfileAvatar';
-import { Tags } from '../../Tags/Tags/Tags';
+import { Tags } from '../../Tags';
 import './ProfileInfo.scss';
 
 interface Props {
@@ -17,8 +24,15 @@ interface Props {
 export const ProfileInfo: React.FC<Props> = ({ userID }): React.ReactElement => {
   const dispatch = useDispatch();
 
+  const profileStatus = useSelector(getFullProfileLoadingState);
+  const mainData = useSelector(getMainProfileInfo);
+  const additionalInfo = useSelector(getAdditionalProfileInfo);
+  const tags = useSelector(getFavoriteProfileInfo);
+
   useEffect(() => {
-    dispatch(fetchMainProfileInfo(userID));
+    if (profileStatus === LoadingState.ERROR || profileStatus === LoadingState.NEVER) {
+      dispatch(fetchFullProfile(userID));
+    }
   });
 
   return (
@@ -29,29 +43,39 @@ export const ProfileInfo: React.FC<Props> = ({ userID }): React.ReactElement => 
       <div className="profile-info__wrapper">
         <div className="fullName">
           <div className="fullName-info" data-testid="fullName-info">
-            <Title style={{ marginRight: 10 }} type={'medium'} variant={'primary'}>
-              {firstName}
-            </Title>
-            <Title type={'medium'} variant={'primary'}>
-              {lastName}
-            </Title>
+            {mainData._status === LoadingState.SUCCESS && (
+              <>
+                <Title style={{ marginRight: 10 }} type={'medium'} variant={'primary'}>
+                  {mainData.firstName}
+                </Title>
+                <Title type={'medium'} variant={'primary'}>
+                  {mainData.lastName}
+                </Title>
+              </>
+            )}
           </div>
 
           <Link to={`/profile/${userID}/settings`} className="setting-button">
             <FiSettings style={{ fontSize: 30 }} />
           </Link>
         </div>
-        <section className="location__section">
-          <GrLocation style={{ marginRight: 10 }} />
-          <Title variant={'primary'} type={'ultraSmall'}>
-            {location}
-          </Title>
-        </section>
-        <section className="about__section">
-          <p>{about}</p>
-        </section>
+        {additionalInfo._status === LoadingState.SUCCESS && (
+          <>
+            <section className="location__section">
+              <GrLocation style={{ marginRight: 10 }} />
+              <Title variant={'primary'} type={'ultraSmall'}>
+                {additionalInfo.location}
+              </Title>
+            </section>
+            <section className="about__section">
+              <p>{additionalInfo.about}</p>
+            </section>
+          </>
+        )}
         <div className="tags-message__wrapper">
-          <div className="profile-info__tags-wrapper">{tags && <Tags tags={tags} />}</div>
+          <div className="profile-info__tags-wrapper">
+            {tags && <Tags tags={tags} clickable={false} />}
+          </div>
           <Button width={170} height={43} fontSize={24} variant={'primary'}>
             Сообщения
           </Button>

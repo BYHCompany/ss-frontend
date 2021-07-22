@@ -10,12 +10,13 @@ export type Tag = {
 export interface TagsProps {
   tags?: Tag[];
   withButton?: boolean;
+  clickable?: boolean;
 }
 
-export const Tags: React.FC<TagsProps> = ({ tags, withButton = false }) => {
+export const Tags: React.FC<TagsProps> = ({ tags, withButton = false, clickable = true }) => {
   const [checked, setChecked] = React.useState<number[]>([]);
 
-  const hadleTag = (index: number) => {
+  const handleTag = (index: number) => {
     setChecked((prev) => {
       if (checked.includes(index)) {
         return prev.filter((elem) => elem !== index);
@@ -37,7 +38,7 @@ export const Tags: React.FC<TagsProps> = ({ tags, withButton = false }) => {
           display={'inline-block'}
           key={tag.id}
           height={23}
-          onClick={() => hadleTag(index)}
+          onClick={() => clickable && handleTag(index)}
           className="tag__wrapper"
           customBgColor={checked.includes(index) ? tag.bg : 'EBEBEB'}>
           {tag.name}
