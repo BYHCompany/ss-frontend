@@ -13,10 +13,10 @@ export const Comment = () => {
 
   return (
     <Paper className="comment__wrapper" width={770} style={{ marginBottom: 40 }}>
-      <Title className="comment__title" variant="primary">
+      <Title type="ultraSmall" className="comment__title" variant="primary">
         {t('advertPage:comment')}
       </Title>
-      <p style={{ lineHeight: '30px', fontSize: 20 }}>{commentContent}</p>
+      <p style={{ lineHeight: '30px', fontSize: 18 }}>{commentContent}</p>
     </Paper>
   );
 };

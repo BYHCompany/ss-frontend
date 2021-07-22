@@ -8,6 +8,7 @@ import {
   translateIsofix,
   translateSupportSystems,
 } from '../../../../services/carTranslators';
+import './CarEquipment.scss';
 
 export const Safety = () => {
   const { t } = useTranslation();
@@ -20,7 +21,7 @@ export const Safety = () => {
   return (
     <div style={{ marginBottom: 20 }}>
       <Accordion width={770} title={t('advertPage:options.safety.label')}>
-        <ul>
+        <ul className="advert-accordion__content">
           {safety.airbags && translateAirbags(safety.airbags).map((e) => <li key={e}>{e}</li>)}
           {safety.airbags &&
             translateIsofix(safety.isofix).map((e) => (

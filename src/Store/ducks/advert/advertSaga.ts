@@ -10,6 +10,7 @@ function* AdvertWorker(action: PayloadAction<string>) {
   try {
     const advertData: CustomResponseType<Advert> = yield call(AdvertApi.GetAdvert, action.payload);
     const advert = advertData.data;
+
     yield put(setAdvert(advert));
   } catch (error) {
     yield put(setLoadingState(LoadingState.ERROR));

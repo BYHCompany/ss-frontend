@@ -22,7 +22,7 @@ export const CarEquipment = () => {
 
   return (
     <div>
-      <Title variant="primary" type="small" style={{ marginBottom: 10 }}>
+      <Title variant="primary" type="ultraSmall" style={{ marginBottom: 10 }}>
         {t('advertPage:carEquipment')}
       </Title>
       <OverviewOptions />

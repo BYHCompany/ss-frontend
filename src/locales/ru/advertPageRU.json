@@ -61,12 +61,18 @@
       "convertible": "Кабриолет",
       "suv": "Спортивный кроссовер",
       "minivan": "Минивэн",
-      "pickup": "Пикап"
+      "pickup": "Пикап",
+      "compact": "Компакт"
     }
   },
   "tax": {
     "tax": "Налоги",
     "value": "{{tax}} €"
+  },
+  "owner": {
+    "bd": {
+      "value": "{{userBd}} Лет"
+    }
   },
   "carLicensePlate": "Гос.номер авто",
   "options": {

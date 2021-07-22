@@ -3,8 +3,9 @@ import React from 'react';
 import { MillageForm } from './MillageForm';
 
 describe('MillageForm', () => {
+  const mock = () => {};
   const getForm = () => {
-    return render(<MillageForm />);
+    return render(<MillageForm setSelectedData={mock} />);
   };
 
   it('MillageForm should be rendered in the document', () => {

@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { translateRimsType } from '../../../../services/carTranslators';
 import { useSelector } from 'react-redux';
 import { getExteriorOptions } from '../../../../Store/ducks/advert/advertSelector';
-
+import './CarEquipment.scss';
 export const ExteriorOptions = () => {
   const { t } = useTranslation();
   const exterior = useSelector(getExteriorOptions);
@@ -16,7 +16,7 @@ export const ExteriorOptions = () => {
   return (
     <div style={{ marginBottom: 20 }}>
       <Accordion width={770} title={t('advertPage:options.exterior.label')}>
-        <ul>
+        <ul className="advert-accordion__content">
           <li>
             {`${t('advertPage:options.exterior.rimsType.label')}:
           ${translateRimsType(exterior.rimsType)}

@@ -4,12 +4,20 @@ export type Boosts = 'free' | 'strong' | 'powerful';
 export type VehicleType = 'car' | 'motocycle' | 'specialTransport';
 export type State = 'new' | 'used';
 export type VehiclePassport = 'original' | 'copy';
-
+export type UserData = {
+  firstName: string;
+  lastName: string;
+  bd: string;
+  phone: string;
+  email: string;
+  avatarURL: string;
+};
 export type Advert = {
   id: string | null;
   ownerID: string | null;
   boosts: Boosts[] | null;
   item: Car | null;
+  owner: UserData | null;
 };
 
 /**

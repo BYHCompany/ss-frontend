@@ -108,3 +108,16 @@ export const getOthersOptions = createDraftSafeSelector(getAdvertCar, (state) =>
     return state.other;
   }
 });
+export const getAdvertUserData = createDraftSafeSelector(getAdvert, (state) => {
+  if (state) {
+    const userBirthDateYear = state.owner?.bd.substring(0, 4);
+
+    const calcRealUserAge = new Date().getFullYear() - Number(userBirthDateYear);
+
+    const userData = {
+      ...state.owner,
+      db: calcRealUserAge,
+    };
+    return userData;
+  }
+});
