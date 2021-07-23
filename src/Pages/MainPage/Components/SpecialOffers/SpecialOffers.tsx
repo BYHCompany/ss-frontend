@@ -1,7 +1,6 @@
 import { Button, Title } from 'byh-components';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { advertData } from '../../../../assets/advertPreviewData';
 import { AdvertPreview } from '../../../../Components/AdvertPreview';
 import './SpecialOffers.scss';
 export const SpecialOffers = () => {
@@ -12,7 +11,7 @@ export const SpecialOffers = () => {
         {t('mainPage:specialOffersLabel')}
       </Title>
       <div className="special-offers__advert-preview__wrapper">
-        {advertData.map((props: any) => (
+        {/* {advertData.map((props: any) => (
           <div key={props.id} style={{ marginBottom: 35 }}>
             <AdvertPreview
               id={props.id}
@@ -24,7 +23,7 @@ export const SpecialOffers = () => {
               isInTrending={props.isInTrending}
             />
           </div>
-        ))}
+        ))} */}
       </div>
       <div className="special-offers__button">
         <Button height={45} width={370} fontSize={26} variant="primary">

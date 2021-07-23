@@ -10,8 +10,8 @@ import { Footer } from './Components/Footer';
 function App() {
   return (
     <Router>
-      <Switch>
-        <div className="app theme-light">
+      <div className="app theme-light">
+        <Switch>
           {routes.map(({ path, name, Component, isAuth = false }, key) => (
             <Route
               exact
@@ -49,8 +49,8 @@ function App() {
             />
           ))}
           <Redirect to="/" />
-        </div>
-      </Switch>
+        </Switch>
+      </div>
     </Router>
   );
 }

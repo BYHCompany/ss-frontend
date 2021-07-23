@@ -13,15 +13,15 @@ export const AdvertPage = () => {
   const dispatch = useDispatch();
   const isLoading = useSelector(getIsAdvertLoading);
   const isError = useSelector(getIsAdvertError);
-  const params: { id: string } = useParams();
-  const id = params.id;
+  const params: { userID: string } = useParams();
+  const userID = params.userID;
   React.useEffect(() => {
-    dispatch(fetchAdvert(id));
+    dispatch(fetchAdvert(userID));
 
     return () => {
       dispatch(setAdvert(null));
     };
-  }, [dispatch, id]);
+  }, [dispatch, userID]);
 
   // if (!advert) {
   //   return null;

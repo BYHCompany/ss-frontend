@@ -25,8 +25,8 @@ export const Settings: React.FC = () => {
   const profileStatus = useSelector(getFullProfileLoadingState);
   const mainProfileInfo = useSelector(getMainProfileInfo);
 
-  const params: { id: string } = useParams();
-  const userID = params.id;
+  const params: { userID: string } = useParams();
+  const userID = params.userID;
 
   useEffect(() => {
     if (profileStatus === LoadingState.NEVER || profileStatus === LoadingState.ERROR) {

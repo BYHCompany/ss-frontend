@@ -1,4 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { AdvertWithoutCar, SmallAdvert } from '../../../GlobalTypes/advertTypes';
 import { Profile, UnformattedFullProfile } from '../../../GlobalTypes/profileTypes';
 import { LoadingState } from '../../commonType';
 
@@ -47,7 +48,10 @@ const profileInitialState = {
       updatedAt: null,
     },
     favorite: null,
-    adverts: null,
+    adverts: {
+      _status: LoadingState.NEVER,
+      items: null,
+    },
   },
 } as ProfileState;
 
@@ -108,7 +112,6 @@ const profileSlice = createSlice({
         };
 
         state.profile.favorite = profileData.favorite;
-        state.profile.adverts = profileData.adverts;
 
         state.status = LoadingState.SUCCESS;
       } else {
@@ -120,10 +123,24 @@ const profileSlice = createSlice({
     setProfileLoadingState(state, action: PayloadAction<LoadingState>) {
       state.status = action.payload;
     },
+
+    fetchSmallProfileAdverts(state, action: PayloadAction<string>) {
+      state.profile.adverts._status = LoadingState.LOADING;
+    },
+
+    setSmallProfileAdverts(state, action: PayloadAction<SmallAdvert[]>) {
+      state.profile.adverts.items = action.payload;
+      state.profile.adverts._status = LoadingState.SUCCESS;
+    },
   },
 });
 
-export const { fetchFullProfile, setFullProfileData, setProfileLoadingState } =
-  profileSlice.actions;
+export const {
+  fetchFullProfile,
+  setFullProfileData,
+  setProfileLoadingState,
+  fetchSmallProfileAdverts,
+  setSmallProfileAdverts,
+} = profileSlice.actions;
 
 export default profileSlice.reducer;

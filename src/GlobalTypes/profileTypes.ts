@@ -1,6 +1,6 @@
 import { Tag } from '../Components/Tags/Tags/Tags';
 import { LoadingState } from '../Store/commonType';
-import { AdvertWithoutCar } from './advertTypes';
+import { AdvertWithoutCar, SmallAdvert } from './advertTypes';
 
 export type ProfileType = 'private' | 'dealer';
 export type ProfileSex = 'male' | 'female' | string;
@@ -64,7 +64,10 @@ export type Profile = {
   additional: ProfileAdditionalInfo;
   situational: ProfileSituationalInfo;
   favorite: Tag[] | null;
-  adverts: AdvertWithoutCar[] | null;
+  adverts: {
+    _status: LoadingState;
+    items: SmallAdvert[] | null;
+  };
 };
 
 export type UnformattedFullProfile = ProfileRequiredInfo &

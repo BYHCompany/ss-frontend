@@ -32,6 +32,10 @@ export const getFavoriteProfileInfo = createDraftSafeSelector(getFullProfile, (s
   return state.favorite;
 });
 
+export const getProfileAdvertsStatusInfo = createDraftSafeSelector(getFullProfile, (state) => {
+  return state.adverts._status;
+});
+
 export const getAdvertsProfileInfo = createDraftSafeSelector(getFullProfile, (state) => {
-  return state.adverts;
+  return state.adverts.items;
 });
