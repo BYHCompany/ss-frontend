@@ -28,6 +28,10 @@
         "millageFrom": "Millage from",
         "millageTo": "To"
       },
+      "price": {
+        "priceFrom": "Price from",
+        "priceTo": "Price to"
+      },
       "carBody": "Car body",
       "gearBox": "Gear Body",
       "transmission": "Transmission",

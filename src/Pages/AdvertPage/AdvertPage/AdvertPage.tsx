@@ -2,11 +2,7 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Redirect, useParams } from 'react-router-dom';
 import { fetchAdvert, setAdvert } from '../../../Store/ducks/advert/advertReducer';
-import {
-  getAdvert,
-  getIsAdvertError,
-  getIsAdvertLoading,
-} from '../../../Store/ducks/advert/advertSelector';
+import { getIsAdvertError, getIsAdvertLoading } from '../../../Store/ducks/advert/advertSelector';
 import { AdvertInfo } from '../Components/AdvertInfo/AdvertInfo';
 import { AdvertSlider } from '../Components/AdvertSlider/AdvertSlider';
 import { AdvertTitle } from '../Components/AdvertTitle/AdvertTitle';

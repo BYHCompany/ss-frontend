@@ -1,5 +1,5 @@
-import { MiniCarObject } from './../../../GlobalTypes/carTypes';
+import { MediumCar, MiniCarObject } from './../../../GlobalTypes/carTypes';
 export interface BigAdvertPreviewProps {
-  src: string;
-  car: MiniCarObject;
+  car: MediumCar | null;
+  advertId: string | null;
 }

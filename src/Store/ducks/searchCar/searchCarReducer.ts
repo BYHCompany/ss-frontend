@@ -1,11 +1,15 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { LoadingState } from '../../commonType';
+import { searchAdvert } from '../../../GlobalTypes/searchAdvert';
+import { MediumAdvert } from '../../../GlobalTypes/advertTypes';
 
 type initialStateType = {
   status: LoadingState;
   data: {
     make: string[] | null;
     model: string[] | null;
+    count: string | null;
+    adverts: MediumAdvert[];
   };
 };
 
@@ -14,6 +18,7 @@ const initialState = {
   data: {
     make: null,
     model: null,
+    count: null,
   },
 } as initialStateType;
 
@@ -38,8 +43,31 @@ const searchSlice = createSlice({
     setLoadingState(state, action: PayloadAction<LoadingState>) {
       state.status = action.payload;
     },
+    fetchSearchDataForCount(state, action: PayloadAction<searchAdvert>) {
+      state.status = LoadingState.LOADING;
+    },
+    setCountOfAvailableAdvert(state, action: PayloadAction<string>) {
+      state.status = LoadingState.SUCCESS;
+      state.data.count = action.payload;
+    },
+    fetchSearchData(state, action: PayloadAction<searchAdvert>) {
+      state.status = LoadingState.LOADING;
+    },
+    setSearchedData(state, action: PayloadAction<MediumAdvert[]>) {
+      state.status = LoadingState.LOADING;
+      state.data.adverts = action.payload;
+    },
   },
 });
 
-export const { fetchMake, setMake, fetchModel, setModel } = searchSlice.actions;
+export const {
+  fetchMake,
+  setMake,
+  fetchModel,
+  setModel,
+  fetchSearchDataForCount,
+  setCountOfAvailableAdvert,
+  fetchSearchData,
+  setSearchedData,
+} = searchSlice.actions;
 export default searchSlice.reducer;

@@ -107,3 +107,21 @@ export type Car = {
     };
   };
 };
+export type MediumCar = {
+  make: string;
+  model: string;
+  gen: string;
+  modification: string;
+  year: string;
+  millage: string;
+  engineVolume: string;
+  transmission: TransmissionType;
+  steeringWheel: SteeringWheelPos;
+  engineType: EngineType;
+  gearbox: Gearbox;
+  power: number;
+  carBody: CarBodyTypes;
+  state: State;
+  price: number;
+  photo: string[];
+};

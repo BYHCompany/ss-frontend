@@ -37,6 +37,7 @@ export const TopicPreview: React.FC<TopicPreviewProps> = ({
             {tags.map((tag) => {
               return (
                 <Button
+                  key={tag.label}
                   fontSize={14}
                   width={200}
                   height={28}

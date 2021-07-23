@@ -39,6 +39,7 @@ export const AdvertInfo = () => {
         </Title>
 
         <DescriptionList
+          style={{ marginBottom: 20 }}
           fontSize={22}
           width={370}
           handleHide={handleHidden}
@@ -48,6 +49,7 @@ export const AdvertInfo = () => {
 
         <DescriptionList
           fontSize={22}
+          style={{ marginBottom: 20 }}
           width={370}
           handleHide={handleHidden}
           header={t('advertPage:millage.millage')}
@@ -55,6 +57,7 @@ export const AdvertInfo = () => {
         />
         <DescriptionList
           fontSize={22}
+          style={{ marginBottom: 20 }}
           header={t('advertPage:transmission.transmission')}
           width={370}
           handleHide={handleHidden}
@@ -62,6 +65,7 @@ export const AdvertInfo = () => {
         />
         <DescriptionList
           fontSize={22}
+          style={{ marginBottom: 20 }}
           width={370}
           handleHide={handleHidden}
           header={t('advertPage:steeringWheel.steeringWheel')}
@@ -70,12 +74,14 @@ export const AdvertInfo = () => {
         <DescriptionList
           fontSize={22}
           width={370}
+          style={{ marginBottom: 20 }}
           handleHide={handleHidden}
           header={t('advertPage:engine.engine')}
           description={translateEngineType(descriptionData.engineType)}
         />
         <DescriptionList
           fontSize={22}
+          style={{ marginBottom: 20 }}
           width={370}
           handleHide={handleHidden}
           header={t('advertPage:gearBox.gearBox')}
@@ -83,6 +89,7 @@ export const AdvertInfo = () => {
         />
         <DescriptionList
           width={370}
+          style={{ marginBottom: 20 }}
           fontSize={22}
           handleHide={handleHidden}
           header={t('advertPage:power.power')}
@@ -91,12 +98,14 @@ export const AdvertInfo = () => {
         <DescriptionList
           width={370}
           fontSize={22}
+          style={{ marginBottom: 20 }}
           handleHide={handleHidden}
           header={t('advertPage:carBody.carBody')}
           description={translateBodyType(descriptionData.carBody)}
         />
         <DescriptionList
           width={370}
+          style={{ marginBottom: 20 }}
           fontSize={22}
           handleHide={handleHidden}
           header={t('advertPage:tax.tax')}
@@ -105,6 +114,7 @@ export const AdvertInfo = () => {
         <DescriptionList
           showButtonText={t('advertPage:buttons.show')}
           width={370}
+          style={{ marginBottom: 20 }}
           fontSize={22}
           handleHide={handleHidden}
           header="VIN"
@@ -114,6 +124,7 @@ export const AdvertInfo = () => {
         <DescriptionList
           width={370}
           fontSize={22}
+          style={{ marginBottom: 20 }}
           showButtonText={t('advertPage:buttons.show')}
           handleHide={handleHidden}
           header={t('advertPage:carLicensePlate')}

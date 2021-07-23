@@ -140,7 +140,7 @@ export const MillageForm: React.FC<IProps> = ({ setSelectedData }) => {
                 pattern="[0-9]{10}"
                 width={238}
                 height={50}
-                placeholder={t('mainPage:carSelectForm.dropDowns.millage.millageFrom')}
+                placeholder={t('mainPage:carSelectForm.dropDowns.price.priceFrom')}
                 fontSize={20}
                 variant="secondary"
               />
@@ -161,7 +161,7 @@ export const MillageForm: React.FC<IProps> = ({ setSelectedData }) => {
               pattern="[0-9]{10}"
               width={238}
               height={50}
-              placeholder={t('mainPage: carSelectForm.dropDowns.millage.millageTo')}
+              placeholder={t('mainPage:carSelectForm.dropDowns.price.priceTo')}
               fontSize={20}
               variant="secondary"
             />

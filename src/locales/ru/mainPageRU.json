@@ -28,6 +28,10 @@
         "millageFrom": "Пробег от",
         "millageTo": "До"
       },
+      "price": {
+        "priceFrom": "Цена от",
+        "priceTo": "До"
+      },
       "carBody": "Кузов",
       "gearBox": "Коробка",
       "transmission": "Привод",

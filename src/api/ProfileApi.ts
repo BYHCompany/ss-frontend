@@ -1,7 +1,6 @@
 import { Tag } from '../Components/Tags/Tags/Tags';
 import { AdvertWithoutCar } from '../GlobalTypes/advertTypes';
 import {
-  Profile,
   ProfileAdditionalInfo,
   ProfileMainInfo,
   ProfileRequiredInfo,
