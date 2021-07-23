@@ -9,7 +9,7 @@ import './ProfitableOffers.scss';
 export const ProfitableOffers = () => {
   const { t } = useTranslation();
   return (
-    <div data-testId="profitableOffers-wrapper">
+    <div data-testid="profitableOffers-wrapper">
       <Title style={{ marginBottom: 20 }} type="medium" variant="primary">
         {t('mainPage:profitableOffers')}
       </Title>

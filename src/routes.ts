@@ -4,6 +4,7 @@ import { MainPage } from './Pages/MainPage';
 import { About, Email, SignUp } from './Pages/SignUp';
 import { SignIn } from './Pages/SignIn';
 import { AddAdvert, SuccessPage } from './Pages/AddAdvert';
+import { SearchAdvertsPage } from './Pages/SearchAdvertsPage/SearchAdvertsPage/SearchAdvertsPage';
 export interface Route {
   path: string;
   Component: any;
@@ -22,6 +23,11 @@ export const routes: Route[] = [
     path: '/profile/:id',
     Component: Profile,
     name: 'Profile',
+  },
+  {
+    path: '/advertsPage/',
+    Component: SearchAdvertsPage,
+    name: 'Adverts Page',
   },
   {
     path: '/advert/:id',

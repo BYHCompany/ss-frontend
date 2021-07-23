@@ -5,14 +5,17 @@ import {
   fetchMake,
   fetchModel,
   fetchSearchData,
+  fetchSearchDataForCount,
   setCountOfAvailableAdvert,
   setMake,
   setModel,
+  setSearchedData,
 } from './searchCarReducer';
 import { CarSearchApi } from '../../../api/SearchCarApi';
 import { setLoadingState } from '../advert/advertReducer';
 import { PayloadAction } from '@reduxjs/toolkit';
 import { searchAdvert } from '../../../GlobalTypes/searchAdvert';
+import { MediumAdvert } from '../../../GlobalTypes/advertTypes';
 
 function* SearchCarMakeWorker() {
   try {
@@ -47,9 +50,22 @@ function* FindTheNumberOfCarsWorker(action: PayloadAction<searchAdvert>) {
     yield put(setLoadingState(LoadingState.ERROR));
   }
 }
+function* FindAdvertsByData(action: PayloadAction<searchAdvert>) {
+  try {
+    const countData: CustomResponseType<MediumAdvert[]> = yield call(
+      CarSearchApi.GetCarData,
+      action.payload,
+    );
+
+    yield put(setSearchedData(countData.data));
+  } catch (error) {
+    yield put(setLoadingState(LoadingState.ERROR));
+  }
+}
 
 export function* SearchCarSagaWatcher() {
   yield takeEvery(fetchMake.type, SearchCarMakeWorker);
   yield takeEvery(fetchModel.type, SearchCarModelWorker);
-  yield takeEvery(fetchSearchData.type, FindTheNumberOfCarsWorker);
+  yield takeEvery(fetchSearchDataForCount.type, FindTheNumberOfCarsWorker);
+  yield takeEvery(fetchSearchData.type, FindAdvertsByData);
 }

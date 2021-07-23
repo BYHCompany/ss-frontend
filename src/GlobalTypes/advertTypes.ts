@@ -1,4 +1,4 @@
-import { Car } from './carTypes';
+import { Car, MediumCar } from './carTypes';
 
 export type Boosts = 'free' | 'strong' | 'powerful';
 export type VehicleType = 'car' | 'motocycle' | 'specialTransport';
@@ -18,6 +18,12 @@ export type Advert = {
   boosts: Boosts[] | null;
   item: Car | null;
   owner: UserData | null;
+};
+export type MediumAdvert = {
+  id: string | null;
+  ownerID: string | null;
+  boosts: Boosts[] | null;
+  item: MediumCar | null;
 };
 
 /**

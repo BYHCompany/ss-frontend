@@ -4,7 +4,7 @@ export type searchAdvert = {
   carBody?: CarBodyTypes;
   engineType?: EngineType;
   model?: string;
-  gasEquip: boolean;
+  gasEquip?: boolean;
   gearbox?: Gearbox;
   make?: string;
   millageFrom?: string;

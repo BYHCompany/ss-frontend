@@ -1,3 +1,4 @@
+import { MediumCar } from '../GlobalTypes/carTypes';
 import { CustomResponseType } from '../GlobalTypes/responseType';
 import { searchAdvert } from '../GlobalTypes/searchAdvert';
 import $api from './instance';
@@ -23,9 +24,19 @@ export const CarSearchApi = {
   },
   async GetCarCount(searchProps: searchAdvert): Promise<CustomResponseType<string> | undefined> {
     try {
-      const countData = await $api.post(`adverts/search/options?count=true`, { searchProps });
+      const countData = await $api.post(`adverts/search/options?count=true`, searchProps);
 
-      console.log(countData.data);
+      return countData.data;
+    } catch (error) {
+      console.log(error);
+    }
+  },
+  async GetCarData(
+    searchProps: searchAdvert,
+  ): Promise<CustomResponseType<MediumCar[]> | undefined> {
+    try {
+      const countData = await $api.post(`adverts/search/options?count`, searchProps);
+
       return countData.data;
     } catch (error) {
       console.log(error);

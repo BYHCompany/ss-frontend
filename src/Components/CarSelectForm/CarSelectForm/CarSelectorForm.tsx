@@ -1,10 +1,8 @@
 import { Paper } from 'byh-components';
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { fetchSearchData } from '../../../Store/ducks/searchCar/searchCarReducer';
-
+import { fetchSearchDataForCount } from '../../../Store/ducks/searchCar/searchCarReducer';
 import { BottomPart } from '../Components/ButtomPart/BottomPart';
-
 import { MakePicker } from '../Components/MakePicker/MakePicker';
 import { MillageForm } from '../Components/MillageForm/MillageForm';
 import { ModelForm } from '../Components/ModelForm/ModelForm';
@@ -14,8 +12,9 @@ export const CarSelectorForm = () => {
   const dispatch = useDispatch();
 
   React.useEffect(() => {
-    selectedData && dispatch(fetchSearchData(selectedData));
+    selectedData && dispatch(fetchSearchDataForCount(selectedData));
   }, [dispatch, selectedData]);
+
   return (
     <Paper display={'flex'} style={{ padding: 15 }} height={397}>
       <MakePicker setSelectedData={setSelectedData} />
@@ -24,7 +23,7 @@ export const CarSelectorForm = () => {
           <ModelForm setSelectedData={setSelectedData} />
           <MillageForm setSelectedData={setSelectedData} />
         </div>
-        <BottomPart />
+        <BottomPart selectedData={selectedData} />
       </div>
     </Paper>
   );

@@ -24,3 +24,8 @@ export const getSearchMessage = createDraftSafeSelector(getSearchCar, (state) =>
     return state.count;
   }
 });
+export const getSearchData = createDraftSafeSelector(getSearchCar, (state) => {
+  if (state) {
+    return state.adverts;
+  }
+});
