@@ -1,7 +1,7 @@
 @import '../../../GlobalStyles/mixins';
 
 .bigAdvertPreview__wrapper {
-  padding: 15px;
+  padding: 10px;
   display: flex;
   cursor: pointer;
 }
@@ -42,6 +42,7 @@
 
 .bigAdertPreview__content__tags {
   display: flex;
+  margin-top: 10px;
 }
 
 .bigAdertPreview__content__tagWrapper {
@@ -82,4 +83,9 @@
   margin-right: 7px;
   font-size: 24px;
   @include theme-aware('color', 'secondary');
+}
+
+.bigAdertPreview__title-wrapper {
+  display: flex;
+  justify-content: space-between;
 }

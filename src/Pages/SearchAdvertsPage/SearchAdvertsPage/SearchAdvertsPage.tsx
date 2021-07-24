@@ -2,6 +2,7 @@ import { Paginator, Title } from 'byh-components';
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { BigAdvertPreview } from '../../../Components/BigAdvertPreview';
+import { CarSelectorForm } from '../../../Components/CarSelectForm';
 import { getSearchData } from '../../../Store/ducks/searchCar/searchCarSelector';
 import './SearchAdvertsPage.scss';
 export const SearchAdvertsPage = () => {
@@ -11,6 +12,9 @@ export const SearchAdvertsPage = () => {
   }
   return (
     <div>
+      <div style={{ marginBottom: 30 }}>
+        <CarSelectorForm />
+      </div>
       <Title variant="primary" type={'medium'}>
         Найденные варианты
       </Title>
@@ -20,7 +24,7 @@ export const SearchAdvertsPage = () => {
         </div>
       ))}
       <div className="searchAdvertPage__paginator-wrapper">
-        <Paginator currentPage={1} allPagesCount={1} />
+        <Paginator currentPage={2} allPagesCount={2} />
       </div>
     </div>
   );

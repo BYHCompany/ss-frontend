@@ -2,6 +2,7 @@ import React from 'react';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { CarSelectorForm } from '../../../Components/CarSelectForm';
+import { VerticalCarForm } from '../../../Components/VerticalCarForm/VerticalCarForm/VerticalCarForm';
 import { setFullProfileData } from '../../../Store/ducks/profile/profileReducer';
 import { ProfitableOffers } from '../Components/ProfitableOffers/ProfitableOffers';
 import { SpecialOffers } from '../Components/SpecialOffers/SpecialOffers';
@@ -19,6 +20,7 @@ export const MainPage = () => {
       {/* <div style={{ marginBottom: 40 }}>
         <TypeSelect />
       </div> */}
+
       <div style={{ marginBottom: 60 }}>
         <CarSelectorForm />
       </div>

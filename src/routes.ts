@@ -25,16 +25,12 @@ export const routes: Route[] = [
     name: 'Profile',
   },
   {
-
     path: '/advertsPage/',
     Component: SearchAdvertsPage,
     name: 'Adverts Page',
   },
   {
-
-    //TODO:
-    //Change id => advertID
-    path: '/advert/:id',
+    path: '/advert/:advertID',
     Component: AdvertPage,
     name: 'AdvertPage',
   },
