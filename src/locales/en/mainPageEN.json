@@ -11,7 +11,7 @@
     "others": "Others"
   },
   "carSelectForm": {
-    "label": "Pick up a car",
+    "label": "Filter",
     "famousMake": "Famous Makes",
     "dropDowns": {
       "model": "Model",
@@ -35,7 +35,8 @@
       "carBody": "Car body",
       "gearBox": "Gear Body",
       "transmission": "Transmission",
-      "gasEquipment": "GE"
+      "gasEquipment": "GE",
+      "generation": "Generation"
     }
   },
   "specialOffersLabel": "Special offers for you",

@@ -11,7 +11,7 @@
     "others": "Другие"
   },
   "carSelectForm": {
-    "label": "Подобрать авто",
+    "label": "Фильтры",
     "famousMake": "Популярные марки",
     "dropDowns": {
       "model": "Модель",
@@ -35,7 +35,8 @@
       "carBody": "Кузов",
       "gearBox": "Коробка",
       "transmission": "Привод",
-      "gasEquipment": "ГБО"
+      "gasEquipment": "ГБО",
+      "generation": "Поколение"
     }
   },
   "specialOffersLabel": "Предложения специально для Вас",
