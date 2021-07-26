@@ -8,8 +8,8 @@ import {
 import { priceFormatter } from '../../../services/priceFormaters';
 import './BigAdvertPreview.scss';
 import { BigAdvertPreviewProps } from './BigAdvertPreviewTypes';
-import { BsPlug } from 'react-icons/bs';
-import { BiTrendingUp } from 'react-icons/bi';
+// import { BsPlug } from 'react-icons/bs';
+// import { BiTrendingUp } from 'react-icons/bi';
 import { NavLink } from 'react-router-dom';
 import { Trans, useTranslation } from 'react-i18next';
 

@@ -1,7 +1,6 @@
 import { Button, Title } from 'byh-components';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { AdvertPreview } from '../../../../Components/AdvertPreview';
 import './SpecialOffers.scss';
 export const SpecialOffers = () => {
   const { t } = useTranslation();

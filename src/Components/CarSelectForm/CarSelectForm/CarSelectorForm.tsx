@@ -13,7 +13,7 @@ export const CarSelectorForm = () => {
   const dispatch = useDispatch();
 
   React.useEffect(() => {
-    selectedData && dispatch(fetchSearchDataForCount(selectedData));
+    selectedData.make && dispatch(fetchSearchDataForCount(selectedData));
   }, [dispatch, selectedData]);
 
   return (

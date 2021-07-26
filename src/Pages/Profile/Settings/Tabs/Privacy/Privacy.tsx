@@ -4,14 +4,8 @@ import { Controller, useForm } from 'react-hook-form';
 import { ImPencil } from 'react-icons/im';
 import './Privacy.scss';
 import { IoKeySharp } from 'react-icons/io5';
-import { useDispatch, useSelector } from 'react-redux';
-import {
-  getAdditionalProfileInfo,
-  getFullProfileLoadingState,
-} from '../../../../../Store/ducks/profile/profileSelector';
-import { useEffect } from 'react';
-import { LoadingState } from '../../../../../Store/commonType';
-import { fetchFullProfile } from '../../../../../Store/ducks/profile/profileReducer';
+import { useSelector } from 'react-redux';
+import { getAdditionalProfileInfo } from '../../../../../Store/ducks/profile/profileSelector';
 
 interface PrivacyData {
   email: string;

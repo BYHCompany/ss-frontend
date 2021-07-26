@@ -31,10 +31,10 @@ export const BottomPart: React.FC<IProps> = ({ selectedData }) => {
         {/* <RangeSlider min={0} max={100} width={322} callback={rangeSliderFunc} /> */}
         <p>{message}</p>
       </div>
-      <NavLink to={`/advertsPage/search?${setStringToQuery(selectedData)}`}>
-        {isLoading ? (
-          <div>Loading...</div>
-        ) : (
+      {isLoading ? (
+        <div> loading...</div>
+      ) : (
+        <NavLink to={`/advertsPage/search?${setStringToQuery(selectedData)}`}>
           <Button
             disabled={noResults ? true : false}
             onClick={() => fetchingData()}
@@ -44,8 +44,8 @@ export const BottomPart: React.FC<IProps> = ({ selectedData }) => {
             fontSize={22}>
             {t('mainPage:buttons.find')}
           </Button>
-        )}
-      </NavLink>
+        </NavLink>
+      )}
     </div>
   );
 };
