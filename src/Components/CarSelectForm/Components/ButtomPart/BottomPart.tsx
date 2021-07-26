@@ -10,9 +10,11 @@ import {
 } from '../../../../Store/ducks/searchCar/searchCarSelector';
 import './BottomPart.scss';
 import { NavLink } from 'react-router-dom';
+import { searchAdvert } from '../../../../GlobalTypes/searchAdvert';
+import { setStringToQuery } from '../../../../services/setStringToQuery';
 
 interface IProps {
-  selectedData: {};
+  selectedData: searchAdvert;
 }
 export const BottomPart: React.FC<IProps> = ({ selectedData }) => {
   const { t } = useTranslation();
@@ -29,7 +31,7 @@ export const BottomPart: React.FC<IProps> = ({ selectedData }) => {
         {/* <RangeSlider min={0} max={100} width={322} callback={rangeSliderFunc} /> */}
         <p>{message}</p>
       </div>
-      <NavLink to="/advertsPage/">
+      <NavLink to={`/advertsPage/search?${setStringToQuery(selectedData)}`}>
         {isLoading ? (
           <div>Loading...</div>
         ) : (

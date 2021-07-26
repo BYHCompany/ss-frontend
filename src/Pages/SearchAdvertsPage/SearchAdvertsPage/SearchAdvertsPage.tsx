@@ -1,17 +1,24 @@
 import { Paginator, Title } from 'byh-components';
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { useLocation } from 'react-router-dom';
 import { BigAdvertPreview } from '../../../Components/BigAdvertPreview';
 import { CarSelectorForm } from '../../../Components/CarSelectForm';
-
+import queryString from 'query-string';
 import { getSearchData } from '../../../Store/ducks/searchCar/searchCarSelector';
 import './SearchAdvertsPage.scss';
+import { fetchSearchData } from '../../../Store/ducks/searchCar/searchCarReducer';
 export const SearchAdvertsPage = () => {
   const adverts = useSelector(getSearchData);
+  const { search } = useLocation();
+  const dispatch = useDispatch();
+  const queryData = queryString.parse(search);
 
-  if (!adverts) {
-    return null;
-  }
+  React.useEffect(() => {
+    if (!adverts) {
+      dispatch(fetchSearchData({ ...queryData }));
+    }
+  }, [queryData, dispatch, adverts]);
   return (
     <div>
       <CarSelectorForm />
@@ -20,7 +27,7 @@ export const SearchAdvertsPage = () => {
       </Title>
 
       <div className="searchAdvert__advert-wrapper">
-        {adverts.map((advert) => (
+        {adverts?.map((advert) => (
           <BigAdvertPreview key={advert.id} advertId={advert.id} car={advert.item} />
         ))}
       </div>
