@@ -1,6 +1,7 @@
 import { Paper } from 'byh-components';
 import React from 'react';
 import { useDispatch } from 'react-redux';
+import { searchAdvert } from '../../../GlobalTypes/searchAdvert';
 import { fetchSearchDataForCount } from '../../../Store/ducks/searchCar/searchCarReducer';
 import { BottomPart } from '../Components/ButtomPart/BottomPart';
 import { MakePicker } from '../Components/MakePicker/MakePicker';
@@ -8,7 +9,7 @@ import { MillageForm } from '../Components/MillageForm/MillageForm';
 import { ModelForm } from '../Components/ModelForm/ModelForm';
 import './CarSelectorForm.scss';
 export const CarSelectorForm = () => {
-  const [selectedData, setSelectedData] = React.useState({});
+  const [selectedData, setSelectedData] = React.useState<searchAdvert>({});
   const dispatch = useDispatch();
 
   React.useEffect(() => {

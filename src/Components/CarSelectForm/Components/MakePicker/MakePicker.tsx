@@ -2,7 +2,12 @@ import { Button, Paper, Title } from 'byh-components';
 import React, { Dispatch, SetStateAction } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector, useDispatch } from 'react-redux';
-import { fetchMake, fetchModel, setMake } from '../../../../Store/ducks/searchCar/searchCarReducer';
+import {
+  fetchMake,
+  fetchModel,
+  setMake,
+  setModel,
+} from '../../../../Store/ducks/searchCar/searchCarReducer';
 import {
   getCarFormIsLoading,
   getSearchCarMake,
@@ -18,11 +23,15 @@ export const MakePicker: React.FC<IProps> = ({ setSelectedData }) => {
   const isLoading = useSelector(getCarFormIsLoading);
   const dispatch = useDispatch();
   const { t } = useTranslation();
-
+  const selectMake = (make: string) => {
+    setTookMake(make);
+  };
   React.useEffect(() => {
+    setSelectedData((prev) => ({ ...prev, model: '' }));
     dispatch(fetchMake());
     tookMake && dispatch(fetchModel(tookMake));
     setSelectedData((prev) => ({ ...prev, make: tookMake }));
+
     return () => {
       dispatch(setMake(null));
     };
@@ -43,17 +52,13 @@ export const MakePicker: React.FC<IProps> = ({ setSelectedData }) => {
           {t('mainPage:carSelectForm.famousMake')}
         </Title>
         <div className="make__wrapper">
-          {isLoading ? (
-            <div> LOADING...</div>
-          ) : (
-            <ul className="make-picker__content">
-              {carMakes?.map((make) => (
-                <li onClick={() => setTookMake(make)} key={make}>
-                  {make}
-                </li>
-              ))}
-            </ul>
-          )}
+          <ul className="make-picker__content">
+            {carMakes?.map((make) => (
+              <li onClick={() => selectMake(make)} key={make}>
+                {make}
+              </li>
+            ))}
+          </ul>
         </div>
         <Button fullWidth fontSize={18} variant="primary">
           {t('mainPage:buttons.others')}

@@ -28,7 +28,7 @@
     "value": { "left": "Левый", "right": "Правый" }
   },
   "engine": {
-    "engine": "Двигатель",
+    "engine": "Тип Двигателя",
     "engineType": {
       "Gasoline": "Бензин",
       "Diesel": "Дизель",

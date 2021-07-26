@@ -1,16 +1,16 @@
 @import '../../../GlobalStyles/mixins';
 
 .bigAdvertPreview__wrapper {
-  padding: 10px;
+  padding: 15px;
   display: flex;
   cursor: pointer;
+  margin-bottom: 30px;
 }
 
 .bigAdertPreview__content {
   display: flex;
-  max-width: 701px;
+  max-width: 360px;
   width: 100%;
-  margin-left: 10px;
   flex-direction: column;
 }
 
@@ -85,7 +85,15 @@
   @include theme-aware('color', 'secondary');
 }
 
+.bigAdvertPreview__smallImg-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 .bigAdertPreview__title-wrapper {
   display: flex;
   justify-content: space-between;
+
+  width: 710px;
 }
