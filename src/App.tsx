@@ -6,8 +6,17 @@ import { routes } from './routes';
 import { BreadCrumbs } from './Components/BreadCrumbs';
 import { Header } from './Components/Header';
 import { Footer } from './Components/Footer';
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { getProfileByAccessToken } from './Store/ducks/auth/authReducer';
 
 function App() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getProfileByAccessToken());
+  }, [dispatch]);
+
   return (
     <Router>
       <div className="app theme-light">

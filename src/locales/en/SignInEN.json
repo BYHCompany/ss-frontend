@@ -5,6 +5,7 @@
   "button": "Continue",
   "forgetPass": "Forgot your password?",
   "alert": {
-    "error": "Invalid email or password"
+    "error": "Invalid email or password",
+    "success": "You are successfully logged in! Redirect..."
   }
 }

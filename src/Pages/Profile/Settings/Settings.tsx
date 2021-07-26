@@ -1,9 +1,10 @@
 import { Paper, Title } from 'byh-components';
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
+import { useHistory, useParams } from 'react-router-dom';
 import { BigProfileAvatar } from '../../../Components/Avatars/BigProfileAvatar';
 import { LoadingState } from '../../../Store/commonType';
+import { getIsAuth } from '../../../Store/ducks/app/appSelector';
 import { fetchFullProfile } from '../../../Store/ducks/profile/profileReducer';
 import {
   getFullProfileLoadingState,
@@ -18,19 +19,25 @@ type SettingsMenus = 'account' | 'privacy' | 'appearance';
 
 export const Settings: React.FC = () => {
   const dispatch = useDispatch();
+  const history = useHistory();
 
   const [selectedType, setSelectedType] = React.useState<SettingsMenus>('account');
 
   //Selectors
   const profileStatus = useSelector(getFullProfileLoadingState);
   const mainProfileInfo = useSelector(getMainProfileInfo);
+  const isAuthInApp = useSelector(getIsAuth);
 
   const params: { userID: string } = useParams();
   const userID = params.userID;
 
   useEffect(() => {
-    if (profileStatus === LoadingState.NEVER || profileStatus === LoadingState.ERROR) {
+    if (!isAuthInApp && profileStatus === LoadingState.NEVER) {
       dispatch(fetchFullProfile(userID));
+    }
+
+    if (profileStatus === LoadingState.ERROR) {
+      history.push('/error/404');
     }
   });
 

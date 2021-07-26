@@ -37,15 +37,7 @@ interface Props {
 export const Privacy: React.FC<Props> = ({ userID }) => {
   const { control, handleSubmit } = useForm<PrivacyData>();
 
-  const dispatch = useDispatch();
-  const profileStatus = useSelector(getFullProfileLoadingState);
   const additionalInfo = useSelector(getAdditionalProfileInfo);
-
-  useEffect(() => {
-    if (profileStatus === LoadingState.ERROR || profileStatus === LoadingState.NEVER) {
-      dispatch(fetchFullProfile(userID));
-    }
-  });
 
   const sendData = (data: PrivacyData) => {
     console.log(data);

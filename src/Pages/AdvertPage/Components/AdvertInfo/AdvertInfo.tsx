@@ -35,7 +35,11 @@ export const AdvertInfo = () => {
     <div className="advert-info__container">
       <div className="advert-info__wrapper">
         <Title className="advert-info__price-title" variant="primary">
-          {descriptionData.price}$
+          {new Intl.NumberFormat('ru-RU', {
+            style: 'currency',
+            currency: 'EUR',
+            maximumFractionDigits: 0,
+          }).format(descriptionData.price)}
         </Title>
 
         <DescriptionList

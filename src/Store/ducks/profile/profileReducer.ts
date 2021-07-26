@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { AdvertWithoutCar, SmallAdvert } from '../../../GlobalTypes/advertTypes';
+import { SmallAdvert } from '../../../GlobalTypes/advertTypes';
 import { Profile, UnformattedFullProfile } from '../../../GlobalTypes/profileTypes';
 import { LoadingState } from '../../commonType';
 
