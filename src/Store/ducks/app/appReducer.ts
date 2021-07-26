@@ -1,32 +1,59 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { UiTheme } from '../../../GlobalTypes/profileTypes';
+import { LanguageType, UiTheme } from '../../../GlobalTypes/profileTypes';
+import { LoadingState } from '../../commonType';
+import { LoginResponseData } from '../auth/@types';
+import { endLogin } from '../auth/authReducer';
 
 type AppInitialState = {
+  _loginStatus: LoadingState;
   isAuth: boolean;
-  isLogin: boolean;
   uiTheme: UiTheme;
   impSys: boolean;
+  lang: LanguageType;
   authUserID: number | null;
+  firstName: string | null;
+  lastName: string | null;
+  avatarURL: string | null;
 };
 
-const appInitialState = {
-  impSys: false,
+const appInitialState: AppInitialState = {
+  _loginStatus: LoadingState.NEVER,
   isAuth: false,
-  isLogin: false,
-  uiTheme: 'light',
   authUserID: null,
-} as AppInitialState;
+  avatarURL: null,
+  lang: 'en',
+  firstName: null,
+  lastName: null,
+  uiTheme: 'light',
+  impSys: false,
+};
 
 const appReducer = createSlice({
   name: 'appSlice',
   initialState: appInitialState,
   reducers: {
-    setLogin(state, action: PayloadAction<boolean>) {
-      state.isLogin = action.payload;
+    setAuthLoadingState(state, action: PayloadAction<LoadingState>) {
+      state._loginStatus = action.payload;
     },
+  },
+  extraReducers: (builder) => {
+    builder.addCase(endLogin, (state, action: PayloadAction<LoginResponseData>) => {
+      state.isAuth = true;
+      state.authUserID = action.payload.user.id;
+      state.avatarURL = action.payload.user.avatarURL;
+      state.lang = action.payload.user.lang;
+      state.firstName = action.payload.user.firstName;
+      state.lastName = action.payload.user.lastName;
+      state.uiTheme = action.payload.user.uiTheme;
+      state.impSys = action.payload.user.impSys;
+
+      localStorage.setItem('accessToken', action.payload.accessToken);
+
+      state._loginStatus = LoadingState.SUCCESS;
+    });
   },
 });
 
-export const { setLogin } = appReducer.actions;
+export const { setAuthLoadingState } = appReducer.actions;
 
 export default appReducer.reducer;

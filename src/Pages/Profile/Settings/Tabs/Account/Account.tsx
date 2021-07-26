@@ -29,8 +29,6 @@ interface Props {
 }
 
 export const Account: React.FC<Props> = ({ userID }): React.ReactElement | null => {
-  const dispatch = useDispatch();
-
   const [selectedSex, setSelectedSex] = React.useState<ProfileSex>('male');
   const { control, handleSubmit } = useForm<Data>();
 
@@ -39,12 +37,8 @@ export const Account: React.FC<Props> = ({ userID }): React.ReactElement | null 
   const profileStatus = useSelector(getFullProfileLoadingState);
 
   useEffect(() => {
-    if (profileStatus === LoadingState.ERROR || profileStatus === LoadingState.NEVER) {
-      dispatch(fetchFullProfile(userID));
-    }
-
     additionalInfo.sex && setSelectedSex(additionalInfo.sex);
-  }, [dispatch, mainData, additionalInfo, profileStatus, userID]);
+  }, [additionalInfo]);
 
   const sendData = (data: Data) => {
     console.log(data);

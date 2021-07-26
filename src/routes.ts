@@ -5,6 +5,7 @@ import { About, Email, SignUp } from './Pages/SignUp';
 import { SignIn } from './Pages/SignIn';
 import { AddAdvert, SuccessPage } from './Pages/AddAdvert';
 import { SearchAdvertsPage } from './Pages/SearchAdvertsPage/SearchAdvertsPage/SearchAdvertsPage';
+import { ErrorPage } from './Pages/ErrorPage';
 export interface Route {
   path: string;
   Component: any;
@@ -44,7 +45,11 @@ export const routes: Route[] = [
     path: '/addAdvert',
     Component: AddAdvert,
     name: 'AddAdvert',
-    isAuth: false,
+  },
+  {
+    path: '/error/:httpCode',
+    Component: ErrorPage,
+    name: 'AddAdvert',
   },
   {
     path: '/',

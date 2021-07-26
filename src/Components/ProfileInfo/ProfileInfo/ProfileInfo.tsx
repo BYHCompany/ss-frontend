@@ -5,6 +5,7 @@ import { GrLocation } from 'react-icons/gr';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { LoadingState } from '../../../Store/commonType';
+import { getAuthUserID } from '../../../Store/ducks/app/appSelector';
 import {
   getAdditionalProfileInfo,
   getFavoriteProfileInfo,
@@ -22,6 +23,8 @@ export const ProfileInfo: React.FC<Props> = ({ userID }): React.ReactElement => 
   const mainData = useSelector(getMainProfileInfo);
   const additionalInfo = useSelector(getAdditionalProfileInfo);
   const tags = useSelector(getFavoriteProfileInfo);
+
+  const authUserID = useSelector(getAuthUserID);
 
   return (
     <Paper maxWidth={1170} style={{ padding: 35, display: 'flex', marginBottom: 55 }}>
@@ -43,9 +46,11 @@ export const ProfileInfo: React.FC<Props> = ({ userID }): React.ReactElement => 
             )}
           </div>
 
-          <Link to={`/profile/${userID}/settings`} className="setting-button">
-            <FiSettings style={{ fontSize: 30 }} />
-          </Link>
+          {Number(userID) === authUserID && (
+            <Link to={`/profile/${userID}/settings`} className="setting-button">
+              <FiSettings style={{ fontSize: 30 }} />
+            </Link>
+          )}
         </div>
         {additionalInfo._status === LoadingState.SUCCESS && (
           <>

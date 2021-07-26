@@ -2,7 +2,6 @@ import { Button, Title } from 'byh-components';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { NavLink } from 'react-router-dom';
-import { AdvertPreview } from '../../../../Components/AdvertPreview';
 
 import './ProfitableOffers.scss';
 export const ProfitableOffers = () => {

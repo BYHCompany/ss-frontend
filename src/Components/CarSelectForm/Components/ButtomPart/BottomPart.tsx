@@ -3,13 +3,13 @@ import React from 'react';
 
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
-import { NavLink } from 'react-router-dom';
 import { fetchSearchData } from '../../../../Store/ducks/searchCar/searchCarReducer';
 import {
   getCarFormIsLoading,
   getSearchMessage,
 } from '../../../../Store/ducks/searchCar/searchCarSelector';
 import './BottomPart.scss';
+import { NavLink } from 'react-router-dom';
 
 interface IProps {
   selectedData: {};

@@ -3,7 +3,7 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { CgFileDocument } from 'react-icons/cg';
 import { RiAccountBoxLine } from 'react-icons/ri';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { getAuthUserID, getIsAuth } from '../../../../Store/ducks/app/appSelector';
 import { IoMdLogIn } from 'react-icons/io';
@@ -11,14 +11,12 @@ import { AiOutlineUserAdd } from 'react-icons/ai';
 
 import './HeaderButtons.scss';
 import { useCallback } from 'react';
-import { setLogin } from '../../../../Store/ducks/app/appReducer';
 
 export const HeaderButtons = () => {
   const { t } = useTranslation();
   const inAuth = useSelector(getIsAuth);
   const authUserID = useSelector(getAuthUserID);
   const history = useHistory();
-  const dispatch = useDispatch();
 
   const routeAccount = useCallback(
     () => history.push(`/profile/${authUserID}`),
@@ -28,14 +26,12 @@ export const HeaderButtons = () => {
   const routeAddAdvert = useCallback(() => history.push('/addAdvert'), [history]);
 
   const routeSignUp = useCallback(() => {
-    dispatch(setLogin(true));
     history.push('/signUp');
-  }, [history, dispatch]);
+  }, [history]);
 
   const routeSignIn = useCallback(() => {
-    dispatch(setLogin(true));
     history.push('/signIn');
-  }, [history, dispatch]);
+  }, [history]);
 
   return (
     <div className="header-buttons" data-testid="header-buttons">
