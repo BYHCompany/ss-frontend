@@ -33,7 +33,7 @@ const searchSlice = createSlice({
       state.status = LoadingState.SUCCESS;
       state.data.make = action.payload;
     },
-    fetchModel(state, action: PayloadAction<string>) {
+    fetchModel(state, action: PayloadAction<string | null>) {
       state.status = LoadingState.LOADING;
     },
     setModel(state, action: PayloadAction<string[] | null>) {
@@ -54,7 +54,7 @@ const searchSlice = createSlice({
       state.status = LoadingState.LOADING;
     },
     setSearchedData(state, action: PayloadAction<MediumAdvert[]>) {
-      state.status = LoadingState.LOADING;
+      state.status = LoadingState.SUCCESS;
       state.data.adverts = action.payload;
     },
   },

@@ -24,10 +24,20 @@ export const BigAdvertPreview: React.FC<BigAdvertPreviewProps> = ({ car, advertI
 
   return (
     <NavLink style={{ textDecoration: 'none' }} to={`/advert/${advertId}`}>
-      <Paper height={275} display={'flex'} className={'bigAdvertPreview__wrapper'}>
-        <div>
-          <ImageComponent style={{ marginRight: 5 }} src={car.photo[0]} width={415} height={215} />
-          <div className="bigAdertPreview__content__tags">
+      <Paper
+        boxShadow={false}
+        width={1170}
+        height={214}
+        display={'flex'}
+        className={'bigAdvertPreview__wrapper'}>
+        <div style={{ display: 'flex', marginRight: 18 }}>
+          <ImageComponent style={{ marginRight: 10 }} src={car.photo[0]} width={286} height={185} />
+          <div className={'bigAdvertPreview__smallImg-wrapper'}>
+            <ImageComponent src={car.photo[1]} width={86} height={55} />
+            <ImageComponent src={car.photo[2]} width={86} height={55} />
+            <ImageComponent src={car.photo[3]} width={86} height={55} />
+          </div>
+          {/* <div className="bigAdertPreview__content__tags">
             {car.engineType === 'electric' && (
               <Paper
                 display={'flex'}
@@ -48,22 +58,22 @@ export const BigAdvertPreview: React.FC<BigAdvertPreviewProps> = ({ car, advertI
               <BiTrendingUp className="bigAdvertPreview__content__tagIcon" />
               <p className="bigAdertPreview__content___tagText">Выгодно</p>
             </Paper>
-          </div>
+          </div> */}
         </div>
         <div className="bigAdertPreview__content">
-          <div>
-            <div className="bigAdertPreview__title-wrapper">
-              <Title variant="primary">
-                {car.make} {car.model}
-              </Title>
-              <Title variant="primary">{priceFormatter(car.price)}</Title>
-            </div>
+          <div className="bigAdertPreview__title-wrapper">
+            <Title type={'ultraSmall'} variant="primary">
+              {car.make} {car.model}
+            </Title>
+            <Title type={'ultraSmall'} variant="primary">
+              {priceFormatter(car.price)}
+            </Title>
           </div>
           <div style={{ height: '100%' }}>
             <DescriptionList
               style={{ marginBottom: 5 }}
               fontSize={20}
-              width={710}
+              width={700}
               header={t('advertPage:year.year')}
               description={<Trans i18nKey={'advertPage:year.value'}> {{ year }} </Trans>}
             />
@@ -71,7 +81,7 @@ export const BigAdvertPreview: React.FC<BigAdvertPreviewProps> = ({ car, advertI
             <DescriptionList
               fontSize={20}
               style={{ marginBottom: 5 }}
-              width={710}
+              width={700}
               header={t('advertPage:millage.millage')}
               description={<Trans i18nKey={'advertPage:millage.value'}> {{ millage }} </Trans>}
             />
@@ -79,13 +89,13 @@ export const BigAdvertPreview: React.FC<BigAdvertPreviewProps> = ({ car, advertI
               fontSize={20}
               style={{ marginBottom: 5 }}
               header={t('advertPage:transmission.transmission')}
-              width={710}
+              width={700}
               description={translateTransmitionType(car.transmission)}
             />
 
             <DescriptionList
               fontSize={20}
-              width={710}
+              width={700}
               style={{ marginBottom: 5 }}
               header={t('advertPage:engine.engine')}
               description={`${translateEngineType(car.engineType)} ${car.engineVolume}`}
@@ -93,7 +103,7 @@ export const BigAdvertPreview: React.FC<BigAdvertPreviewProps> = ({ car, advertI
             <DescriptionList
               fontSize={20}
               style={{ marginBottom: 5 }}
-              width={710}
+              width={700}
               header={t('advertPage:gearBox.gearBox')}
               description={translateGearboxType(car.gearbox)}
             />

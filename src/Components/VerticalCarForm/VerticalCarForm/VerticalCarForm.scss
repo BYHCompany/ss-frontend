@@ -1,4 +1,19 @@
 .verticalCarForm__wrapper {
   max-width: 330px;
   width: 100%;
+  position: sticky;
+  top: 20px;
+  height: 100%;
+}
+.verticalCarForm__input-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.verticalCarForm__input-divider {
+  font-size: 20px;
+  margin: 0 10px 0 10px;
+}
+.verticalCarForm__margin-between {
+  margin-bottom: 20px;
 }

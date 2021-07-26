@@ -28,6 +28,7 @@ export const dropdownData = [
 export const ModelForm: React.FC<IProps> = ({ setSelectedData }) => {
   const { t } = useTranslation();
   const model = useSelector(getSearchCarModel);
+
   const setDropdownInfo = (data: dropdownDataType) => {
     setSelectedData((prev) => {
       return { ...prev, [data.value]: data.id };
