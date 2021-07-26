@@ -26,7 +26,7 @@ export const routes: Route[] = [
     name: 'Profile',
   },
   {
-    path: '/advertsPage/',
+    path: '/advertsPage/search',
     Component: SearchAdvertsPage,
     name: 'Adverts Page',
   },

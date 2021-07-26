@@ -2,16 +2,8 @@ import { Button, Paper, Title } from 'byh-components';
 import React, { Dispatch, SetStateAction } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector, useDispatch } from 'react-redux';
-import {
-  fetchMake,
-  fetchModel,
-  setMake,
-  setModel,
-} from '../../../../Store/ducks/searchCar/searchCarReducer';
-import {
-  getCarFormIsLoading,
-  getSearchCarMake,
-} from '../../../../Store/ducks/searchCar/searchCarSelector';
+import { fetchMake, fetchModel, setMake } from '../../../../Store/ducks/searchCar/searchCarReducer';
+import { getSearchCarMake } from '../../../../Store/ducks/searchCar/searchCarSelector';
 import './MakePicker.scss';
 
 interface IProps {
@@ -20,15 +12,14 @@ interface IProps {
 export const MakePicker: React.FC<IProps> = ({ setSelectedData }) => {
   const [tookMake, setTookMake] = React.useState('');
   const carMakes = useSelector(getSearchCarMake);
-  const isLoading = useSelector(getCarFormIsLoading);
   const dispatch = useDispatch();
   const { t } = useTranslation();
   const selectMake = (make: string) => {
     setTookMake(make);
   };
   React.useEffect(() => {
-    setSelectedData((prev) => ({ ...prev, model: '' }));
     dispatch(fetchMake());
+
     tookMake && dispatch(fetchModel(tookMake));
     setSelectedData((prev) => ({ ...prev, make: tookMake }));
 

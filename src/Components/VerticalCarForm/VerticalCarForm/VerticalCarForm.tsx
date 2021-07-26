@@ -1,4 +1,4 @@
-import { Button, CheckBox, Dropdown, Input, Title } from 'byh-components';
+import { Button, Dropdown, Input, Title } from 'byh-components';
 
 import React from 'react';
 import { Controller, useForm } from 'react-hook-form';

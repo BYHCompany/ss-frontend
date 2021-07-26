@@ -2,10 +2,9 @@ import { Button, ImageComponent, Input, Textarea, Title } from 'byh-components';
 import React from 'react';
 import { useEffect } from 'react';
 import { Controller, useForm } from 'react-hook-form';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { ProfileSex } from '../../../../../GlobalTypes/profileTypes';
 import { LoadingState } from '../../../../../Store/commonType';
-import { fetchFullProfile } from '../../../../../Store/ducks/profile/profileReducer';
 import {
   getAdditionalProfileInfo,
   getFullProfileLoadingState,
