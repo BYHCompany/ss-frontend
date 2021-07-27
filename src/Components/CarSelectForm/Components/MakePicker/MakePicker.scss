@@ -1,3 +1,4 @@
+@import '../../../../GlobalStyles/mixins';
 .make-picker__wrapper {
   padding: 10px;
   display: flex;
@@ -14,4 +15,9 @@
   font-weight: 700;
   line-height: 28px;
   cursor: pointer;
+}
+
+.make-picker__selected-make {
+  @include theme-aware('background-color', 'inherit');
+  border-radius: 3px;
 }

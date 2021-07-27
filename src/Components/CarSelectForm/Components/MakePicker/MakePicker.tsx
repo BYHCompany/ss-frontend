@@ -2,7 +2,12 @@ import { Button, Paper, Title } from 'byh-components';
 import React, { Dispatch, SetStateAction } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector, useDispatch } from 'react-redux';
-import { fetchMake, fetchModel, setMake } from '../../../../Store/ducks/searchCar/searchCarReducer';
+import {
+  fetchMake,
+  fetchModel,
+  fetchSearchDataForCount,
+  setMake,
+} from '../../../../Store/ducks/searchCar/searchCarReducer';
 import { getSearchCarMake } from '../../../../Store/ducks/searchCar/searchCarSelector';
 import './MakePicker.scss';
 
@@ -45,7 +50,10 @@ export const MakePicker: React.FC<IProps> = ({ setSelectedData }) => {
         <div className="make__wrapper">
           <ul className="make-picker__content">
             {carMakes?.map((make) => (
-              <li onClick={() => selectMake(make)} key={make}>
+              <li
+                className={make === tookMake ? 'make-picker__selected-make' : ''}
+                onClick={() => selectMake(make)}
+                key={make}>
                 {make}
               </li>
             ))}

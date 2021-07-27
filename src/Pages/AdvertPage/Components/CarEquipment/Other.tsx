@@ -14,7 +14,7 @@ export const Other = () => {
   }
 
   return (
-    <div style={{ marginBottom: 20 }}>
+    <div>
       <Accordion width={770} title={t('advertPage:options.other.label')}>
         <ul className="advert-accordion__content">
           {other.suspention && <li> {translateSuspention(other.suspention)} </li>}
