@@ -1,3 +1,4 @@
+@import '../../../../GlobalStyles/mixins';
 .advert-slider__wrapper {
   margin-bottom: 40px;
 }
@@ -17,9 +18,19 @@
 }
 .advert-slider__next__button,
 .advert-slider__prev__button {
+  @include theme-aware('color', 'secondary');
+  font-size: 70px;
   cursor: pointer;
   width: 50%;
   height: 100%;
+  display: flex;
+  align-items: center;
+}
+.advert-slider__next__button {
+  justify-content: flex-end;
+}
+.advert-slider__prev__button {
+  justify-content: flex-start;
 }
 
 .advert-slider__image-for-more {
