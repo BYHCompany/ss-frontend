@@ -7,6 +7,21 @@ import { CgShapeRhombus } from 'react-icons/cg';
 import { topicSliderData } from '../../../../assets/topicData';
 import { TopicPreview } from '../../../../Components/TopicPreview';
 import { useTranslation } from 'react-i18next';
+import { motion } from 'framer-motion';
+
+const variants = {
+  enter: {
+    opacity: 0,
+  },
+  center: {
+    zIndex: 1,
+    opacity: 1,
+  },
+  exit: {
+    zIndex: 0,
+    opacity: 0,
+  },
+};
 
 export const TopicsSlider = () => {
   const { t } = useTranslation();
@@ -49,7 +64,16 @@ export const TopicsSlider = () => {
         {arr.map((topic: any, index: number) => {
           if (index === currentSlide) {
             return (
-              <div key={index} className={'active__slider'}>
+              <motion.div
+                key={index}
+                className={'active__slider'}
+                variants={variants}
+                initial="enter"
+                animate="center"
+                exit="exit"
+                transition={{
+                  opacity: { duration: 0.2 },
+                }}>
                 {topic.map((topic: any, index: any) => {
                   return (
                     <React.Fragment key={index}>
@@ -63,7 +87,7 @@ export const TopicsSlider = () => {
                     </React.Fragment>
                   );
                 })}
-              </div>
+              </motion.div>
             );
           }
           return null;

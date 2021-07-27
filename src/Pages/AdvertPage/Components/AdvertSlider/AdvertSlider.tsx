@@ -3,10 +3,27 @@ import { ImageComponent } from 'byh-components';
 import './AdvertSlider.scss';
 import { useSelector } from 'react-redux';
 import { getAdvertImages } from '../../../../Store/ducks/advert/advertSelector';
+import { AnimatePresence, motion } from 'framer-motion';
+import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from 'react-icons/md';
+
+const variants = {
+  enter: {
+    opacity: 0,
+  },
+  center: {
+    zIndex: 1,
+    opacity: 1,
+  },
+  exit: {
+    zIndex: 0,
+    opacity: 0,
+  },
+};
 
 export const AdvertSlider = () => {
   const imageArr = useSelector(getAdvertImages);
   const [photoIndex, setPhotoIndex] = React.useState(0);
+
   if (!imageArr) {
     return null;
   }
@@ -29,15 +46,30 @@ export const AdvertSlider = () => {
     <div className="advert-slider__wrapper">
       <div>
         <div className="advert-slider__next-prev__buttons">
-          <div className="advert-slider__prev__button" onClick={prevSlide} />
-          <div className="advert-slider__next__button" onClick={nextSlide} />
+          <div className="advert-slider__prev__button" onClick={prevSlide}>
+            <MdKeyboardArrowLeft />
+          </div>
+          <div className="advert-slider__next__button" onClick={nextSlide}>
+            <MdKeyboardArrowRight />
+          </div>
         </div>
-        <ImageComponent
-          src={selectedImg ? selectedImg : firstImage}
-          width={770}
-          height={380}
-          style={{ marginBottom: 20 }}
-        />
+
+        <motion.div
+          variants={variants}
+          initial="enter"
+          animate="center"
+          exit="exit"
+          key={selectedImg}
+          transition={{
+            opacity: { duration: 0.3 },
+          }}>
+          <ImageComponent
+            src={selectedImg ? selectedImg : firstImage}
+            width={770}
+            height={380}
+            style={{ marginBottom: 20 }}
+          />
+        </motion.div>
       </div>
       <div className="advert-slider__small-wrapper">
         {imageArr.map(({ photo }, index) => {

@@ -13,6 +13,10 @@
   "carSelectForm": {
     "label": "Фильтры",
     "famousMake": "Популярные марки",
+    "messages": {
+      "noResult": "По вашему запросу ничего не найдено",
+      "result": "По вашему запросу найдено {{message}} объявлений"
+    },
     "dropDowns": {
       "model": "Модель",
       "year": {

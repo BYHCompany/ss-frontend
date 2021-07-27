@@ -13,6 +13,10 @@
   "carSelectForm": {
     "label": "Filter",
     "famousMake": "Famous Makes",
+    "messages": {
+      "noResult": "No ads found for your search",
+      "result": "According to your request found {{message}}"
+    },
     "dropDowns": {
       "model": "Model",
       "year": {
