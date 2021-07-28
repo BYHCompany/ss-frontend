@@ -1,9 +1,10 @@
 export type newsType = {
-  title: string | null;
-  shortDescription: string | null;
-  description: string | null;
-  img: string[] | null;
-  tags: string[] | null;
-  createdAt: string | null;
-  updatedAt: string | null;
+  id: string;
+  title: string;
+  shortDescription: string;
+  description: string;
+  img: string[];
+  tags: string[];
+  createdAt: string;
+  updatedAt: string;
 };

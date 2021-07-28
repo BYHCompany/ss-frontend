@@ -4,12 +4,13 @@ import { TopicPreviewProps } from './TopicPreviewTypes';
 import './TopicPreview.scss';
 import { AiFillFire } from 'react-icons/ai';
 import { ReactComponent as ElectricCar } from '../../../assets/img/icons/electric_car.svg';
+import { NavLink } from 'react-router-dom';
 
 export const TopicPreview: React.FC<TopicPreviewProps> = ({
   imageSrc,
   description,
   label,
-
+  topicId,
   tags,
 }) => {
   return (
@@ -61,9 +62,11 @@ export const TopicPreview: React.FC<TopicPreviewProps> = ({
                 );
               })} */}
           </div>
-          <Button width={160} height={40} variant="primary">
-            Читать далее
-          </Button>
+          <NavLink to={`/news/${topicId}`}>
+            <Button width={160} height={40} variant="primary">
+              Читать далее
+            </Button>
+          </NavLink>
         </div>
       </div>
     </Paper>

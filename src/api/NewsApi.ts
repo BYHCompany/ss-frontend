@@ -11,4 +11,12 @@ export const NewsApi = {
       console.log(error);
     }
   },
+  async getFullNewsById(id: string): Promise<CustomResponseType<newsType> | undefined> {
+    try {
+      const newsData = await $api.get<CustomResponseType<newsType>>(`news/fullNews/${id}`);
+      return newsData.data;
+    } catch (error) {
+      console.log(error);
+    }
+  },
 };

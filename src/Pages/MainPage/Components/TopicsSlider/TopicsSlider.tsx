@@ -1,15 +1,16 @@
 import React from 'react';
 import { Title } from 'byh-components';
-
 import './TopicSlider.scss';
-
 import { CgShapeRhombus } from 'react-icons/cg';
 import { TopicPreview } from '../../../../Components/TopicPreview';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { useDispatch, useSelector } from 'react-redux';
-import { getNews } from '../../../../Store/ducks/news/newsSelector';
-import { fetchLastTenNews } from '../../../../Store/ducks/news/newsReducer';
+import { getShortNews } from '../../../../Store/ducks/news/newsSelector';
+import {
+  fetchLastTenShortNews,
+  setLastTenShortNews,
+} from '../../../../Store/ducks/news/newsReducer';
 import { newsType } from '../../../../Store/ducks/news/@types';
 
 const variants = {
@@ -28,7 +29,7 @@ const variants = {
 
 export const TopicsSlider = () => {
   const { t } = useTranslation();
-  const news = useSelector(getNews);
+  const news = useSelector(getShortNews);
   const [currentSlide, setCurrentSlide] = React.useState<number>(0);
   const dispatch = useDispatch();
   const allNav = 5;
@@ -45,7 +46,11 @@ export const TopicsSlider = () => {
   }, [currentSlide, allNav]);
 
   React.useEffect(() => {
-    dispatch(fetchLastTenNews());
+    dispatch(fetchLastTenShortNews());
+
+    return () => {
+      dispatch(setLastTenShortNews(null));
+    };
   }, [dispatch]);
 
   if (!news) {
@@ -91,6 +96,7 @@ export const TopicsSlider = () => {
                   return (
                     <React.Fragment key={index}>
                       <TopicPreview
+                        topicId={topic.id}
                         description={topic.shortDescription}
                         imageSrc={topic.img}
                         label={topic.title}

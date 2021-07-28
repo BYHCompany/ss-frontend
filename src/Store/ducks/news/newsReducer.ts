@@ -4,28 +4,43 @@ import { newsType } from './@types';
 
 type initialStateType = {
   status: LoadingState;
-  news: newsType[] | null;
+  shortNews: newsType[] | null;
+  fullNews: newsType | null;
 };
 const initialState = {
   status: LoadingState.NEVER,
-  news: null,
+  shortNews: null,
+  fullNews: null,
 } as initialStateType;
 
 const newsSlice = createSlice({
   name: 'newsSlise',
   initialState,
   reducers: {
-    fetchLastTenNews(state) {
+    fetchLastTenShortNews(state) {
       state.status = LoadingState.LOADING;
     },
-    setLastTenNews(state, action: PayloadAction<newsType[]>) {
-      state.news = action.payload;
+    fetchOneFullByIdNews(state, action: PayloadAction<string | null>) {
+      state.status = LoadingState.LOADING;
+    },
+    setLastTenShortNews(state, action: PayloadAction<newsType[] | null>) {
+      state.shortNews = action.payload;
+      state.status = LoadingState.SUCCESS;
+    },
+    setOneFullByIdNews(state, action: PayloadAction<newsType | null>) {
+      state.fullNews = action.payload;
+      state.status = LoadingState.SUCCESS;
     },
     setLoadingState(state, action: PayloadAction<LoadingState>) {
       state.status = action.payload;
     },
   },
 });
-export const { fetchLastTenNews, setLastTenNews } = newsSlice.actions;
+export const {
+  fetchLastTenShortNews,
+  setLastTenShortNews,
+  fetchOneFullByIdNews,
+  setOneFullByIdNews,
+} = newsSlice.actions;
 
 export default newsSlice.reducer;

@@ -6,6 +6,7 @@ import { SignIn } from './Pages/SignIn';
 import { AddAdvert, SuccessPage } from './Pages/AddAdvert';
 import { ErrorPage } from './Pages/ErrorPage';
 import { SearchAdvertsPage } from './Pages/SearchAdvertsPage';
+import { NewsPage } from './Pages/NewsPage';
 export interface Route {
   path: string;
   Component: any;
@@ -39,6 +40,11 @@ export const routes: Route[] = [
     path: '/addAdvert/success',
     Component: SuccessPage,
     name: 'SuccessPage',
+  },
+  {
+    path: '/news/:newsId',
+    Component: NewsPage,
+    name: 'NewsPage',
   },
 
   {
