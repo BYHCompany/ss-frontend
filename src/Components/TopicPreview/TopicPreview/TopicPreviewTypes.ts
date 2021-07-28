@@ -1,9 +1,8 @@
 export interface TopicPreviewProps {
-  imageSrc: string;
-  label: string;
-  description: string;
-  tags: TopicTag[]; //Max 2
-  mainTag: TopicTag; //Tag with topick label
+  imageSrc: string[] | null;
+  label: string | null;
+  description: string | null;
+  tags: string[] | null; //Max 2
 }
 
 export type TopicTag = {

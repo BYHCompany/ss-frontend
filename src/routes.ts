@@ -4,8 +4,8 @@ import { MainPage } from './Pages/MainPage';
 import { About, Email, SignUp } from './Pages/SignUp';
 import { SignIn } from './Pages/SignIn';
 import { AddAdvert, SuccessPage } from './Pages/AddAdvert';
-import { SearchAdvertsPage } from './Pages/SearchAdvertsPage/SearchAdvertsPage/SearchAdvertsPage';
 import { ErrorPage } from './Pages/ErrorPage';
+import { SearchAdvertsPage } from './Pages/SearchAdvertsPage';
 export interface Route {
   path: string;
   Component: any;

@@ -7,7 +7,7 @@ import { CarSelectorForm } from '../../../Components/CarSelectForm';
 import queryString from 'query-string';
 import { getSearchData } from '../../../Store/ducks/searchCar/searchCarSelector';
 import './SearchAdvertsPage.scss';
-import { fetchSearchData } from '../../../Store/ducks/searchCar/searchCarReducer';
+import { fetchSearchData, setSearchedData } from '../../../Store/ducks/searchCar/searchCarReducer';
 export const SearchAdvertsPage = () => {
   const adverts = useSelector(getSearchData);
   const { search } = useLocation();
@@ -19,6 +19,11 @@ export const SearchAdvertsPage = () => {
       dispatch(fetchSearchData({ ...queryData }));
     }
   }, [queryData, dispatch, adverts]);
+  React.useEffect(() => {
+    return () => {
+      dispatch(setSearchedData(null));
+    };
+  }, [dispatch]);
   return (
     <div>
       <CarSelectorForm />

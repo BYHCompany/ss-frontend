@@ -9,7 +9,7 @@ type initialStateType = {
     make: string[] | null;
     model: string[] | null;
     count: string | null;
-    adverts: MediumAdvert[];
+    adverts: MediumAdvert[] | null;
   };
 };
 
@@ -53,7 +53,7 @@ const searchSlice = createSlice({
     fetchSearchData(state, action: PayloadAction<searchAdvert>) {
       state.status = LoadingState.LOADING;
     },
-    setSearchedData(state, action: PayloadAction<MediumAdvert[]>) {
+    setSearchedData(state, action: PayloadAction<MediumAdvert[] | null>) {
       state.status = LoadingState.SUCCESS;
       state.data.adverts = action.payload;
     },
