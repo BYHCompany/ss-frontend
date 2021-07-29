@@ -1,6 +1,5 @@
 import { Button } from 'byh-components';
 import React from 'react';
-
 import { Trans, useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchSearchData } from '../../../../Store/ducks/searchCar/searchCarReducer';
@@ -25,17 +24,16 @@ export const BottomPart: React.FC<IProps> = ({ selectedData }) => {
     dispatch(fetchSearchData(selectedData));
   };
   const noResults = message === 'No ads found for your search ';
-  // i18n.t('advertPage:gearBox.value.variable');
+
   return (
     <div className="result-button__wrapper">
       <div>
-        {/* <RangeSlider min={0} max={100} width={322} callback={rangeSliderFunc} /> */}
         {noResults ? (
-          <p className={noResults ? 'buttonPart__noResult-text' : ''}>
+          <p className={'buttonPart__noResult-text'}>
             {t('mainPage:carSelectForm.messages.noResult')}
           </p>
         ) : (
-          <p>
+          <p style={{ fontWeight: 'bold' }}>
             <Trans i18nKey={'mainPage:carSelectForm.messages.result'}> {{ message }} </Trans>
           </p>
         )}
