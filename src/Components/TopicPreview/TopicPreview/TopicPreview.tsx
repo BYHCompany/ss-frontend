@@ -2,8 +2,8 @@ import { Button, ImageComponent, Paper, Title } from 'byh-components';
 import React from 'react';
 import { TopicPreviewProps } from './TopicPreviewTypes';
 import './TopicPreview.scss';
-import { AiFillFire } from 'react-icons/ai';
-import { ReactComponent as ElectricCar } from '../../../assets/img/icons/electric_car.svg';
+// import { AiFillFire } from 'react-icons/ai';
+// import { ReactComponent as ElectricCar } from '../../../assets/img/icons/electric_car.svg';
 import { NavLink } from 'react-router-dom';
 
 export const TopicPreview: React.FC<TopicPreviewProps> = ({

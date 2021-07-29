@@ -12,6 +12,20 @@ import { BigAdvertPreviewProps } from './BigAdvertPreviewTypes';
 // import { BiTrendingUp } from 'react-icons/bi';
 import { NavLink } from 'react-router-dom';
 import { Trans, useTranslation } from 'react-i18next';
+import { motion } from 'framer-motion';
+const variants = {
+  enter: {
+    opacity: 0,
+  },
+  center: {
+    zIndex: 1,
+    opacity: 1,
+  },
+  exit: {
+    zIndex: 0,
+    opacity: 0,
+  },
+};
 
 export const BigAdvertPreview: React.FC<BigAdvertPreviewProps> = ({ car, advertId }) => {
   const { t } = useTranslation();
@@ -23,21 +37,34 @@ export const BigAdvertPreview: React.FC<BigAdvertPreviewProps> = ({ car, advertI
   const millage = car.millage;
 
   return (
-    <NavLink style={{ textDecoration: 'none' }} to={`/advert/${advertId}`}>
-      <Paper
-        boxShadow={false}
-        width={1170}
-        height={214}
-        display={'flex'}
-        className={'bigAdvertPreview__wrapper'}>
-        <div style={{ display: 'flex', marginRight: 18 }}>
-          <ImageComponent style={{ marginRight: 10 }} src={car.photo[0]} width={286} height={185} />
-          <div className={'bigAdvertPreview__smallImg-wrapper'}>
-            <ImageComponent src={car.photo[1]} width={86} height={55} />
-            <ImageComponent src={car.photo[2]} width={86} height={55} />
-            <ImageComponent src={car.photo[3]} width={86} height={55} />
-          </div>
-          {/* <div className="bigAdertPreview__content__tags">
+    <motion.div
+      variants={variants}
+      initial="enter"
+      animate="center"
+      exit="exit"
+      transition={{
+        opacity: { duration: 0.3 },
+      }}>
+      <NavLink style={{ textDecoration: 'none' }} to={`/advert/${advertId}`}>
+        <Paper
+          boxShadow={false}
+          width={1170}
+          height={214}
+          display={'flex'}
+          className={'bigAdvertPreview__wrapper'}>
+          <div style={{ display: 'flex', marginRight: 18 }}>
+            <ImageComponent
+              style={{ marginRight: 10 }}
+              src={car.photo[0]}
+              width={286}
+              height={185}
+            />
+            <div className={'bigAdvertPreview__smallImg-wrapper'}>
+              <ImageComponent src={car.photo[1]} width={86} height={55} />
+              <ImageComponent src={car.photo[2]} width={86} height={55} />
+              <ImageComponent src={car.photo[3]} width={86} height={55} />
+            </div>
+            {/* <div className="bigAdertPreview__content__tags">
             {car.engineType === 'electric' && (
               <Paper
                 display={'flex'}
@@ -59,57 +86,58 @@ export const BigAdvertPreview: React.FC<BigAdvertPreviewProps> = ({ car, advertI
               <p className="bigAdertPreview__content___tagText">Выгодно</p>
             </Paper>
           </div> */}
-        </div>
-        <div className="bigAdertPreview__content">
-          <div className="bigAdertPreview__title-wrapper">
-            <Title type={'ultraSmall'} variant="primary">
-              {car.make} {car.model}
-            </Title>
-            <Title type={'ultraSmall'} variant="primary">
-              {priceFormatter(car.price)}
-            </Title>
           </div>
-          <div style={{ height: '100%' }}>
-            <DescriptionList
-              style={{ marginBottom: 5 }}
-              fontSize={20}
-              width={700}
-              header={t('advertPage:year.year')}
-              description={<Trans i18nKey={'advertPage:year.value'}> {{ year }} </Trans>}
-            />
+          <div className="bigAdertPreview__content">
+            <div className="bigAdertPreview__title-wrapper">
+              <Title type={'ultraSmall'} variant="primary">
+                {car.make} {car.model}
+              </Title>
+              <Title type={'ultraSmall'} variant="primary">
+                {priceFormatter(car.price)}
+              </Title>
+            </div>
+            <div style={{ height: '100%' }}>
+              <DescriptionList
+                style={{ marginBottom: 5 }}
+                fontSize={20}
+                width={700}
+                header={t('advertPage:year.year')}
+                description={<Trans i18nKey={'advertPage:year.value'}> {{ year }} </Trans>}
+              />
 
-            <DescriptionList
-              fontSize={20}
-              style={{ marginBottom: 5 }}
-              width={700}
-              header={t('advertPage:millage.millage')}
-              description={<Trans i18nKey={'advertPage:millage.value'}> {{ millage }} </Trans>}
-            />
-            <DescriptionList
-              fontSize={20}
-              style={{ marginBottom: 5 }}
-              header={t('advertPage:transmission.transmission')}
-              width={700}
-              description={translateTransmitionType(car.transmission)}
-            />
+              <DescriptionList
+                fontSize={20}
+                style={{ marginBottom: 5 }}
+                width={700}
+                header={t('advertPage:millage.millage')}
+                description={<Trans i18nKey={'advertPage:millage.value'}> {{ millage }} </Trans>}
+              />
+              <DescriptionList
+                fontSize={20}
+                style={{ marginBottom: 5 }}
+                header={t('advertPage:transmission.transmission')}
+                width={700}
+                description={translateTransmitionType(car.transmission)}
+              />
 
-            <DescriptionList
-              fontSize={20}
-              width={700}
-              style={{ marginBottom: 5 }}
-              header={t('advertPage:engine.engine')}
-              description={`${translateEngineType(car.engineType)} ${car.engineVolume}`}
-            />
-            <DescriptionList
-              fontSize={20}
-              style={{ marginBottom: 5 }}
-              width={700}
-              header={t('advertPage:gearBox.gearBox')}
-              description={translateGearboxType(car.gearbox)}
-            />
+              <DescriptionList
+                fontSize={20}
+                width={700}
+                style={{ marginBottom: 5 }}
+                header={t('advertPage:engine.engine')}
+                description={`${translateEngineType(car.engineType)} ${car.engineVolume}`}
+              />
+              <DescriptionList
+                fontSize={20}
+                style={{ marginBottom: 5 }}
+                width={700}
+                header={t('advertPage:gearBox.gearBox')}
+                description={translateGearboxType(car.gearbox)}
+              />
+            </div>
           </div>
-        </div>
-      </Paper>
-    </NavLink>
+        </Paper>
+      </NavLink>
+    </motion.div>
   );
 };

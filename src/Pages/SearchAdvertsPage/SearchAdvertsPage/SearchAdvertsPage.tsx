@@ -24,10 +24,13 @@ export const SearchAdvertsPage = () => {
       dispatch(setSearchedData(null));
     };
   }, [dispatch]);
+
   return (
     <div>
-      <CarSelectorForm />
-      <Title variant="primary" type={'medium'}>
+      <div style={{ marginBottom: 20 }}>
+        <CarSelectorForm />
+      </div>
+      <Title style={{ marginBottom: 10 }} variant="primary" type={'medium'}>
         Найденные варианты
       </Title>
 

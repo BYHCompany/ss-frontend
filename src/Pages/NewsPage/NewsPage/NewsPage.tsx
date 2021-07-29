@@ -2,7 +2,7 @@ import { ImageComponent, Title } from 'byh-components';
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
-import { fetchOneFullByIdNews } from '../../../Store/ducks/news/newsReducer';
+import { fetchOneFullByIdNews, setOneFullByIdNews } from '../../../Store/ducks/news/newsReducer';
 import { getFullNews } from '../../../Store/ducks/news/newsSelector';
 import './NewsPage.scss';
 export const NewsPage = () => {
@@ -13,6 +13,10 @@ export const NewsPage = () => {
 
   React.useEffect(() => {
     dispatch(fetchOneFullByIdNews(newsId));
+
+    return () => {
+      dispatch(setOneFullByIdNews(null));
+    };
   }, [dispatch, newsId]);
 
   if (!news) {

@@ -1,12 +1,10 @@
 import { Button } from 'byh-components';
 import React from 'react';
-
 import { Trans, useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchSearchData } from '../../../../Store/ducks/searchCar/searchCarReducer';
 import {
   getCarFormIsLoading,
-  getSearchData,
   getSearchMessage,
 } from '../../../../Store/ducks/searchCar/searchCarSelector';
 import './BottomPart.scss';

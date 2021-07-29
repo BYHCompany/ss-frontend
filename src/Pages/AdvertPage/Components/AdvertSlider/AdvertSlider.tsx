@@ -3,7 +3,7 @@ import { ImageComponent } from 'byh-components';
 import './AdvertSlider.scss';
 import { useSelector } from 'react-redux';
 import { getAdvertImages } from '../../../../Store/ducks/advert/advertSelector';
-import { AnimatePresence, motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from 'react-icons/md';
 
 const variants = {
